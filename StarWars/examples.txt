@@ -1,0 +1,21 @@
+﻿query {
+  hero (episode: EMPIRE) {
+    id
+    name
+    friends {
+      edges {
+        node {
+          name
+        }
+      }
+      totalCount
+    }
+  }
+}
+
+query {
+  character(ids: [1000, 1001])  {
+    id
+    name
+  }
+}
