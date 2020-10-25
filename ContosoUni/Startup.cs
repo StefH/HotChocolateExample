@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using HotChocolate;
 using HotChocolate.AspNetCore;
 using HotChocolate.Execution.Configuration;
+using Microsoft.Extensions.Logging;
 
 
 namespace ContosoUniversity
@@ -18,7 +19,10 @@ namespace ContosoUniversity
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<SchoolContext>();
+            services.AddDbContext<SchoolContext>(options => options
+                .EnableDetailedErrors()
+                .EnableSensitiveDataLogging()
+                .UseLoggerFactory(LoggerFactory.Create(builder => builder.AddDebug().AddConsole())));
 
             services.AddAutoMapper(typeof(Startup));
 
@@ -26,7 +30,16 @@ namespace ContosoUniversity
                 SchemaBuilder.New()
                     .AddQueryType<Query>()
                     .Create(),
-                new QueryExecutionOptions { ForceSerialExecution = true });
+                    new QueryExecutionOptions
+                    {
+                        ForceSerialExecution = true,
+                        IncludeExceptionDetails = true,
+                        TracingPreference = TracingPreference.Always
+                    }).AddErrorFilter(error =>
+                    {
+                        Console.WriteLine(error.Exception);
+                        return error;
+                    });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,7 +61,7 @@ namespace ContosoUniversity
             {
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hello World!");
+                    context.Response.Redirect("playground");
                 });
             });
         }
@@ -58,6 +71,9 @@ namespace ContosoUniversity
             using var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope();
 
             var context = serviceScope.ServiceProvider.GetRequiredService<SchoolContext>();
+
+            
+
             if (context.Database.EnsureCreated())
             {
                 var course = new Course { Credits = 10, Title = "Object Oriented Programming 1" };
