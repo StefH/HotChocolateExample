@@ -11,8 +11,8 @@ namespace ContosoUniversity.Models
         public string FirstMidName { get; set; }
         public DateTime EnrollmentDate { get; set; }
 
-        //[UseSelection]
-        //[UseFiltering]
-        public virtual ICollection<EnrollmentModel> Enrollments { get; set; } = new List<EnrollmentModel>();
+        [UseSelection]
+        [UseFiltering]
+        public virtual ICollection<EnrollmentModel> Enrollments { get; set; }
     }
 }
