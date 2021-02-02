@@ -6,7 +6,7 @@ using StrawberryShake;
 namespace graphql_console
 {
     [System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "11.0.0")]
-    public partial interface ICharacter1
+    public partial interface ICharacter2
     {
         int Id { get; }
 

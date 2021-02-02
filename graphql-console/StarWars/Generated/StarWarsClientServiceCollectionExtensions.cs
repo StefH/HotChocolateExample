@@ -40,6 +40,7 @@ namespace graphql_console
             IOperationClientBuilder builder = serviceCollection.AddOperationClientOptions(_clientName)
                 .AddValueSerializer(() => new EpisodeValueSerializer())
                 .AddResultParser(serializers => new GetHeroResultParser(serializers))
+                .AddResultParser(serializers => new GetCharactersResultParser(serializers))
                 .AddOperationFormatter(serializers => new JsonOperationFormatter(serializers))
                 .AddHttpOperationPipeline(b => b.UseHttpDefaultPipeline());
 

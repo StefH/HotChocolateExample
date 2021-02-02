@@ -116,6 +116,7 @@ namespace graphql_console
 
             return new Character1
             (
+                DeserializeInt(obj, "id"),
                 DeserializeString(obj, "name")
             );
         }

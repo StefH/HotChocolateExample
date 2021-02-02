@@ -6,10 +6,10 @@ using StrawberryShake;
 namespace graphql_console
 {
     [System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "11.0.0")]
-    public partial class Character1
-        : ICharacter1
+    public partial class Character2
+        : ICharacter2
     {
-        public Character1(
+        public Character2(
             int id, 
             string name)
         {

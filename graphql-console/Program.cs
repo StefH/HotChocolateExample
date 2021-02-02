@@ -19,10 +19,18 @@ namespace graphql_console
 
             IServiceProvider services = serviceCollection.BuildServiceProvider();
             IStarWarsClient client = services.GetRequiredService<IStarWarsClient>();
-            IOperationResult<IGetHero> result = await client.GetHeroAsync(Episode.Empire);
 
-            var heroAsJson = JsonSerializer.Serialize(result.Data.Hero, new JsonSerializerOptions { WriteIndented = true });
+
+
+            IOperationResult<IGetHero> heroResult = await client.GetHeroAsync(Episode.Empire);
+
+            var heroAsJson = JsonSerializer.Serialize(heroResult.Data.Hero, new JsonSerializerOptions { WriteIndented = true });
             Console.WriteLine(heroAsJson);
+
+            var charactersByIdsResult = await client.GetCharactersAsync(new[] { 1000, 2000});
+
+            var charactersByIdsJson = JsonSerializer.Serialize(charactersByIdsResult.Data.Character, new JsonSerializerOptions { WriteIndented = true });
+            Console.WriteLine(charactersByIdsJson);
         }
     }
 }

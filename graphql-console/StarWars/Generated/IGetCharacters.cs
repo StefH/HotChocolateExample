@@ -6,10 +6,8 @@ using StrawberryShake;
 namespace graphql_console
 {
     [System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "11.0.0")]
-    public partial interface ICharacter1
+    public partial interface IGetCharacters
     {
-        int Id { get; }
-
-        string Name { get; }
+        global::System.Collections.Generic.IReadOnlyList<global::graphql_console.ICharacter2> Character { get; }
     }
 }

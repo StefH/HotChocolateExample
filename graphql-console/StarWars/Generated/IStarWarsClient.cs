@@ -17,5 +17,13 @@ namespace graphql_console
         Task<IOperationResult<global::graphql_console.IGetHero>> GetHeroAsync(
             GetHeroOperation operation,
             CancellationToken cancellationToken = default);
+
+        Task<IOperationResult<global::graphql_console.IGetCharacters>> GetCharactersAsync(
+            Optional<IReadOnlyList<int>> ids = default,
+            CancellationToken cancellationToken = default);
+
+        Task<IOperationResult<global::graphql_console.IGetCharacters>> GetCharactersAsync(
+            GetCharactersOperation operation,
+            CancellationToken cancellationToken = default);
     }
 }

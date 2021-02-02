@@ -5,10 +5,18 @@
     friends {
       edges {
         node {
+          id
           name
         }
       }
       totalCount
     }
+  }
+}
+
+ query GetCharacters($ids: [Int!]!){
+  character(ids: $ids) {
+    id
+    name
   }
 }
