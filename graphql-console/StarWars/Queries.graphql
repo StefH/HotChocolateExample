@@ -1,0 +1,14 @@
+﻿query getHero($episode: Episode!) {
+  hero(episode: $episode) {
+    id
+    name
+    friends {
+      edges {
+        node {
+          name
+        }
+      }
+      totalCount
+    }
+  }
+}

@@ -7,7 +7,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <GraphQL Remove="StarWars\Queries.graphql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Watch Remove="StarWars\Queries.graphql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include=".config\dotnet-tools.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="HotChocolate" Version="10.5.3" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="3.0.0" />
+    <PackageReference Include="StrawberryShake" Version="11.0.0-preview.137" />
   </ItemGroup>
 
 </Project>
