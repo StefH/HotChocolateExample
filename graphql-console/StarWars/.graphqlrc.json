@@ -1,0 +1,11 @@
+{
+  "schema": "schema.graphql",
+  "documents": "**/*.graphql",
+  "extensions": {
+    "strawberryShake": {
+      "name": "StarWarsClient",
+      "url": "https://localhost:44339/graphql",
+      "dependencyInjection": true
+    }
+  }
+}
