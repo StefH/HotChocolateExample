@@ -1,4 +1,8 @@
-﻿``` cmd 
+﻿``` cmd
+cd graphql-console
+```
+
+``` cmd
 dotnet tool install StrawberryShake.Tools --version 12.0.0-preview.1 --local
 
 dotnet add package StrawberryShake.Transport.Http --version 12.0.0-preview.1
