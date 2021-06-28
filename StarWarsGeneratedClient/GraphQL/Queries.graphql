@@ -14,9 +14,18 @@
   }
 }
 
- query GetCharacters($ids: [Int!]!){
+query getCharacters($ids: [Int!]!){
   character(ids: $ids) {
     id
     name
+  }
+}
+
+mutation createReview($review: CreateReviewInput!) {
+  createReview(input: $review) {
+    review {
+      commentary
+      stars
+    }
   }
 }

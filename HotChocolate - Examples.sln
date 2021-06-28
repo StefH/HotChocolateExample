@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "graphql-console", "graphql-
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContosoUniversity", "ContosoUni\ContosoUniversity.csproj", "{AE69790B-B6A4-4E4E-9DE0-1E502586F5DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarWarsGeneratedClient", "StarWarsGeneratedClient\StarWarsGeneratedClient.csproj", "{AF7B5F9B-6A56-4B41-8AC1-C48A3A8E9615}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +57,18 @@ Global
 		{AE69790B-B6A4-4E4E-9DE0-1E502586F5DB}.Release|x64.Build.0 = Release|Any CPU
 		{AE69790B-B6A4-4E4E-9DE0-1E502586F5DB}.Release|x86.ActiveCfg = Release|Any CPU
 		{AE69790B-B6A4-4E4E-9DE0-1E502586F5DB}.Release|x86.Build.0 = Release|Any CPU
+		{AF7B5F9B-6A56-4B41-8AC1-C48A3A8E9615}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF7B5F9B-6A56-4B41-8AC1-C48A3A8E9615}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF7B5F9B-6A56-4B41-8AC1-C48A3A8E9615}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{AF7B5F9B-6A56-4B41-8AC1-C48A3A8E9615}.Debug|x64.Build.0 = Debug|Any CPU
+		{AF7B5F9B-6A56-4B41-8AC1-C48A3A8E9615}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AF7B5F9B-6A56-4B41-8AC1-C48A3A8E9615}.Debug|x86.Build.0 = Debug|Any CPU
+		{AF7B5F9B-6A56-4B41-8AC1-C48A3A8E9615}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF7B5F9B-6A56-4B41-8AC1-C48A3A8E9615}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF7B5F9B-6A56-4B41-8AC1-C48A3A8E9615}.Release|x64.ActiveCfg = Release|Any CPU
+		{AF7B5F9B-6A56-4B41-8AC1-C48A3A8E9615}.Release|x64.Build.0 = Release|Any CPU
+		{AF7B5F9B-6A56-4B41-8AC1-C48A3A8E9615}.Release|x86.ActiveCfg = Release|Any CPU
+		{AF7B5F9B-6A56-4B41-8AC1-C48A3A8E9615}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

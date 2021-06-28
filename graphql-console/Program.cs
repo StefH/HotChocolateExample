@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Text.Json;
 using System.Threading.Tasks;
-using graphql_console.StarWarsClient;
 using Microsoft.Extensions.DependencyInjection;
-using StrawberryShake;
+using StarWarsGeneratedClient;
 
 namespace graphql_console
 {
@@ -14,12 +13,12 @@ namespace graphql_console
             var serviceCollection = new ServiceCollection();
 
             serviceCollection.AddHttpClient(
-                "StarWarsClient",
+                "StarWarsGeneratedClient",
                 c => c.BaseAddress = new Uri("https://localhost:44339/graphql"));
-            serviceCollection.AddStarWarsClient();
+            serviceCollection.AddStarWarsGeneratedClient();
 
             IServiceProvider services = serviceCollection.BuildServiceProvider();
-            IStarWarsClient client = services.GetRequiredService<IStarWarsClient>();
+            var client = services.GetRequiredService<IStarWarsGeneratedClient>();
             
             var getHeroResult = await client.GetHero.ExecuteAsync(Episode.Empire);
 
@@ -30,6 +29,9 @@ namespace graphql_console
 
             var charactersByIdsJson = JsonSerializer.Serialize(charactersByIdsResult.Data.Character, new JsonSerializerOptions { WriteIndented = true });
             Console.WriteLine(charactersByIdsJson);
+
+            // Mutate
+            await client.CreateReview.ExecuteAsync(new CreateReviewInput { Episode = Episode.Empire, Commentary = "test", Stars = 5 });
         }
     }
 }
