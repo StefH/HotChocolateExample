@@ -5,23 +5,23 @@ using HotChocolate.Types.Relay;
 namespace StarWars.Characters
 {
     /// <summary>
-    /// A droid in the Star Wars universe.
+    /// A human character in the Star Wars universe.
     /// </summary>
-    public class Droid : ICharacter
+    public class Human : ICharacter
     {
-        public Droid(
-            int id,
-            string name,
-            IReadOnlyList<int> friends,
-            IReadOnlyList<Episode> appearsIn,
-            string primaryFunction,
+        public Human(
+            int id, 
+            string name, 
+            IReadOnlyList<int> friends, 
+            IReadOnlyList<Episode> appearsIn, 
+            string? homePlanet = null, 
             double height = 1.72d)
         {
             Id = id;
             Name = name;
             Friends = friends;
             AppearsIn = appearsIn;
-            PrimaryFunction = primaryFunction;
+            HomePlanet = homePlanet;
             Height = height;
         }
 
@@ -32,15 +32,20 @@ namespace StarWars.Characters
         public string Name { get; }
 
         /// <inheritdoc />
+        [UsePaging(typeof(InterfaceType<ICharacter>))]
+        [GetFriendsResolver]
         public IReadOnlyList<int> Friends { get; }
+
+        //[GetFriends2Resolver]
+        //public IReadOnlyList<ICharacter> Friends2 { get; }
 
         /// <inheritdoc />
         public IReadOnlyList<Episode> AppearsIn { get; }
 
         /// <summary>
-        /// The droid's primary function.
+        /// The planet the character is originally from.
         /// </summary>
-        public string PrimaryFunction { get; }
+        public string? HomePlanet { get; }
 
         /// <inheritdoc />
         [UseConvertUnit]

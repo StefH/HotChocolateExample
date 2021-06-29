@@ -1,20 +1,31 @@
 using HotChocolate;
-using HotChocolate.Subscriptions;
 using HotChocolate.Types;
 using StarWars.Characters;
-using StarWars.Repositories;
 
 namespace StarWars.Reviews
 {
-    [ExtendObjectType(Name = "Subscription")]
+    /// <summary>
+    /// The subscriptions related to reviews.
+    /// </summary>
+    [ExtendObjectType(OperationTypeNames.Subscription)]
     public class ReviewSubscriptions
     {
+        /// <summary>
+        /// The OnReview event is invoked whenever a new review is being created.
+        /// </summary>
+        /// <param name="episode">
+        /// The episode to which you want to subscribe to.
+        /// </param>
+        /// <param name="message">
+        /// The event message.
+        /// </param>
+        /// <returns>
+        /// The review that was created.
+        /// </returns>
+        [Subscribe]
         public Review OnReview(
-            Episode episode, 
-            IEventMessage message, 
-            [Service]IReviewRepository _repository)
-        {
-            return (Review)message.Payload;
-        }
+            [Topic]Episode episode, 
+            [EventMessage]Review message) => 
+            message;
     }
 }
