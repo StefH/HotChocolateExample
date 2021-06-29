@@ -14,7 +14,7 @@ namespace graphql_console
 
             serviceCollection.AddHttpClient(
                 "StarWarsGeneratedClient",
-                c => c.BaseAddress = new Uri("https://localhost:44339/graphql"));
+                c => c.BaseAddress = new Uri("https://localhost:44339/starwars"));
             serviceCollection.AddStarWarsGeneratedClient();
 
             IServiceProvider services = serviceCollection.BuildServiceProvider();
@@ -32,7 +32,7 @@ namespace graphql_console
 
             // Mutate
             var createReviewResult = await client.CreateReview.ExecuteAsync(new CreateReviewInput { Episode = Episode.Empire, Commentary = "test", Stars = 5 });
-            Console.WriteLine(createReviewResult.Data.CreateReview.DateTime);
+            Console.WriteLine(createReviewResult.Data.CreateReview.Review.Stars);
         }
     }
 }

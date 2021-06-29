@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using StarWars.Characters;
 using StarWars.Reviews;
@@ -7,7 +7,8 @@ namespace StarWars.Repositories
 {
     public class ReviewRepository : IReviewRepository
     {
-        private readonly Dictionary<Episode, List<Review>> _data = new Dictionary<Episode, List<Review>>();
+        private readonly Dictionary<Episode, List<Review>> _data =
+            new Dictionary<Episode, List<Review>>();
 
         public void AddReview(Episode episode, Review review)
         {

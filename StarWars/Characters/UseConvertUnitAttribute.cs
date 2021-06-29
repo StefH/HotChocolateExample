@@ -8,8 +8,7 @@ namespace StarWars.Characters
     [AttributeUsage(
         AttributeTargets.Property | AttributeTargets.Method,
         AllowMultiple = false)]
-    public sealed class UseConvertUnitAttribute
-        : DescriptorAttribute
+    public sealed class UseConvertUnitAttribute : DescriptorAttribute
     {
         protected override void TryConfigure(
             IDescriptorContext context,
@@ -26,7 +25,7 @@ namespace StarWars.Characters
 
                         if (context.Result is double length)
                         {
-                            context.Result = ConvertToUnit(length, context.Argument<Unit>("unit"));
+                            context.Result = ConvertToUnit(length, context.ArgumentValue<Unit>("unit"));
                         }
                     });
             }

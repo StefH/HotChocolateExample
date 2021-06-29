@@ -1,4 +1,3 @@
-using System;
 using System.Threading.Tasks;
 using HotChocolate;
 using HotChocolate.Subscriptions;
@@ -7,7 +6,10 @@ using StarWars.Repositories;
 
 namespace StarWars.Reviews
 {
-    [ExtendObjectType(Name = "Mutation")]
+    /// <summary>
+    /// The mutations related to reviews.
+    /// </summary>
+    [ExtendObjectType(OperationTypeNames.Mutation)]
     public class ReviewMutations
     {
         /// <summary>
@@ -16,12 +18,16 @@ namespace StarWars.Reviews
         public async Task<CreateReviewPayload> CreateReview(
             CreateReviewInput input,
             [Service]IReviewRepository repository,
-            [Service]IEventSender eventSender)
+            [Service]ITopicEventSender eventSender)
         {
             var review = new Review(input.Stars, input.Commentary);
             repository.AddReview(input.Episode, review);
-            await eventSender.SendAsync(new OnReviewMessage(input.Episode, review));
-            return new CreateReviewPayload(input.Episode, review, DateTime.Now);
+
+            await eventSender
+                .SendAsync(input.Episode, review)
+                .ConfigureAwait(false);
+
+            return new CreateReviewPayload(input.Episode, review);
         }
     }
 }

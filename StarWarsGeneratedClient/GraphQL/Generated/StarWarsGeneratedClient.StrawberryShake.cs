@@ -111,6 +111,9 @@ namespace Microsoft.Extensions.DependencyInjection
 
 namespace StarWarsGeneratedClient
 {
+    /// <summary>
+    /// The queries related to reviews.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class GetHeroResult : global::System.IEquatable<GetHeroResult>, IGetHeroResult
     {
@@ -121,6 +124,10 @@ namespace StarWarsGeneratedClient
 
         /// <summary>
         /// Retrieve a hero by a particular Star Wars episode.
+        /// 
+        /// 
+        /// **Returns:**
+        /// The hero character.
         /// </summary>
         public global::StarWarsGeneratedClient.IGetHero_Hero Hero { get; }
 
@@ -176,7 +183,7 @@ namespace StarWarsGeneratedClient
     }
 
     /// <summary>
-    /// A human character in the Star Wars universe.
+    /// This resolver class extends all object types implementing ICharacter.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class GetHero_Hero_Human : global::System.IEquatable<GetHero_Hero_Human>, IGetHero_Hero_Human
@@ -198,9 +205,6 @@ namespace StarWarsGeneratedClient
         /// </summary>
         public global::System.String Name { get; }
 
-        /// <summary>
-        /// The ids of the character's friends.
-        /// </summary>
         public global::StarWarsGeneratedClient.IGetHero_Hero_Friends? Friends { get; }
 
         public virtual global::System.Boolean Equals(GetHero_Hero_Human? other)
@@ -261,7 +265,7 @@ namespace StarWarsGeneratedClient
     }
 
     /// <summary>
-    /// A droid in the Star Wars universe.
+    /// This resolver class extends all object types implementing ICharacter.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class GetHero_Hero_Droid : global::System.IEquatable<GetHero_Hero_Droid>, IGetHero_Hero_Droid
@@ -283,9 +287,6 @@ namespace StarWarsGeneratedClient
         /// </summary>
         public global::System.String Name { get; }
 
-        /// <summary>
-        /// The ids of the character's friends.
-        /// </summary>
         public global::StarWarsGeneratedClient.IGetHero_Hero_Friends? Friends { get; }
 
         public virtual global::System.Boolean Equals(GetHero_Hero_Droid? other)
@@ -351,18 +352,15 @@ namespace StarWarsGeneratedClient
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class GetHero_Hero_Friends_CharacterConnection : global::System.IEquatable<GetHero_Hero_Friends_CharacterConnection>, IGetHero_Hero_Friends_CharacterConnection
     {
-        public GetHero_Hero_Friends_CharacterConnection(global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetHero_Hero_Friends_Edges>? edges, global::System.Int32 totalCount)
+        public GetHero_Hero_Friends_CharacterConnection(global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetHero_Hero_Friends_Edges>? edges)
         {
             Edges = edges;
-            TotalCount = totalCount;
         }
 
         /// <summary>
         /// A list of edges.
         /// </summary>
         public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetHero_Hero_Friends_Edges>? Edges { get; }
-
-        public global::System.Int32 TotalCount { get; }
 
         public virtual global::System.Boolean Equals(GetHero_Hero_Friends_CharacterConnection? other)
         {
@@ -381,7 +379,7 @@ namespace StarWarsGeneratedClient
                 return false;
             }
 
-            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Edges, other.Edges)) && TotalCount == other.TotalCount;
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Edges, other.Edges));
         }
 
         public override global::System.Boolean Equals(global::System.Object? obj)
@@ -417,7 +415,6 @@ namespace StarWarsGeneratedClient
                     }
                 }
 
-                hash ^= 397 * TotalCount.GetHashCode();
                 return hash;
             }
         }
@@ -495,7 +492,7 @@ namespace StarWarsGeneratedClient
     }
 
     /// <summary>
-    /// A human character in the Star Wars universe.
+    /// This resolver class extends all object types implementing ICharacter.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class GetHero_Hero_Friends_Edges_Node_Human : global::System.IEquatable<GetHero_Hero_Friends_Edges_Node_Human>, IGetHero_Hero_Friends_Edges_Node_Human
@@ -569,7 +566,7 @@ namespace StarWarsGeneratedClient
     }
 
     /// <summary>
-    /// A droid in the Star Wars universe.
+    /// This resolver class extends all object types implementing ICharacter.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class GetHero_Hero_Friends_Edges_Node_Droid : global::System.IEquatable<GetHero_Hero_Friends_Edges_Node_Droid>, IGetHero_Hero_Friends_Edges_Node_Droid
@@ -642,11 +639,18 @@ namespace StarWarsGeneratedClient
         }
     }
 
+    /// <summary>
+    /// The queries related to reviews.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public interface IGetHeroResult
     {
         /// <summary>
         /// Retrieve a hero by a particular Star Wars episode.
+        /// 
+        /// 
+        /// **Returns:**
+        /// The hero character.
         /// </summary>
         public global::StarWarsGeneratedClient.IGetHero_Hero Hero { get; }
     }
@@ -674,7 +678,7 @@ namespace StarWarsGeneratedClient
     }
 
     /// <summary>
-    /// A human character in the Star Wars universe.
+    /// This resolver class extends all object types implementing ICharacter.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public interface IGetHero_Hero_Human : IGetHero_Hero
@@ -682,7 +686,7 @@ namespace StarWarsGeneratedClient
     }
 
     /// <summary>
-    /// A droid in the Star Wars universe.
+    /// This resolver class extends all object types implementing ICharacter.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public interface IGetHero_Hero_Droid : IGetHero_Hero
@@ -699,8 +703,6 @@ namespace StarWarsGeneratedClient
         /// A list of edges.
         /// </summary>
         public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetHero_Hero_Friends_Edges>? Edges { get; }
-
-        public global::System.Int32 TotalCount { get; }
     }
 
     /// <summary>
@@ -749,7 +751,7 @@ namespace StarWarsGeneratedClient
     }
 
     /// <summary>
-    /// A human character in the Star Wars universe.
+    /// This resolver class extends all object types implementing ICharacter.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public interface IGetHero_Hero_Friends_Edges_Node_Human : IGetHero_Hero_Friends_Edges_Node
@@ -757,13 +759,16 @@ namespace StarWarsGeneratedClient
     }
 
     /// <summary>
-    /// A droid in the Star Wars universe.
+    /// This resolver class extends all object types implementing ICharacter.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public interface IGetHero_Hero_Friends_Edges_Node_Droid : IGetHero_Hero_Friends_Edges_Node
     {
     }
 
+    /// <summary>
+    /// The queries related to reviews.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class GetCharactersResult : global::System.IEquatable<GetCharactersResult>, IGetCharactersResult
     {
@@ -774,6 +779,10 @@ namespace StarWarsGeneratedClient
 
         /// <summary>
         /// Gets a character by it`s id.
+        /// 
+        /// 
+        /// **Returns:**
+        /// The character.
         /// </summary>
         public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetCharacters_Character> Character { get; }
 
@@ -833,7 +842,7 @@ namespace StarWarsGeneratedClient
     }
 
     /// <summary>
-    /// A human character in the Star Wars universe.
+    /// This resolver class extends all object types implementing ICharacter.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class GetCharacters_Character_Human : global::System.IEquatable<GetCharacters_Character_Human>, IGetCharacters_Character_Human
@@ -907,7 +916,7 @@ namespace StarWarsGeneratedClient
     }
 
     /// <summary>
-    /// A droid in the Star Wars universe.
+    /// This resolver class extends all object types implementing ICharacter.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class GetCharacters_Character_Droid : global::System.IEquatable<GetCharacters_Character_Droid>, IGetCharacters_Character_Droid
@@ -980,11 +989,18 @@ namespace StarWarsGeneratedClient
         }
     }
 
+    /// <summary>
+    /// The queries related to reviews.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public interface IGetCharactersResult
     {
         /// <summary>
         /// Gets a character by it`s id.
+        /// 
+        /// 
+        /// **Returns:**
+        /// The character.
         /// </summary>
         public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetCharacters_Character> Character { get; }
     }
@@ -1007,7 +1023,7 @@ namespace StarWarsGeneratedClient
     }
 
     /// <summary>
-    /// A human character in the Star Wars universe.
+    /// This resolver class extends all object types implementing ICharacter.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public interface IGetCharacters_Character_Human : IGetCharacters_Character
@@ -1015,13 +1031,16 @@ namespace StarWarsGeneratedClient
     }
 
     /// <summary>
-    /// A droid in the Star Wars universe.
+    /// This resolver class extends all object types implementing ICharacter.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public interface IGetCharacters_Character_Droid : IGetCharacters_Character
     {
     }
 
+    /// <summary>
+    /// The mutations related to reviews.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class CreateReviewResult : global::System.IEquatable<CreateReviewResult>, ICreateReviewResult
     {
@@ -1086,18 +1105,21 @@ namespace StarWarsGeneratedClient
         }
     }
 
+    /// <summary>
+    /// This payload allows us to query the created review object.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class CreateReview_CreateReview_CreateReviewPayload : global::System.IEquatable<CreateReview_CreateReview_CreateReviewPayload>, ICreateReview_CreateReview_CreateReviewPayload
     {
-        public CreateReview_CreateReview_CreateReviewPayload(global::StarWarsGeneratedClient.ICreateReview_CreateReview_Review review, global::System.DateTimeOffset dateTime)
+        public CreateReview_CreateReview_CreateReviewPayload(global::StarWarsGeneratedClient.ICreateReview_CreateReview_Review review)
         {
             Review = review;
-            DateTime = dateTime;
         }
 
+        /// <summary>
+        /// The review that was being created.
+        /// </summary>
         public global::StarWarsGeneratedClient.ICreateReview_CreateReview_Review Review { get; }
-
-        public global::System.DateTimeOffset DateTime { get; }
 
         public virtual global::System.Boolean Equals(CreateReview_CreateReview_CreateReviewPayload? other)
         {
@@ -1116,7 +1138,7 @@ namespace StarWarsGeneratedClient
                 return false;
             }
 
-            return (Review.Equals(other.Review)) && DateTime.Equals(other.DateTime);
+            return (Review.Equals(other.Review));
         }
 
         public override global::System.Boolean Equals(global::System.Object? obj)
@@ -1145,7 +1167,6 @@ namespace StarWarsGeneratedClient
             {
                 int hash = 5;
                 hash ^= 397 * Review.GetHashCode();
-                hash ^= 397 * DateTime.GetHashCode();
                 return hash;
             }
         }
@@ -1225,6 +1246,9 @@ namespace StarWarsGeneratedClient
         }
     }
 
+    /// <summary>
+    /// The mutations related to reviews.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public interface ICreateReviewResult
     {
@@ -1234,14 +1258,21 @@ namespace StarWarsGeneratedClient
         public global::StarWarsGeneratedClient.ICreateReview_CreateReview CreateReview { get; }
     }
 
+    /// <summary>
+    /// This payload allows us to query the created review object.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public interface ICreateReview_CreateReview
     {
+        /// <summary>
+        /// The review that was being created.
+        /// </summary>
         public global::StarWarsGeneratedClient.ICreateReview_CreateReview_Review Review { get; }
-
-        public global::System.DateTimeOffset DateTime { get; }
     }
 
+    /// <summary>
+    /// This payload allows us to query the created review object.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public interface ICreateReview_CreateReview_CreateReviewPayload : ICreateReview_CreateReview
     {
@@ -1275,15 +1306,15 @@ namespace StarWarsGeneratedClient
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class CreateReviewInputInputValueFormatter : global::StrawberryShake.Serialization.IInputObjectFormatter
     {
-        private global::StrawberryShake.Serialization.IInputValueFormatter _stringFormatter = default !;
         private global::StrawberryShake.Serialization.IInputValueFormatter _episodeFormatter = default !;
         private global::StrawberryShake.Serialization.IInputValueFormatter _intFormatter = default !;
+        private global::StrawberryShake.Serialization.IInputValueFormatter _stringFormatter = default !;
         public global::System.String TypeName => "CreateReviewInput";
         public void Initialize(global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
         {
-            _stringFormatter = serializerResolver.GetInputValueFormatter("String");
             _episodeFormatter = serializerResolver.GetInputValueFormatter("Episode");
             _intFormatter = serializerResolver.GetInputValueFormatter("Int");
+            _stringFormatter = serializerResolver.GetInputValueFormatter("String");
         }
 
         public global::System.Object? Format(global::System.Object? runtimeValue)
@@ -1301,11 +1332,6 @@ namespace StarWarsGeneratedClient
             }
 
             var fields = new global::System.Collections.Generic.List<global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>>();
-            if (inputInfo.IsCommentarySet)
-            {
-                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("commentary", FormatCommentary(input.Commentary)));
-            }
-
             if (inputInfo.IsEpisodeSet)
             {
                 fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("episode", FormatEpisode(input.Episode)));
@@ -1316,17 +1342,12 @@ namespace StarWarsGeneratedClient
                 fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("stars", FormatStars(input.Stars)));
             }
 
-            return fields;
-        }
-
-        private global::System.Object? FormatCommentary(global::System.String input)
-        {
-            if (input is null)
+            if (inputInfo.IsCommentarySet)
             {
-                throw new global::System.ArgumentNullException(nameof(input));
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("commentary", FormatCommentary(input.Commentary)));
             }
 
-            return _stringFormatter.Format(input);
+            return fields;
         }
 
         private global::System.Object? FormatEpisode(global::StarWarsGeneratedClient.Episode input)
@@ -1338,8 +1359,19 @@ namespace StarWarsGeneratedClient
         {
             return _intFormatter.Format(input);
         }
+
+        private global::System.Object? FormatCommentary(global::System.String input)
+        {
+            if (input is null)
+            {
+                throw new global::System.ArgumentNullException(nameof(input));
+            }
+
+            return _stringFormatter.Format(input);
+        }
     }
 
+    ///<summary>This input represents the data needed to create a review.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class CreateReviewInput : global::StarWarsGeneratedClient.State.ICreateReviewInputInfo, global::System.IEquatable<CreateReviewInput>
     {
@@ -1380,7 +1412,7 @@ namespace StarWarsGeneratedClient
                 return false;
             }
 
-            return (Commentary.Equals(other.Commentary)) && Episode.Equals(other.Episode) && Stars == other.Stars;
+            return (Episode.Equals(other.Episode)) && Stars == other.Stars && Commentary.Equals(other.Commentary);
         }
 
         public override global::System.Int32 GetHashCode()
@@ -1388,31 +1420,20 @@ namespace StarWarsGeneratedClient
             unchecked
             {
                 int hash = 5;
-                hash ^= 397 * Commentary.GetHashCode();
                 hash ^= 397 * Episode.GetHashCode();
                 hash ^= 397 * Stars.GetHashCode();
+                hash ^= 397 * Commentary.GetHashCode();
                 return hash;
             }
         }
 
-        private global::System.String _value_commentary = default !;
-        private global::System.Boolean _set_commentary;
         private global::StarWarsGeneratedClient.Episode _value_episode;
         private global::System.Boolean _set_episode;
         private global::System.Int32 _value_stars;
         private global::System.Boolean _set_stars;
-        ///<summary>An explanation for the rating.</summary>
-        public global::System.String Commentary
-        {
-            get => _value_commentary;
-            set
-            {
-                _set_commentary = true;
-                _value_commentary = value;
-            }
-        }
-
-        global::System.Boolean global::StarWarsGeneratedClient.State.ICreateReviewInputInfo.IsCommentarySet => _set_commentary;
+        private global::System.String _value_commentary = default !;
+        private global::System.Boolean _set_commentary;
+        ///<summary>The review for which to create the review.</summary>
         public global::StarWarsGeneratedClient.Episode Episode
         {
             get => _value_episode;
@@ -1436,6 +1457,18 @@ namespace StarWarsGeneratedClient
         }
 
         global::System.Boolean global::StarWarsGeneratedClient.State.ICreateReviewInputInfo.IsStarsSet => _set_stars;
+        ///<summary>An explanation for the rating.</summary>
+        public global::System.String Commentary
+        {
+            get => _value_commentary;
+            set
+            {
+                _set_commentary = true;
+                _value_commentary = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.ICreateReviewInputInfo.IsCommentarySet => _set_commentary;
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
@@ -1444,7 +1477,7 @@ namespace StarWarsGeneratedClient
         /// <summary>
         /// Star Wars Episode IV: A New Hope
         /// </summary>
-        Newhope,
+        NewHope,
         /// <summary>
         /// Star Wars Episode V: Empire Strikes Back
         /// </summary>
@@ -1463,7 +1496,7 @@ namespace StarWarsGeneratedClient
         {
             return serializedValue switch
             {
-            "NEWHOPE" => Episode.Newhope, "EMPIRE" => Episode.Empire, "JEDI" => Episode.Jedi, _ => throw new global::StrawberryShake.GraphQLClientException()}
+            "NEW_HOPE" => Episode.NewHope, "EMPIRE" => Episode.Empire, "JEDI" => Episode.Jedi, _ => throw new global::StrawberryShake.GraphQLClientException()}
 
             ;
         }
@@ -1472,7 +1505,7 @@ namespace StarWarsGeneratedClient
         {
             return runtimeValue switch
             {
-            Episode.Newhope => "NEWHOPE", Episode.Empire => "EMPIRE", Episode.Jedi => "JEDI", _ => throw new global::StrawberryShake.GraphQLClientException()}
+            Episode.NewHope => "NEW_HOPE", Episode.Empire => "EMPIRE", Episode.Jedi => "JEDI", _ => throw new global::StrawberryShake.GraphQLClientException()}
 
             ;
         }
@@ -1502,7 +1535,6 @@ namespace StarWarsGeneratedClient
     ///           }
     ///         }
     ///       }
-    ///       totalCount
     ///     }
     ///     ... on Human {
     ///       id
@@ -1523,8 +1555,8 @@ namespace StarWarsGeneratedClient
 
         public static GetHeroQueryDocument Instance { get; } = new GetHeroQueryDocument();
         public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Query;
-        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x48, 0x65, 0x72, 0x6f, 0x28, 0x24, 0x65, 0x70, 0x69, 0x73, 0x6f, 0x64, 0x65, 0x3a, 0x20, 0x45, 0x70, 0x69, 0x73, 0x6f, 0x64, 0x65, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x68, 0x65, 0x72, 0x6f, 0x28, 0x65, 0x70, 0x69, 0x73, 0x6f, 0x64, 0x65, 0x3a, 0x20, 0x24, 0x65, 0x70, 0x69, 0x73, 0x6f, 0x64, 0x65, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x66, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x65, 0x64, 0x67, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x6f, 0x64, 0x65, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d};
-        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "9ef2aa21895a0131cfc5be3e3bf58a9b");
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x48, 0x65, 0x72, 0x6f, 0x28, 0x24, 0x65, 0x70, 0x69, 0x73, 0x6f, 0x64, 0x65, 0x3a, 0x20, 0x45, 0x70, 0x69, 0x73, 0x6f, 0x64, 0x65, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x68, 0x65, 0x72, 0x6f, 0x28, 0x65, 0x70, 0x69, 0x73, 0x6f, 0x64, 0x65, 0x3a, 0x20, 0x24, 0x65, 0x70, 0x69, 0x73, 0x6f, 0x64, 0x65, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x66, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x65, 0x64, 0x67, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x6f, 0x64, 0x65, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "2add160266d9d7ed4ea876ffaeddffea");
         public override global::System.String ToString()
         {
 #if NETSTANDARD2_0
@@ -1559,7 +1591,6 @@ namespace StarWarsGeneratedClient
     ///           }
     ///         }
     ///       }
-    ///       totalCount
     ///     }
     ///     ... on Human {
     ///       id
@@ -1642,7 +1673,6 @@ namespace StarWarsGeneratedClient
     ///           }
     ///         }
     ///       }
-    ///       totalCount
     ///     }
     ///     ... on Human {
     ///       id
@@ -1810,7 +1840,6 @@ namespace StarWarsGeneratedClient
     ///         id
     ///       }
     ///     }
-    ///     dateTime
     ///   }
     /// }
     /// </code>
@@ -1824,8 +1853,8 @@ namespace StarWarsGeneratedClient
 
         public static CreateReviewMutationDocument Instance { get; } = new CreateReviewMutationDocument();
         public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Mutation;
-        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x6d, 0x75, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x20, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x28, 0x24, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x3a, 0x20, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x49, 0x6e, 0x70, 0x75, 0x74, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x28, 0x69, 0x6e, 0x70, 0x75, 0x74, 0x3a, 0x20, 0x24, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x61, 0x72, 0x79, 0x20, 0x73, 0x74, 0x61, 0x72, 0x73, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x64, 0x61, 0x74, 0x65, 0x54, 0x69, 0x6d, 0x65, 0x20, 0x7d, 0x20, 0x7d};
-        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "d55950aba076d1cd9712fcb5e07ba4b0");
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x6d, 0x75, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x20, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x28, 0x24, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x3a, 0x20, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x49, 0x6e, 0x70, 0x75, 0x74, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x28, 0x69, 0x6e, 0x70, 0x75, 0x74, 0x3a, 0x20, 0x24, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x61, 0x72, 0x79, 0x20, 0x73, 0x74, 0x61, 0x72, 0x73, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "5b6a783649dc31c687682aa24df735d0");
         public override global::System.String ToString()
         {
 #if NETSTANDARD2_0
@@ -1850,7 +1879,6 @@ namespace StarWarsGeneratedClient
     ///         id
     ///       }
     ///     }
-    ///     dateTime
     ///   }
     /// }
     /// </code>
@@ -1921,7 +1949,6 @@ namespace StarWarsGeneratedClient
     ///         id
     ///       }
     ///     }
-    ///     dateTime
     ///   }
     /// }
     /// </code>
@@ -1971,7 +1998,7 @@ namespace StarWarsGeneratedClient
 
 namespace StarWarsGeneratedClient.State
 {
-    ///<summary>A human character in the Star Wars universe.</summary>
+    ///<summary>This resolver class extends all object types implementing ICharacter.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class HumanEntity
     {
@@ -1988,11 +2015,10 @@ namespace StarWarsGeneratedClient.State
         ///<summary>The name of the character.</summary>
         public global::System.String Name { get; }
 
-        ///<summary>The ids of the character's friends.</summary>
         public global::StarWarsGeneratedClient.State.CharacterConnectionData? Friends { get; }
     }
 
-    ///<summary>A droid in the Star Wars universe.</summary>
+    ///<summary>This resolver class extends all object types implementing ICharacter.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class DroidEntity
     {
@@ -2009,7 +2035,6 @@ namespace StarWarsGeneratedClient.State
         ///<summary>The name of the character.</summary>
         public global::System.String Name { get; }
 
-        ///<summary>The ids of the character's friends.</summary>
         public global::StarWarsGeneratedClient.State.CharacterConnectionData? Friends { get; }
     }
 
@@ -2094,6 +2119,10 @@ namespace StarWarsGeneratedClient.State
 
         /// <summary>
         /// Retrieve a hero by a particular Star Wars episode.
+        /// 
+        /// 
+        /// **Returns:**
+        /// The hero character.
         /// </summary>
         public global::StrawberryShake.EntityId Hero { get; }
 
@@ -2138,7 +2167,7 @@ namespace StarWarsGeneratedClient.State
             IGetHero_Hero_Friends returnValue = default !;
             if (data?.__typename.Equals("CharacterConnection", global::System.StringComparison.Ordinal) ?? false)
             {
-                returnValue = new GetHero_Hero_Friends_CharacterConnection(MapIGetHero_Hero_Friends_EdgesNonNullableArray(data.Edges, snapshot), data.TotalCount ?? throw new global::System.ArgumentNullException());
+                returnValue = new GetHero_Hero_Friends_CharacterConnection(MapIGetHero_Hero_Friends_EdgesNonNullableArray(data.Edges, snapshot));
             }
             else
             {
@@ -2233,7 +2262,7 @@ namespace StarWarsGeneratedClient.State
             IGetHero_Hero_Friends returnValue = default !;
             if (data?.__typename.Equals("CharacterConnection", global::System.StringComparison.Ordinal) ?? false)
             {
-                returnValue = new GetHero_Hero_Friends_CharacterConnection(MapIGetHero_Hero_Friends_EdgesNonNullableArray(data.Edges, snapshot), data.TotalCount ?? throw new global::System.ArgumentNullException());
+                returnValue = new GetHero_Hero_Friends_CharacterConnection(MapIGetHero_Hero_Friends_EdgesNonNullableArray(data.Edges, snapshot));
             }
             else
             {
@@ -2415,6 +2444,10 @@ namespace StarWarsGeneratedClient.State
 
         /// <summary>
         /// Gets a character by it`s id.
+        /// 
+        /// 
+        /// **Returns:**
+        /// The character.
         /// </summary>
         public global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId> Character { get; }
 
@@ -2498,7 +2531,7 @@ namespace StarWarsGeneratedClient.State
             ICreateReview_CreateReview returnValue = default !;
             if (data.__typename.Equals("CreateReviewPayload", global::System.StringComparison.Ordinal))
             {
-                returnValue = new CreateReview_CreateReview_CreateReviewPayload(MapNonNullableICreateReview_CreateReview_Review(data.Review ?? throw new global::System.ArgumentNullException(), snapshot), data.DateTime ?? throw new global::System.ArgumentNullException());
+                returnValue = new CreateReview_CreateReview_CreateReviewPayload(MapNonNullableICreateReview_CreateReview_Review(data.Review ?? throw new global::System.ArgumentNullException(), snapshot));
             }
             else
             {
@@ -2572,11 +2605,11 @@ namespace StarWarsGeneratedClient.State
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     internal interface ICreateReviewInputInfo
     {
-        global::System.Boolean IsCommentarySet { get; }
-
         global::System.Boolean IsEpisodeSet { get; }
 
         global::System.Boolean IsStarsSet { get; }
+
+        global::System.Boolean IsCommentarySet { get; }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
@@ -2716,7 +2749,7 @@ namespace StarWarsGeneratedClient.State
             var typename = obj.Value.GetProperty("__typename").GetString();
             if (typename?.Equals("CharacterConnection", global::System.StringComparison.Ordinal) ?? false)
             {
-                return new global::StarWarsGeneratedClient.State.CharacterConnectionData(typename, edges: DeserializeIGetHero_Hero_Friends_EdgesNonNullableArray(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "edges"), entityIds), totalCount: DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "totalCount")));
+                return new global::StarWarsGeneratedClient.State.CharacterConnectionData(typename, edges: DeserializeIGetHero_Hero_Friends_EdgesNonNullableArray(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "edges"), entityIds));
             }
 
             throw new global::System.NotSupportedException();
@@ -2944,18 +2977,16 @@ namespace StarWarsGeneratedClient.State
         private readonly global::StrawberryShake.IEntityIdSerializer _idSerializer;
         private readonly global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.ICreateReviewResult> _resultDataFactory;
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::StarWarsGeneratedClient.Episode> _episodeParser;
-        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Int32, global::System.Int32> _intParser;
-        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.DateTimeOffset> _dateTimeParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
         public CreateReviewBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.ICreateReviewResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
         {
             _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
             _idSerializer = idSerializer ?? throw new global::System.ArgumentNullException(nameof(idSerializer));
             _resultDataFactory = resultDataFactory ?? throw new global::System.ArgumentNullException(nameof(resultDataFactory));
             _episodeParser = serializerResolver.GetLeafValueParser<global::System.String, global::StarWarsGeneratedClient.Episode>("Episode") ?? throw new global::System.ArgumentException("No serializer for type `Episode` found.");
-            _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
             _intParser = serializerResolver.GetLeafValueParser<global::System.Int32, global::System.Int32>("Int") ?? throw new global::System.ArgumentException("No serializer for type `Int` found.");
-            _dateTimeParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.DateTimeOffset>("DateTime") ?? throw new global::System.ArgumentException("No serializer for type `DateTime` found.");
+            _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
         }
 
         public global::StrawberryShake.IOperationResult<ICreateReviewResult> Build(global::StrawberryShake.Response<global::System.Text.Json.JsonDocument> response)
@@ -3016,7 +3047,7 @@ namespace StarWarsGeneratedClient.State
             var typename = obj.Value.GetProperty("__typename").GetString();
             if (typename?.Equals("CreateReviewPayload", global::System.StringComparison.Ordinal) ?? false)
             {
-                return new global::StarWarsGeneratedClient.State.CreateReviewPayloadData(typename, review: UpdateNonNullableICreateReview_CreateReview_ReviewEntity(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "review"), entityIds), dateTime: DeserializeNonNullableDateTimeOffset(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "dateTime")));
+                return new global::StarWarsGeneratedClient.State.CreateReviewPayloadData(typename, review: UpdateNonNullableICreateReview_CreateReview_ReviewEntity(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "review"), entityIds));
             }
 
             throw new global::System.NotSupportedException();
@@ -3067,35 +3098,22 @@ namespace StarWarsGeneratedClient.State
 
             return _intParser.Parse(obj.Value.GetInt32()!);
         }
-
-        private global::System.DateTimeOffset DeserializeNonNullableDateTimeOffset(global::System.Text.Json.JsonElement? obj)
-        {
-            if (!obj.HasValue)
-            {
-                throw new global::System.ArgumentNullException();
-            }
-
-            return _dateTimeParser.Parse(obj.Value.GetString()!);
-        }
     }
 
     ///<summary>A connection to a list of items.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class CharacterConnectionData
     {
-        public CharacterConnectionData(global::System.String __typename, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.State.CharacterEdgeData>? edges = default !, global::System.Int32? totalCount = default !)
+        public CharacterConnectionData(global::System.String __typename, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.State.CharacterEdgeData>? edges = default !)
         {
             this.__typename = __typename ?? throw new global::System.ArgumentNullException(nameof(__typename));
             Edges = edges;
-            TotalCount = totalCount;
         }
 
         public global::System.String __typename { get; }
 
         ///<summary>A list of edges.</summary>
         public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.State.CharacterEdgeData>? Edges { get; }
-
-        public global::System.Int32? TotalCount { get; }
     }
 
     ///<summary>An edge in a connection.</summary>
@@ -3114,21 +3132,20 @@ namespace StarWarsGeneratedClient.State
         public global::StrawberryShake.EntityId? Node { get; }
     }
 
+    ///<summary>This payload allows us to query the created review object.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class CreateReviewPayloadData
     {
-        public CreateReviewPayloadData(global::System.String __typename, global::StrawberryShake.EntityId? review = default !, global::System.DateTimeOffset? dateTime = default !)
+        public CreateReviewPayloadData(global::System.String __typename, global::StrawberryShake.EntityId? review = default !)
         {
             this.__typename = __typename ?? throw new global::System.ArgumentNullException(nameof(__typename));
             Review = review;
-            DateTime = dateTime;
         }
 
         public global::System.String __typename { get; }
 
+        ///<summary>The review that was being created.</summary>
         public global::StrawberryShake.EntityId? Review { get; }
-
-        public global::System.DateTimeOffset? DateTime { get; }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]

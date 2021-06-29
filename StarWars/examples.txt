@@ -8,7 +8,11 @@
           name
         }
       }
-      totalCount
+      pageInfo {
+        startCursor
+        hasNextPage
+        hasPreviousPage
+      }
     }
   }
 }

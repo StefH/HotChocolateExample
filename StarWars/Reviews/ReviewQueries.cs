@@ -1,13 +1,16 @@
 using System.Collections.Generic;
 using HotChocolate;
+using HotChocolate.Data;
 using HotChocolate.Types;
-using HotChocolate.Types.Relay;
 using StarWars.Characters;
 using StarWars.Repositories;
 
 namespace StarWars.Reviews
 {
-    [ExtendObjectType(Name = "Query")]
+    /// <summary>
+    /// The queries related to reviews.
+    /// </summary>
+    [ExtendObjectType(OperationTypeNames.Query)]
     public class ReviewQueries
     {
         [UsePaging]

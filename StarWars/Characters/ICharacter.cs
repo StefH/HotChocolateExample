@@ -1,13 +1,12 @@
 using System.Collections.Generic;
 using HotChocolate.Types;
-using HotChocolate.Types.Relay;
 
 namespace StarWars.Characters
 {
     /// <summary>
     /// A character in the Star Wars universe.
     /// </summary>
-    [InterfaceType(Name = "Character")]
+    [InterfaceType("Character")]
     public interface ICharacter : ISearchResult
     {
         /// <summary>
@@ -23,10 +22,8 @@ namespace StarWars.Characters
         /// <summary>
         /// The ids of the character's friends.
         /// </summary>
-        [UsePaging(SchemaType = typeof(InterfaceType<ICharacter>))]
+        [UsePaging(typeof(InterfaceType<ICharacter>))]
         IReadOnlyList<int> Friends { get; }
-
-        // IReadOnlyList<ICharacter> Friends2 { get; }
 
         /// <summary>
         /// The episodes the character appears in.
