@@ -262,6 +262,7 @@ enum Episode {
 union SearchResult = Human | Droid | Starship
 
 type CreateReviewPayload {
+  dateTime: DateTime!
   episode: Episode!
   review: Review!
 }
@@ -275,6 +276,9 @@ input CreateReviewInput {
 }
 
 scalar Uuid
+
+"The `DateTime` scalar represents an ISO-8601 compliant date time type."
+scalar DateTime
 
 "The cost directives is used to express the complexity of a field."
 directive @cost("Defines the complexity of the field." complexity: Int! = 1 "Defines field arguments that act as complexity multipliers." multipliers: [MultiplierPath!]) on FIELD_DEFINITION

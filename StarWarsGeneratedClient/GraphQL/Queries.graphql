@@ -26,6 +26,7 @@ mutation createReview($review: CreateReviewInput!) {
     review {
       commentary
       stars
-    }
+    },
+    dateTime
   }
 }

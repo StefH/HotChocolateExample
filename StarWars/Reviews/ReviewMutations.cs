@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using HotChocolate;
 using HotChocolate.Subscriptions;
@@ -20,7 +21,7 @@ namespace StarWars.Reviews
             var review = new Review(input.Stars, input.Commentary);
             repository.AddReview(input.Episode, review);
             await eventSender.SendAsync(new OnReviewMessage(input.Episode, review));
-            return new CreateReviewPayload(input.Episode, review);
+            return new CreateReviewPayload(input.Episode, review, DateTime.Now);
         }
     }
 }

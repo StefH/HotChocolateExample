@@ -31,7 +31,8 @@ namespace graphql_console
             Console.WriteLine(charactersByIdsJson);
 
             // Mutate
-            await client.CreateReview.ExecuteAsync(new CreateReviewInput { Episode = Episode.Empire, Commentary = "test", Stars = 5 });
+            var createReviewResult = await client.CreateReview.ExecuteAsync(new CreateReviewInput { Episode = Episode.Empire, Commentary = "test", Stars = 5 });
+            Console.WriteLine(createReviewResult.Data.CreateReview.DateTime);
         }
     }
 }

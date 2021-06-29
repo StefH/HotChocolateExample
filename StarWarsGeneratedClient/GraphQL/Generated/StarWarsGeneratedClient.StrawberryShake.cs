@@ -1089,12 +1089,15 @@ namespace StarWarsGeneratedClient
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class CreateReview_CreateReview_CreateReviewPayload : global::System.IEquatable<CreateReview_CreateReview_CreateReviewPayload>, ICreateReview_CreateReview_CreateReviewPayload
     {
-        public CreateReview_CreateReview_CreateReviewPayload(global::StarWarsGeneratedClient.ICreateReview_CreateReview_Review review)
+        public CreateReview_CreateReview_CreateReviewPayload(global::StarWarsGeneratedClient.ICreateReview_CreateReview_Review review, global::System.DateTimeOffset dateTime)
         {
             Review = review;
+            DateTime = dateTime;
         }
 
         public global::StarWarsGeneratedClient.ICreateReview_CreateReview_Review Review { get; }
+
+        public global::System.DateTimeOffset DateTime { get; }
 
         public virtual global::System.Boolean Equals(CreateReview_CreateReview_CreateReviewPayload? other)
         {
@@ -1113,7 +1116,7 @@ namespace StarWarsGeneratedClient
                 return false;
             }
 
-            return (Review.Equals(other.Review));
+            return (Review.Equals(other.Review)) && DateTime.Equals(other.DateTime);
         }
 
         public override global::System.Boolean Equals(global::System.Object? obj)
@@ -1142,6 +1145,7 @@ namespace StarWarsGeneratedClient
             {
                 int hash = 5;
                 hash ^= 397 * Review.GetHashCode();
+                hash ^= 397 * DateTime.GetHashCode();
                 return hash;
             }
         }
@@ -1234,6 +1238,8 @@ namespace StarWarsGeneratedClient
     public interface ICreateReview_CreateReview
     {
         public global::StarWarsGeneratedClient.ICreateReview_CreateReview_Review Review { get; }
+
+        public global::System.DateTimeOffset DateTime { get; }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
@@ -1804,6 +1810,7 @@ namespace StarWarsGeneratedClient
     ///         id
     ///       }
     ///     }
+    ///     dateTime
     ///   }
     /// }
     /// </code>
@@ -1817,8 +1824,8 @@ namespace StarWarsGeneratedClient
 
         public static CreateReviewMutationDocument Instance { get; } = new CreateReviewMutationDocument();
         public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Mutation;
-        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x6d, 0x75, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x20, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x28, 0x24, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x3a, 0x20, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x49, 0x6e, 0x70, 0x75, 0x74, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x28, 0x69, 0x6e, 0x70, 0x75, 0x74, 0x3a, 0x20, 0x24, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x61, 0x72, 0x79, 0x20, 0x73, 0x74, 0x61, 0x72, 0x73, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d};
-        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "5b6a783649dc31c687682aa24df735d0");
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x6d, 0x75, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x20, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x28, 0x24, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x3a, 0x20, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x49, 0x6e, 0x70, 0x75, 0x74, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x63, 0x72, 0x65, 0x61, 0x74, 0x65, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x28, 0x69, 0x6e, 0x70, 0x75, 0x74, 0x3a, 0x20, 0x24, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x63, 0x6f, 0x6d, 0x6d, 0x65, 0x6e, 0x74, 0x61, 0x72, 0x79, 0x20, 0x73, 0x74, 0x61, 0x72, 0x73, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x52, 0x65, 0x76, 0x69, 0x65, 0x77, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x64, 0x61, 0x74, 0x65, 0x54, 0x69, 0x6d, 0x65, 0x20, 0x7d, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "d55950aba076d1cd9712fcb5e07ba4b0");
         public override global::System.String ToString()
         {
 #if NETSTANDARD2_0
@@ -1843,6 +1850,7 @@ namespace StarWarsGeneratedClient
     ///         id
     ///       }
     ///     }
+    ///     dateTime
     ///   }
     /// }
     /// </code>
@@ -1913,6 +1921,7 @@ namespace StarWarsGeneratedClient
     ///         id
     ///       }
     ///     }
+    ///     dateTime
     ///   }
     /// }
     /// </code>
@@ -2489,7 +2498,7 @@ namespace StarWarsGeneratedClient.State
             ICreateReview_CreateReview returnValue = default !;
             if (data.__typename.Equals("CreateReviewPayload", global::System.StringComparison.Ordinal))
             {
-                returnValue = new CreateReview_CreateReview_CreateReviewPayload(MapNonNullableICreateReview_CreateReview_Review(data.Review ?? throw new global::System.ArgumentNullException(), snapshot));
+                returnValue = new CreateReview_CreateReview_CreateReviewPayload(MapNonNullableICreateReview_CreateReview_Review(data.Review ?? throw new global::System.ArgumentNullException(), snapshot), data.DateTime ?? throw new global::System.ArgumentNullException());
             }
             else
             {
@@ -2937,6 +2946,7 @@ namespace StarWarsGeneratedClient.State
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::StarWarsGeneratedClient.Episode> _episodeParser;
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Int32, global::System.Int32> _intParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.DateTimeOffset> _dateTimeParser;
         public CreateReviewBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.ICreateReviewResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
         {
             _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
@@ -2945,6 +2955,7 @@ namespace StarWarsGeneratedClient.State
             _episodeParser = serializerResolver.GetLeafValueParser<global::System.String, global::StarWarsGeneratedClient.Episode>("Episode") ?? throw new global::System.ArgumentException("No serializer for type `Episode` found.");
             _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
             _intParser = serializerResolver.GetLeafValueParser<global::System.Int32, global::System.Int32>("Int") ?? throw new global::System.ArgumentException("No serializer for type `Int` found.");
+            _dateTimeParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.DateTimeOffset>("DateTime") ?? throw new global::System.ArgumentException("No serializer for type `DateTime` found.");
         }
 
         public global::StrawberryShake.IOperationResult<ICreateReviewResult> Build(global::StrawberryShake.Response<global::System.Text.Json.JsonDocument> response)
@@ -3005,7 +3016,7 @@ namespace StarWarsGeneratedClient.State
             var typename = obj.Value.GetProperty("__typename").GetString();
             if (typename?.Equals("CreateReviewPayload", global::System.StringComparison.Ordinal) ?? false)
             {
-                return new global::StarWarsGeneratedClient.State.CreateReviewPayloadData(typename, review: UpdateNonNullableICreateReview_CreateReview_ReviewEntity(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "review"), entityIds));
+                return new global::StarWarsGeneratedClient.State.CreateReviewPayloadData(typename, review: UpdateNonNullableICreateReview_CreateReview_ReviewEntity(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "review"), entityIds), dateTime: DeserializeNonNullableDateTimeOffset(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "dateTime")));
             }
 
             throw new global::System.NotSupportedException();
@@ -3056,6 +3067,16 @@ namespace StarWarsGeneratedClient.State
 
             return _intParser.Parse(obj.Value.GetInt32()!);
         }
+
+        private global::System.DateTimeOffset DeserializeNonNullableDateTimeOffset(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _dateTimeParser.Parse(obj.Value.GetString()!);
+        }
     }
 
     ///<summary>A connection to a list of items.</summary>
@@ -3096,15 +3117,18 @@ namespace StarWarsGeneratedClient.State
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class CreateReviewPayloadData
     {
-        public CreateReviewPayloadData(global::System.String __typename, global::StrawberryShake.EntityId? review = default !)
+        public CreateReviewPayloadData(global::System.String __typename, global::StrawberryShake.EntityId? review = default !, global::System.DateTimeOffset? dateTime = default !)
         {
             this.__typename = __typename ?? throw new global::System.ArgumentNullException(nameof(__typename));
             Review = review;
+            DateTime = dateTime;
         }
 
         public global::System.String __typename { get; }
 
         public global::StrawberryShake.EntityId? Review { get; }
+
+        public global::System.DateTimeOffset? DateTime { get; }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
