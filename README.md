@@ -1,5 +1,5 @@
 ﻿# StarWars
-Creates a GraphQL StarWars Demo
+Creates a GraphQL StarWars Demo (https://dotnetnew.azurewebsites.net/template/HotChocolate.Templates.StarWars/HotChocolate.Templates.StarWars)
 - `dotnet new --install "HotChocolate.Templates.StarWars"`
 - `dotnet new starwars`
 
