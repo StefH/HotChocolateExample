@@ -1,0 +1,46 @@
+﻿query {
+  hero (episode: EMPIRE) {
+    id
+    name
+    friends {
+      edges {
+        node {
+          name
+        }
+      }
+      pageInfo {
+        startCursor
+        hasNextPage
+        hasPreviousPage
+        endCursor
+      }
+    }
+  }
+}
+
+query {
+  character(ids: [1000, 1001, 2000])  {
+    id
+    name
+    ... on Human {
+      __typename
+      id
+      name
+
+      ...@defer {
+        friends {
+          nodes {
+            name
+          }
+        }
+      }
+    }
+
+    ... on Droid {
+      __typename
+      id
+      name
+      primaryFunction
+    }
+  }
+}

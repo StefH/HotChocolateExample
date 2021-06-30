@@ -39,3 +39,8 @@ cd StarWarsGeneratedClient
 - Update `Queries.graphql` in the `GraphQL` folder
 
 - Build the StarWarsGeneratedClient project
+
+
+
+### Notes
+- https://marketplace.visualstudio.com/items?itemName=RomanKvasov.GraphQL-Textmate
