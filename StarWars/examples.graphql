@@ -44,3 +44,20 @@ query {
     }
   }
 }
+
+query {
+  characters (order: { name: ASC }, where: { id: { gt: 1000 } }, first: 4) {
+    nodes {
+      __typename
+      id
+      name
+    }
+    pageInfo {
+      __typename
+      endCursor
+      startCursor
+      hasNextPage
+      hasPreviousPage
+    }
+  }
+}
