@@ -1,8 +1,10 @@
+using HotChocolate;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using StarWars.Characters;
+using StarWars.ExtraGraphQL;
 using StarWars.Repositories;
 using StarWars.Reviews;
 
@@ -17,6 +19,8 @@ namespace StarWars
             services
                 // In order to use the ASP.NET Core routing we need to add the routing services.
                 .AddRouting()
+
+                // .AddSingleton<IErrorFilter, MyErrorFilter>()
 
                 // We will add some in-memory repositories that hold the in-memory data for this GraphQL server.
                 .AddSingleton<ICharacterRepository, CharacterRepository>()
@@ -35,9 +39,9 @@ namespace StarWars
                         .AddTypeExtension<CharacterQueries>()
                         .AddTypeExtension<ReviewQueries>()
 
-
                     .AddMutationType()
                         .AddTypeExtension<ReviewMutations>()
+
                     .AddSubscriptionType()
                         .AddTypeExtension<ReviewSubscriptions>()
 
@@ -65,7 +69,11 @@ namespace StarWars
 
                     // Last we will add apollo tracing to our server which by default is 
                     // only activated through the X-APOLLO-TRACING:1 header.
-                    .AddApolloTracing();
+                    .AddApolloTracing()
+
+                    // Stef
+                    //.AddErrorFilter(sp => sp.GetRequiredService<IErrorFilter>())
+                    ;
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
