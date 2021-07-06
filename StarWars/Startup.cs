@@ -2,7 +2,9 @@ using HotChocolate;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyModel;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using StarWars.Characters;
 using StarWars.ExtraGraphQL;
 using StarWars.Repositories;
@@ -20,7 +22,7 @@ namespace StarWars
                 // In order to use the ASP.NET Core routing we need to add the routing services.
                 .AddRouting()
 
-                // .AddSingleton<IErrorFilter, MyErrorFilter>()
+                .AddLogging()
 
                 // We will add some in-memory repositories that hold the in-memory data for this GraphQL server.
                 .AddSingleton<ICharacterRepository, CharacterRepository>()
@@ -71,8 +73,9 @@ namespace StarWars
                     // only activated through the X-APOLLO-TRACING:1 header.
                     .AddApolloTracing()
 
-                    // Stef
-                    //.AddErrorFilter(sp => sp.GetRequiredService<IErrorFilter>())
+                    // - https://github.com/ChilliCream/hotchocolate/issues/2901
+                    // - https://github.com/ChilliCream/hotchocolate/issues/3923
+                    .AddDiagnosticEventListener(sp => new MyDiagnosticEventListener(sp.GetApplicationService<ILogger<MyDiagnosticEventListener>>()))
                     ;
         }
 
