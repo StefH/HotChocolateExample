@@ -18,7 +18,7 @@ namespace StarWars.Reviews
         [UseSorting]
         public IEnumerable<Review> GetReviews(
             Episode episode,
-            [Service]IReviewRepository repository) =>
+            [Service] IReviewRepository repository) =>
             repository.GetReviews(episode);
     }
 }

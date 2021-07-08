@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using HotChocolate.Types;
+using HotChocolate.Data;
 
 namespace ContosoUniversity.Models
 {
@@ -12,8 +12,8 @@ namespace ContosoUniversity.Models
         public string FirstMidName { get; set; }
         public DateTime EnrollmentDate { get; set; }
 
-        [UseSelection]
-        //[UseFiltering]
+        [UseProjection]
+        [UseFiltering]
         public virtual ICollection<EnrollmentModel> Enrollments { get; set; }
     }
 }

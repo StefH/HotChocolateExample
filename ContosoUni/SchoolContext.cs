@@ -6,10 +6,12 @@ namespace ContosoUniversity
     public class SchoolContext : DbContext
     {
         private readonly ILoggerFactory _loggerFactory;
+        private readonly ILogger _logger;
 
-        public SchoolContext(ILoggerFactory loggerFactory)
+        public SchoolContext(DbContextOptions<SchoolContext> options, ILoggerFactory loggerFactory, ILogger<SchoolContext> logger) : base(options)
         {
             _loggerFactory = loggerFactory;
+            _logger = logger;
         }
 
         public DbSet<Student> Students { get; set; }
@@ -18,9 +20,14 @@ namespace ContosoUniversity
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseInMemoryDatabase("chat");
-            //options.UseSqlite("Data Source=chat.db");
-            options.UseLoggerFactory(_loggerFactory);
+            options
+                .LogTo(a => _logger.LogDebug(a))
+                //.UseInMemoryDatabase("uni")
+                .UseSqlite("Data Source=uni.db")
+                .EnableDetailedErrors()
+                .EnableSensitiveDataLogging()
+                .UseLoggerFactory(_loggerFactory)
+                ;
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

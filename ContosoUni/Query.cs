@@ -1,13 +1,14 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
-using AutoMapper.QueryableExtensions;
 using ContosoUniversity.Models;
 using HotChocolate;
+using HotChocolate.Data;
+using HotChocolate.Resolvers;
 using HotChocolate.Types;
-using HotChocolate.Types.Relay;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace ContosoUniversity
 {
@@ -15,11 +16,13 @@ namespace ContosoUniversity
     {
         private readonly IMapper _mapper;
         private readonly SchoolContext _schoolContext;
+        private readonly ILogger _logger;
 
-        public Query(IMapper mapper, SchoolContext schoolContext)
+        public Query(IMapper mapper, SchoolContext schoolContext, ILogger<Query> logger)
         {
             _mapper = mapper;
             _schoolContext = schoolContext;
+            _logger = logger;
         }
 
         //[UseFirstOrDefault]
@@ -28,24 +31,30 @@ namespace ContosoUniversity
         //    context.Students.Where(t => t.Id == studentId);
 
         [UseFirstOrDefault]
-        [UseSelection]
-        public IEnumerable<StudentModel> GetStudentById(int studentId)
+        [UseProjection]
+        [UseFiltering]
+        public IEnumerable<StudentModel> GetStudentById([Service] SchoolContext context, int studentId)
         {
-            return _mapper.ProjectTo<StudentModel>(_schoolContext.Students.Where(t => t.Id == studentId)).ToList();
+            return _mapper.ProjectTo<StudentModel>(context.Students.Where(t => t.Id == studentId)).ToList();
         }
 
-        [UseFirstOrDefault]
-        [UseSelection]
-        public IQueryable<StudentModel> GetStudentByIdError(int studentId)
-        {
-            return _mapper.ProjectTo<StudentModel>(_schoolContext.Students.Where(t => t.Id == studentId));
-        }
-
-        [UseSelection]
+        // [UsePaging]
         [UseFiltering]
         [UseSorting]
-        public IQueryable<StudentModel> GetStudents([Service]SchoolContext context) =>
-            _mapper.ProjectTo<StudentModel>(context.Students.AsNoTracking());
+        [UseProjection]
+        public IQueryable<StudentModel> GetStudents(
+            [Service] SchoolContext dbContext,
+            [Service] IResolverContext context,
+            [Service] IHttpContextAccessor httpContext) //, [Service] 
+        {
+            //var fields = context.Field.CollectFields((ObjectType<ICollection<EnrollmentModel>>)context.Field.Type, context.FieldSelection.SelectionSet);
+
+            // var a = context.ArgumentValue<ICollection<EnrollmentModel>>("enrollments");
+
+            var query = context.Selection.SyntaxNode.Arguments.Any(n => n.Name.Value == nameof(StudentModel.Enrollments));
+            return _mapper.ProjectTo<StudentModel>(dbContext.Students.Include(s => s.Enrollments).AsNoTracking());
+        }
+            
 
         //[UsePaging]
         //[UseSelection]
