@@ -75,7 +75,7 @@ namespace StarWars
 
                     // - https://github.com/ChilliCream/hotchocolate/issues/2901
                     // - https://github.com/ChilliCream/hotchocolate/issues/3923
-                    .AddDiagnosticEventListener(sp => new MyDiagnosticEventListener(sp.GetApplicationService<ILogger<MyDiagnosticEventListener>>()))
+                    .AddDiagnosticEventListener(sp => new MyDiagnosticEventListener(sp.GetService<ILogger<MyDiagnosticEventListener>>()))
                     ;
         }
 
