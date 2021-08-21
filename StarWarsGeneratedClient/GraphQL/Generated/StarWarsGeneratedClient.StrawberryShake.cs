@@ -350,9 +350,9 @@ namespace StarWarsGeneratedClient
     /// A connection to a list of items.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
-    public partial class GetHero_Hero_Friends_CharacterConnection : global::System.IEquatable<GetHero_Hero_Friends_CharacterConnection>, IGetHero_Hero_Friends_CharacterConnection
+    public partial class GetHero_Hero_Friends_FriendsConnection : global::System.IEquatable<GetHero_Hero_Friends_FriendsConnection>, IGetHero_Hero_Friends_FriendsConnection
     {
-        public GetHero_Hero_Friends_CharacterConnection(global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetHero_Hero_Friends_Edges>? edges)
+        public GetHero_Hero_Friends_FriendsConnection(global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetHero_Hero_Friends_Edges>? edges)
         {
             Edges = edges;
         }
@@ -362,7 +362,7 @@ namespace StarWarsGeneratedClient
         /// </summary>
         public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetHero_Hero_Friends_Edges>? Edges { get; }
 
-        public virtual global::System.Boolean Equals(GetHero_Hero_Friends_CharacterConnection? other)
+        public virtual global::System.Boolean Equals(GetHero_Hero_Friends_FriendsConnection? other)
         {
             if (ReferenceEquals(null, other))
             {
@@ -399,7 +399,7 @@ namespace StarWarsGeneratedClient
                 return false;
             }
 
-            return Equals((GetHero_Hero_Friends_CharacterConnection)obj);
+            return Equals((GetHero_Hero_Friends_FriendsConnection)obj);
         }
 
         public override global::System.Int32 GetHashCode()
@@ -424,9 +424,9 @@ namespace StarWarsGeneratedClient
     /// An edge in a connection.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
-    public partial class GetHero_Hero_Friends_Edges_CharacterEdge : global::System.IEquatable<GetHero_Hero_Friends_Edges_CharacterEdge>, IGetHero_Hero_Friends_Edges_CharacterEdge
+    public partial class GetHero_Hero_Friends_Edges_FriendsEdge : global::System.IEquatable<GetHero_Hero_Friends_Edges_FriendsEdge>, IGetHero_Hero_Friends_Edges_FriendsEdge
     {
-        public GetHero_Hero_Friends_Edges_CharacterEdge(global::StarWarsGeneratedClient.IGetHero_Hero_Friends_Edges_Node? node)
+        public GetHero_Hero_Friends_Edges_FriendsEdge(global::StarWarsGeneratedClient.IGetHero_Hero_Friends_Edges_Node? node)
         {
             Node = node;
         }
@@ -436,7 +436,7 @@ namespace StarWarsGeneratedClient
         /// </summary>
         public global::StarWarsGeneratedClient.IGetHero_Hero_Friends_Edges_Node? Node { get; }
 
-        public virtual global::System.Boolean Equals(GetHero_Hero_Friends_Edges_CharacterEdge? other)
+        public virtual global::System.Boolean Equals(GetHero_Hero_Friends_Edges_FriendsEdge? other)
         {
             if (ReferenceEquals(null, other))
             {
@@ -473,7 +473,7 @@ namespace StarWarsGeneratedClient
                 return false;
             }
 
-            return Equals((GetHero_Hero_Friends_Edges_CharacterEdge)obj);
+            return Equals((GetHero_Hero_Friends_Edges_FriendsEdge)obj);
         }
 
         public override global::System.Int32 GetHashCode()
@@ -709,7 +709,7 @@ namespace StarWarsGeneratedClient
     /// A connection to a list of items.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
-    public interface IGetHero_Hero_Friends_CharacterConnection : IGetHero_Hero_Friends
+    public interface IGetHero_Hero_Friends_FriendsConnection : IGetHero_Hero_Friends
     {
     }
 
@@ -729,7 +729,7 @@ namespace StarWarsGeneratedClient
     /// An edge in a connection.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
-    public interface IGetHero_Hero_Friends_Edges_CharacterEdge : IGetHero_Hero_Friends_Edges
+    public interface IGetHero_Hero_Friends_Edges_FriendsEdge : IGetHero_Hero_Friends_Edges
     {
     }
 
@@ -1496,18 +1496,20 @@ namespace StarWarsGeneratedClient
         {
             return serializedValue switch
             {
-            "NEW_HOPE" => Episode.NewHope, "EMPIRE" => Episode.Empire, "JEDI" => Episode.Jedi, _ => throw new global::StrawberryShake.GraphQLClientException()}
-
-            ;
+                "NEW_HOPE" => Episode.NewHope,
+                "EMPIRE" => Episode.Empire,
+                "JEDI" => Episode.Jedi,
+                _ => throw new global::StrawberryShake.GraphQLClientException()};
         }
 
         public global::System.Object Format(global::System.Object? runtimeValue)
         {
             return runtimeValue switch
             {
-            Episode.NewHope => "NEW_HOPE", Episode.Empire => "EMPIRE", Episode.Jedi => "JEDI", _ => throw new global::StrawberryShake.GraphQLClientException()}
-
-            ;
+                Episode.NewHope => "NEW_HOPE",
+                Episode.Empire => "EMPIRE",
+                Episode.Jedi => "JEDI",
+                _ => throw new global::StrawberryShake.GraphQLClientException()};
         }
     }
 
@@ -2002,7 +2004,7 @@ namespace StarWarsGeneratedClient.State
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class HumanEntity
     {
-        public HumanEntity(global::System.Int32 id = default !, global::System.String name = default !, global::StarWarsGeneratedClient.State.CharacterConnectionData? friends = default !)
+        public HumanEntity(global::System.Int32 id = default !, global::System.String name = default !, global::StarWarsGeneratedClient.State.FriendsConnectionData? friends = default !)
         {
             Id = id;
             Name = name;
@@ -2015,14 +2017,14 @@ namespace StarWarsGeneratedClient.State
         ///<summary>The name of the character.</summary>
         public global::System.String Name { get; }
 
-        public global::StarWarsGeneratedClient.State.CharacterConnectionData? Friends { get; }
+        public global::StarWarsGeneratedClient.State.FriendsConnectionData? Friends { get; }
     }
 
     ///<summary>This resolver class extends all object types implementing ICharacter.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class DroidEntity
     {
-        public DroidEntity(global::System.Int32 id = default !, global::System.String name = default !, global::StarWarsGeneratedClient.State.CharacterConnectionData? friends = default !)
+        public DroidEntity(global::System.Int32 id = default !, global::System.String name = default !, global::StarWarsGeneratedClient.State.FriendsConnectionData? friends = default !)
         {
             Id = id;
             Name = name;
@@ -2035,7 +2037,7 @@ namespace StarWarsGeneratedClient.State
         ///<summary>The name of the character.</summary>
         public global::System.String Name { get; }
 
-        public global::StarWarsGeneratedClient.State.CharacterConnectionData? Friends { get; }
+        public global::StarWarsGeneratedClient.State.FriendsConnectionData? Friends { get; }
     }
 
     ///<summary>A review of a particular movie.</summary>
@@ -2157,7 +2159,7 @@ namespace StarWarsGeneratedClient.State
             return new GetHero_Hero_Human(entity.Id, entity.Name, MapIGetHero_Hero_Friends(entity.Friends, snapshot));
         }
 
-        private global::StarWarsGeneratedClient.IGetHero_Hero_Friends? MapIGetHero_Hero_Friends(global::StarWarsGeneratedClient.State.CharacterConnectionData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        private global::StarWarsGeneratedClient.IGetHero_Hero_Friends? MapIGetHero_Hero_Friends(global::StarWarsGeneratedClient.State.FriendsConnectionData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
         {
             if (data is null)
             {
@@ -2165,9 +2167,9 @@ namespace StarWarsGeneratedClient.State
             }
 
             IGetHero_Hero_Friends returnValue = default !;
-            if (data?.__typename.Equals("CharacterConnection", global::System.StringComparison.Ordinal) ?? false)
+            if (data?.__typename.Equals("FriendsConnection", global::System.StringComparison.Ordinal) ?? false)
             {
-                returnValue = new GetHero_Hero_Friends_CharacterConnection(MapIGetHero_Hero_Friends_EdgesNonNullableArray(data.Edges, snapshot));
+                returnValue = new GetHero_Hero_Friends_FriendsConnection(MapIGetHero_Hero_Friends_EdgesNonNullableArray(data.Edges, snapshot));
             }
             else
             {
@@ -2177,28 +2179,28 @@ namespace StarWarsGeneratedClient.State
             return returnValue;
         }
 
-        private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetHero_Hero_Friends_Edges>? MapIGetHero_Hero_Friends_EdgesNonNullableArray(global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.State.CharacterEdgeData>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetHero_Hero_Friends_Edges>? MapIGetHero_Hero_Friends_EdgesNonNullableArray(global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.State.FriendsEdgeData>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
         {
             if (list is null)
             {
                 return null;
             }
 
-            var characterEdges = new global::System.Collections.Generic.List<global::StarWarsGeneratedClient.IGetHero_Hero_Friends_Edges>();
-            foreach (global::StarWarsGeneratedClient.State.CharacterEdgeData child in list)
+            var friendsEdges = new global::System.Collections.Generic.List<global::StarWarsGeneratedClient.IGetHero_Hero_Friends_Edges>();
+            foreach (global::StarWarsGeneratedClient.State.FriendsEdgeData child in list)
             {
-                characterEdges.Add(MapNonNullableIGetHero_Hero_Friends_Edges(child, snapshot));
+                friendsEdges.Add(MapNonNullableIGetHero_Hero_Friends_Edges(child, snapshot));
             }
 
-            return characterEdges;
+            return friendsEdges;
         }
 
-        private global::StarWarsGeneratedClient.IGetHero_Hero_Friends_Edges MapNonNullableIGetHero_Hero_Friends_Edges(global::StarWarsGeneratedClient.State.CharacterEdgeData data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        private global::StarWarsGeneratedClient.IGetHero_Hero_Friends_Edges MapNonNullableIGetHero_Hero_Friends_Edges(global::StarWarsGeneratedClient.State.FriendsEdgeData data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
         {
             IGetHero_Hero_Friends_Edges returnValue = default !;
-            if (data.__typename.Equals("CharacterEdge", global::System.StringComparison.Ordinal))
+            if (data.__typename.Equals("FriendsEdge", global::System.StringComparison.Ordinal))
             {
-                returnValue = new GetHero_Hero_Friends_Edges_CharacterEdge(MapIGetHero_Hero_Friends_Edges_Node(data.Node, snapshot));
+                returnValue = new GetHero_Hero_Friends_Edges_FriendsEdge(MapIGetHero_Hero_Friends_Edges_Node(data.Node, snapshot));
             }
             else
             {
@@ -2252,7 +2254,7 @@ namespace StarWarsGeneratedClient.State
             return new GetHero_Hero_Droid(entity.Id, entity.Name, MapIGetHero_Hero_Friends(entity.Friends, snapshot));
         }
 
-        private global::StarWarsGeneratedClient.IGetHero_Hero_Friends? MapIGetHero_Hero_Friends(global::StarWarsGeneratedClient.State.CharacterConnectionData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        private global::StarWarsGeneratedClient.IGetHero_Hero_Friends? MapIGetHero_Hero_Friends(global::StarWarsGeneratedClient.State.FriendsConnectionData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
         {
             if (data is null)
             {
@@ -2260,9 +2262,9 @@ namespace StarWarsGeneratedClient.State
             }
 
             IGetHero_Hero_Friends returnValue = default !;
-            if (data?.__typename.Equals("CharacterConnection", global::System.StringComparison.Ordinal) ?? false)
+            if (data?.__typename.Equals("FriendsConnection", global::System.StringComparison.Ordinal) ?? false)
             {
-                returnValue = new GetHero_Hero_Friends_CharacterConnection(MapIGetHero_Hero_Friends_EdgesNonNullableArray(data.Edges, snapshot));
+                returnValue = new GetHero_Hero_Friends_FriendsConnection(MapIGetHero_Hero_Friends_EdgesNonNullableArray(data.Edges, snapshot));
             }
             else
             {
@@ -2272,28 +2274,28 @@ namespace StarWarsGeneratedClient.State
             return returnValue;
         }
 
-        private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetHero_Hero_Friends_Edges>? MapIGetHero_Hero_Friends_EdgesNonNullableArray(global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.State.CharacterEdgeData>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetHero_Hero_Friends_Edges>? MapIGetHero_Hero_Friends_EdgesNonNullableArray(global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.State.FriendsEdgeData>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
         {
             if (list is null)
             {
                 return null;
             }
 
-            var characterEdges = new global::System.Collections.Generic.List<global::StarWarsGeneratedClient.IGetHero_Hero_Friends_Edges>();
-            foreach (global::StarWarsGeneratedClient.State.CharacterEdgeData child in list)
+            var friendsEdges = new global::System.Collections.Generic.List<global::StarWarsGeneratedClient.IGetHero_Hero_Friends_Edges>();
+            foreach (global::StarWarsGeneratedClient.State.FriendsEdgeData child in list)
             {
-                characterEdges.Add(MapNonNullableIGetHero_Hero_Friends_Edges(child, snapshot));
+                friendsEdges.Add(MapNonNullableIGetHero_Hero_Friends_Edges(child, snapshot));
             }
 
-            return characterEdges;
+            return friendsEdges;
         }
 
-        private global::StarWarsGeneratedClient.IGetHero_Hero_Friends_Edges MapNonNullableIGetHero_Hero_Friends_Edges(global::StarWarsGeneratedClient.State.CharacterEdgeData data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        private global::StarWarsGeneratedClient.IGetHero_Hero_Friends_Edges MapNonNullableIGetHero_Hero_Friends_Edges(global::StarWarsGeneratedClient.State.FriendsEdgeData data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
         {
             IGetHero_Hero_Friends_Edges returnValue = default !;
-            if (data.__typename.Equals("CharacterEdge", global::System.StringComparison.Ordinal))
+            if (data.__typename.Equals("FriendsEdge", global::System.StringComparison.Ordinal))
             {
-                returnValue = new GetHero_Hero_Friends_Edges_CharacterEdge(MapIGetHero_Hero_Friends_Edges_Node(data.Node, snapshot));
+                returnValue = new GetHero_Hero_Friends_Edges_FriendsEdge(MapIGetHero_Hero_Friends_Edges_Node(data.Node, snapshot));
             }
             else
             {
@@ -2739,7 +2741,7 @@ namespace StarWarsGeneratedClient.State
             return _stringParser.Parse(obj.Value.GetString()!);
         }
 
-        private global::StarWarsGeneratedClient.State.CharacterConnectionData? DeserializeIGetHero_Hero_Friends(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
+        private global::StarWarsGeneratedClient.State.FriendsConnectionData? DeserializeIGetHero_Hero_Friends(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
         {
             if (!obj.HasValue)
             {
@@ -2747,31 +2749,31 @@ namespace StarWarsGeneratedClient.State
             }
 
             var typename = obj.Value.GetProperty("__typename").GetString();
-            if (typename?.Equals("CharacterConnection", global::System.StringComparison.Ordinal) ?? false)
+            if (typename?.Equals("FriendsConnection", global::System.StringComparison.Ordinal) ?? false)
             {
-                return new global::StarWarsGeneratedClient.State.CharacterConnectionData(typename, edges: DeserializeIGetHero_Hero_Friends_EdgesNonNullableArray(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "edges"), entityIds));
+                return new global::StarWarsGeneratedClient.State.FriendsConnectionData(typename, edges: DeserializeIGetHero_Hero_Friends_EdgesNonNullableArray(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "edges"), entityIds));
             }
 
             throw new global::System.NotSupportedException();
         }
 
-        private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.State.CharacterEdgeData>? DeserializeIGetHero_Hero_Friends_EdgesNonNullableArray(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
+        private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.State.FriendsEdgeData>? DeserializeIGetHero_Hero_Friends_EdgesNonNullableArray(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
         {
             if (!obj.HasValue)
             {
                 return null;
             }
 
-            var characterEdges = new global::System.Collections.Generic.List<global::StarWarsGeneratedClient.State.CharacterEdgeData>();
+            var friendsEdges = new global::System.Collections.Generic.List<global::StarWarsGeneratedClient.State.FriendsEdgeData>();
             foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
             {
-                characterEdges.Add(DeserializeNonNullableIGetHero_Hero_Friends_Edges(session, child, entityIds));
+                friendsEdges.Add(DeserializeNonNullableIGetHero_Hero_Friends_Edges(session, child, entityIds));
             }
 
-            return characterEdges;
+            return friendsEdges;
         }
 
-        private global::StarWarsGeneratedClient.State.CharacterEdgeData DeserializeNonNullableIGetHero_Hero_Friends_Edges(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
+        private global::StarWarsGeneratedClient.State.FriendsEdgeData DeserializeNonNullableIGetHero_Hero_Friends_Edges(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
         {
             if (!obj.HasValue)
             {
@@ -2779,9 +2781,9 @@ namespace StarWarsGeneratedClient.State
             }
 
             var typename = obj.Value.GetProperty("__typename").GetString();
-            if (typename?.Equals("CharacterEdge", global::System.StringComparison.Ordinal) ?? false)
+            if (typename?.Equals("FriendsEdge", global::System.StringComparison.Ordinal) ?? false)
             {
-                return new global::StarWarsGeneratedClient.State.CharacterEdgeData(typename, node: UpdateIGetHero_Hero_Friends_Edges_NodeEntity(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "node"), entityIds));
+                return new global::StarWarsGeneratedClient.State.FriendsEdgeData(typename, node: UpdateIGetHero_Hero_Friends_Edges_NodeEntity(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "node"), entityIds));
             }
 
             throw new global::System.NotSupportedException();
@@ -3102,9 +3104,9 @@ namespace StarWarsGeneratedClient.State
 
     ///<summary>A connection to a list of items.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
-    public partial class CharacterConnectionData
+    public partial class FriendsConnectionData
     {
-        public CharacterConnectionData(global::System.String __typename, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.State.CharacterEdgeData>? edges = default !)
+        public FriendsConnectionData(global::System.String __typename, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.State.FriendsEdgeData>? edges = default !)
         {
             this.__typename = __typename ?? throw new global::System.ArgumentNullException(nameof(__typename));
             Edges = edges;
@@ -3113,14 +3115,14 @@ namespace StarWarsGeneratedClient.State
         public global::System.String __typename { get; }
 
         ///<summary>A list of edges.</summary>
-        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.State.CharacterEdgeData>? Edges { get; }
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.State.FriendsEdgeData>? Edges { get; }
     }
 
     ///<summary>An edge in a connection.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
-    public partial class CharacterEdgeData
+    public partial class FriendsEdgeData
     {
-        public CharacterEdgeData(global::System.String __typename, global::StrawberryShake.EntityId? node = default !)
+        public FriendsEdgeData(global::System.String __typename, global::StrawberryShake.EntityId? node = default !)
         {
             this.__typename = __typename ?? throw new global::System.ArgumentNullException(nameof(__typename));
             Node = node;
@@ -3158,18 +3160,20 @@ namespace StarWarsGeneratedClient.State
             global::System.String __typename = obj.GetProperty("__typename").GetString()!;
             return __typename switch
             {
-            "Human" => ParseHumanEntityId(obj, __typename), "Droid" => ParseDroidEntityId(obj, __typename), "Review" => ParseReviewEntityId(obj, __typename), _ => throw new global::System.NotSupportedException()}
-
-            ;
+                "Human" => ParseHumanEntityId(obj, __typename),
+                "Droid" => ParseDroidEntityId(obj, __typename),
+                "Review" => ParseReviewEntityId(obj, __typename),
+                _ => throw new global::System.NotSupportedException()};
         }
 
         public global::System.String Format(global::StrawberryShake.EntityId entityId)
         {
             return entityId.Name switch
             {
-            "Human" => FormatHumanEntityId(entityId), "Droid" => FormatDroidEntityId(entityId), "Review" => FormatReviewEntityId(entityId), _ => throw new global::System.NotSupportedException()}
-
-            ;
+                "Human" => FormatHumanEntityId(entityId),
+                "Droid" => FormatDroidEntityId(entityId),
+                "Review" => FormatReviewEntityId(entityId),
+                _ => throw new global::System.NotSupportedException()};
         }
 
         private global::StrawberryShake.EntityId ParseHumanEntityId(global::System.Text.Json.JsonElement obj, global::System.String type)
@@ -3227,7 +3231,7 @@ namespace StarWarsGeneratedClient.State
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class StarWarsGeneratedClientStoreAccessor : global::StrawberryShake.StoreAccessor
     {
-        public StarWarsGeneratedClientStoreAccessor(global::StrawberryShake.IOperationStore operationStore, global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer entityIdSerializer, global::System.Collections.Generic.IEnumerable<global::StrawberryShake.IOperationRequestFactory> requestFactories, global::System.Collections.Generic.IEnumerable<global::StrawberryShake.IOperationResultDataFactory> resultDataFactories): base(operationStore, entityStore, entityIdSerializer, requestFactories, resultDataFactories)
+        public StarWarsGeneratedClientStoreAccessor(global::StrawberryShake.IOperationStore operationStore, global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer entityIdSerializer, global::System.Collections.Generic.IEnumerable<global::StrawberryShake.IOperationRequestFactory> requestFactories, global::System.Collections.Generic.IEnumerable<global::StrawberryShake.IOperationResultDataFactory> resultDataFactories) : base(operationStore, entityStore, entityIdSerializer, requestFactories, resultDataFactories)
         {
         }
     }
