@@ -30,6 +30,11 @@ namespace StarWars.Repositories
             }
         }
 
+        public IEnumerable<ICharacter> GetHeros(Episode episode)
+        {
+            return _characters.Values;
+        }
+
         public ICharacter GetHero(Episode episode)
         {
             if (episode == Episode.Empire)

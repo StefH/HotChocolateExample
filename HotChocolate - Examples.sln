@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30611.23
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31612.314
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "graphql-console", "graphql-console\graphql-console.csproj", "{1AA773A0-3BC7-41E6-939A-C8D5E88CA179}"
 EndProject
@@ -16,7 +16,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarWars", "StarWars\StarWars.csproj", "{C176A720-0D10-4D56-A392-4DB7D7429698}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarWars.ExtraGraphQL", "StarWars.ExtraGraphQL\StarWars.ExtraGraphQL.csproj", "{8ADA7F04-51A7-4DA3-891D-CE75940C52C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarWars.ExtraGraphQL", "StarWars.ExtraGraphQL\StarWars.ExtraGraphQL.csproj", "{8ADA7F04-51A7-4DA3-891D-CE75940C52C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "server", "server", "{6819F19A-CEC7-4B84-87FC-2944DB5A580D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "client", "client", "{E7126E6E-3282-456E-9FAA-C335B5F3EA66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarWars.BlazorApp", "StarWars.BlazorApp\StarWars.BlazorApp.csproj", "{31924BF7-49AB-4C29-82ED-E70C2C65AACB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -88,9 +94,29 @@ Global
 		{8ADA7F04-51A7-4DA3-891D-CE75940C52C5}.Release|x64.Build.0 = Release|Any CPU
 		{8ADA7F04-51A7-4DA3-891D-CE75940C52C5}.Release|x86.ActiveCfg = Release|Any CPU
 		{8ADA7F04-51A7-4DA3-891D-CE75940C52C5}.Release|x86.Build.0 = Release|Any CPU
+		{31924BF7-49AB-4C29-82ED-E70C2C65AACB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31924BF7-49AB-4C29-82ED-E70C2C65AACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31924BF7-49AB-4C29-82ED-E70C2C65AACB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{31924BF7-49AB-4C29-82ED-E70C2C65AACB}.Debug|x64.Build.0 = Debug|Any CPU
+		{31924BF7-49AB-4C29-82ED-E70C2C65AACB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{31924BF7-49AB-4C29-82ED-E70C2C65AACB}.Debug|x86.Build.0 = Debug|Any CPU
+		{31924BF7-49AB-4C29-82ED-E70C2C65AACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31924BF7-49AB-4C29-82ED-E70C2C65AACB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31924BF7-49AB-4C29-82ED-E70C2C65AACB}.Release|x64.ActiveCfg = Release|Any CPU
+		{31924BF7-49AB-4C29-82ED-E70C2C65AACB}.Release|x64.Build.0 = Release|Any CPU
+		{31924BF7-49AB-4C29-82ED-E70C2C65AACB}.Release|x86.ActiveCfg = Release|Any CPU
+		{31924BF7-49AB-4C29-82ED-E70C2C65AACB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1AA773A0-3BC7-41E6-939A-C8D5E88CA179} = {E7126E6E-3282-456E-9FAA-C335B5F3EA66}
+		{AE69790B-B6A4-4E4E-9DE0-1E502586F5DB} = {6819F19A-CEC7-4B84-87FC-2944DB5A580D}
+		{AF7B5F9B-6A56-4B41-8AC1-C48A3A8E9615} = {E7126E6E-3282-456E-9FAA-C335B5F3EA66}
+		{C176A720-0D10-4D56-A392-4DB7D7429698} = {6819F19A-CEC7-4B84-87FC-2944DB5A580D}
+		{8ADA7F04-51A7-4DA3-891D-CE75940C52C5} = {6819F19A-CEC7-4B84-87FC-2944DB5A580D}
+		{31924BF7-49AB-4C29-82ED-E70C2C65AACB} = {E7126E6E-3282-456E-9FAA-C335B5F3EA66}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2928E532-3E28-4E12-BA0D-2366F7CD9B86}

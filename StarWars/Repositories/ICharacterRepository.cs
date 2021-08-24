@@ -12,6 +12,8 @@ namespace StarWars.Repositories
 
         ICharacter GetHero(Episode episode);
 
+        IEnumerable<ICharacter> GetHeros(Episode episode);
+
         IEnumerable<ISearchResult> Search(string text);
     }
 }

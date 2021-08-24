@@ -19,30 +19,21 @@
 }
 
 query {
-  character(ids: [1000, 1001, 2000])  {
-    id
-    name
-    ... on Human {
-      __typename
-      id
-      name
-
-      ...@defer {
-        friends {
-          nodes {
-            name
-          }
-        }
-      }
-    }
-
-    ... on Droid {
-      __typename
-      id
-      name
-      primaryFunction
-    }
+  characters {
+    ...d
+    ...h
   }
+}
+
+fragment h on Human {
+  id
+  name
+}
+
+fragment d on Droid {
+  id
+  name
+  primaryFunction
 }
 
 query {

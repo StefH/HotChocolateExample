@@ -1,22 +1,19 @@
-﻿query getHero($episode: Episode!) {
+﻿fragment characterWithIdAndName on Character {
+  id
+  name
+}
+
+query getHero($episode: Episode!) {
   hero(episode: $episode) {
     id
     name
     friends {
       edges {
         node {
-          id
-          name
+          ...characterWithIdAndName
         }
       }
     }
-  }
-}
-
-query getCharacters($ids: [Int!]!){
-  character(ids: $ids) {
-    id
-    name
   }
 }
 
@@ -27,4 +24,42 @@ mutation createReview($review: CreateReviewInput!) {
       stars
     }
   }
+}
+
+query getCharactersByIds($ids: [Int!]!){
+  charactersByIds(ids: $ids) {
+    ...c
+  }
+}
+
+query GetAllCharacters {
+  characters {
+    ...c
+  }
+}
+
+query GetAllHumansAndDroids {
+  characters {
+    ...d
+    ...h
+  }
+}
+
+fragment h on Human {
+  id
+  name
+  appearsIn
+}
+
+fragment d on Droid {
+  id
+  name
+  appearsIn
+  primaryFunction
+}
+
+fragment c on Character {
+  id
+  name
+  appearsIn
 }

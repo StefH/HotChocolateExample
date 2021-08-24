@@ -25,9 +25,9 @@ namespace graphql_console
             var heroAsJson = JsonSerializer.Serialize(getHeroResult.Data.Hero, new JsonSerializerOptions { WriteIndented = true });
             Console.WriteLine(heroAsJson);
 
-            var charactersByIdsResult = await client.GetCharacters.ExecuteAsync(new[] { 1000, 2000});
+            var charactersByIdsResult = await client.GetCharactersByIds.ExecuteAsync(new[] { 1000, 2000});
 
-            var charactersByIdsJson = JsonSerializer.Serialize(charactersByIdsResult.Data.Character, new JsonSerializerOptions { WriteIndented = true });
+            var charactersByIdsJson = JsonSerializer.Serialize(charactersByIdsResult.Data.CharactersByIds, new JsonSerializerOptions { WriteIndented = true });
             Console.WriteLine(charactersByIdsJson);
 
             // Mutate

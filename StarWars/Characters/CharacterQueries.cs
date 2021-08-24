@@ -24,6 +24,26 @@ namespace StarWars.Characters
             repository.GetHero(episode);
 
         /// <summary>
+        /// Retrieve all heros by a particular Star Wars episode.
+        /// </summary>
+        /// <param name="episode">The episode to retrieve the hero.</param>
+        /// <param name="repository">The character repository.</param>
+        /// <returns>The hero characters.</returns>
+        public IEnumerable<ICharacter> GetHeros(
+            Episode episode,
+            [Service] ICharacterRepository repository) =>
+            repository.GetHeros(episode);
+
+        /// <summary>
+        /// Gets all character.
+        /// </summary>
+        /// <param name="repository">The character repository.</param>
+        /// <returns>The character.</returns>
+        public IEnumerable<ICharacter> GetCharacters(
+            [Service] ICharacterRepository repository) =>
+            repository.GetCharacters();
+
+        /// <summary>
         /// Gets all character.
         /// </summary>
         /// <param name="repository">The character repository.</param>
@@ -31,17 +51,17 @@ namespace StarWars.Characters
         [UsePaging(typeof(InterfaceType<ICharacter>))]
         [UseFiltering]
         [UseSorting]
-        public IEnumerable<ICharacter> GetCharacters(
+        public IEnumerable<ICharacter> GetCharactersWithPagingFilteringAndSorting(
             [Service] ICharacterRepository repository) =>
             repository.GetCharacters();
 
         /// <summary>
-        /// Gets a character by it`s id.
+        /// Gets characters by it`s id.
         /// </summary>
         /// <param name="ids">The ids of the human to retrieve.</param>
         /// <param name="repository">The character repository.</param>
-        /// <returns>The character.</returns>
-        public IEnumerable<ICharacter> GetCharacter(
+        /// <returns>The characters.</returns>
+        public IEnumerable<ICharacter> GetCharactersByIds(
             int[] ids,
             [Service] ICharacterRepository repository) =>
             repository.GetCharacters(ids);

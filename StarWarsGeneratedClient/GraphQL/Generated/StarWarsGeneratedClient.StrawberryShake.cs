@@ -16,8 +16,10 @@ namespace Microsoft.Extensions.DependencyInjection
             });
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => new global::StarWarsGeneratedClient.State.StarWarsGeneratedClientStoreAccessor(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IEntityStore>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IEntityIdSerializer>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::System.Collections.Generic.IEnumerable<global::StrawberryShake.IOperationRequestFactory>>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::System.Collections.Generic.IEnumerable<global::StrawberryShake.IOperationResultDataFactory>>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp))));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.GetHeroQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
-            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.GetCharactersQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.CreateReviewMutation>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.GetCharactersByIdsQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.GetAllCharactersQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.GetAllHumansAndDroidsQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.StarWarsGeneratedClient>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.IStarWarsGeneratedClient>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
             return new global::StrawberryShake.ClientBuilder<global::StarWarsGeneratedClient.State.StarWarsGeneratedClientStoreAccessor>("StarWarsGeneratedClient", services, serviceCollection);
@@ -36,9 +38,13 @@ namespace Microsoft.Extensions.DependencyInjection
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, global::StarWarsGeneratedClient.GetHero_Hero_Droid>, global::StarWarsGeneratedClient.State.GetHero_Hero_DroidFromDroidEntityMapper>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, global::StarWarsGeneratedClient.GetHero_Hero_Friends_Edges_Node_Human>, global::StarWarsGeneratedClient.State.GetHero_Hero_Friends_Edges_Node_HumanFromHumanEntityMapper>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, global::StarWarsGeneratedClient.GetHero_Hero_Friends_Edges_Node_Droid>, global::StarWarsGeneratedClient.State.GetHero_Hero_Friends_Edges_Node_DroidFromDroidEntityMapper>(services);
-            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, global::StarWarsGeneratedClient.GetCharacters_Character_Human>, global::StarWarsGeneratedClient.State.GetCharacters_Character_HumanFromHumanEntityMapper>(services);
-            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, global::StarWarsGeneratedClient.GetCharacters_Character_Droid>, global::StarWarsGeneratedClient.State.GetCharacters_Character_DroidFromDroidEntityMapper>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.ReviewEntity, global::StarWarsGeneratedClient.CreateReview_CreateReview_Review_Review>, global::StarWarsGeneratedClient.State.CreateReview_CreateReview_Review_ReviewFromReviewEntityMapper>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, global::StarWarsGeneratedClient.GetCharactersByIds_CharactersByIds_Human>, global::StarWarsGeneratedClient.State.GetCharactersByIds_CharactersByIds_HumanFromHumanEntityMapper>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, global::StarWarsGeneratedClient.GetCharactersByIds_CharactersByIds_Droid>, global::StarWarsGeneratedClient.State.GetCharactersByIds_CharactersByIds_DroidFromDroidEntityMapper>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, global::StarWarsGeneratedClient.GetAllCharacters_Characters_Human>, global::StarWarsGeneratedClient.State.GetAllCharacters_Characters_HumanFromHumanEntityMapper>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, global::StarWarsGeneratedClient.GetAllCharacters_Characters_Droid>, global::StarWarsGeneratedClient.State.GetAllCharacters_Characters_DroidFromDroidEntityMapper>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, global::StarWarsGeneratedClient.GetAllHumansAndDroids_Characters_Human>, global::StarWarsGeneratedClient.State.GetAllHumansAndDroids_Characters_HumanFromHumanEntityMapper>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, global::StarWarsGeneratedClient.GetAllHumansAndDroids_Characters_Droid>, global::StarWarsGeneratedClient.State.GetAllHumansAndDroids_Characters_DroidFromDroidEntityMapper>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StarWarsGeneratedClient.EpisodeSerializer>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StrawberryShake.Serialization.StringSerializer>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StrawberryShake.Serialization.BooleanSerializer>(services);
@@ -65,13 +71,6 @@ namespace Microsoft.Extensions.DependencyInjection
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationExecutor<global::StarWarsGeneratedClient.IGetHeroResult>>(services, sp => new global::StrawberryShake.OperationExecutor<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetHeroResult>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.Transport.Http.IHttpConnection>(sp), () => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetHeroResult>>(sp), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(sp), strategy));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StarWarsGeneratedClient.GetHeroQuery>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StarWarsGeneratedClient.IGetHeroQuery>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.GetHeroQuery>(sp));
-            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetCharactersResult>, global::StarWarsGeneratedClient.State.GetCharactersResultFactory>(services);
-            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetCharactersResult>>(sp));
-            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationRequestFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.IGetCharactersQuery>(sp));
-            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetCharactersResult>, global::StarWarsGeneratedClient.State.GetCharactersBuilder>(services);
-            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationExecutor<global::StarWarsGeneratedClient.IGetCharactersResult>>(services, sp => new global::StrawberryShake.OperationExecutor<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetCharactersResult>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.Transport.Http.IHttpConnection>(sp), () => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetCharactersResult>>(sp), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(sp), strategy));
-            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StarWarsGeneratedClient.GetCharactersQuery>(services);
-            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StarWarsGeneratedClient.IGetCharactersQuery>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.GetCharactersQuery>(sp));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.ICreateReviewResult>, global::StarWarsGeneratedClient.State.CreateReviewResultFactory>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.ICreateReviewResult>>(sp));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationRequestFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.ICreateReviewMutation>(sp));
@@ -79,6 +78,27 @@ namespace Microsoft.Extensions.DependencyInjection
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationExecutor<global::StarWarsGeneratedClient.ICreateReviewResult>>(services, sp => new global::StrawberryShake.OperationExecutor<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.ICreateReviewResult>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.Transport.Http.IHttpConnection>(sp), () => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.ICreateReviewResult>>(sp), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(sp), strategy));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StarWarsGeneratedClient.CreateReviewMutation>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StarWarsGeneratedClient.ICreateReviewMutation>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.CreateReviewMutation>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetCharactersByIdsResult>, global::StarWarsGeneratedClient.State.GetCharactersByIdsResultFactory>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetCharactersByIdsResult>>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationRequestFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.IGetCharactersByIdsQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetCharactersByIdsResult>, global::StarWarsGeneratedClient.State.GetCharactersByIdsBuilder>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationExecutor<global::StarWarsGeneratedClient.IGetCharactersByIdsResult>>(services, sp => new global::StrawberryShake.OperationExecutor<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetCharactersByIdsResult>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.Transport.Http.IHttpConnection>(sp), () => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetCharactersByIdsResult>>(sp), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(sp), strategy));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StarWarsGeneratedClient.GetCharactersByIdsQuery>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StarWarsGeneratedClient.IGetCharactersByIdsQuery>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.GetCharactersByIdsQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetAllCharactersResult>, global::StarWarsGeneratedClient.State.GetAllCharactersResultFactory>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetAllCharactersResult>>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationRequestFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.IGetAllCharactersQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetAllCharactersResult>, global::StarWarsGeneratedClient.State.GetAllCharactersBuilder>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationExecutor<global::StarWarsGeneratedClient.IGetAllCharactersResult>>(services, sp => new global::StrawberryShake.OperationExecutor<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetAllCharactersResult>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.Transport.Http.IHttpConnection>(sp), () => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetAllCharactersResult>>(sp), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(sp), strategy));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StarWarsGeneratedClient.GetAllCharactersQuery>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StarWarsGeneratedClient.IGetAllCharactersQuery>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.GetAllCharactersQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetAllHumansAndDroidsResult>, global::StarWarsGeneratedClient.State.GetAllHumansAndDroidsResultFactory>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetAllHumansAndDroidsResult>>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationRequestFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.IGetAllHumansAndDroidsQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetAllHumansAndDroidsResult>, global::StarWarsGeneratedClient.State.GetAllHumansAndDroidsBuilder>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationExecutor<global::StarWarsGeneratedClient.IGetAllHumansAndDroidsResult>>(services, sp => new global::StrawberryShake.OperationExecutor<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetAllHumansAndDroidsResult>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.Transport.Http.IHttpConnection>(sp), () => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetAllHumansAndDroidsResult>>(sp), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(sp), strategy));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StarWarsGeneratedClient.GetAllHumansAndDroidsQuery>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StarWarsGeneratedClient.IGetAllHumansAndDroidsQuery>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.GetAllHumansAndDroidsQuery>(sp));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityIdSerializer, global::StarWarsGeneratedClient.State.StarWarsGeneratedClientEntityIdFactory>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StarWarsGeneratedClient.StarWarsGeneratedClient>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StarWarsGeneratedClient.IStarWarsGeneratedClient>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.StarWarsGeneratedClient>(sp));
@@ -737,7 +757,7 @@ namespace StarWarsGeneratedClient
     /// A character in the Star Wars universe.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
-    public interface IGetHero_Hero_Friends_Edges_Node
+    public interface ICharacterWithIdAndName
     {
         /// <summary>
         /// The unique identifier for the character.
@@ -748,6 +768,14 @@ namespace StarWarsGeneratedClient
         /// The name of the character.
         /// </summary>
         public global::System.String Name { get; }
+    }
+
+    /// <summary>
+    /// A character in the Star Wars universe.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetHero_Hero_Friends_Edges_Node : ICharacterWithIdAndName
+    {
     }
 
     /// <summary>
@@ -763,278 +791,6 @@ namespace StarWarsGeneratedClient
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public interface IGetHero_Hero_Friends_Edges_Node_Droid : IGetHero_Hero_Friends_Edges_Node
-    {
-    }
-
-    /// <summary>
-    /// The queries related to reviews.
-    /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
-    public partial class GetCharactersResult : global::System.IEquatable<GetCharactersResult>, IGetCharactersResult
-    {
-        public GetCharactersResult(global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetCharacters_Character> character)
-        {
-            Character = character;
-        }
-
-        /// <summary>
-        /// Gets a character by it`s id.
-        /// 
-        /// 
-        /// **Returns:**
-        /// The character.
-        /// </summary>
-        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetCharacters_Character> Character { get; }
-
-        public virtual global::System.Boolean Equals(GetCharactersResult? other)
-        {
-            if (ReferenceEquals(null, other))
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(this, other))
-            {
-                return true;
-            }
-
-            if (other.GetType() != GetType())
-            {
-                return false;
-            }
-
-            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Character, other.Character));
-        }
-
-        public override global::System.Boolean Equals(global::System.Object? obj)
-        {
-            if (ReferenceEquals(null, obj))
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(this, obj))
-            {
-                return true;
-            }
-
-            if (obj.GetType() != GetType())
-            {
-                return false;
-            }
-
-            return Equals((GetCharactersResult)obj);
-        }
-
-        public override global::System.Int32 GetHashCode()
-        {
-            unchecked
-            {
-                int hash = 5;
-                foreach (var Character_elm in Character)
-                {
-                    hash ^= 397 * Character_elm.GetHashCode();
-                }
-
-                return hash;
-            }
-        }
-    }
-
-    /// <summary>
-    /// This resolver class extends all object types implementing ICharacter.
-    /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
-    public partial class GetCharacters_Character_Human : global::System.IEquatable<GetCharacters_Character_Human>, IGetCharacters_Character_Human
-    {
-        public GetCharacters_Character_Human(global::System.Int32 id, global::System.String name)
-        {
-            Id = id;
-            Name = name;
-        }
-
-        /// <summary>
-        /// The unique identifier for the character.
-        /// </summary>
-        public global::System.Int32 Id { get; }
-
-        /// <summary>
-        /// The name of the character.
-        /// </summary>
-        public global::System.String Name { get; }
-
-        public virtual global::System.Boolean Equals(GetCharacters_Character_Human? other)
-        {
-            if (ReferenceEquals(null, other))
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(this, other))
-            {
-                return true;
-            }
-
-            if (other.GetType() != GetType())
-            {
-                return false;
-            }
-
-            return (Id == other.Id) && Name.Equals(other.Name);
-        }
-
-        public override global::System.Boolean Equals(global::System.Object? obj)
-        {
-            if (ReferenceEquals(null, obj))
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(this, obj))
-            {
-                return true;
-            }
-
-            if (obj.GetType() != GetType())
-            {
-                return false;
-            }
-
-            return Equals((GetCharacters_Character_Human)obj);
-        }
-
-        public override global::System.Int32 GetHashCode()
-        {
-            unchecked
-            {
-                int hash = 5;
-                hash ^= 397 * Id.GetHashCode();
-                hash ^= 397 * Name.GetHashCode();
-                return hash;
-            }
-        }
-    }
-
-    /// <summary>
-    /// This resolver class extends all object types implementing ICharacter.
-    /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
-    public partial class GetCharacters_Character_Droid : global::System.IEquatable<GetCharacters_Character_Droid>, IGetCharacters_Character_Droid
-    {
-        public GetCharacters_Character_Droid(global::System.Int32 id, global::System.String name)
-        {
-            Id = id;
-            Name = name;
-        }
-
-        /// <summary>
-        /// The unique identifier for the character.
-        /// </summary>
-        public global::System.Int32 Id { get; }
-
-        /// <summary>
-        /// The name of the character.
-        /// </summary>
-        public global::System.String Name { get; }
-
-        public virtual global::System.Boolean Equals(GetCharacters_Character_Droid? other)
-        {
-            if (ReferenceEquals(null, other))
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(this, other))
-            {
-                return true;
-            }
-
-            if (other.GetType() != GetType())
-            {
-                return false;
-            }
-
-            return (Id == other.Id) && Name.Equals(other.Name);
-        }
-
-        public override global::System.Boolean Equals(global::System.Object? obj)
-        {
-            if (ReferenceEquals(null, obj))
-            {
-                return false;
-            }
-
-            if (ReferenceEquals(this, obj))
-            {
-                return true;
-            }
-
-            if (obj.GetType() != GetType())
-            {
-                return false;
-            }
-
-            return Equals((GetCharacters_Character_Droid)obj);
-        }
-
-        public override global::System.Int32 GetHashCode()
-        {
-            unchecked
-            {
-                int hash = 5;
-                hash ^= 397 * Id.GetHashCode();
-                hash ^= 397 * Name.GetHashCode();
-                return hash;
-            }
-        }
-    }
-
-    /// <summary>
-    /// The queries related to reviews.
-    /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
-    public interface IGetCharactersResult
-    {
-        /// <summary>
-        /// Gets a character by it`s id.
-        /// 
-        /// 
-        /// **Returns:**
-        /// The character.
-        /// </summary>
-        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetCharacters_Character> Character { get; }
-    }
-
-    /// <summary>
-    /// A character in the Star Wars universe.
-    /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
-    public interface IGetCharacters_Character
-    {
-        /// <summary>
-        /// The unique identifier for the character.
-        /// </summary>
-        public global::System.Int32 Id { get; }
-
-        /// <summary>
-        /// The name of the character.
-        /// </summary>
-        public global::System.String Name { get; }
-    }
-
-    /// <summary>
-    /// This resolver class extends all object types implementing ICharacter.
-    /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
-    public interface IGetCharacters_Character_Human : IGetCharacters_Character
-    {
-    }
-
-    /// <summary>
-    /// This resolver class extends all object types implementing ICharacter.
-    /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
-    public interface IGetCharacters_Character_Droid : IGetCharacters_Character
     {
     }
 
@@ -1303,6 +1059,939 @@ namespace StarWarsGeneratedClient
     {
     }
 
+    /// <summary>
+    /// The queries related to reviews.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersByIdsResult : global::System.IEquatable<GetCharactersByIdsResult>, IGetCharactersByIdsResult
+    {
+        public GetCharactersByIdsResult(global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetCharactersByIds_CharactersByIds> charactersByIds)
+        {
+            CharactersByIds = charactersByIds;
+        }
+
+        /// <summary>
+        /// Gets characters by it`s id.
+        /// 
+        /// 
+        /// **Returns:**
+        /// The characters.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetCharactersByIds_CharactersByIds> CharactersByIds { get; }
+
+        public virtual global::System.Boolean Equals(GetCharactersByIdsResult? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(CharactersByIds, other.CharactersByIds));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetCharactersByIdsResult)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                foreach (var CharactersByIds_elm in CharactersByIds)
+                {
+                    hash ^= 397 * CharactersByIds_elm.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// This resolver class extends all object types implementing ICharacter.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersByIds_CharactersByIds_Human : global::System.IEquatable<GetCharactersByIds_CharactersByIds_Human>, IGetCharactersByIds_CharactersByIds_Human
+    {
+        public GetCharactersByIds_CharactersByIds_Human(global::System.Int32 id, global::System.String name, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
+        {
+            Id = id;
+            Name = name;
+            AppearsIn = appearsIn;
+        }
+
+        /// <summary>
+        /// The unique identifier for the character.
+        /// </summary>
+        public global::System.Int32 Id { get; }
+
+        /// <summary>
+        /// The name of the character.
+        /// </summary>
+        public global::System.String Name { get; }
+
+        /// <summary>
+        /// The episodes the character appears in.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> AppearsIn { get; }
+
+        public virtual global::System.Boolean Equals(GetCharactersByIds_CharactersByIds_Human? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (Id == other.Id) && Name.Equals(other.Name) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetCharactersByIds_CharactersByIds_Human)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * Id.GetHashCode();
+                hash ^= 397 * Name.GetHashCode();
+                foreach (var AppearsIn_elm in AppearsIn)
+                {
+                    hash ^= 397 * AppearsIn_elm.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// This resolver class extends all object types implementing ICharacter.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersByIds_CharactersByIds_Droid : global::System.IEquatable<GetCharactersByIds_CharactersByIds_Droid>, IGetCharactersByIds_CharactersByIds_Droid
+    {
+        public GetCharactersByIds_CharactersByIds_Droid(global::System.Int32 id, global::System.String name, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
+        {
+            Id = id;
+            Name = name;
+            AppearsIn = appearsIn;
+        }
+
+        /// <summary>
+        /// The unique identifier for the character.
+        /// </summary>
+        public global::System.Int32 Id { get; }
+
+        /// <summary>
+        /// The name of the character.
+        /// </summary>
+        public global::System.String Name { get; }
+
+        /// <summary>
+        /// The episodes the character appears in.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> AppearsIn { get; }
+
+        public virtual global::System.Boolean Equals(GetCharactersByIds_CharactersByIds_Droid? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (Id == other.Id) && Name.Equals(other.Name) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetCharactersByIds_CharactersByIds_Droid)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * Id.GetHashCode();
+                hash ^= 397 * Name.GetHashCode();
+                foreach (var AppearsIn_elm in AppearsIn)
+                {
+                    hash ^= 397 * AppearsIn_elm.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// The queries related to reviews.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetCharactersByIdsResult
+    {
+        /// <summary>
+        /// Gets characters by it`s id.
+        /// 
+        /// 
+        /// **Returns:**
+        /// The characters.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetCharactersByIds_CharactersByIds> CharactersByIds { get; }
+    }
+
+    /// <summary>
+    /// A character in the Star Wars universe.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IC
+    {
+        /// <summary>
+        /// The unique identifier for the character.
+        /// </summary>
+        public global::System.Int32 Id { get; }
+
+        /// <summary>
+        /// The name of the character.
+        /// </summary>
+        public global::System.String Name { get; }
+
+        /// <summary>
+        /// The episodes the character appears in.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> AppearsIn { get; }
+    }
+
+    /// <summary>
+    /// A character in the Star Wars universe.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetCharactersByIds_CharactersByIds : IC
+    {
+    }
+
+    /// <summary>
+    /// This resolver class extends all object types implementing ICharacter.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetCharactersByIds_CharactersByIds_Human : IGetCharactersByIds_CharactersByIds
+    {
+    }
+
+    /// <summary>
+    /// This resolver class extends all object types implementing ICharacter.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetCharactersByIds_CharactersByIds_Droid : IGetCharactersByIds_CharactersByIds
+    {
+    }
+
+    /// <summary>
+    /// The queries related to reviews.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetAllCharactersResult : global::System.IEquatable<GetAllCharactersResult>, IGetAllCharactersResult
+    {
+        public GetAllCharactersResult(global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetAllCharacters_Characters> characters)
+        {
+            Characters = characters;
+        }
+
+        /// <summary>
+        /// Gets all character.
+        /// 
+        /// 
+        /// **Returns:**
+        /// The character.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetAllCharacters_Characters> Characters { get; }
+
+        public virtual global::System.Boolean Equals(GetAllCharactersResult? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Characters, other.Characters));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetAllCharactersResult)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                foreach (var Characters_elm in Characters)
+                {
+                    hash ^= 397 * Characters_elm.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// This resolver class extends all object types implementing ICharacter.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetAllCharacters_Characters_Human : global::System.IEquatable<GetAllCharacters_Characters_Human>, IGetAllCharacters_Characters_Human
+    {
+        public GetAllCharacters_Characters_Human(global::System.Int32 id, global::System.String name, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
+        {
+            Id = id;
+            Name = name;
+            AppearsIn = appearsIn;
+        }
+
+        /// <summary>
+        /// The unique identifier for the character.
+        /// </summary>
+        public global::System.Int32 Id { get; }
+
+        /// <summary>
+        /// The name of the character.
+        /// </summary>
+        public global::System.String Name { get; }
+
+        /// <summary>
+        /// The episodes the character appears in.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> AppearsIn { get; }
+
+        public virtual global::System.Boolean Equals(GetAllCharacters_Characters_Human? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (Id == other.Id) && Name.Equals(other.Name) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetAllCharacters_Characters_Human)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * Id.GetHashCode();
+                hash ^= 397 * Name.GetHashCode();
+                foreach (var AppearsIn_elm in AppearsIn)
+                {
+                    hash ^= 397 * AppearsIn_elm.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// This resolver class extends all object types implementing ICharacter.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetAllCharacters_Characters_Droid : global::System.IEquatable<GetAllCharacters_Characters_Droid>, IGetAllCharacters_Characters_Droid
+    {
+        public GetAllCharacters_Characters_Droid(global::System.Int32 id, global::System.String name, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
+        {
+            Id = id;
+            Name = name;
+            AppearsIn = appearsIn;
+        }
+
+        /// <summary>
+        /// The unique identifier for the character.
+        /// </summary>
+        public global::System.Int32 Id { get; }
+
+        /// <summary>
+        /// The name of the character.
+        /// </summary>
+        public global::System.String Name { get; }
+
+        /// <summary>
+        /// The episodes the character appears in.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> AppearsIn { get; }
+
+        public virtual global::System.Boolean Equals(GetAllCharacters_Characters_Droid? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (Id == other.Id) && Name.Equals(other.Name) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetAllCharacters_Characters_Droid)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * Id.GetHashCode();
+                hash ^= 397 * Name.GetHashCode();
+                foreach (var AppearsIn_elm in AppearsIn)
+                {
+                    hash ^= 397 * AppearsIn_elm.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// The queries related to reviews.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetAllCharactersResult
+    {
+        /// <summary>
+        /// Gets all character.
+        /// 
+        /// 
+        /// **Returns:**
+        /// The character.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetAllCharacters_Characters> Characters { get; }
+    }
+
+    /// <summary>
+    /// A character in the Star Wars universe.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetAllCharacters_Characters : IC
+    {
+    }
+
+    /// <summary>
+    /// This resolver class extends all object types implementing ICharacter.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetAllCharacters_Characters_Human : IGetAllCharacters_Characters
+    {
+    }
+
+    /// <summary>
+    /// This resolver class extends all object types implementing ICharacter.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetAllCharacters_Characters_Droid : IGetAllCharacters_Characters
+    {
+    }
+
+    /// <summary>
+    /// The queries related to reviews.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetAllHumansAndDroidsResult : global::System.IEquatable<GetAllHumansAndDroidsResult>, IGetAllHumansAndDroidsResult
+    {
+        public GetAllHumansAndDroidsResult(global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetAllHumansAndDroids_Characters> characters)
+        {
+            Characters = characters;
+        }
+
+        /// <summary>
+        /// Gets all character.
+        /// 
+        /// 
+        /// **Returns:**
+        /// The character.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetAllHumansAndDroids_Characters> Characters { get; }
+
+        public virtual global::System.Boolean Equals(GetAllHumansAndDroidsResult? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Characters, other.Characters));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetAllHumansAndDroidsResult)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                foreach (var Characters_elm in Characters)
+                {
+                    hash ^= 397 * Characters_elm.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// This resolver class extends all object types implementing ICharacter.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetAllHumansAndDroids_Characters_Human : global::System.IEquatable<GetAllHumansAndDroids_Characters_Human>, IGetAllHumansAndDroids_Characters_Human
+    {
+        public GetAllHumansAndDroids_Characters_Human(global::System.Int32 id, global::System.String name, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
+        {
+            Id = id;
+            Name = name;
+            AppearsIn = appearsIn;
+        }
+
+        /// <summary>
+        /// The unique identifier for the character.
+        /// </summary>
+        public global::System.Int32 Id { get; }
+
+        /// <summary>
+        /// The name of the character.
+        /// </summary>
+        public global::System.String Name { get; }
+
+        /// <summary>
+        /// The episodes the character appears in.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> AppearsIn { get; }
+
+        public virtual global::System.Boolean Equals(GetAllHumansAndDroids_Characters_Human? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (Id == other.Id) && Name.Equals(other.Name) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetAllHumansAndDroids_Characters_Human)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * Id.GetHashCode();
+                hash ^= 397 * Name.GetHashCode();
+                foreach (var AppearsIn_elm in AppearsIn)
+                {
+                    hash ^= 397 * AppearsIn_elm.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// This resolver class extends all object types implementing ICharacter.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetAllHumansAndDroids_Characters_Droid : global::System.IEquatable<GetAllHumansAndDroids_Characters_Droid>, IGetAllHumansAndDroids_Characters_Droid
+    {
+        public GetAllHumansAndDroids_Characters_Droid(global::System.Int32 id, global::System.String name, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn, global::System.String primaryFunction)
+        {
+            Id = id;
+            Name = name;
+            AppearsIn = appearsIn;
+            PrimaryFunction = primaryFunction;
+        }
+
+        /// <summary>
+        /// The unique identifier for the character.
+        /// </summary>
+        public global::System.Int32 Id { get; }
+
+        /// <summary>
+        /// The name of the character.
+        /// </summary>
+        public global::System.String Name { get; }
+
+        /// <summary>
+        /// The episodes the character appears in.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> AppearsIn { get; }
+
+        /// <summary>
+        /// The droid's primary function.
+        /// </summary>
+        public global::System.String PrimaryFunction { get; }
+
+        public virtual global::System.Boolean Equals(GetAllHumansAndDroids_Characters_Droid? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (Id == other.Id) && Name.Equals(other.Name) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn) && PrimaryFunction.Equals(other.PrimaryFunction);
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetAllHumansAndDroids_Characters_Droid)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * Id.GetHashCode();
+                hash ^= 397 * Name.GetHashCode();
+                foreach (var AppearsIn_elm in AppearsIn)
+                {
+                    hash ^= 397 * AppearsIn_elm.GetHashCode();
+                }
+
+                hash ^= 397 * PrimaryFunction.GetHashCode();
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// The queries related to reviews.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetAllHumansAndDroidsResult
+    {
+        /// <summary>
+        /// Gets all character.
+        /// 
+        /// 
+        /// **Returns:**
+        /// The character.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetAllHumansAndDroids_Characters> Characters { get; }
+    }
+
+    /// <summary>
+    /// A character in the Star Wars universe.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetAllHumansAndDroids_Characters
+    {
+    }
+
+    /// <summary>
+    /// This resolver class extends all object types implementing ICharacter.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IH
+    {
+        /// <summary>
+        /// The unique identifier for the character.
+        /// </summary>
+        public global::System.Int32 Id { get; }
+
+        /// <summary>
+        /// The name of the character.
+        /// </summary>
+        public global::System.String Name { get; }
+
+        /// <summary>
+        /// The episodes the character appears in.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> AppearsIn { get; }
+    }
+
+    /// <summary>
+    /// This resolver class extends all object types implementing ICharacter.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetAllHumansAndDroids_Characters_Human : IGetAllHumansAndDroids_Characters, IH
+    {
+    }
+
+    /// <summary>
+    /// This resolver class extends all object types implementing ICharacter.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface ID
+    {
+        /// <summary>
+        /// The unique identifier for the character.
+        /// </summary>
+        public global::System.Int32 Id { get; }
+
+        /// <summary>
+        /// The name of the character.
+        /// </summary>
+        public global::System.String Name { get; }
+
+        /// <summary>
+        /// The episodes the character appears in.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> AppearsIn { get; }
+
+        /// <summary>
+        /// The droid's primary function.
+        /// </summary>
+        public global::System.String PrimaryFunction { get; }
+    }
+
+    /// <summary>
+    /// This resolver class extends all object types implementing ICharacter.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetAllHumansAndDroids_Characters_Droid : IGetAllHumansAndDroids_Characters, ID
+    {
+    }
+
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class CreateReviewInputInputValueFormatter : global::StrawberryShake.Serialization.IInputObjectFormatter
     {
@@ -1527,8 +2216,7 @@ namespace StarWarsGeneratedClient
     ///         __typename
     ///         node {
     ///           __typename
-    ///           id
-    ///           name
+    ///           ... characterWithIdAndName
     ///           ... on Human {
     ///             id
     ///           }
@@ -1546,6 +2234,11 @@ namespace StarWarsGeneratedClient
     ///     }
     ///   }
     /// }
+    /// 
+    /// fragment characterWithIdAndName on Character {
+    ///   id
+    ///   name
+    /// }
     /// </code>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
@@ -1557,8 +2250,8 @@ namespace StarWarsGeneratedClient
 
         public static GetHeroQueryDocument Instance { get; } = new GetHeroQueryDocument();
         public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Query;
-        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x48, 0x65, 0x72, 0x6f, 0x28, 0x24, 0x65, 0x70, 0x69, 0x73, 0x6f, 0x64, 0x65, 0x3a, 0x20, 0x45, 0x70, 0x69, 0x73, 0x6f, 0x64, 0x65, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x68, 0x65, 0x72, 0x6f, 0x28, 0x65, 0x70, 0x69, 0x73, 0x6f, 0x64, 0x65, 0x3a, 0x20, 0x24, 0x65, 0x70, 0x69, 0x73, 0x6f, 0x64, 0x65, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x66, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x65, 0x64, 0x67, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x6f, 0x64, 0x65, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d};
-        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "2add160266d9d7ed4ea876ffaeddffea");
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x48, 0x65, 0x72, 0x6f, 0x28, 0x24, 0x65, 0x70, 0x69, 0x73, 0x6f, 0x64, 0x65, 0x3a, 0x20, 0x45, 0x70, 0x69, 0x73, 0x6f, 0x64, 0x65, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x68, 0x65, 0x72, 0x6f, 0x28, 0x65, 0x70, 0x69, 0x73, 0x6f, 0x64, 0x65, 0x3a, 0x20, 0x24, 0x65, 0x70, 0x69, 0x73, 0x6f, 0x64, 0x65, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x66, 0x72, 0x69, 0x65, 0x6e, 0x64, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x65, 0x64, 0x67, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x6f, 0x64, 0x65, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x63, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x49, 0x64, 0x41, 0x6e, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x63, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x57, 0x69, 0x74, 0x68, 0x49, 0x64, 0x41, 0x6e, 0x64, 0x4e, 0x61, 0x6d, 0x65, 0x20, 0x6f, 0x6e, 0x20, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "7a0400901bd22bc9b39dd5b95ee12713");
         public override global::System.String ToString()
         {
 #if NETSTANDARD2_0
@@ -1583,8 +2276,7 @@ namespace StarWarsGeneratedClient
     ///         __typename
     ///         node {
     ///           __typename
-    ///           id
-    ///           name
+    ///           ... characterWithIdAndName
     ///           ... on Human {
     ///             id
     ///           }
@@ -1601,6 +2293,11 @@ namespace StarWarsGeneratedClient
     ///       id
     ///     }
     ///   }
+    /// }
+    /// 
+    /// fragment characterWithIdAndName on Character {
+    ///   id
+    ///   name
     /// }
     /// </code>
     /// </summary>
@@ -1665,8 +2362,7 @@ namespace StarWarsGeneratedClient
     ///         __typename
     ///         node {
     ///           __typename
-    ///           id
-    ///           name
+    ///           ... characterWithIdAndName
     ///           ... on Human {
     ///             id
     ///           }
@@ -1684,6 +2380,11 @@ namespace StarWarsGeneratedClient
     ///     }
     ///   }
     /// }
+    /// 
+    /// fragment characterWithIdAndName on Character {
+    ///   id
+    ///   name
+    /// }
     /// </code>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
@@ -1691,141 +2392,6 @@ namespace StarWarsGeneratedClient
     {
         global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetHeroResult>> ExecuteAsync(global::StarWarsGeneratedClient.Episode episode, global::System.Threading.CancellationToken cancellationToken = default);
         global::System.IObservable<global::StrawberryShake.IOperationResult<IGetHeroResult>> Watch(global::StarWarsGeneratedClient.Episode episode, global::StrawberryShake.ExecutionStrategy? strategy = null);
-    }
-
-    /// <summary>
-    /// Represents the operation service of the GetCharacters GraphQL operation
-    /// <code>
-    /// query GetCharacters($ids: [Int!]!) {
-    ///   character(ids: $ids) {
-    ///     __typename
-    ///     id
-    ///     name
-    ///     ... on Human {
-    ///       id
-    ///     }
-    ///     ... on Droid {
-    ///       id
-    ///     }
-    ///   }
-    /// }
-    /// </code>
-    /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
-    public partial class GetCharactersQueryDocument : global::StrawberryShake.IDocument
-    {
-        private GetCharactersQueryDocument()
-        {
-        }
-
-        public static GetCharactersQueryDocument Instance { get; } = new GetCharactersQueryDocument();
-        public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Query;
-        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x28, 0x24, 0x69, 0x64, 0x73, 0x3a, 0x20, 0x5b, 0x49, 0x6e, 0x74, 0x21, 0x5d, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x63, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x28, 0x69, 0x64, 0x73, 0x3a, 0x20, 0x24, 0x69, 0x64, 0x73, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d};
-        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "9dead78d4aae7639f7baa5c1baf58b85");
-        public override global::System.String ToString()
-        {
-#if NETSTANDARD2_0
-        return global::System.Text.Encoding.UTF8.GetString(Body.ToArray());
-#else
-            return global::System.Text.Encoding.UTF8.GetString(Body);
-#endif
-        }
-    }
-
-    /// <summary>
-    /// Represents the operation service of the GetCharacters GraphQL operation
-    /// <code>
-    /// query GetCharacters($ids: [Int!]!) {
-    ///   character(ids: $ids) {
-    ///     __typename
-    ///     id
-    ///     name
-    ///     ... on Human {
-    ///       id
-    ///     }
-    ///     ... on Droid {
-    ///       id
-    ///     }
-    ///   }
-    /// }
-    /// </code>
-    /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
-    public partial class GetCharactersQuery : global::StarWarsGeneratedClient.IGetCharactersQuery
-    {
-        private readonly global::StrawberryShake.IOperationExecutor<IGetCharactersResult> _operationExecutor;
-        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _intFormatter;
-        public GetCharactersQuery(global::StrawberryShake.IOperationExecutor<IGetCharactersResult> operationExecutor, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
-        {
-            _operationExecutor = operationExecutor ?? throw new global::System.ArgumentNullException(nameof(operationExecutor));
-            _intFormatter = serializerResolver.GetInputValueFormatter("Int");
-        }
-
-        global::System.Type global::StrawberryShake.IOperationRequestFactory.ResultType => typeof(IGetCharactersResult);
-        public async global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetCharactersResult>> ExecuteAsync(global::System.Collections.Generic.IReadOnlyList<global::System.Int32> ids, global::System.Threading.CancellationToken cancellationToken = default)
-        {
-            var request = CreateRequest(ids);
-            return await _operationExecutor.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
-        }
-
-        public global::System.IObservable<global::StrawberryShake.IOperationResult<IGetCharactersResult>> Watch(global::System.Collections.Generic.IReadOnlyList<global::System.Int32> ids, global::StrawberryShake.ExecutionStrategy? strategy = null)
-        {
-            var request = CreateRequest(ids);
-            return _operationExecutor.Watch(request, strategy);
-        }
-
-        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Collections.Generic.IReadOnlyList<global::System.Int32> ids)
-        {
-            var variables = new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>();
-            variables.Add("ids", FormatIds(ids));
-            return CreateRequest(variables);
-        }
-
-        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
-        {
-            return new global::StrawberryShake.OperationRequest(id: GetCharactersQueryDocument.Instance.Hash.Value, name: "GetCharacters", document: GetCharactersQueryDocument.Instance, strategy: global::StrawberryShake.RequestStrategy.Default, variables: variables);
-        }
-
-        private global::System.Object? FormatIds(global::System.Collections.Generic.IReadOnlyList<global::System.Int32> value)
-        {
-            var value_list = new global::System.Collections.Generic.List<global::System.Object?>();
-            foreach (var value_elm in value)
-            {
-                value_list.Add(_intFormatter.Format(value_elm));
-            }
-
-            return value_list;
-        }
-
-        global::StrawberryShake.OperationRequest global::StrawberryShake.IOperationRequestFactory.Create(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
-        {
-            return CreateRequest(variables!);
-        }
-    }
-
-    /// <summary>
-    /// Represents the operation service of the GetCharacters GraphQL operation
-    /// <code>
-    /// query GetCharacters($ids: [Int!]!) {
-    ///   character(ids: $ids) {
-    ///     __typename
-    ///     id
-    ///     name
-    ///     ... on Human {
-    ///       id
-    ///     }
-    ///     ... on Droid {
-    ///       id
-    ///     }
-    ///   }
-    /// }
-    /// </code>
-    /// </summary>
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
-    public interface IGetCharactersQuery : global::StrawberryShake.IOperationRequestFactory
-    {
-        global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetCharactersResult>> ExecuteAsync(global::System.Collections.Generic.IReadOnlyList<global::System.Int32> ids, global::System.Threading.CancellationToken cancellationToken = default);
-        global::System.IObservable<global::StrawberryShake.IOperationResult<IGetCharactersResult>> Watch(global::System.Collections.Generic.IReadOnlyList<global::System.Int32> ids, global::StrawberryShake.ExecutionStrategy? strategy = null);
     }
 
     /// <summary>
@@ -1963,25 +2529,475 @@ namespace StarWarsGeneratedClient
     }
 
     /// <summary>
+    /// Represents the operation service of the GetCharactersByIds GraphQL operation
+    /// <code>
+    /// query GetCharactersByIds($ids: [Int!]!) {
+    ///   charactersByIds(ids: $ids) {
+    ///     __typename
+    ///     ... c
+    ///     ... on Human {
+    ///       id
+    ///     }
+    ///     ... on Droid {
+    ///       id
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment c on Character {
+    ///   id
+    ///   name
+    ///   appearsIn
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersByIdsQueryDocument : global::StrawberryShake.IDocument
+    {
+        private GetCharactersByIdsQueryDocument()
+        {
+        }
+
+        public static GetCharactersByIdsQueryDocument Instance { get; } = new GetCharactersByIdsQueryDocument();
+        public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Query;
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x42, 0x79, 0x49, 0x64, 0x73, 0x28, 0x24, 0x69, 0x64, 0x73, 0x3a, 0x20, 0x5b, 0x49, 0x6e, 0x74, 0x21, 0x5d, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x63, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x42, 0x79, 0x49, 0x64, 0x73, 0x28, 0x69, 0x64, 0x73, 0x3a, 0x20, 0x24, 0x69, 0x64, 0x73, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x63, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x63, 0x20, 0x6f, 0x6e, 0x20, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x61, 0x70, 0x70, 0x65, 0x61, 0x72, 0x73, 0x49, 0x6e, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "74a49c2ce041d8131c47abd24a296a71");
+        public override global::System.String ToString()
+        {
+#if NETSTANDARD2_0
+        return global::System.Text.Encoding.UTF8.GetString(Body.ToArray());
+#else
+            return global::System.Text.Encoding.UTF8.GetString(Body);
+#endif
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetCharactersByIds GraphQL operation
+    /// <code>
+    /// query GetCharactersByIds($ids: [Int!]!) {
+    ///   charactersByIds(ids: $ids) {
+    ///     __typename
+    ///     ... c
+    ///     ... on Human {
+    ///       id
+    ///     }
+    ///     ... on Droid {
+    ///       id
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment c on Character {
+    ///   id
+    ///   name
+    ///   appearsIn
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersByIdsQuery : global::StarWarsGeneratedClient.IGetCharactersByIdsQuery
+    {
+        private readonly global::StrawberryShake.IOperationExecutor<IGetCharactersByIdsResult> _operationExecutor;
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _intFormatter;
+        public GetCharactersByIdsQuery(global::StrawberryShake.IOperationExecutor<IGetCharactersByIdsResult> operationExecutor, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _operationExecutor = operationExecutor ?? throw new global::System.ArgumentNullException(nameof(operationExecutor));
+            _intFormatter = serializerResolver.GetInputValueFormatter("Int");
+        }
+
+        global::System.Type global::StrawberryShake.IOperationRequestFactory.ResultType => typeof(IGetCharactersByIdsResult);
+        public async global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetCharactersByIdsResult>> ExecuteAsync(global::System.Collections.Generic.IReadOnlyList<global::System.Int32> ids, global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var request = CreateRequest(ids);
+            return await _operationExecutor.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        public global::System.IObservable<global::StrawberryShake.IOperationResult<IGetCharactersByIdsResult>> Watch(global::System.Collections.Generic.IReadOnlyList<global::System.Int32> ids, global::StrawberryShake.ExecutionStrategy? strategy = null)
+        {
+            var request = CreateRequest(ids);
+            return _operationExecutor.Watch(request, strategy);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Collections.Generic.IReadOnlyList<global::System.Int32> ids)
+        {
+            var variables = new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>();
+            variables.Add("ids", FormatIds(ids));
+            return CreateRequest(variables);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return new global::StrawberryShake.OperationRequest(id: GetCharactersByIdsQueryDocument.Instance.Hash.Value, name: "GetCharactersByIds", document: GetCharactersByIdsQueryDocument.Instance, strategy: global::StrawberryShake.RequestStrategy.Default, variables: variables);
+        }
+
+        private global::System.Object? FormatIds(global::System.Collections.Generic.IReadOnlyList<global::System.Int32> value)
+        {
+            var value_list = new global::System.Collections.Generic.List<global::System.Object?>();
+            foreach (var value_elm in value)
+            {
+                value_list.Add(_intFormatter.Format(value_elm));
+            }
+
+            return value_list;
+        }
+
+        global::StrawberryShake.OperationRequest global::StrawberryShake.IOperationRequestFactory.Create(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return CreateRequest(variables!);
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetCharactersByIds GraphQL operation
+    /// <code>
+    /// query GetCharactersByIds($ids: [Int!]!) {
+    ///   charactersByIds(ids: $ids) {
+    ///     __typename
+    ///     ... c
+    ///     ... on Human {
+    ///       id
+    ///     }
+    ///     ... on Droid {
+    ///       id
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment c on Character {
+    ///   id
+    ///   name
+    ///   appearsIn
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetCharactersByIdsQuery : global::StrawberryShake.IOperationRequestFactory
+    {
+        global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetCharactersByIdsResult>> ExecuteAsync(global::System.Collections.Generic.IReadOnlyList<global::System.Int32> ids, global::System.Threading.CancellationToken cancellationToken = default);
+        global::System.IObservable<global::StrawberryShake.IOperationResult<IGetCharactersByIdsResult>> Watch(global::System.Collections.Generic.IReadOnlyList<global::System.Int32> ids, global::StrawberryShake.ExecutionStrategy? strategy = null);
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetAllCharacters GraphQL operation
+    /// <code>
+    /// query GetAllCharacters {
+    ///   characters {
+    ///     __typename
+    ///     ... c
+    ///     ... on Human {
+    ///       id
+    ///     }
+    ///     ... on Droid {
+    ///       id
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment c on Character {
+    ///   id
+    ///   name
+    ///   appearsIn
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetAllCharactersQueryDocument : global::StrawberryShake.IDocument
+    {
+        private GetAllCharactersQueryDocument()
+        {
+        }
+
+        public static GetAllCharactersQueryDocument Instance { get; } = new GetAllCharactersQueryDocument();
+        public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Query;
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x20, 0x7b, 0x20, 0x63, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x63, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x63, 0x20, 0x6f, 0x6e, 0x20, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x61, 0x70, 0x70, 0x65, 0x61, 0x72, 0x73, 0x49, 0x6e, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "f5182c61e56079e2c22f68c05f853638");
+        public override global::System.String ToString()
+        {
+#if NETSTANDARD2_0
+        return global::System.Text.Encoding.UTF8.GetString(Body.ToArray());
+#else
+            return global::System.Text.Encoding.UTF8.GetString(Body);
+#endif
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetAllCharacters GraphQL operation
+    /// <code>
+    /// query GetAllCharacters {
+    ///   characters {
+    ///     __typename
+    ///     ... c
+    ///     ... on Human {
+    ///       id
+    ///     }
+    ///     ... on Droid {
+    ///       id
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment c on Character {
+    ///   id
+    ///   name
+    ///   appearsIn
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetAllCharactersQuery : global::StarWarsGeneratedClient.IGetAllCharactersQuery
+    {
+        private readonly global::StrawberryShake.IOperationExecutor<IGetAllCharactersResult> _operationExecutor;
+        public GetAllCharactersQuery(global::StrawberryShake.IOperationExecutor<IGetAllCharactersResult> operationExecutor)
+        {
+            _operationExecutor = operationExecutor ?? throw new global::System.ArgumentNullException(nameof(operationExecutor));
+        }
+
+        global::System.Type global::StrawberryShake.IOperationRequestFactory.ResultType => typeof(IGetAllCharactersResult);
+        public async global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetAllCharactersResult>> ExecuteAsync(global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var request = CreateRequest();
+            return await _operationExecutor.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        public global::System.IObservable<global::StrawberryShake.IOperationResult<IGetAllCharactersResult>> Watch(global::StrawberryShake.ExecutionStrategy? strategy = null)
+        {
+            var request = CreateRequest();
+            return _operationExecutor.Watch(request, strategy);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest()
+        {
+            return CreateRequest(null);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return new global::StrawberryShake.OperationRequest(id: GetAllCharactersQueryDocument.Instance.Hash.Value, name: "GetAllCharacters", document: GetAllCharactersQueryDocument.Instance, strategy: global::StrawberryShake.RequestStrategy.Default);
+        }
+
+        global::StrawberryShake.OperationRequest global::StrawberryShake.IOperationRequestFactory.Create(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return CreateRequest();
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetAllCharacters GraphQL operation
+    /// <code>
+    /// query GetAllCharacters {
+    ///   characters {
+    ///     __typename
+    ///     ... c
+    ///     ... on Human {
+    ///       id
+    ///     }
+    ///     ... on Droid {
+    ///       id
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment c on Character {
+    ///   id
+    ///   name
+    ///   appearsIn
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetAllCharactersQuery : global::StrawberryShake.IOperationRequestFactory
+    {
+        global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetAllCharactersResult>> ExecuteAsync(global::System.Threading.CancellationToken cancellationToken = default);
+        global::System.IObservable<global::StrawberryShake.IOperationResult<IGetAllCharactersResult>> Watch(global::StrawberryShake.ExecutionStrategy? strategy = null);
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetAllHumansAndDroids GraphQL operation
+    /// <code>
+    /// query GetAllHumansAndDroids {
+    ///   characters {
+    ///     __typename
+    ///     ... d
+    ///     ... h
+    ///     ... on Human {
+    ///       id
+    ///     }
+    ///     ... on Droid {
+    ///       id
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment d on Droid {
+    ///   id
+    ///   name
+    ///   appearsIn
+    ///   primaryFunction
+    /// }
+    /// 
+    /// fragment h on Human {
+    ///   id
+    ///   name
+    ///   appearsIn
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetAllHumansAndDroidsQueryDocument : global::StrawberryShake.IDocument
+    {
+        private GetAllHumansAndDroidsQueryDocument()
+        {
+        }
+
+        public static GetAllHumansAndDroidsQueryDocument Instance { get; } = new GetAllHumansAndDroidsQueryDocument();
+        public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Query;
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x73, 0x41, 0x6e, 0x64, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x73, 0x20, 0x7b, 0x20, 0x63, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x64, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x68, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x64, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x61, 0x70, 0x70, 0x65, 0x61, 0x72, 0x73, 0x49, 0x6e, 0x20, 0x70, 0x72, 0x69, 0x6d, 0x61, 0x72, 0x79, 0x46, 0x75, 0x6e, 0x63, 0x74, 0x69, 0x6f, 0x6e, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x68, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x61, 0x70, 0x70, 0x65, 0x61, 0x72, 0x73, 0x49, 0x6e, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "9a72ebcc2fd3f150afbcafa695b67784");
+        public override global::System.String ToString()
+        {
+#if NETSTANDARD2_0
+        return global::System.Text.Encoding.UTF8.GetString(Body.ToArray());
+#else
+            return global::System.Text.Encoding.UTF8.GetString(Body);
+#endif
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetAllHumansAndDroids GraphQL operation
+    /// <code>
+    /// query GetAllHumansAndDroids {
+    ///   characters {
+    ///     __typename
+    ///     ... d
+    ///     ... h
+    ///     ... on Human {
+    ///       id
+    ///     }
+    ///     ... on Droid {
+    ///       id
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment d on Droid {
+    ///   id
+    ///   name
+    ///   appearsIn
+    ///   primaryFunction
+    /// }
+    /// 
+    /// fragment h on Human {
+    ///   id
+    ///   name
+    ///   appearsIn
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetAllHumansAndDroidsQuery : global::StarWarsGeneratedClient.IGetAllHumansAndDroidsQuery
+    {
+        private readonly global::StrawberryShake.IOperationExecutor<IGetAllHumansAndDroidsResult> _operationExecutor;
+        public GetAllHumansAndDroidsQuery(global::StrawberryShake.IOperationExecutor<IGetAllHumansAndDroidsResult> operationExecutor)
+        {
+            _operationExecutor = operationExecutor ?? throw new global::System.ArgumentNullException(nameof(operationExecutor));
+        }
+
+        global::System.Type global::StrawberryShake.IOperationRequestFactory.ResultType => typeof(IGetAllHumansAndDroidsResult);
+        public async global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetAllHumansAndDroidsResult>> ExecuteAsync(global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var request = CreateRequest();
+            return await _operationExecutor.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        public global::System.IObservable<global::StrawberryShake.IOperationResult<IGetAllHumansAndDroidsResult>> Watch(global::StrawberryShake.ExecutionStrategy? strategy = null)
+        {
+            var request = CreateRequest();
+            return _operationExecutor.Watch(request, strategy);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest()
+        {
+            return CreateRequest(null);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return new global::StrawberryShake.OperationRequest(id: GetAllHumansAndDroidsQueryDocument.Instance.Hash.Value, name: "GetAllHumansAndDroids", document: GetAllHumansAndDroidsQueryDocument.Instance, strategy: global::StrawberryShake.RequestStrategy.Default);
+        }
+
+        global::StrawberryShake.OperationRequest global::StrawberryShake.IOperationRequestFactory.Create(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return CreateRequest();
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetAllHumansAndDroids GraphQL operation
+    /// <code>
+    /// query GetAllHumansAndDroids {
+    ///   characters {
+    ///     __typename
+    ///     ... d
+    ///     ... h
+    ///     ... on Human {
+    ///       id
+    ///     }
+    ///     ... on Droid {
+    ///       id
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment d on Droid {
+    ///   id
+    ///   name
+    ///   appearsIn
+    ///   primaryFunction
+    /// }
+    /// 
+    /// fragment h on Human {
+    ///   id
+    ///   name
+    ///   appearsIn
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetAllHumansAndDroidsQuery : global::StrawberryShake.IOperationRequestFactory
+    {
+        global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetAllHumansAndDroidsResult>> ExecuteAsync(global::System.Threading.CancellationToken cancellationToken = default);
+        global::System.IObservable<global::StrawberryShake.IOperationResult<IGetAllHumansAndDroidsResult>> Watch(global::StrawberryShake.ExecutionStrategy? strategy = null);
+    }
+
+    /// <summary>
     /// Represents the StarWarsGeneratedClient GraphQL client
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class StarWarsGeneratedClient : global::StarWarsGeneratedClient.IStarWarsGeneratedClient
     {
         private readonly global::StarWarsGeneratedClient.IGetHeroQuery _getHero;
-        private readonly global::StarWarsGeneratedClient.IGetCharactersQuery _getCharacters;
         private readonly global::StarWarsGeneratedClient.ICreateReviewMutation _createReview;
-        public StarWarsGeneratedClient(global::StarWarsGeneratedClient.IGetHeroQuery getHero, global::StarWarsGeneratedClient.IGetCharactersQuery getCharacters, global::StarWarsGeneratedClient.ICreateReviewMutation createReview)
+        private readonly global::StarWarsGeneratedClient.IGetCharactersByIdsQuery _getCharactersByIds;
+        private readonly global::StarWarsGeneratedClient.IGetAllCharactersQuery _getAllCharacters;
+        private readonly global::StarWarsGeneratedClient.IGetAllHumansAndDroidsQuery _getAllHumansAndDroids;
+        public StarWarsGeneratedClient(global::StarWarsGeneratedClient.IGetHeroQuery getHero, global::StarWarsGeneratedClient.ICreateReviewMutation createReview, global::StarWarsGeneratedClient.IGetCharactersByIdsQuery getCharactersByIds, global::StarWarsGeneratedClient.IGetAllCharactersQuery getAllCharacters, global::StarWarsGeneratedClient.IGetAllHumansAndDroidsQuery getAllHumansAndDroids)
         {
             _getHero = getHero ?? throw new global::System.ArgumentNullException(nameof(getHero));
-            _getCharacters = getCharacters ?? throw new global::System.ArgumentNullException(nameof(getCharacters));
             _createReview = createReview ?? throw new global::System.ArgumentNullException(nameof(createReview));
+            _getCharactersByIds = getCharactersByIds ?? throw new global::System.ArgumentNullException(nameof(getCharactersByIds));
+            _getAllCharacters = getAllCharacters ?? throw new global::System.ArgumentNullException(nameof(getAllCharacters));
+            _getAllHumansAndDroids = getAllHumansAndDroids ?? throw new global::System.ArgumentNullException(nameof(getAllHumansAndDroids));
         }
 
         public static global::System.String ClientName => "StarWarsGeneratedClient";
         public global::StarWarsGeneratedClient.IGetHeroQuery GetHero => _getHero;
-        public global::StarWarsGeneratedClient.IGetCharactersQuery GetCharacters => _getCharacters;
         public global::StarWarsGeneratedClient.ICreateReviewMutation CreateReview => _createReview;
+        public global::StarWarsGeneratedClient.IGetCharactersByIdsQuery GetCharactersByIds => _getCharactersByIds;
+        public global::StarWarsGeneratedClient.IGetAllCharactersQuery GetAllCharacters => _getAllCharacters;
+        public global::StarWarsGeneratedClient.IGetAllHumansAndDroidsQuery GetAllHumansAndDroids => _getAllHumansAndDroids;
     }
 
     /// <summary>
@@ -1992,9 +3008,13 @@ namespace StarWarsGeneratedClient
     {
         global::StarWarsGeneratedClient.IGetHeroQuery GetHero { get; }
 
-        global::StarWarsGeneratedClient.IGetCharactersQuery GetCharacters { get; }
-
         global::StarWarsGeneratedClient.ICreateReviewMutation CreateReview { get; }
+
+        global::StarWarsGeneratedClient.IGetCharactersByIdsQuery GetCharactersByIds { get; }
+
+        global::StarWarsGeneratedClient.IGetAllCharactersQuery GetAllCharacters { get; }
+
+        global::StarWarsGeneratedClient.IGetAllHumansAndDroidsQuery GetAllHumansAndDroids { get; }
     }
 }
 
@@ -2004,11 +3024,12 @@ namespace StarWarsGeneratedClient.State
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class HumanEntity
     {
-        public HumanEntity(global::System.Int32 id = default !, global::System.String name = default !, global::StarWarsGeneratedClient.State.FriendsConnectionData? friends = default !)
+        public HumanEntity(global::System.Int32 id = default !, global::System.String name = default !, global::StarWarsGeneratedClient.State.FriendsConnectionData? friends = default !, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn = default !)
         {
             Id = id;
             Name = name;
             Friends = friends;
+            AppearsIn = appearsIn;
         }
 
         ///<summary>The unique identifier for the character.</summary>
@@ -2018,17 +3039,22 @@ namespace StarWarsGeneratedClient.State
         public global::System.String Name { get; }
 
         public global::StarWarsGeneratedClient.State.FriendsConnectionData? Friends { get; }
+
+        ///<summary>The episodes the character appears in.</summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> AppearsIn { get; }
     }
 
     ///<summary>This resolver class extends all object types implementing ICharacter.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class DroidEntity
     {
-        public DroidEntity(global::System.Int32 id = default !, global::System.String name = default !, global::StarWarsGeneratedClient.State.FriendsConnectionData? friends = default !)
+        public DroidEntity(global::System.Int32 id = default !, global::System.String name = default !, global::StarWarsGeneratedClient.State.FriendsConnectionData? friends = default !, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn = default !, global::System.String primaryFunction = default !)
         {
             Id = id;
             Name = name;
             Friends = friends;
+            AppearsIn = appearsIn;
+            PrimaryFunction = primaryFunction;
         }
 
         ///<summary>The unique identifier for the character.</summary>
@@ -2038,6 +3064,12 @@ namespace StarWarsGeneratedClient.State
         public global::System.String Name { get; }
 
         public global::StarWarsGeneratedClient.State.FriendsConnectionData? Friends { get; }
+
+        ///<summary>The episodes the character appears in.</summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> AppearsIn { get; }
+
+        ///<summary>The droid's primary function.</summary>
+        public global::System.String PrimaryFunction { get; }
     }
 
     ///<summary>A review of a particular movie.</summary>
@@ -2367,141 +3399,6 @@ namespace StarWarsGeneratedClient.State
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
-    public partial class GetCharactersResultFactory : global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.GetCharactersResult>
-    {
-        private readonly global::StrawberryShake.IEntityStore _entityStore;
-        private readonly global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, GetCharacters_Character_Human> _getCharacters_Character_HumanFromHumanEntityMapper;
-        private readonly global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, GetCharacters_Character_Droid> _getCharacters_Character_DroidFromDroidEntityMapper;
-        public GetCharactersResultFactory(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, GetCharacters_Character_Human> getCharacters_Character_HumanFromHumanEntityMapper, global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, GetCharacters_Character_Droid> getCharacters_Character_DroidFromDroidEntityMapper)
-        {
-            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
-            _getCharacters_Character_HumanFromHumanEntityMapper = getCharacters_Character_HumanFromHumanEntityMapper ?? throw new global::System.ArgumentNullException(nameof(getCharacters_Character_HumanFromHumanEntityMapper));
-            _getCharacters_Character_DroidFromDroidEntityMapper = getCharacters_Character_DroidFromDroidEntityMapper ?? throw new global::System.ArgumentNullException(nameof(getCharacters_Character_DroidFromDroidEntityMapper));
-        }
-
-        global::System.Type global::StrawberryShake.IOperationResultDataFactory.ResultType => typeof(global::StarWarsGeneratedClient.IGetCharactersResult);
-        public GetCharactersResult Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
-        {
-            if (snapshot is null)
-            {
-                snapshot = _entityStore.CurrentSnapshot;
-            }
-
-            if (dataInfo is GetCharactersResultInfo info)
-            {
-                return new GetCharactersResult(MapNonNullableIGetCharacters_CharacterNonNullableArray(info.Character, snapshot));
-            }
-
-            throw new global::System.ArgumentException("GetCharactersResultInfo expected.");
-        }
-
-        private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetCharacters_Character> MapNonNullableIGetCharacters_CharacterNonNullableArray(global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
-        {
-            if (list is null)
-            {
-                throw new global::System.ArgumentNullException();
-            }
-
-            var characters = new global::System.Collections.Generic.List<global::StarWarsGeneratedClient.IGetCharacters_Character>();
-            foreach (global::StrawberryShake.EntityId child in list)
-            {
-                characters.Add(MapNonNullableIGetCharacters_Character(child, snapshot));
-            }
-
-            return characters;
-        }
-
-        private global::StarWarsGeneratedClient.IGetCharacters_Character MapNonNullableIGetCharacters_Character(global::StrawberryShake.EntityId entityId, global::StrawberryShake.IEntityStoreSnapshot snapshot)
-        {
-            if (entityId.Name.Equals("Human", global::System.StringComparison.Ordinal))
-            {
-                return _getCharacters_Character_HumanFromHumanEntityMapper.Map(snapshot.GetEntity<global::StarWarsGeneratedClient.State.HumanEntity>(entityId) ?? throw new global::StrawberryShake.GraphQLClientException());
-            }
-
-            if (entityId.Name.Equals("Droid", global::System.StringComparison.Ordinal))
-            {
-                return _getCharacters_Character_DroidFromDroidEntityMapper.Map(snapshot.GetEntity<global::StarWarsGeneratedClient.State.DroidEntity>(entityId) ?? throw new global::StrawberryShake.GraphQLClientException());
-            }
-
-            throw new global::System.NotSupportedException();
-        }
-
-        global::System.Object global::StrawberryShake.IOperationResultDataFactory.Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot)
-        {
-            return Create(dataInfo, snapshot);
-        }
-    }
-
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
-    public partial class GetCharactersResultInfo : global::StrawberryShake.IOperationResultDataInfo
-    {
-        private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
-        private readonly global::System.UInt64 _version;
-        public GetCharactersResultInfo(global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId> character, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
-        {
-            Character = character;
-            _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
-            _version = version;
-        }
-
-        /// <summary>
-        /// Gets a character by it`s id.
-        /// 
-        /// 
-        /// **Returns:**
-        /// The character.
-        /// </summary>
-        public global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId> Character { get; }
-
-        public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
-        public global::System.UInt64 Version => _version;
-        public global::StrawberryShake.IOperationResultDataInfo WithVersion(global::System.UInt64 version)
-        {
-            return new GetCharactersResultInfo(Character, _entityIds, version);
-        }
-    }
-
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
-    public partial class GetCharacters_Character_HumanFromHumanEntityMapper : global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, GetCharacters_Character_Human>
-    {
-        private readonly global::StrawberryShake.IEntityStore _entityStore;
-        public GetCharacters_Character_HumanFromHumanEntityMapper(global::StrawberryShake.IEntityStore entityStore)
-        {
-            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
-        }
-
-        public GetCharacters_Character_Human Map(global::StarWarsGeneratedClient.State.HumanEntity entity, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
-        {
-            if (snapshot is null)
-            {
-                snapshot = _entityStore.CurrentSnapshot;
-            }
-
-            return new GetCharacters_Character_Human(entity.Id, entity.Name);
-        }
-    }
-
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
-    public partial class GetCharacters_Character_DroidFromDroidEntityMapper : global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, GetCharacters_Character_Droid>
-    {
-        private readonly global::StrawberryShake.IEntityStore _entityStore;
-        public GetCharacters_Character_DroidFromDroidEntityMapper(global::StrawberryShake.IEntityStore entityStore)
-        {
-            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
-        }
-
-        public GetCharacters_Character_Droid Map(global::StarWarsGeneratedClient.State.DroidEntity entity, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
-        {
-            if (snapshot is null)
-            {
-                snapshot = _entityStore.CurrentSnapshot;
-            }
-
-            return new GetCharacters_Character_Droid(entity.Id, entity.Name);
-        }
-    }
-
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class CreateReviewResultFactory : global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.CreateReviewResult>
     {
         private readonly global::StrawberryShake.IEntityStore _entityStore;
@@ -2605,6 +3502,411 @@ namespace StarWarsGeneratedClient.State
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersByIdsResultFactory : global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.GetCharactersByIdsResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        private readonly global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, GetCharactersByIds_CharactersByIds_Human> _getCharactersByIds_CharactersByIds_HumanFromHumanEntityMapper;
+        private readonly global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, GetCharactersByIds_CharactersByIds_Droid> _getCharactersByIds_CharactersByIds_DroidFromDroidEntityMapper;
+        public GetCharactersByIdsResultFactory(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, GetCharactersByIds_CharactersByIds_Human> getCharactersByIds_CharactersByIds_HumanFromHumanEntityMapper, global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, GetCharactersByIds_CharactersByIds_Droid> getCharactersByIds_CharactersByIds_DroidFromDroidEntityMapper)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+            _getCharactersByIds_CharactersByIds_HumanFromHumanEntityMapper = getCharactersByIds_CharactersByIds_HumanFromHumanEntityMapper ?? throw new global::System.ArgumentNullException(nameof(getCharactersByIds_CharactersByIds_HumanFromHumanEntityMapper));
+            _getCharactersByIds_CharactersByIds_DroidFromDroidEntityMapper = getCharactersByIds_CharactersByIds_DroidFromDroidEntityMapper ?? throw new global::System.ArgumentNullException(nameof(getCharactersByIds_CharactersByIds_DroidFromDroidEntityMapper));
+        }
+
+        global::System.Type global::StrawberryShake.IOperationResultDataFactory.ResultType => typeof(global::StarWarsGeneratedClient.IGetCharactersByIdsResult);
+        public GetCharactersByIdsResult Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            if (dataInfo is GetCharactersByIdsResultInfo info)
+            {
+                return new GetCharactersByIdsResult(MapNonNullableIGetCharactersByIds_CharactersByIdsNonNullableArray(info.CharactersByIds, snapshot));
+            }
+
+            throw new global::System.ArgumentException("GetCharactersByIdsResultInfo expected.");
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetCharactersByIds_CharactersByIds> MapNonNullableIGetCharactersByIds_CharactersByIdsNonNullableArray(global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (list is null)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            var characters = new global::System.Collections.Generic.List<global::StarWarsGeneratedClient.IGetCharactersByIds_CharactersByIds>();
+            foreach (global::StrawberryShake.EntityId child in list)
+            {
+                characters.Add(MapNonNullableIGetCharactersByIds_CharactersByIds(child, snapshot));
+            }
+
+            return characters;
+        }
+
+        private global::StarWarsGeneratedClient.IGetCharactersByIds_CharactersByIds MapNonNullableIGetCharactersByIds_CharactersByIds(global::StrawberryShake.EntityId entityId, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (entityId.Name.Equals("Human", global::System.StringComparison.Ordinal))
+            {
+                return _getCharactersByIds_CharactersByIds_HumanFromHumanEntityMapper.Map(snapshot.GetEntity<global::StarWarsGeneratedClient.State.HumanEntity>(entityId) ?? throw new global::StrawberryShake.GraphQLClientException());
+            }
+
+            if (entityId.Name.Equals("Droid", global::System.StringComparison.Ordinal))
+            {
+                return _getCharactersByIds_CharactersByIds_DroidFromDroidEntityMapper.Map(snapshot.GetEntity<global::StarWarsGeneratedClient.State.DroidEntity>(entityId) ?? throw new global::StrawberryShake.GraphQLClientException());
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        global::System.Object global::StrawberryShake.IOperationResultDataFactory.Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot)
+        {
+            return Create(dataInfo, snapshot);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersByIdsResultInfo : global::StrawberryShake.IOperationResultDataInfo
+    {
+        private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
+        private readonly global::System.UInt64 _version;
+        public GetCharactersByIdsResultInfo(global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId> charactersByIds, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
+        {
+            CharactersByIds = charactersByIds;
+            _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
+            _version = version;
+        }
+
+        /// <summary>
+        /// Gets characters by it`s id.
+        /// 
+        /// 
+        /// **Returns:**
+        /// The characters.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId> CharactersByIds { get; }
+
+        public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
+        public global::System.UInt64 Version => _version;
+        public global::StrawberryShake.IOperationResultDataInfo WithVersion(global::System.UInt64 version)
+        {
+            return new GetCharactersByIdsResultInfo(CharactersByIds, _entityIds, version);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersByIds_CharactersByIds_HumanFromHumanEntityMapper : global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, GetCharactersByIds_CharactersByIds_Human>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        public GetCharactersByIds_CharactersByIds_HumanFromHumanEntityMapper(global::StrawberryShake.IEntityStore entityStore)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+        }
+
+        public GetCharactersByIds_CharactersByIds_Human Map(global::StarWarsGeneratedClient.State.HumanEntity entity, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            return new GetCharactersByIds_CharactersByIds_Human(entity.Id, entity.Name, entity.AppearsIn);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersByIds_CharactersByIds_DroidFromDroidEntityMapper : global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, GetCharactersByIds_CharactersByIds_Droid>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        public GetCharactersByIds_CharactersByIds_DroidFromDroidEntityMapper(global::StrawberryShake.IEntityStore entityStore)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+        }
+
+        public GetCharactersByIds_CharactersByIds_Droid Map(global::StarWarsGeneratedClient.State.DroidEntity entity, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            return new GetCharactersByIds_CharactersByIds_Droid(entity.Id, entity.Name, entity.AppearsIn);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetAllCharactersResultFactory : global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.GetAllCharactersResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        private readonly global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, GetAllCharacters_Characters_Human> _getAllCharacters_Characters_HumanFromHumanEntityMapper;
+        private readonly global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, GetAllCharacters_Characters_Droid> _getAllCharacters_Characters_DroidFromDroidEntityMapper;
+        public GetAllCharactersResultFactory(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, GetAllCharacters_Characters_Human> getAllCharacters_Characters_HumanFromHumanEntityMapper, global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, GetAllCharacters_Characters_Droid> getAllCharacters_Characters_DroidFromDroidEntityMapper)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+            _getAllCharacters_Characters_HumanFromHumanEntityMapper = getAllCharacters_Characters_HumanFromHumanEntityMapper ?? throw new global::System.ArgumentNullException(nameof(getAllCharacters_Characters_HumanFromHumanEntityMapper));
+            _getAllCharacters_Characters_DroidFromDroidEntityMapper = getAllCharacters_Characters_DroidFromDroidEntityMapper ?? throw new global::System.ArgumentNullException(nameof(getAllCharacters_Characters_DroidFromDroidEntityMapper));
+        }
+
+        global::System.Type global::StrawberryShake.IOperationResultDataFactory.ResultType => typeof(global::StarWarsGeneratedClient.IGetAllCharactersResult);
+        public GetAllCharactersResult Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            if (dataInfo is GetAllCharactersResultInfo info)
+            {
+                return new GetAllCharactersResult(MapNonNullableIGetAllCharacters_CharactersNonNullableArray(info.Characters, snapshot));
+            }
+
+            throw new global::System.ArgumentException("GetAllCharactersResultInfo expected.");
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetAllCharacters_Characters> MapNonNullableIGetAllCharacters_CharactersNonNullableArray(global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (list is null)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            var characters = new global::System.Collections.Generic.List<global::StarWarsGeneratedClient.IGetAllCharacters_Characters>();
+            foreach (global::StrawberryShake.EntityId child in list)
+            {
+                characters.Add(MapNonNullableIGetAllCharacters_Characters(child, snapshot));
+            }
+
+            return characters;
+        }
+
+        private global::StarWarsGeneratedClient.IGetAllCharacters_Characters MapNonNullableIGetAllCharacters_Characters(global::StrawberryShake.EntityId entityId, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (entityId.Name.Equals("Human", global::System.StringComparison.Ordinal))
+            {
+                return _getAllCharacters_Characters_HumanFromHumanEntityMapper.Map(snapshot.GetEntity<global::StarWarsGeneratedClient.State.HumanEntity>(entityId) ?? throw new global::StrawberryShake.GraphQLClientException());
+            }
+
+            if (entityId.Name.Equals("Droid", global::System.StringComparison.Ordinal))
+            {
+                return _getAllCharacters_Characters_DroidFromDroidEntityMapper.Map(snapshot.GetEntity<global::StarWarsGeneratedClient.State.DroidEntity>(entityId) ?? throw new global::StrawberryShake.GraphQLClientException());
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        global::System.Object global::StrawberryShake.IOperationResultDataFactory.Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot)
+        {
+            return Create(dataInfo, snapshot);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetAllCharactersResultInfo : global::StrawberryShake.IOperationResultDataInfo
+    {
+        private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
+        private readonly global::System.UInt64 _version;
+        public GetAllCharactersResultInfo(global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId> characters, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
+        {
+            Characters = characters;
+            _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
+            _version = version;
+        }
+
+        /// <summary>
+        /// Gets all character.
+        /// 
+        /// 
+        /// **Returns:**
+        /// The character.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId> Characters { get; }
+
+        public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
+        public global::System.UInt64 Version => _version;
+        public global::StrawberryShake.IOperationResultDataInfo WithVersion(global::System.UInt64 version)
+        {
+            return new GetAllCharactersResultInfo(Characters, _entityIds, version);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetAllCharacters_Characters_HumanFromHumanEntityMapper : global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, GetAllCharacters_Characters_Human>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        public GetAllCharacters_Characters_HumanFromHumanEntityMapper(global::StrawberryShake.IEntityStore entityStore)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+        }
+
+        public GetAllCharacters_Characters_Human Map(global::StarWarsGeneratedClient.State.HumanEntity entity, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            return new GetAllCharacters_Characters_Human(entity.Id, entity.Name, entity.AppearsIn);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetAllCharacters_Characters_DroidFromDroidEntityMapper : global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, GetAllCharacters_Characters_Droid>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        public GetAllCharacters_Characters_DroidFromDroidEntityMapper(global::StrawberryShake.IEntityStore entityStore)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+        }
+
+        public GetAllCharacters_Characters_Droid Map(global::StarWarsGeneratedClient.State.DroidEntity entity, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            return new GetAllCharacters_Characters_Droid(entity.Id, entity.Name, entity.AppearsIn);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetAllHumansAndDroidsResultFactory : global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.GetAllHumansAndDroidsResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        private readonly global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, GetAllHumansAndDroids_Characters_Human> _getAllHumansAndDroids_Characters_HumanFromHumanEntityMapper;
+        private readonly global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, GetAllHumansAndDroids_Characters_Droid> _getAllHumansAndDroids_Characters_DroidFromDroidEntityMapper;
+        public GetAllHumansAndDroidsResultFactory(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, GetAllHumansAndDroids_Characters_Human> getAllHumansAndDroids_Characters_HumanFromHumanEntityMapper, global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, GetAllHumansAndDroids_Characters_Droid> getAllHumansAndDroids_Characters_DroidFromDroidEntityMapper)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+            _getAllHumansAndDroids_Characters_HumanFromHumanEntityMapper = getAllHumansAndDroids_Characters_HumanFromHumanEntityMapper ?? throw new global::System.ArgumentNullException(nameof(getAllHumansAndDroids_Characters_HumanFromHumanEntityMapper));
+            _getAllHumansAndDroids_Characters_DroidFromDroidEntityMapper = getAllHumansAndDroids_Characters_DroidFromDroidEntityMapper ?? throw new global::System.ArgumentNullException(nameof(getAllHumansAndDroids_Characters_DroidFromDroidEntityMapper));
+        }
+
+        global::System.Type global::StrawberryShake.IOperationResultDataFactory.ResultType => typeof(global::StarWarsGeneratedClient.IGetAllHumansAndDroidsResult);
+        public GetAllHumansAndDroidsResult Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            if (dataInfo is GetAllHumansAndDroidsResultInfo info)
+            {
+                return new GetAllHumansAndDroidsResult(MapNonNullableIGetAllHumansAndDroids_CharactersNonNullableArray(info.Characters, snapshot));
+            }
+
+            throw new global::System.ArgumentException("GetAllHumansAndDroidsResultInfo expected.");
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetAllHumansAndDroids_Characters> MapNonNullableIGetAllHumansAndDroids_CharactersNonNullableArray(global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (list is null)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            var characters = new global::System.Collections.Generic.List<global::StarWarsGeneratedClient.IGetAllHumansAndDroids_Characters>();
+            foreach (global::StrawberryShake.EntityId child in list)
+            {
+                characters.Add(MapNonNullableIGetAllHumansAndDroids_Characters(child, snapshot));
+            }
+
+            return characters;
+        }
+
+        private global::StarWarsGeneratedClient.IGetAllHumansAndDroids_Characters MapNonNullableIGetAllHumansAndDroids_Characters(global::StrawberryShake.EntityId entityId, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (entityId.Name.Equals("Human", global::System.StringComparison.Ordinal))
+            {
+                return _getAllHumansAndDroids_Characters_HumanFromHumanEntityMapper.Map(snapshot.GetEntity<global::StarWarsGeneratedClient.State.HumanEntity>(entityId) ?? throw new global::StrawberryShake.GraphQLClientException());
+            }
+
+            if (entityId.Name.Equals("Droid", global::System.StringComparison.Ordinal))
+            {
+                return _getAllHumansAndDroids_Characters_DroidFromDroidEntityMapper.Map(snapshot.GetEntity<global::StarWarsGeneratedClient.State.DroidEntity>(entityId) ?? throw new global::StrawberryShake.GraphQLClientException());
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        global::System.Object global::StrawberryShake.IOperationResultDataFactory.Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot)
+        {
+            return Create(dataInfo, snapshot);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetAllHumansAndDroidsResultInfo : global::StrawberryShake.IOperationResultDataInfo
+    {
+        private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
+        private readonly global::System.UInt64 _version;
+        public GetAllHumansAndDroidsResultInfo(global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId> characters, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
+        {
+            Characters = characters;
+            _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
+            _version = version;
+        }
+
+        /// <summary>
+        /// Gets all character.
+        /// 
+        /// 
+        /// **Returns:**
+        /// The character.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId> Characters { get; }
+
+        public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
+        public global::System.UInt64 Version => _version;
+        public global::StrawberryShake.IOperationResultDataInfo WithVersion(global::System.UInt64 version)
+        {
+            return new GetAllHumansAndDroidsResultInfo(Characters, _entityIds, version);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetAllHumansAndDroids_Characters_HumanFromHumanEntityMapper : global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, GetAllHumansAndDroids_Characters_Human>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        public GetAllHumansAndDroids_Characters_HumanFromHumanEntityMapper(global::StrawberryShake.IEntityStore entityStore)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+        }
+
+        public GetAllHumansAndDroids_Characters_Human Map(global::StarWarsGeneratedClient.State.HumanEntity entity, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            return new GetAllHumansAndDroids_Characters_Human(entity.Id, entity.Name, entity.AppearsIn);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetAllHumansAndDroids_Characters_DroidFromDroidEntityMapper : global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, GetAllHumansAndDroids_Characters_Droid>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        public GetAllHumansAndDroids_Characters_DroidFromDroidEntityMapper(global::StrawberryShake.IEntityStore entityStore)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+        }
+
+        public GetAllHumansAndDroids_Characters_Droid Map(global::StarWarsGeneratedClient.State.DroidEntity entity, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            return new GetAllHumansAndDroids_Characters_Droid(entity.Id, entity.Name, entity.AppearsIn, entity.PrimaryFunction);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     internal interface ICreateReviewInputInfo
     {
         global::System.Boolean IsEpisodeSet { get; }
@@ -2694,11 +3996,11 @@ namespace StarWarsGeneratedClient.State
             {
                 if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.HumanEntity? entity))
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), DeserializeIGetHero_Hero_Friends(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "friends"), entityIds)));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), DeserializeIGetHero_Hero_Friends(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "friends"), entityIds), entity.AppearsIn));
                 }
                 else
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), DeserializeIGetHero_Hero_Friends(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "friends"), entityIds)));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), DeserializeIGetHero_Hero_Friends(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "friends"), entityIds), default !));
                 }
 
                 return entityId;
@@ -2708,11 +4010,11 @@ namespace StarWarsGeneratedClient.State
             {
                 if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.DroidEntity? entity))
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), DeserializeIGetHero_Hero_Friends(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "friends"), entityIds)));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), DeserializeIGetHero_Hero_Friends(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "friends"), entityIds), entity.AppearsIn, entity.PrimaryFunction));
                 }
                 else
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), DeserializeIGetHero_Hero_Friends(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "friends"), entityIds)));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), DeserializeIGetHero_Hero_Friends(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "friends"), entityIds), default !, default !));
                 }
 
                 return entityId;
@@ -2802,11 +4104,11 @@ namespace StarWarsGeneratedClient.State
             {
                 if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.HumanEntity? entity))
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, entity.AppearsIn));
                 }
                 else
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, default !));
                 }
 
                 return entityId;
@@ -2816,159 +4118,17 @@ namespace StarWarsGeneratedClient.State
             {
                 if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.DroidEntity? entity))
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, entity.AppearsIn, entity.PrimaryFunction));
                 }
                 else
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, default !, default !));
                 }
 
                 return entityId;
             }
 
             throw new global::System.NotSupportedException();
-        }
-    }
-
-    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
-    public partial class GetCharactersBuilder : global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetCharactersResult>
-    {
-        private readonly global::StrawberryShake.IEntityStore _entityStore;
-        private readonly global::StrawberryShake.IEntityIdSerializer _idSerializer;
-        private readonly global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetCharactersResult> _resultDataFactory;
-        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Int32, global::System.Int32> _intParser;
-        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
-        public GetCharactersBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetCharactersResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
-        {
-            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
-            _idSerializer = idSerializer ?? throw new global::System.ArgumentNullException(nameof(idSerializer));
-            _resultDataFactory = resultDataFactory ?? throw new global::System.ArgumentNullException(nameof(resultDataFactory));
-            _intParser = serializerResolver.GetLeafValueParser<global::System.Int32, global::System.Int32>("Int") ?? throw new global::System.ArgumentException("No serializer for type `Int` found.");
-            _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
-        }
-
-        public global::StrawberryShake.IOperationResult<IGetCharactersResult> Build(global::StrawberryShake.Response<global::System.Text.Json.JsonDocument> response)
-        {
-            (IGetCharactersResult Result, GetCharactersResultInfo Info)? data = null;
-            global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.IClientError>? errors = null;
-            if (response.Exception is null)
-            {
-                try
-                {
-                    if (response.Body != null)
-                    {
-                        if (response.Body.RootElement.TryGetProperty("data", out global::System.Text.Json.JsonElement dataElement) && dataElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
-                        {
-                            data = BuildData(dataElement);
-                        }
-
-                        if (response.Body.RootElement.TryGetProperty("errors", out global::System.Text.Json.JsonElement errorsElement))
-                        {
-                            errors = global::StrawberryShake.Json.JsonErrorParser.ParseErrors(errorsElement);
-                        }
-                    }
-                }
-                catch (global::System.Exception ex)
-                {
-                    errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(ex.Message, exception: ex, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
-                }
-            }
-            else
-            {
-                errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(response.Exception.Message, exception: response.Exception, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
-            }
-
-            return new global::StrawberryShake.OperationResult<IGetCharactersResult>(data?.Result, data?.Info, _resultDataFactory, errors);
-        }
-
-        private (IGetCharactersResult, GetCharactersResultInfo) BuildData(global::System.Text.Json.JsonElement obj)
-        {
-            var entityIds = new global::System.Collections.Generic.HashSet<global::StrawberryShake.EntityId>();
-            global::StrawberryShake.IEntityStoreSnapshot snapshot = default !;
-            global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId> characterId = default !;
-            _entityStore.Update(session =>
-            {
-                characterId = UpdateNonNullableIGetCharacters_CharacterEntityNonNullableArray(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "character"), entityIds);
-                snapshot = session.CurrentSnapshot;
-            });
-            var resultInfo = new GetCharactersResultInfo(characterId, entityIds, snapshot.Version);
-            return (_resultDataFactory.Create(resultInfo), resultInfo);
-        }
-
-        private global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId> UpdateNonNullableIGetCharacters_CharacterEntityNonNullableArray(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
-        {
-            if (!obj.HasValue)
-            {
-                throw new global::System.ArgumentNullException();
-            }
-
-            var characters = new global::System.Collections.Generic.List<global::StrawberryShake.EntityId>();
-            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
-            {
-                characters.Add(UpdateNonNullableIGetCharacters_CharacterEntity(session, child, entityIds));
-            }
-
-            return characters;
-        }
-
-        private global::StrawberryShake.EntityId UpdateNonNullableIGetCharacters_CharacterEntity(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
-        {
-            if (!obj.HasValue)
-            {
-                throw new global::System.ArgumentNullException();
-            }
-
-            global::StrawberryShake.EntityId entityId = _idSerializer.Parse(obj.Value);
-            entityIds.Add(entityId);
-            if (entityId.Name.Equals("Human", global::System.StringComparison.Ordinal))
-            {
-                if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.HumanEntity? entity))
-                {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends));
-                }
-                else
-                {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !));
-                }
-
-                return entityId;
-            }
-
-            if (entityId.Name.Equals("Droid", global::System.StringComparison.Ordinal))
-            {
-                if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.DroidEntity? entity))
-                {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends));
-                }
-                else
-                {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !));
-                }
-
-                return entityId;
-            }
-
-            throw new global::System.NotSupportedException();
-        }
-
-        private global::System.Int32 DeserializeNonNullableInt32(global::System.Text.Json.JsonElement? obj)
-        {
-            if (!obj.HasValue)
-            {
-                throw new global::System.ArgumentNullException();
-            }
-
-            return _intParser.Parse(obj.Value.GetInt32()!);
-        }
-
-        private global::System.String DeserializeNonNullableString(global::System.Text.Json.JsonElement? obj)
-        {
-            if (!obj.HasValue)
-            {
-                throw new global::System.ArgumentNullException();
-            }
-
-            return _stringParser.Parse(obj.Value.GetString()!);
         }
     }
 
@@ -3099,6 +4259,516 @@ namespace StarWarsGeneratedClient.State
             }
 
             return _intParser.Parse(obj.Value.GetInt32()!);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersByIdsBuilder : global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetCharactersByIdsResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        private readonly global::StrawberryShake.IEntityIdSerializer _idSerializer;
+        private readonly global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetCharactersByIdsResult> _resultDataFactory;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::StarWarsGeneratedClient.Episode> _episodeParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Int32, global::System.Int32> _intParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
+        public GetCharactersByIdsBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetCharactersByIdsResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+            _idSerializer = idSerializer ?? throw new global::System.ArgumentNullException(nameof(idSerializer));
+            _resultDataFactory = resultDataFactory ?? throw new global::System.ArgumentNullException(nameof(resultDataFactory));
+            _episodeParser = serializerResolver.GetLeafValueParser<global::System.String, global::StarWarsGeneratedClient.Episode>("Episode") ?? throw new global::System.ArgumentException("No serializer for type `Episode` found.");
+            _intParser = serializerResolver.GetLeafValueParser<global::System.Int32, global::System.Int32>("Int") ?? throw new global::System.ArgumentException("No serializer for type `Int` found.");
+            _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
+        }
+
+        public global::StrawberryShake.IOperationResult<IGetCharactersByIdsResult> Build(global::StrawberryShake.Response<global::System.Text.Json.JsonDocument> response)
+        {
+            (IGetCharactersByIdsResult Result, GetCharactersByIdsResultInfo Info)? data = null;
+            global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.IClientError>? errors = null;
+            if (response.Exception is null)
+            {
+                try
+                {
+                    if (response.Body != null)
+                    {
+                        if (response.Body.RootElement.TryGetProperty("data", out global::System.Text.Json.JsonElement dataElement) && dataElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                        {
+                            data = BuildData(dataElement);
+                        }
+
+                        if (response.Body.RootElement.TryGetProperty("errors", out global::System.Text.Json.JsonElement errorsElement))
+                        {
+                            errors = global::StrawberryShake.Json.JsonErrorParser.ParseErrors(errorsElement);
+                        }
+                    }
+                }
+                catch (global::System.Exception ex)
+                {
+                    errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(ex.Message, exception: ex, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+                }
+            }
+            else
+            {
+                errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(response.Exception.Message, exception: response.Exception, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+            }
+
+            return new global::StrawberryShake.OperationResult<IGetCharactersByIdsResult>(data?.Result, data?.Info, _resultDataFactory, errors);
+        }
+
+        private (IGetCharactersByIdsResult, GetCharactersByIdsResultInfo) BuildData(global::System.Text.Json.JsonElement obj)
+        {
+            var entityIds = new global::System.Collections.Generic.HashSet<global::StrawberryShake.EntityId>();
+            global::StrawberryShake.IEntityStoreSnapshot snapshot = default !;
+            global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId> charactersByIdsId = default !;
+            _entityStore.Update(session =>
+            {
+                charactersByIdsId = UpdateNonNullableIGetCharactersByIds_CharactersByIdsEntityNonNullableArray(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "charactersByIds"), entityIds);
+                snapshot = session.CurrentSnapshot;
+            });
+            var resultInfo = new GetCharactersByIdsResultInfo(charactersByIdsId, entityIds, snapshot.Version);
+            return (_resultDataFactory.Create(resultInfo), resultInfo);
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId> UpdateNonNullableIGetCharactersByIds_CharactersByIdsEntityNonNullableArray(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            var characters = new global::System.Collections.Generic.List<global::StrawberryShake.EntityId>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                characters.Add(UpdateNonNullableIGetCharactersByIds_CharactersByIdsEntity(session, child, entityIds));
+            }
+
+            return characters;
+        }
+
+        private global::StrawberryShake.EntityId UpdateNonNullableIGetCharactersByIds_CharactersByIdsEntity(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            global::StrawberryShake.EntityId entityId = _idSerializer.Parse(obj.Value);
+            entityIds.Add(entityId);
+            if (entityId.Name.Equals("Human", global::System.StringComparison.Ordinal))
+            {
+                if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.HumanEntity? entity))
+                {
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
+                }
+                else
+                {
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
+                }
+
+                return entityId;
+            }
+
+            if (entityId.Name.Equals("Droid", global::System.StringComparison.Ordinal))
+            {
+                if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.DroidEntity? entity))
+                {
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), entity.PrimaryFunction));
+                }
+                else
+                {
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), default !));
+                }
+
+                return entityId;
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Int32 DeserializeNonNullableInt32(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _intParser.Parse(obj.Value.GetInt32()!);
+        }
+
+        private global::System.String DeserializeNonNullableString(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _stringParser.Parse(obj.Value.GetString()!);
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> DeserializeNonNullableEpisodeNonNullableArray(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            var episodes = new global::System.Collections.Generic.List<global::StarWarsGeneratedClient.Episode>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                episodes.Add(DeserializeNonNullableEpisode(child));
+            }
+
+            return episodes;
+        }
+
+        private global::StarWarsGeneratedClient.Episode DeserializeNonNullableEpisode(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _episodeParser.Parse(obj.Value.GetString()!);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetAllCharactersBuilder : global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetAllCharactersResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        private readonly global::StrawberryShake.IEntityIdSerializer _idSerializer;
+        private readonly global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetAllCharactersResult> _resultDataFactory;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::StarWarsGeneratedClient.Episode> _episodeParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Int32, global::System.Int32> _intParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
+        public GetAllCharactersBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetAllCharactersResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+            _idSerializer = idSerializer ?? throw new global::System.ArgumentNullException(nameof(idSerializer));
+            _resultDataFactory = resultDataFactory ?? throw new global::System.ArgumentNullException(nameof(resultDataFactory));
+            _episodeParser = serializerResolver.GetLeafValueParser<global::System.String, global::StarWarsGeneratedClient.Episode>("Episode") ?? throw new global::System.ArgumentException("No serializer for type `Episode` found.");
+            _intParser = serializerResolver.GetLeafValueParser<global::System.Int32, global::System.Int32>("Int") ?? throw new global::System.ArgumentException("No serializer for type `Int` found.");
+            _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
+        }
+
+        public global::StrawberryShake.IOperationResult<IGetAllCharactersResult> Build(global::StrawberryShake.Response<global::System.Text.Json.JsonDocument> response)
+        {
+            (IGetAllCharactersResult Result, GetAllCharactersResultInfo Info)? data = null;
+            global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.IClientError>? errors = null;
+            if (response.Exception is null)
+            {
+                try
+                {
+                    if (response.Body != null)
+                    {
+                        if (response.Body.RootElement.TryGetProperty("data", out global::System.Text.Json.JsonElement dataElement) && dataElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                        {
+                            data = BuildData(dataElement);
+                        }
+
+                        if (response.Body.RootElement.TryGetProperty("errors", out global::System.Text.Json.JsonElement errorsElement))
+                        {
+                            errors = global::StrawberryShake.Json.JsonErrorParser.ParseErrors(errorsElement);
+                        }
+                    }
+                }
+                catch (global::System.Exception ex)
+                {
+                    errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(ex.Message, exception: ex, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+                }
+            }
+            else
+            {
+                errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(response.Exception.Message, exception: response.Exception, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+            }
+
+            return new global::StrawberryShake.OperationResult<IGetAllCharactersResult>(data?.Result, data?.Info, _resultDataFactory, errors);
+        }
+
+        private (IGetAllCharactersResult, GetAllCharactersResultInfo) BuildData(global::System.Text.Json.JsonElement obj)
+        {
+            var entityIds = new global::System.Collections.Generic.HashSet<global::StrawberryShake.EntityId>();
+            global::StrawberryShake.IEntityStoreSnapshot snapshot = default !;
+            global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId> charactersId = default !;
+            _entityStore.Update(session =>
+            {
+                charactersId = UpdateNonNullableIGetAllCharacters_CharactersEntityNonNullableArray(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "characters"), entityIds);
+                snapshot = session.CurrentSnapshot;
+            });
+            var resultInfo = new GetAllCharactersResultInfo(charactersId, entityIds, snapshot.Version);
+            return (_resultDataFactory.Create(resultInfo), resultInfo);
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId> UpdateNonNullableIGetAllCharacters_CharactersEntityNonNullableArray(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            var characters = new global::System.Collections.Generic.List<global::StrawberryShake.EntityId>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                characters.Add(UpdateNonNullableIGetAllCharacters_CharactersEntity(session, child, entityIds));
+            }
+
+            return characters;
+        }
+
+        private global::StrawberryShake.EntityId UpdateNonNullableIGetAllCharacters_CharactersEntity(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            global::StrawberryShake.EntityId entityId = _idSerializer.Parse(obj.Value);
+            entityIds.Add(entityId);
+            if (entityId.Name.Equals("Human", global::System.StringComparison.Ordinal))
+            {
+                if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.HumanEntity? entity))
+                {
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
+                }
+                else
+                {
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
+                }
+
+                return entityId;
+            }
+
+            if (entityId.Name.Equals("Droid", global::System.StringComparison.Ordinal))
+            {
+                if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.DroidEntity? entity))
+                {
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), entity.PrimaryFunction));
+                }
+                else
+                {
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), default !));
+                }
+
+                return entityId;
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Int32 DeserializeNonNullableInt32(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _intParser.Parse(obj.Value.GetInt32()!);
+        }
+
+        private global::System.String DeserializeNonNullableString(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _stringParser.Parse(obj.Value.GetString()!);
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> DeserializeNonNullableEpisodeNonNullableArray(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            var episodes = new global::System.Collections.Generic.List<global::StarWarsGeneratedClient.Episode>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                episodes.Add(DeserializeNonNullableEpisode(child));
+            }
+
+            return episodes;
+        }
+
+        private global::StarWarsGeneratedClient.Episode DeserializeNonNullableEpisode(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _episodeParser.Parse(obj.Value.GetString()!);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetAllHumansAndDroidsBuilder : global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetAllHumansAndDroidsResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        private readonly global::StrawberryShake.IEntityIdSerializer _idSerializer;
+        private readonly global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetAllHumansAndDroidsResult> _resultDataFactory;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::StarWarsGeneratedClient.Episode> _episodeParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Int32, global::System.Int32> _intParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
+        public GetAllHumansAndDroidsBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetAllHumansAndDroidsResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+            _idSerializer = idSerializer ?? throw new global::System.ArgumentNullException(nameof(idSerializer));
+            _resultDataFactory = resultDataFactory ?? throw new global::System.ArgumentNullException(nameof(resultDataFactory));
+            _episodeParser = serializerResolver.GetLeafValueParser<global::System.String, global::StarWarsGeneratedClient.Episode>("Episode") ?? throw new global::System.ArgumentException("No serializer for type `Episode` found.");
+            _intParser = serializerResolver.GetLeafValueParser<global::System.Int32, global::System.Int32>("Int") ?? throw new global::System.ArgumentException("No serializer for type `Int` found.");
+            _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
+        }
+
+        public global::StrawberryShake.IOperationResult<IGetAllHumansAndDroidsResult> Build(global::StrawberryShake.Response<global::System.Text.Json.JsonDocument> response)
+        {
+            (IGetAllHumansAndDroidsResult Result, GetAllHumansAndDroidsResultInfo Info)? data = null;
+            global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.IClientError>? errors = null;
+            if (response.Exception is null)
+            {
+                try
+                {
+                    if (response.Body != null)
+                    {
+                        if (response.Body.RootElement.TryGetProperty("data", out global::System.Text.Json.JsonElement dataElement) && dataElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                        {
+                            data = BuildData(dataElement);
+                        }
+
+                        if (response.Body.RootElement.TryGetProperty("errors", out global::System.Text.Json.JsonElement errorsElement))
+                        {
+                            errors = global::StrawberryShake.Json.JsonErrorParser.ParseErrors(errorsElement);
+                        }
+                    }
+                }
+                catch (global::System.Exception ex)
+                {
+                    errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(ex.Message, exception: ex, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+                }
+            }
+            else
+            {
+                errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(response.Exception.Message, exception: response.Exception, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+            }
+
+            return new global::StrawberryShake.OperationResult<IGetAllHumansAndDroidsResult>(data?.Result, data?.Info, _resultDataFactory, errors);
+        }
+
+        private (IGetAllHumansAndDroidsResult, GetAllHumansAndDroidsResultInfo) BuildData(global::System.Text.Json.JsonElement obj)
+        {
+            var entityIds = new global::System.Collections.Generic.HashSet<global::StrawberryShake.EntityId>();
+            global::StrawberryShake.IEntityStoreSnapshot snapshot = default !;
+            global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId> charactersId = default !;
+            _entityStore.Update(session =>
+            {
+                charactersId = UpdateNonNullableIGetAllHumansAndDroids_CharactersEntityNonNullableArray(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "characters"), entityIds);
+                snapshot = session.CurrentSnapshot;
+            });
+            var resultInfo = new GetAllHumansAndDroidsResultInfo(charactersId, entityIds, snapshot.Version);
+            return (_resultDataFactory.Create(resultInfo), resultInfo);
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId> UpdateNonNullableIGetAllHumansAndDroids_CharactersEntityNonNullableArray(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            var characters = new global::System.Collections.Generic.List<global::StrawberryShake.EntityId>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                characters.Add(UpdateNonNullableIGetAllHumansAndDroids_CharactersEntity(session, child, entityIds));
+            }
+
+            return characters;
+        }
+
+        private global::StrawberryShake.EntityId UpdateNonNullableIGetAllHumansAndDroids_CharactersEntity(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            global::StrawberryShake.EntityId entityId = _idSerializer.Parse(obj.Value);
+            entityIds.Add(entityId);
+            if (entityId.Name.Equals("Human", global::System.StringComparison.Ordinal))
+            {
+                if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.HumanEntity? entity))
+                {
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
+                }
+                else
+                {
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
+                }
+
+                return entityId;
+            }
+
+            if (entityId.Name.Equals("Droid", global::System.StringComparison.Ordinal))
+            {
+                if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.DroidEntity? entity))
+                {
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "primaryFunction"))));
+                }
+                else
+                {
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "primaryFunction"))));
+                }
+
+                return entityId;
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Int32 DeserializeNonNullableInt32(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _intParser.Parse(obj.Value.GetInt32()!);
+        }
+
+        private global::System.String DeserializeNonNullableString(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _stringParser.Parse(obj.Value.GetString()!);
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> DeserializeNonNullableEpisodeNonNullableArray(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            var episodes = new global::System.Collections.Generic.List<global::StarWarsGeneratedClient.Episode>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                episodes.Add(DeserializeNonNullableEpisode(child));
+            }
+
+            return episodes;
+        }
+
+        private global::StarWarsGeneratedClient.Episode DeserializeNonNullableEpisode(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _episodeParser.Parse(obj.Value.GetString()!);
         }
     }
 

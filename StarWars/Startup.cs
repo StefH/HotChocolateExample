@@ -19,6 +19,9 @@ namespace StarWars
         public void ConfigureServices(IServiceCollection services)
         {
             services
+                // Needed for Blazor demo
+                .AddCors()
+
                 // In order to use the ASP.NET Core routing we need to add the routing services.
                 .AddRouting()
 
@@ -85,6 +88,14 @@ namespace StarWars
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            // Needed for Blazor demo
+            app.UseCors(policyBuilder =>
+            {
+                policyBuilder.AllowAnyOrigin();
+                policyBuilder.AllowAnyMethod();
+                policyBuilder.AllowAnyHeader();
+            });
 
             // in order to expose our GraphQL schema we need to map the GraphQL server 
             // to a specific route. By default it is mapped onto /graphql.
