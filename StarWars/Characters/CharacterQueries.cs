@@ -48,7 +48,19 @@ namespace StarWars.Characters
         /// </summary>
         /// <param name="repository">The character repository.</param>
         /// <returns>The character.</returns>
-        [UsePaging(typeof(InterfaceType<ICharacter>))]
+        [UsePaging(typeof(InterfaceType<ICharacter>), IncludeTotalCount = true, AllowBackwardPagination = true)]
+        [UseFiltering]
+        [UseSorting]
+        public IEnumerable<ICharacter> GetCharactersWithCursorPagingFilteringAndSorting(
+            [Service] ICharacterRepository repository) =>
+            repository.GetCharacters();
+
+        /// <summary>
+        /// Gets all character.
+        /// </summary>
+        /// <param name="repository">The character repository.</param>
+        /// <returns>The character.</returns>
+        [UseOffsetPaging(typeof(InterfaceType<ICharacter>), IncludeTotalCount = true)] // , AllowBackwardPagination = true
         [UseFiltering]
         [UseSorting]
         public IEnumerable<ICharacter> GetCharactersWithPagingFilteringAndSorting(

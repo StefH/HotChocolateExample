@@ -38,6 +38,34 @@ query GetAllCharacters {
   }
 }
 
+query GetCharactersWithCursorPaging($first: Int, $last: Int, $before: String, $after: String) {
+  charactersWithCursorPagingFilteringAndSorting (first: $first, last: $last, before: $before, after: $after) {
+    nodes {
+      ...c
+    }
+    totalCount
+    pageInfo {
+      endCursor
+      startCursor
+      hasNextPage
+      hasPreviousPage
+    }
+  }
+}
+
+query GetCharactersWithPaging($take: Int, $skip: Int) {
+  charactersWithPagingFilteringAndSorting (take: $take, skip: $skip) {
+    items {
+      ...c
+    }
+    totalCount
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+    }
+  }
+}
+
 query GetAllHumansAndDroids {
   characters {
     ...d

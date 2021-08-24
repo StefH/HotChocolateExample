@@ -13,7 +13,9 @@ type Query {
   "Gets all character.\n\n\n**Returns:**\nThe character."
   characters: [Character!]!
   "Gets all character.\n\n\n**Returns:**\nThe character."
-  charactersWithPagingFilteringAndSorting("Returns the first _n_ elements from the list." first: Int "Returns the elements in the list that come after the specified cursor." after: String "Returns the last _n_ elements from the list." last: Int "Returns the elements in the list that come before the specified cursor." before: String where: ICharacterFilterInput order: [ICharacterSortInput!]): CharactersWithPagingFilteringAndSortingConnection
+  charactersWithCursorPagingFilteringAndSorting("Returns the first _n_ elements from the list." first: Int "Returns the elements in the list that come after the specified cursor." after: String "Returns the last _n_ elements from the list." last: Int "Returns the elements in the list that come before the specified cursor." before: String where: ICharacterFilterInput order: [ICharacterSortInput!]): CharactersWithCursorPagingFilteringAndSortingConnection
+  "Gets all character.\n\n\n**Returns:**\nThe character."
+  charactersWithPagingFilteringAndSorting(skip: Int take: Int where: ICharacterFilterInput order: [ICharacterSortInput!]): CharacterCollectionSegment
   "Gets characters by it`s id.\n\n\n**Returns:**\nThe characters."
   charactersByIds("The ids of the human to retrieve." ids: [Int!]!): [Character!]!
   "Search the repository for objects that contain the text.\n\n\n**Returns:**\nReturns the union type ISearchResult."
@@ -100,13 +102,21 @@ input ICharacterSortInput {
 }
 
 "A connection to a list of items."
-type CharactersWithPagingFilteringAndSortingConnection {
+type CharactersWithCursorPagingFilteringAndSortingConnection {
   "Information to aid in pagination."
   pageInfo: PageInfo!
   "A list of edges."
-  edges: [CharactersWithPagingFilteringAndSortingEdge!]
+  edges: [CharactersWithCursorPagingFilteringAndSortingEdge!]
   "A flattened list of the nodes."
   nodes: [Character]
+  totalCount: Int!
+}
+
+type CharacterCollectionSegment {
+  items: [Character]
+  "Information to aid in pagination."
+  pageInfo: CollectionSegmentInfo!
+  totalCount: Int!
 }
 
 "A review of a particular movie."
@@ -248,11 +258,19 @@ interface Character {
 }
 
 "An edge in a connection."
-type CharactersWithPagingFilteringAndSortingEdge {
+type CharactersWithCursorPagingFilteringAndSortingEdge {
   "A cursor for use in pagination."
   cursor: String!
   "The item at the end of the edge."
   node: Character
+}
+
+"Information about the offset pagination."
+type CollectionSegmentInfo {
+  "Indicates whether more items exist following the set defined by the clients arguments."
+  hasNextPage: Boolean!
+  "Indicates whether more items exist prior the set defined by the clients arguments."
+  hasPreviousPage: Boolean!
 }
 
 input ComparableGuidOperationFilterInput {

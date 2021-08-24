@@ -19,6 +19,8 @@ namespace Microsoft.Extensions.DependencyInjection
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.CreateReviewMutation>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.GetCharactersByIdsQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.GetAllCharactersQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.GetCharactersWithCursorPagingQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.GetCharactersWithPagingQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.GetAllHumansAndDroidsQuery>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.StarWarsGeneratedClient>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.IStarWarsGeneratedClient>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<ClientServiceProvider>(sp)));
@@ -43,6 +45,10 @@ namespace Microsoft.Extensions.DependencyInjection
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, global::StarWarsGeneratedClient.GetCharactersByIds_CharactersByIds_Droid>, global::StarWarsGeneratedClient.State.GetCharactersByIds_CharactersByIds_DroidFromDroidEntityMapper>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, global::StarWarsGeneratedClient.GetAllCharacters_Characters_Human>, global::StarWarsGeneratedClient.State.GetAllCharacters_Characters_HumanFromHumanEntityMapper>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, global::StarWarsGeneratedClient.GetAllCharacters_Characters_Droid>, global::StarWarsGeneratedClient.State.GetAllCharacters_Characters_DroidFromDroidEntityMapper>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, global::StarWarsGeneratedClient.GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Human>, global::StarWarsGeneratedClient.State.GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_HumanFromHumanEntityMapper>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, global::StarWarsGeneratedClient.GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Droid>, global::StarWarsGeneratedClient.State.GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_DroidFromDroidEntityMapper>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, global::StarWarsGeneratedClient.GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Human>, global::StarWarsGeneratedClient.State.GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_HumanFromHumanEntityMapper>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, global::StarWarsGeneratedClient.GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Droid>, global::StarWarsGeneratedClient.State.GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_DroidFromDroidEntityMapper>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, global::StarWarsGeneratedClient.GetAllHumansAndDroids_Characters_Human>, global::StarWarsGeneratedClient.State.GetAllHumansAndDroids_Characters_HumanFromHumanEntityMapper>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, global::StarWarsGeneratedClient.GetAllHumansAndDroids_Characters_Droid>, global::StarWarsGeneratedClient.State.GetAllHumansAndDroids_Characters_DroidFromDroidEntityMapper>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StarWarsGeneratedClient.EpisodeSerializer>(services);
@@ -92,6 +98,20 @@ namespace Microsoft.Extensions.DependencyInjection
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationExecutor<global::StarWarsGeneratedClient.IGetAllCharactersResult>>(services, sp => new global::StrawberryShake.OperationExecutor<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetAllCharactersResult>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.Transport.Http.IHttpConnection>(sp), () => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetAllCharactersResult>>(sp), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(sp), strategy));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StarWarsGeneratedClient.GetAllCharactersQuery>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StarWarsGeneratedClient.IGetAllCharactersQuery>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.GetAllCharactersQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetCharactersWithCursorPagingResult>, global::StarWarsGeneratedClient.State.GetCharactersWithCursorPagingResultFactory>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetCharactersWithCursorPagingResult>>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationRequestFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.IGetCharactersWithCursorPagingQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetCharactersWithCursorPagingResult>, global::StarWarsGeneratedClient.State.GetCharactersWithCursorPagingBuilder>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationExecutor<global::StarWarsGeneratedClient.IGetCharactersWithCursorPagingResult>>(services, sp => new global::StrawberryShake.OperationExecutor<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetCharactersWithCursorPagingResult>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.Transport.Http.IHttpConnection>(sp), () => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetCharactersWithCursorPagingResult>>(sp), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(sp), strategy));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StarWarsGeneratedClient.GetCharactersWithCursorPagingQuery>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StarWarsGeneratedClient.IGetCharactersWithCursorPagingQuery>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.GetCharactersWithCursorPagingQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetCharactersWithPagingResult>, global::StarWarsGeneratedClient.State.GetCharactersWithPagingResultFactory>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetCharactersWithPagingResult>>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationRequestFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.IGetCharactersWithPagingQuery>(sp));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetCharactersWithPagingResult>, global::StarWarsGeneratedClient.State.GetCharactersWithPagingBuilder>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationExecutor<global::StarWarsGeneratedClient.IGetCharactersWithPagingResult>>(services, sp => new global::StrawberryShake.OperationExecutor<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetCharactersWithPagingResult>(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.Transport.Http.IHttpConnection>(sp), () => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetCharactersWithPagingResult>>(sp), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationStore>(sp), strategy));
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StarWarsGeneratedClient.GetCharactersWithPagingQuery>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StarWarsGeneratedClient.IGetCharactersWithPagingQuery>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.GetCharactersWithPagingQuery>(sp));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetAllHumansAndDroidsResult>, global::StarWarsGeneratedClient.State.GetAllHumansAndDroidsResultFactory>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetAllHumansAndDroidsResult>>(sp));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationRequestFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StarWarsGeneratedClient.IGetAllHumansAndDroidsQuery>(sp));
@@ -1655,6 +1675,1021 @@ namespace StarWarsGeneratedClient
     /// The queries related to reviews.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersWithCursorPagingResult : global::System.IEquatable<GetCharactersWithCursorPagingResult>, IGetCharactersWithCursorPagingResult
+    {
+        public GetCharactersWithCursorPagingResult(global::StarWarsGeneratedClient.IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting? charactersWithCursorPagingFilteringAndSorting)
+        {
+            CharactersWithCursorPagingFilteringAndSorting = charactersWithCursorPagingFilteringAndSorting;
+        }
+
+        /// <summary>
+        /// Gets all character.
+        /// 
+        /// 
+        /// **Returns:**
+        /// The character.
+        /// </summary>
+        public global::StarWarsGeneratedClient.IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting? CharactersWithCursorPagingFilteringAndSorting { get; }
+
+        public virtual global::System.Boolean Equals(GetCharactersWithCursorPagingResult? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (((CharactersWithCursorPagingFilteringAndSorting is null && other.CharactersWithCursorPagingFilteringAndSorting is null) || CharactersWithCursorPagingFilteringAndSorting != null && CharactersWithCursorPagingFilteringAndSorting.Equals(other.CharactersWithCursorPagingFilteringAndSorting)));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetCharactersWithCursorPagingResult)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (CharactersWithCursorPagingFilteringAndSorting != null)
+                {
+                    hash ^= 397 * CharactersWithCursorPagingFilteringAndSorting.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_CharactersWithCursorPagingFilteringAndSortingConnection : global::System.IEquatable<GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_CharactersWithCursorPagingFilteringAndSortingConnection>, IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_CharactersWithCursorPagingFilteringAndSortingConnection
+    {
+        public GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_CharactersWithCursorPagingFilteringAndSortingConnection(global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes?>? nodes, global::System.Int32 totalCount, global::StarWarsGeneratedClient.IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_PageInfo pageInfo)
+        {
+            Nodes = nodes;
+            TotalCount = totalCount;
+            PageInfo = pageInfo;
+        }
+
+        /// <summary>
+        /// A flattened list of the nodes.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes?>? Nodes { get; }
+
+        public global::System.Int32 TotalCount { get; }
+
+        /// <summary>
+        /// Information to aid in pagination.
+        /// </summary>
+        public global::StarWarsGeneratedClient.IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_PageInfo PageInfo { get; }
+
+        public virtual global::System.Boolean Equals(GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_CharactersWithCursorPagingFilteringAndSortingConnection? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Nodes, other.Nodes)) && TotalCount == other.TotalCount && PageInfo.Equals(other.PageInfo);
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_CharactersWithCursorPagingFilteringAndSortingConnection)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (Nodes != null)
+                {
+                    foreach (var Nodes_elm in Nodes)
+                    {
+                        if (Nodes_elm != null)
+                        {
+                            hash ^= 397 * Nodes_elm.GetHashCode();
+                        }
+                    }
+                }
+
+                hash ^= 397 * TotalCount.GetHashCode();
+                hash ^= 397 * PageInfo.GetHashCode();
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// This resolver class extends all object types implementing ICharacter.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Human : global::System.IEquatable<GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Human>, IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Human
+    {
+        public GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Human(global::System.Int32 id, global::System.String name, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
+        {
+            Id = id;
+            Name = name;
+            AppearsIn = appearsIn;
+        }
+
+        /// <summary>
+        /// The unique identifier for the character.
+        /// </summary>
+        public global::System.Int32 Id { get; }
+
+        /// <summary>
+        /// The name of the character.
+        /// </summary>
+        public global::System.String Name { get; }
+
+        /// <summary>
+        /// The episodes the character appears in.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> AppearsIn { get; }
+
+        public virtual global::System.Boolean Equals(GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Human? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (Id == other.Id) && Name.Equals(other.Name) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Human)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * Id.GetHashCode();
+                hash ^= 397 * Name.GetHashCode();
+                foreach (var AppearsIn_elm in AppearsIn)
+                {
+                    hash ^= 397 * AppearsIn_elm.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// This resolver class extends all object types implementing ICharacter.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Droid : global::System.IEquatable<GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Droid>, IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Droid
+    {
+        public GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Droid(global::System.Int32 id, global::System.String name, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
+        {
+            Id = id;
+            Name = name;
+            AppearsIn = appearsIn;
+        }
+
+        /// <summary>
+        /// The unique identifier for the character.
+        /// </summary>
+        public global::System.Int32 Id { get; }
+
+        /// <summary>
+        /// The name of the character.
+        /// </summary>
+        public global::System.String Name { get; }
+
+        /// <summary>
+        /// The episodes the character appears in.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> AppearsIn { get; }
+
+        public virtual global::System.Boolean Equals(GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Droid? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (Id == other.Id) && Name.Equals(other.Name) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Droid)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * Id.GetHashCode();
+                hash ^= 397 * Name.GetHashCode();
+                foreach (var AppearsIn_elm in AppearsIn)
+                {
+                    hash ^= 397 * AppearsIn_elm.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_PageInfo_PageInfo : global::System.IEquatable<GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_PageInfo_PageInfo>, IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_PageInfo_PageInfo
+    {
+        public GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_PageInfo_PageInfo(global::System.String? endCursor, global::System.String? startCursor, global::System.Boolean hasNextPage, global::System.Boolean hasPreviousPage)
+        {
+            EndCursor = endCursor;
+            StartCursor = startCursor;
+            HasNextPage = hasNextPage;
+            HasPreviousPage = hasPreviousPage;
+        }
+
+        /// <summary>
+        /// When paginating forwards, the cursor to continue.
+        /// </summary>
+        public global::System.String? EndCursor { get; }
+
+        /// <summary>
+        /// When paginating backwards, the cursor to continue.
+        /// </summary>
+        public global::System.String? StartCursor { get; }
+
+        /// <summary>
+        /// Indicates whether more edges exist following the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasNextPage { get; }
+
+        /// <summary>
+        /// Indicates whether more edges exist prior the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasPreviousPage { get; }
+
+        public virtual global::System.Boolean Equals(GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_PageInfo_PageInfo? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (((EndCursor is null && other.EndCursor is null) || EndCursor != null && EndCursor.Equals(other.EndCursor))) && ((StartCursor is null && other.StartCursor is null) || StartCursor != null && StartCursor.Equals(other.StartCursor)) && HasNextPage == other.HasNextPage && HasPreviousPage == other.HasPreviousPage;
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_PageInfo_PageInfo)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (EndCursor != null)
+                {
+                    hash ^= 397 * EndCursor.GetHashCode();
+                }
+
+                if (StartCursor != null)
+                {
+                    hash ^= 397 * StartCursor.GetHashCode();
+                }
+
+                hash ^= 397 * HasNextPage.GetHashCode();
+                hash ^= 397 * HasPreviousPage.GetHashCode();
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// The queries related to reviews.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetCharactersWithCursorPagingResult
+    {
+        /// <summary>
+        /// Gets all character.
+        /// 
+        /// 
+        /// **Returns:**
+        /// The character.
+        /// </summary>
+        public global::StarWarsGeneratedClient.IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting? CharactersWithCursorPagingFilteringAndSorting { get; }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting
+    {
+        /// <summary>
+        /// A flattened list of the nodes.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes?>? Nodes { get; }
+
+        public global::System.Int32 TotalCount { get; }
+
+        /// <summary>
+        /// Information to aid in pagination.
+        /// </summary>
+        public global::StarWarsGeneratedClient.IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_PageInfo PageInfo { get; }
+    }
+
+    /// <summary>
+    /// A connection to a list of items.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_CharactersWithCursorPagingFilteringAndSortingConnection : IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting
+    {
+    }
+
+    /// <summary>
+    /// A character in the Star Wars universe.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes : IC
+    {
+    }
+
+    /// <summary>
+    /// This resolver class extends all object types implementing ICharacter.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Human : IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes
+    {
+    }
+
+    /// <summary>
+    /// This resolver class extends all object types implementing ICharacter.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Droid : IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes
+    {
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_PageInfo
+    {
+        /// <summary>
+        /// When paginating forwards, the cursor to continue.
+        /// </summary>
+        public global::System.String? EndCursor { get; }
+
+        /// <summary>
+        /// When paginating backwards, the cursor to continue.
+        /// </summary>
+        public global::System.String? StartCursor { get; }
+
+        /// <summary>
+        /// Indicates whether more edges exist following the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasNextPage { get; }
+
+        /// <summary>
+        /// Indicates whether more edges exist prior the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasPreviousPage { get; }
+    }
+
+    /// <summary>
+    /// Information about pagination in a connection.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_PageInfo_PageInfo : IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_PageInfo
+    {
+    }
+
+    /// <summary>
+    /// The queries related to reviews.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersWithPagingResult : global::System.IEquatable<GetCharactersWithPagingResult>, IGetCharactersWithPagingResult
+    {
+        public GetCharactersWithPagingResult(global::StarWarsGeneratedClient.IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting? charactersWithPagingFilteringAndSorting)
+        {
+            CharactersWithPagingFilteringAndSorting = charactersWithPagingFilteringAndSorting;
+        }
+
+        /// <summary>
+        /// Gets all character.
+        /// 
+        /// 
+        /// **Returns:**
+        /// The character.
+        /// </summary>
+        public global::StarWarsGeneratedClient.IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting? CharactersWithPagingFilteringAndSorting { get; }
+
+        public virtual global::System.Boolean Equals(GetCharactersWithPagingResult? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (((CharactersWithPagingFilteringAndSorting is null && other.CharactersWithPagingFilteringAndSorting is null) || CharactersWithPagingFilteringAndSorting != null && CharactersWithPagingFilteringAndSorting.Equals(other.CharactersWithPagingFilteringAndSorting)));
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetCharactersWithPagingResult)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (CharactersWithPagingFilteringAndSorting != null)
+                {
+                    hash ^= 397 * CharactersWithPagingFilteringAndSorting.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_CharacterCollectionSegment : global::System.IEquatable<GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_CharacterCollectionSegment>, IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_CharacterCollectionSegment
+    {
+        public GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_CharacterCollectionSegment(global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items?>? items, global::System.Int32 totalCount, global::StarWarsGeneratedClient.IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_PageInfo pageInfo)
+        {
+            Items = items;
+            TotalCount = totalCount;
+            PageInfo = pageInfo;
+        }
+
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items?>? Items { get; }
+
+        public global::System.Int32 TotalCount { get; }
+
+        /// <summary>
+        /// Information to aid in pagination.
+        /// </summary>
+        public global::StarWarsGeneratedClient.IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_PageInfo PageInfo { get; }
+
+        public virtual global::System.Boolean Equals(GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_CharacterCollectionSegment? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Items, other.Items)) && TotalCount == other.TotalCount && PageInfo.Equals(other.PageInfo);
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_CharacterCollectionSegment)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (Items != null)
+                {
+                    foreach (var Items_elm in Items)
+                    {
+                        if (Items_elm != null)
+                        {
+                            hash ^= 397 * Items_elm.GetHashCode();
+                        }
+                    }
+                }
+
+                hash ^= 397 * TotalCount.GetHashCode();
+                hash ^= 397 * PageInfo.GetHashCode();
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// This resolver class extends all object types implementing ICharacter.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Human : global::System.IEquatable<GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Human>, IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Human
+    {
+        public GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Human(global::System.Int32 id, global::System.String name, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
+        {
+            Id = id;
+            Name = name;
+            AppearsIn = appearsIn;
+        }
+
+        /// <summary>
+        /// The unique identifier for the character.
+        /// </summary>
+        public global::System.Int32 Id { get; }
+
+        /// <summary>
+        /// The name of the character.
+        /// </summary>
+        public global::System.String Name { get; }
+
+        /// <summary>
+        /// The episodes the character appears in.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> AppearsIn { get; }
+
+        public virtual global::System.Boolean Equals(GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Human? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (Id == other.Id) && Name.Equals(other.Name) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Human)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * Id.GetHashCode();
+                hash ^= 397 * Name.GetHashCode();
+                foreach (var AppearsIn_elm in AppearsIn)
+                {
+                    hash ^= 397 * AppearsIn_elm.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// This resolver class extends all object types implementing ICharacter.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Droid : global::System.IEquatable<GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Droid>, IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Droid
+    {
+        public GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Droid(global::System.Int32 id, global::System.String name, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
+        {
+            Id = id;
+            Name = name;
+            AppearsIn = appearsIn;
+        }
+
+        /// <summary>
+        /// The unique identifier for the character.
+        /// </summary>
+        public global::System.Int32 Id { get; }
+
+        /// <summary>
+        /// The name of the character.
+        /// </summary>
+        public global::System.String Name { get; }
+
+        /// <summary>
+        /// The episodes the character appears in.
+        /// </summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> AppearsIn { get; }
+
+        public virtual global::System.Boolean Equals(GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Droid? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (Id == other.Id) && Name.Equals(other.Name) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Droid)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * Id.GetHashCode();
+                hash ^= 397 * Name.GetHashCode();
+                foreach (var AppearsIn_elm in AppearsIn)
+                {
+                    hash ^= 397 * AppearsIn_elm.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Information about the offset pagination.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_PageInfo_CollectionSegmentInfo : global::System.IEquatable<GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_PageInfo_CollectionSegmentInfo>, IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_PageInfo_CollectionSegmentInfo
+    {
+        public GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_PageInfo_CollectionSegmentInfo(global::System.Boolean hasNextPage, global::System.Boolean hasPreviousPage)
+        {
+            HasNextPage = hasNextPage;
+            HasPreviousPage = hasPreviousPage;
+        }
+
+        /// <summary>
+        /// Indicates whether more items exist following the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasNextPage { get; }
+
+        /// <summary>
+        /// Indicates whether more items exist prior the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasPreviousPage { get; }
+
+        public virtual global::System.Boolean Equals(GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_PageInfo_CollectionSegmentInfo? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (HasNextPage == other.HasNextPage) && HasPreviousPage == other.HasPreviousPage;
+        }
+
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_PageInfo_CollectionSegmentInfo)obj);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                hash ^= 397 * HasNextPage.GetHashCode();
+                hash ^= 397 * HasPreviousPage.GetHashCode();
+                return hash;
+            }
+        }
+    }
+
+    /// <summary>
+    /// The queries related to reviews.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetCharactersWithPagingResult
+    {
+        /// <summary>
+        /// Gets all character.
+        /// 
+        /// 
+        /// **Returns:**
+        /// The character.
+        /// </summary>
+        public global::StarWarsGeneratedClient.IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting? CharactersWithPagingFilteringAndSorting { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting
+    {
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items?>? Items { get; }
+
+        public global::System.Int32 TotalCount { get; }
+
+        /// <summary>
+        /// Information to aid in pagination.
+        /// </summary>
+        public global::StarWarsGeneratedClient.IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_PageInfo PageInfo { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_CharacterCollectionSegment : IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting
+    {
+    }
+
+    /// <summary>
+    /// A character in the Star Wars universe.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items : IC
+    {
+    }
+
+    /// <summary>
+    /// This resolver class extends all object types implementing ICharacter.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Human : IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items
+    {
+    }
+
+    /// <summary>
+    /// This resolver class extends all object types implementing ICharacter.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Droid : IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items
+    {
+    }
+
+    /// <summary>
+    /// Information about the offset pagination.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_PageInfo
+    {
+        /// <summary>
+        /// Indicates whether more items exist following the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasNextPage { get; }
+
+        /// <summary>
+        /// Indicates whether more items exist prior the set defined by the clients arguments.
+        /// </summary>
+        public global::System.Boolean HasPreviousPage { get; }
+    }
+
+    /// <summary>
+    /// Information about the offset pagination.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_PageInfo_CollectionSegmentInfo : IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_PageInfo
+    {
+    }
+
+    /// <summary>
+    /// The queries related to reviews.
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class GetAllHumansAndDroidsResult : global::System.IEquatable<GetAllHumansAndDroidsResult>, IGetAllHumansAndDroidsResult
     {
         public GetAllHumansAndDroidsResult(global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetAllHumansAndDroids_Characters> characters)
@@ -2814,6 +3849,422 @@ namespace StarWarsGeneratedClient
     }
 
     /// <summary>
+    /// Represents the operation service of the GetCharactersWithCursorPaging GraphQL operation
+    /// <code>
+    /// query GetCharactersWithCursorPaging($first: Int, $last: Int, $before: String, $after: String) {
+    ///   charactersWithCursorPagingFilteringAndSorting(first: $first, last: $last, before: $before, after: $after) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... c
+    ///       ... on Human {
+    ///         id
+    ///       }
+    ///       ... on Droid {
+    ///         id
+    ///       }
+    ///     }
+    ///     totalCount
+    ///     pageInfo {
+    ///       __typename
+    ///       endCursor
+    ///       startCursor
+    ///       hasNextPage
+    ///       hasPreviousPage
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment c on Character {
+    ///   id
+    ///   name
+    ///   appearsIn
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersWithCursorPagingQueryDocument : global::StrawberryShake.IDocument
+    {
+        private GetCharactersWithCursorPagingQueryDocument()
+        {
+        }
+
+        public static GetCharactersWithCursorPagingQueryDocument Instance { get; } = new GetCharactersWithCursorPagingQueryDocument();
+        public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Query;
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x57, 0x69, 0x74, 0x68, 0x43, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x28, 0x24, 0x66, 0x69, 0x72, 0x73, 0x74, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x2c, 0x20, 0x24, 0x6c, 0x61, 0x73, 0x74, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x2c, 0x20, 0x24, 0x62, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x3a, 0x20, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x2c, 0x20, 0x24, 0x61, 0x66, 0x74, 0x65, 0x72, 0x3a, 0x20, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x29, 0x20, 0x7b, 0x20, 0x63, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x57, 0x69, 0x74, 0x68, 0x43, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x46, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x69, 0x6e, 0x67, 0x41, 0x6e, 0x64, 0x53, 0x6f, 0x72, 0x74, 0x69, 0x6e, 0x67, 0x28, 0x66, 0x69, 0x72, 0x73, 0x74, 0x3a, 0x20, 0x24, 0x66, 0x69, 0x72, 0x73, 0x74, 0x2c, 0x20, 0x6c, 0x61, 0x73, 0x74, 0x3a, 0x20, 0x24, 0x6c, 0x61, 0x73, 0x74, 0x2c, 0x20, 0x62, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x3a, 0x20, 0x24, 0x62, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x2c, 0x20, 0x61, 0x66, 0x74, 0x65, 0x72, 0x3a, 0x20, 0x24, 0x61, 0x66, 0x74, 0x65, 0x72, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x6f, 0x64, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x63, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x20, 0x70, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x65, 0x6e, 0x64, 0x43, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x20, 0x73, 0x74, 0x61, 0x72, 0x74, 0x43, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x20, 0x68, 0x61, 0x73, 0x4e, 0x65, 0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x20, 0x68, 0x61, 0x73, 0x50, 0x72, 0x65, 0x76, 0x69, 0x6f, 0x75, 0x73, 0x50, 0x61, 0x67, 0x65, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x63, 0x20, 0x6f, 0x6e, 0x20, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x61, 0x70, 0x70, 0x65, 0x61, 0x72, 0x73, 0x49, 0x6e, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "40a41651e074201c994b72d7ab251b7a");
+        public override global::System.String ToString()
+        {
+#if NETSTANDARD2_0
+        return global::System.Text.Encoding.UTF8.GetString(Body.ToArray());
+#else
+            return global::System.Text.Encoding.UTF8.GetString(Body);
+#endif
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetCharactersWithCursorPaging GraphQL operation
+    /// <code>
+    /// query GetCharactersWithCursorPaging($first: Int, $last: Int, $before: String, $after: String) {
+    ///   charactersWithCursorPagingFilteringAndSorting(first: $first, last: $last, before: $before, after: $after) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... c
+    ///       ... on Human {
+    ///         id
+    ///       }
+    ///       ... on Droid {
+    ///         id
+    ///       }
+    ///     }
+    ///     totalCount
+    ///     pageInfo {
+    ///       __typename
+    ///       endCursor
+    ///       startCursor
+    ///       hasNextPage
+    ///       hasPreviousPage
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment c on Character {
+    ///   id
+    ///   name
+    ///   appearsIn
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersWithCursorPagingQuery : global::StarWarsGeneratedClient.IGetCharactersWithCursorPagingQuery
+    {
+        private readonly global::StrawberryShake.IOperationExecutor<IGetCharactersWithCursorPagingResult> _operationExecutor;
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _intFormatter;
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _stringFormatter;
+        public GetCharactersWithCursorPagingQuery(global::StrawberryShake.IOperationExecutor<IGetCharactersWithCursorPagingResult> operationExecutor, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _operationExecutor = operationExecutor ?? throw new global::System.ArgumentNullException(nameof(operationExecutor));
+            _intFormatter = serializerResolver.GetInputValueFormatter("Int");
+            _stringFormatter = serializerResolver.GetInputValueFormatter("String");
+        }
+
+        global::System.Type global::StrawberryShake.IOperationRequestFactory.ResultType => typeof(IGetCharactersWithCursorPagingResult);
+        public async global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetCharactersWithCursorPagingResult>> ExecuteAsync(global::System.Int32? first, global::System.Int32? last, global::System.String? before, global::System.String? after, global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var request = CreateRequest(first, last, before, after);
+            return await _operationExecutor.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        public global::System.IObservable<global::StrawberryShake.IOperationResult<IGetCharactersWithCursorPagingResult>> Watch(global::System.Int32? first, global::System.Int32? last, global::System.String? before, global::System.String? after, global::StrawberryShake.ExecutionStrategy? strategy = null)
+        {
+            var request = CreateRequest(first, last, before, after);
+            return _operationExecutor.Watch(request, strategy);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Int32? first, global::System.Int32? last, global::System.String? before, global::System.String? after)
+        {
+            var variables = new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>();
+            variables.Add("first", FormatFirst(first));
+            variables.Add("last", FormatLast(last));
+            variables.Add("before", FormatBefore(before));
+            variables.Add("after", FormatAfter(after));
+            return CreateRequest(variables);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return new global::StrawberryShake.OperationRequest(id: GetCharactersWithCursorPagingQueryDocument.Instance.Hash.Value, name: "GetCharactersWithCursorPaging", document: GetCharactersWithCursorPagingQueryDocument.Instance, strategy: global::StrawberryShake.RequestStrategy.Default, variables: variables);
+        }
+
+        private global::System.Object? FormatFirst(global::System.Int32? value)
+        {
+            if (value is null)
+            {
+                return value;
+            }
+            else
+            {
+                return _intFormatter.Format(value);
+            }
+        }
+
+        private global::System.Object? FormatLast(global::System.Int32? value)
+        {
+            if (value is null)
+            {
+                return value;
+            }
+            else
+            {
+                return _intFormatter.Format(value);
+            }
+        }
+
+        private global::System.Object? FormatBefore(global::System.String? value)
+        {
+            if (value is null)
+            {
+                return value;
+            }
+            else
+            {
+                return _stringFormatter.Format(value);
+            }
+        }
+
+        private global::System.Object? FormatAfter(global::System.String? value)
+        {
+            if (value is null)
+            {
+                return value;
+            }
+            else
+            {
+                return _stringFormatter.Format(value);
+            }
+        }
+
+        global::StrawberryShake.OperationRequest global::StrawberryShake.IOperationRequestFactory.Create(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return CreateRequest(variables!);
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetCharactersWithCursorPaging GraphQL operation
+    /// <code>
+    /// query GetCharactersWithCursorPaging($first: Int, $last: Int, $before: String, $after: String) {
+    ///   charactersWithCursorPagingFilteringAndSorting(first: $first, last: $last, before: $before, after: $after) {
+    ///     __typename
+    ///     nodes {
+    ///       __typename
+    ///       ... c
+    ///       ... on Human {
+    ///         id
+    ///       }
+    ///       ... on Droid {
+    ///         id
+    ///       }
+    ///     }
+    ///     totalCount
+    ///     pageInfo {
+    ///       __typename
+    ///       endCursor
+    ///       startCursor
+    ///       hasNextPage
+    ///       hasPreviousPage
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment c on Character {
+    ///   id
+    ///   name
+    ///   appearsIn
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetCharactersWithCursorPagingQuery : global::StrawberryShake.IOperationRequestFactory
+    {
+        global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetCharactersWithCursorPagingResult>> ExecuteAsync(global::System.Int32? first, global::System.Int32? last, global::System.String? before, global::System.String? after, global::System.Threading.CancellationToken cancellationToken = default);
+        global::System.IObservable<global::StrawberryShake.IOperationResult<IGetCharactersWithCursorPagingResult>> Watch(global::System.Int32? first, global::System.Int32? last, global::System.String? before, global::System.String? after, global::StrawberryShake.ExecutionStrategy? strategy = null);
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetCharactersWithPaging GraphQL operation
+    /// <code>
+    /// query GetCharactersWithPaging($take: Int, $skip: Int) {
+    ///   charactersWithPagingFilteringAndSorting(take: $take, skip: $skip) {
+    ///     __typename
+    ///     items {
+    ///       __typename
+    ///       ... c
+    ///       ... on Human {
+    ///         id
+    ///       }
+    ///       ... on Droid {
+    ///         id
+    ///       }
+    ///     }
+    ///     totalCount
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       hasPreviousPage
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment c on Character {
+    ///   id
+    ///   name
+    ///   appearsIn
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersWithPagingQueryDocument : global::StrawberryShake.IDocument
+    {
+        private GetCharactersWithPagingQueryDocument()
+        {
+        }
+
+        public static GetCharactersWithPagingQueryDocument Instance { get; } = new GetCharactersWithPagingQueryDocument();
+        public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Query;
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x57, 0x69, 0x74, 0x68, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x28, 0x24, 0x74, 0x61, 0x6b, 0x65, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x2c, 0x20, 0x24, 0x73, 0x6b, 0x69, 0x70, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x29, 0x20, 0x7b, 0x20, 0x63, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x57, 0x69, 0x74, 0x68, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x46, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x69, 0x6e, 0x67, 0x41, 0x6e, 0x64, 0x53, 0x6f, 0x72, 0x74, 0x69, 0x6e, 0x67, 0x28, 0x74, 0x61, 0x6b, 0x65, 0x3a, 0x20, 0x24, 0x74, 0x61, 0x6b, 0x65, 0x2c, 0x20, 0x73, 0x6b, 0x69, 0x70, 0x3a, 0x20, 0x24, 0x73, 0x6b, 0x69, 0x70, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x63, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x20, 0x70, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x68, 0x61, 0x73, 0x4e, 0x65, 0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x20, 0x68, 0x61, 0x73, 0x50, 0x72, 0x65, 0x76, 0x69, 0x6f, 0x75, 0x73, 0x50, 0x61, 0x67, 0x65, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x63, 0x20, 0x6f, 0x6e, 0x20, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x61, 0x70, 0x70, 0x65, 0x61, 0x72, 0x73, 0x49, 0x6e, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "7664e78ecb61f69383715bd239ecb85e");
+        public override global::System.String ToString()
+        {
+#if NETSTANDARD2_0
+        return global::System.Text.Encoding.UTF8.GetString(Body.ToArray());
+#else
+            return global::System.Text.Encoding.UTF8.GetString(Body);
+#endif
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetCharactersWithPaging GraphQL operation
+    /// <code>
+    /// query GetCharactersWithPaging($take: Int, $skip: Int) {
+    ///   charactersWithPagingFilteringAndSorting(take: $take, skip: $skip) {
+    ///     __typename
+    ///     items {
+    ///       __typename
+    ///       ... c
+    ///       ... on Human {
+    ///         id
+    ///       }
+    ///       ... on Droid {
+    ///         id
+    ///       }
+    ///     }
+    ///     totalCount
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       hasPreviousPage
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment c on Character {
+    ///   id
+    ///   name
+    ///   appearsIn
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersWithPagingQuery : global::StarWarsGeneratedClient.IGetCharactersWithPagingQuery
+    {
+        private readonly global::StrawberryShake.IOperationExecutor<IGetCharactersWithPagingResult> _operationExecutor;
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _intFormatter;
+        public GetCharactersWithPagingQuery(global::StrawberryShake.IOperationExecutor<IGetCharactersWithPagingResult> operationExecutor, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _operationExecutor = operationExecutor ?? throw new global::System.ArgumentNullException(nameof(operationExecutor));
+            _intFormatter = serializerResolver.GetInputValueFormatter("Int");
+        }
+
+        global::System.Type global::StrawberryShake.IOperationRequestFactory.ResultType => typeof(IGetCharactersWithPagingResult);
+        public async global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetCharactersWithPagingResult>> ExecuteAsync(global::System.Int32? take, global::System.Int32? skip, global::System.Threading.CancellationToken cancellationToken = default)
+        {
+            var request = CreateRequest(take, skip);
+            return await _operationExecutor.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+        public global::System.IObservable<global::StrawberryShake.IOperationResult<IGetCharactersWithPagingResult>> Watch(global::System.Int32? take, global::System.Int32? skip, global::StrawberryShake.ExecutionStrategy? strategy = null)
+        {
+            var request = CreateRequest(take, skip);
+            return _operationExecutor.Watch(request, strategy);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Int32? take, global::System.Int32? skip)
+        {
+            var variables = new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>();
+            variables.Add("take", FormatTake(take));
+            variables.Add("skip", FormatSkip(skip));
+            return CreateRequest(variables);
+        }
+
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return new global::StrawberryShake.OperationRequest(id: GetCharactersWithPagingQueryDocument.Instance.Hash.Value, name: "GetCharactersWithPaging", document: GetCharactersWithPagingQueryDocument.Instance, strategy: global::StrawberryShake.RequestStrategy.Default, variables: variables);
+        }
+
+        private global::System.Object? FormatTake(global::System.Int32? value)
+        {
+            if (value is null)
+            {
+                return value;
+            }
+            else
+            {
+                return _intFormatter.Format(value);
+            }
+        }
+
+        private global::System.Object? FormatSkip(global::System.Int32? value)
+        {
+            if (value is null)
+            {
+                return value;
+            }
+            else
+            {
+                return _intFormatter.Format(value);
+            }
+        }
+
+        global::StrawberryShake.OperationRequest global::StrawberryShake.IOperationRequestFactory.Create(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
+        {
+            return CreateRequest(variables!);
+        }
+    }
+
+    /// <summary>
+    /// Represents the operation service of the GetCharactersWithPaging GraphQL operation
+    /// <code>
+    /// query GetCharactersWithPaging($take: Int, $skip: Int) {
+    ///   charactersWithPagingFilteringAndSorting(take: $take, skip: $skip) {
+    ///     __typename
+    ///     items {
+    ///       __typename
+    ///       ... c
+    ///       ... on Human {
+    ///         id
+    ///       }
+    ///       ... on Droid {
+    ///         id
+    ///       }
+    ///     }
+    ///     totalCount
+    ///     pageInfo {
+    ///       __typename
+    ///       hasNextPage
+    ///       hasPreviousPage
+    ///     }
+    ///   }
+    /// }
+    /// 
+    /// fragment c on Character {
+    ///   id
+    ///   name
+    ///   appearsIn
+    /// }
+    /// </code>
+    /// </summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public interface IGetCharactersWithPagingQuery : global::StrawberryShake.IOperationRequestFactory
+    {
+        global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetCharactersWithPagingResult>> ExecuteAsync(global::System.Int32? take, global::System.Int32? skip, global::System.Threading.CancellationToken cancellationToken = default);
+        global::System.IObservable<global::StrawberryShake.IOperationResult<IGetCharactersWithPagingResult>> Watch(global::System.Int32? take, global::System.Int32? skip, global::StrawberryShake.ExecutionStrategy? strategy = null);
+    }
+
+    /// <summary>
     /// Represents the operation service of the GetAllHumansAndDroids GraphQL operation
     /// <code>
     /// query GetAllHumansAndDroids {
@@ -2982,13 +4433,17 @@ namespace StarWarsGeneratedClient
         private readonly global::StarWarsGeneratedClient.ICreateReviewMutation _createReview;
         private readonly global::StarWarsGeneratedClient.IGetCharactersByIdsQuery _getCharactersByIds;
         private readonly global::StarWarsGeneratedClient.IGetAllCharactersQuery _getAllCharacters;
+        private readonly global::StarWarsGeneratedClient.IGetCharactersWithCursorPagingQuery _getCharactersWithCursorPaging;
+        private readonly global::StarWarsGeneratedClient.IGetCharactersWithPagingQuery _getCharactersWithPaging;
         private readonly global::StarWarsGeneratedClient.IGetAllHumansAndDroidsQuery _getAllHumansAndDroids;
-        public StarWarsGeneratedClient(global::StarWarsGeneratedClient.IGetHeroQuery getHero, global::StarWarsGeneratedClient.ICreateReviewMutation createReview, global::StarWarsGeneratedClient.IGetCharactersByIdsQuery getCharactersByIds, global::StarWarsGeneratedClient.IGetAllCharactersQuery getAllCharacters, global::StarWarsGeneratedClient.IGetAllHumansAndDroidsQuery getAllHumansAndDroids)
+        public StarWarsGeneratedClient(global::StarWarsGeneratedClient.IGetHeroQuery getHero, global::StarWarsGeneratedClient.ICreateReviewMutation createReview, global::StarWarsGeneratedClient.IGetCharactersByIdsQuery getCharactersByIds, global::StarWarsGeneratedClient.IGetAllCharactersQuery getAllCharacters, global::StarWarsGeneratedClient.IGetCharactersWithCursorPagingQuery getCharactersWithCursorPaging, global::StarWarsGeneratedClient.IGetCharactersWithPagingQuery getCharactersWithPaging, global::StarWarsGeneratedClient.IGetAllHumansAndDroidsQuery getAllHumansAndDroids)
         {
             _getHero = getHero ?? throw new global::System.ArgumentNullException(nameof(getHero));
             _createReview = createReview ?? throw new global::System.ArgumentNullException(nameof(createReview));
             _getCharactersByIds = getCharactersByIds ?? throw new global::System.ArgumentNullException(nameof(getCharactersByIds));
             _getAllCharacters = getAllCharacters ?? throw new global::System.ArgumentNullException(nameof(getAllCharacters));
+            _getCharactersWithCursorPaging = getCharactersWithCursorPaging ?? throw new global::System.ArgumentNullException(nameof(getCharactersWithCursorPaging));
+            _getCharactersWithPaging = getCharactersWithPaging ?? throw new global::System.ArgumentNullException(nameof(getCharactersWithPaging));
             _getAllHumansAndDroids = getAllHumansAndDroids ?? throw new global::System.ArgumentNullException(nameof(getAllHumansAndDroids));
         }
 
@@ -2997,6 +4452,8 @@ namespace StarWarsGeneratedClient
         public global::StarWarsGeneratedClient.ICreateReviewMutation CreateReview => _createReview;
         public global::StarWarsGeneratedClient.IGetCharactersByIdsQuery GetCharactersByIds => _getCharactersByIds;
         public global::StarWarsGeneratedClient.IGetAllCharactersQuery GetAllCharacters => _getAllCharacters;
+        public global::StarWarsGeneratedClient.IGetCharactersWithCursorPagingQuery GetCharactersWithCursorPaging => _getCharactersWithCursorPaging;
+        public global::StarWarsGeneratedClient.IGetCharactersWithPagingQuery GetCharactersWithPaging => _getCharactersWithPaging;
         public global::StarWarsGeneratedClient.IGetAllHumansAndDroidsQuery GetAllHumansAndDroids => _getAllHumansAndDroids;
     }
 
@@ -3013,6 +4470,10 @@ namespace StarWarsGeneratedClient
         global::StarWarsGeneratedClient.IGetCharactersByIdsQuery GetCharactersByIds { get; }
 
         global::StarWarsGeneratedClient.IGetAllCharactersQuery GetAllCharacters { get; }
+
+        global::StarWarsGeneratedClient.IGetCharactersWithCursorPagingQuery GetCharactersWithCursorPaging { get; }
+
+        global::StarWarsGeneratedClient.IGetCharactersWithPagingQuery GetCharactersWithPaging { get; }
 
         global::StarWarsGeneratedClient.IGetAllHumansAndDroidsQuery GetAllHumansAndDroids { get; }
     }
@@ -3768,6 +5229,356 @@ namespace StarWarsGeneratedClient.State
             }
 
             return new GetAllCharacters_Characters_Droid(entity.Id, entity.Name, entity.AppearsIn);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersWithCursorPagingResultFactory : global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.GetCharactersWithCursorPagingResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        private readonly global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Human> _getCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_HumanFromHumanEntityMapper;
+        private readonly global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Droid> _getCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_DroidFromDroidEntityMapper;
+        public GetCharactersWithCursorPagingResultFactory(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Human> getCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_HumanFromHumanEntityMapper, global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Droid> getCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_DroidFromDroidEntityMapper)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+            _getCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_HumanFromHumanEntityMapper = getCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_HumanFromHumanEntityMapper ?? throw new global::System.ArgumentNullException(nameof(getCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_HumanFromHumanEntityMapper));
+            _getCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_DroidFromDroidEntityMapper = getCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_DroidFromDroidEntityMapper ?? throw new global::System.ArgumentNullException(nameof(getCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_DroidFromDroidEntityMapper));
+        }
+
+        global::System.Type global::StrawberryShake.IOperationResultDataFactory.ResultType => typeof(global::StarWarsGeneratedClient.IGetCharactersWithCursorPagingResult);
+        public GetCharactersWithCursorPagingResult Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            if (dataInfo is GetCharactersWithCursorPagingResultInfo info)
+            {
+                return new GetCharactersWithCursorPagingResult(MapIGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting(info.CharactersWithCursorPagingFilteringAndSorting, snapshot));
+            }
+
+            throw new global::System.ArgumentException("GetCharactersWithCursorPagingResultInfo expected.");
+        }
+
+        private global::StarWarsGeneratedClient.IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting? MapIGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting(global::StarWarsGeneratedClient.State.CharactersWithCursorPagingFilteringAndSortingConnectionData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting returnValue = default !;
+            if (data?.__typename.Equals("CharactersWithCursorPagingFilteringAndSortingConnection", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_CharactersWithCursorPagingFilteringAndSortingConnection(MapIGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_NodesArray(data.Nodes, snapshot), data.TotalCount ?? throw new global::System.ArgumentNullException(), MapNonNullableIGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_PageInfo(data.PageInfo ?? throw new global::System.ArgumentNullException(), snapshot));
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes?>? MapIGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_NodesArray(global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId?>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (list is null)
+            {
+                return null;
+            }
+
+            var characters = new global::System.Collections.Generic.List<global::StarWarsGeneratedClient.IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes?>();
+            foreach (global::StrawberryShake.EntityId? child in list)
+            {
+                characters.Add(MapIGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes(child, snapshot));
+            }
+
+            return characters;
+        }
+
+        private global::StarWarsGeneratedClient.IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes? MapIGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes(global::StrawberryShake.EntityId? entityId, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (entityId is null)
+            {
+                return null;
+            }
+
+            if (entityId.Value.Name.Equals("Human", global::System.StringComparison.Ordinal))
+            {
+                return _getCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_HumanFromHumanEntityMapper.Map(snapshot.GetEntity<global::StarWarsGeneratedClient.State.HumanEntity>(entityId.Value) ?? throw new global::StrawberryShake.GraphQLClientException());
+            }
+
+            if (entityId.Value.Name.Equals("Droid", global::System.StringComparison.Ordinal))
+            {
+                return _getCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_DroidFromDroidEntityMapper.Map(snapshot.GetEntity<global::StarWarsGeneratedClient.State.DroidEntity>(entityId.Value) ?? throw new global::StrawberryShake.GraphQLClientException());
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::StarWarsGeneratedClient.IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_PageInfo MapNonNullableIGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_PageInfo(global::StarWarsGeneratedClient.State.PageInfoData data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_PageInfo returnValue = default !;
+            if (data.__typename.Equals("PageInfo", global::System.StringComparison.Ordinal))
+            {
+                returnValue = new GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_PageInfo_PageInfo(data.EndCursor, data.StartCursor, data.HasNextPage ?? throw new global::System.ArgumentNullException(), data.HasPreviousPage ?? throw new global::System.ArgumentNullException());
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        global::System.Object global::StrawberryShake.IOperationResultDataFactory.Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot)
+        {
+            return Create(dataInfo, snapshot);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersWithCursorPagingResultInfo : global::StrawberryShake.IOperationResultDataInfo
+    {
+        private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
+        private readonly global::System.UInt64 _version;
+        public GetCharactersWithCursorPagingResultInfo(global::StarWarsGeneratedClient.State.CharactersWithCursorPagingFilteringAndSortingConnectionData? charactersWithCursorPagingFilteringAndSorting, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
+        {
+            CharactersWithCursorPagingFilteringAndSorting = charactersWithCursorPagingFilteringAndSorting;
+            _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
+            _version = version;
+        }
+
+        /// <summary>
+        /// Gets all character.
+        /// 
+        /// 
+        /// **Returns:**
+        /// The character.
+        /// </summary>
+        public global::StarWarsGeneratedClient.State.CharactersWithCursorPagingFilteringAndSortingConnectionData? CharactersWithCursorPagingFilteringAndSorting { get; }
+
+        public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
+        public global::System.UInt64 Version => _version;
+        public global::StrawberryShake.IOperationResultDataInfo WithVersion(global::System.UInt64 version)
+        {
+            return new GetCharactersWithCursorPagingResultInfo(CharactersWithCursorPagingFilteringAndSorting, _entityIds, version);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_HumanFromHumanEntityMapper : global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Human>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        public GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_HumanFromHumanEntityMapper(global::StrawberryShake.IEntityStore entityStore)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+        }
+
+        public GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Human Map(global::StarWarsGeneratedClient.State.HumanEntity entity, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            return new GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Human(entity.Id, entity.Name, entity.AppearsIn);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_DroidFromDroidEntityMapper : global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Droid>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        public GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_DroidFromDroidEntityMapper(global::StrawberryShake.IEntityStore entityStore)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+        }
+
+        public GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Droid Map(global::StarWarsGeneratedClient.State.DroidEntity entity, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            return new GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Droid(entity.Id, entity.Name, entity.AppearsIn);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersWithPagingResultFactory : global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.GetCharactersWithPagingResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        private readonly global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Human> _getCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_HumanFromHumanEntityMapper;
+        private readonly global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Droid> _getCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_DroidFromDroidEntityMapper;
+        public GetCharactersWithPagingResultFactory(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Human> getCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_HumanFromHumanEntityMapper, global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Droid> getCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_DroidFromDroidEntityMapper)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+            _getCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_HumanFromHumanEntityMapper = getCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_HumanFromHumanEntityMapper ?? throw new global::System.ArgumentNullException(nameof(getCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_HumanFromHumanEntityMapper));
+            _getCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_DroidFromDroidEntityMapper = getCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_DroidFromDroidEntityMapper ?? throw new global::System.ArgumentNullException(nameof(getCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_DroidFromDroidEntityMapper));
+        }
+
+        global::System.Type global::StrawberryShake.IOperationResultDataFactory.ResultType => typeof(global::StarWarsGeneratedClient.IGetCharactersWithPagingResult);
+        public GetCharactersWithPagingResult Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            if (dataInfo is GetCharactersWithPagingResultInfo info)
+            {
+                return new GetCharactersWithPagingResult(MapIGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting(info.CharactersWithPagingFilteringAndSorting, snapshot));
+            }
+
+            throw new global::System.ArgumentException("GetCharactersWithPagingResultInfo expected.");
+        }
+
+        private global::StarWarsGeneratedClient.IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting? MapIGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting(global::StarWarsGeneratedClient.State.CharacterCollectionSegmentData? data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (data is null)
+            {
+                return null;
+            }
+
+            IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting returnValue = default !;
+            if (data?.__typename.Equals("CharacterCollectionSegment", global::System.StringComparison.Ordinal) ?? false)
+            {
+                returnValue = new GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_CharacterCollectionSegment(MapIGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_ItemsArray(data.Items, snapshot), data.TotalCount ?? throw new global::System.ArgumentNullException(), MapNonNullableIGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_PageInfo(data.PageInfo ?? throw new global::System.ArgumentNullException(), snapshot));
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items?>? MapIGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_ItemsArray(global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId?>? list, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (list is null)
+            {
+                return null;
+            }
+
+            var characters = new global::System.Collections.Generic.List<global::StarWarsGeneratedClient.IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items?>();
+            foreach (global::StrawberryShake.EntityId? child in list)
+            {
+                characters.Add(MapIGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items(child, snapshot));
+            }
+
+            return characters;
+        }
+
+        private global::StarWarsGeneratedClient.IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items? MapIGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items(global::StrawberryShake.EntityId? entityId, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            if (entityId is null)
+            {
+                return null;
+            }
+
+            if (entityId.Value.Name.Equals("Human", global::System.StringComparison.Ordinal))
+            {
+                return _getCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_HumanFromHumanEntityMapper.Map(snapshot.GetEntity<global::StarWarsGeneratedClient.State.HumanEntity>(entityId.Value) ?? throw new global::StrawberryShake.GraphQLClientException());
+            }
+
+            if (entityId.Value.Name.Equals("Droid", global::System.StringComparison.Ordinal))
+            {
+                return _getCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_DroidFromDroidEntityMapper.Map(snapshot.GetEntity<global::StarWarsGeneratedClient.State.DroidEntity>(entityId.Value) ?? throw new global::StrawberryShake.GraphQLClientException());
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::StarWarsGeneratedClient.IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_PageInfo MapNonNullableIGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_PageInfo(global::StarWarsGeneratedClient.State.CollectionSegmentInfoData data, global::StrawberryShake.IEntityStoreSnapshot snapshot)
+        {
+            IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_PageInfo returnValue = default !;
+            if (data.__typename.Equals("CollectionSegmentInfo", global::System.StringComparison.Ordinal))
+            {
+                returnValue = new GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_PageInfo_CollectionSegmentInfo(data.HasNextPage ?? throw new global::System.ArgumentNullException(), data.HasPreviousPage ?? throw new global::System.ArgumentNullException());
+            }
+            else
+            {
+                throw new global::System.NotSupportedException();
+            }
+
+            return returnValue;
+        }
+
+        global::System.Object global::StrawberryShake.IOperationResultDataFactory.Create(global::StrawberryShake.IOperationResultDataInfo dataInfo, global::StrawberryShake.IEntityStoreSnapshot? snapshot)
+        {
+            return Create(dataInfo, snapshot);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersWithPagingResultInfo : global::StrawberryShake.IOperationResultDataInfo
+    {
+        private readonly global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> _entityIds;
+        private readonly global::System.UInt64 _version;
+        public GetCharactersWithPagingResultInfo(global::StarWarsGeneratedClient.State.CharacterCollectionSegmentData? charactersWithPagingFilteringAndSorting, global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> entityIds, global::System.UInt64 version)
+        {
+            CharactersWithPagingFilteringAndSorting = charactersWithPagingFilteringAndSorting;
+            _entityIds = entityIds ?? throw new global::System.ArgumentNullException(nameof(entityIds));
+            _version = version;
+        }
+
+        /// <summary>
+        /// Gets all character.
+        /// 
+        /// 
+        /// **Returns:**
+        /// The character.
+        /// </summary>
+        public global::StarWarsGeneratedClient.State.CharacterCollectionSegmentData? CharactersWithPagingFilteringAndSorting { get; }
+
+        public global::System.Collections.Generic.IReadOnlyCollection<global::StrawberryShake.EntityId> EntityIds => _entityIds;
+        public global::System.UInt64 Version => _version;
+        public global::StrawberryShake.IOperationResultDataInfo WithVersion(global::System.UInt64 version)
+        {
+            return new GetCharactersWithPagingResultInfo(CharactersWithPagingFilteringAndSorting, _entityIds, version);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_HumanFromHumanEntityMapper : global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Human>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        public GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_HumanFromHumanEntityMapper(global::StrawberryShake.IEntityStore entityStore)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+        }
+
+        public GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Human Map(global::StarWarsGeneratedClient.State.HumanEntity entity, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            return new GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Human(entity.Id, entity.Name, entity.AppearsIn);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_DroidFromDroidEntityMapper : global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Droid>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        public GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_DroidFromDroidEntityMapper(global::StrawberryShake.IEntityStore entityStore)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+        }
+
+        public GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Droid Map(global::StarWarsGeneratedClient.State.DroidEntity entity, global::StrawberryShake.IEntityStoreSnapshot? snapshot = null)
+        {
+            if (snapshot is null)
+            {
+                snapshot = _entityStore.CurrentSnapshot;
+            }
+
+            return new GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Droid(entity.Id, entity.Name, entity.AppearsIn);
         }
     }
 
@@ -4603,6 +6414,444 @@ namespace StarWarsGeneratedClient.State
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersWithCursorPagingBuilder : global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetCharactersWithCursorPagingResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        private readonly global::StrawberryShake.IEntityIdSerializer _idSerializer;
+        private readonly global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetCharactersWithCursorPagingResult> _resultDataFactory;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::StarWarsGeneratedClient.Episode> _episodeParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Int32, global::System.Int32> _intParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Boolean, global::System.Boolean> _booleanParser;
+        public GetCharactersWithCursorPagingBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetCharactersWithCursorPagingResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+            _idSerializer = idSerializer ?? throw new global::System.ArgumentNullException(nameof(idSerializer));
+            _resultDataFactory = resultDataFactory ?? throw new global::System.ArgumentNullException(nameof(resultDataFactory));
+            _episodeParser = serializerResolver.GetLeafValueParser<global::System.String, global::StarWarsGeneratedClient.Episode>("Episode") ?? throw new global::System.ArgumentException("No serializer for type `Episode` found.");
+            _intParser = serializerResolver.GetLeafValueParser<global::System.Int32, global::System.Int32>("Int") ?? throw new global::System.ArgumentException("No serializer for type `Int` found.");
+            _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
+            _booleanParser = serializerResolver.GetLeafValueParser<global::System.Boolean, global::System.Boolean>("Boolean") ?? throw new global::System.ArgumentException("No serializer for type `Boolean` found.");
+        }
+
+        public global::StrawberryShake.IOperationResult<IGetCharactersWithCursorPagingResult> Build(global::StrawberryShake.Response<global::System.Text.Json.JsonDocument> response)
+        {
+            (IGetCharactersWithCursorPagingResult Result, GetCharactersWithCursorPagingResultInfo Info)? data = null;
+            global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.IClientError>? errors = null;
+            if (response.Exception is null)
+            {
+                try
+                {
+                    if (response.Body != null)
+                    {
+                        if (response.Body.RootElement.TryGetProperty("data", out global::System.Text.Json.JsonElement dataElement) && dataElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                        {
+                            data = BuildData(dataElement);
+                        }
+
+                        if (response.Body.RootElement.TryGetProperty("errors", out global::System.Text.Json.JsonElement errorsElement))
+                        {
+                            errors = global::StrawberryShake.Json.JsonErrorParser.ParseErrors(errorsElement);
+                        }
+                    }
+                }
+                catch (global::System.Exception ex)
+                {
+                    errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(ex.Message, exception: ex, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+                }
+            }
+            else
+            {
+                errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(response.Exception.Message, exception: response.Exception, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+            }
+
+            return new global::StrawberryShake.OperationResult<IGetCharactersWithCursorPagingResult>(data?.Result, data?.Info, _resultDataFactory, errors);
+        }
+
+        private (IGetCharactersWithCursorPagingResult, GetCharactersWithCursorPagingResultInfo) BuildData(global::System.Text.Json.JsonElement obj)
+        {
+            var entityIds = new global::System.Collections.Generic.HashSet<global::StrawberryShake.EntityId>();
+            global::StrawberryShake.IEntityStoreSnapshot snapshot = default !;
+            global::StarWarsGeneratedClient.State.CharactersWithCursorPagingFilteringAndSortingConnectionData? charactersWithCursorPagingFilteringAndSortingId = default !;
+            _entityStore.Update(session =>
+            {
+                charactersWithCursorPagingFilteringAndSortingId = DeserializeIGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "charactersWithCursorPagingFilteringAndSorting"), entityIds);
+                snapshot = session.CurrentSnapshot;
+            });
+            var resultInfo = new GetCharactersWithCursorPagingResultInfo(charactersWithCursorPagingFilteringAndSortingId, entityIds, snapshot.Version);
+            return (_resultDataFactory.Create(resultInfo), resultInfo);
+        }
+
+        private global::StarWarsGeneratedClient.State.CharactersWithCursorPagingFilteringAndSortingConnectionData? DeserializeIGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("CharactersWithCursorPagingFilteringAndSortingConnection", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::StarWarsGeneratedClient.State.CharactersWithCursorPagingFilteringAndSortingConnectionData(typename, nodes: UpdateIGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_NodesEntityArray(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "nodes"), entityIds), totalCount: DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "totalCount")), pageInfo: DeserializeNonNullableIGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_PageInfo(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "pageInfo")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId?>? UpdateIGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_NodesEntityArray(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var characters = new global::System.Collections.Generic.List<global::StrawberryShake.EntityId?>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                characters.Add(UpdateIGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_NodesEntity(session, child, entityIds));
+            }
+
+            return characters;
+        }
+
+        private global::StrawberryShake.EntityId? UpdateIGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_NodesEntity(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            global::StrawberryShake.EntityId entityId = _idSerializer.Parse(obj.Value);
+            entityIds.Add(entityId);
+            if (entityId.Name.Equals("Human", global::System.StringComparison.Ordinal))
+            {
+                if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.HumanEntity? entity))
+                {
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
+                }
+                else
+                {
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
+                }
+
+                return entityId;
+            }
+
+            if (entityId.Name.Equals("Droid", global::System.StringComparison.Ordinal))
+            {
+                if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.DroidEntity? entity))
+                {
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), entity.PrimaryFunction));
+                }
+                else
+                {
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), default !));
+                }
+
+                return entityId;
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Int32 DeserializeNonNullableInt32(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _intParser.Parse(obj.Value.GetInt32()!);
+        }
+
+        private global::System.String DeserializeNonNullableString(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _stringParser.Parse(obj.Value.GetString()!);
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> DeserializeNonNullableEpisodeNonNullableArray(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            var episodes = new global::System.Collections.Generic.List<global::StarWarsGeneratedClient.Episode>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                episodes.Add(DeserializeNonNullableEpisode(child));
+            }
+
+            return episodes;
+        }
+
+        private global::StarWarsGeneratedClient.Episode DeserializeNonNullableEpisode(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _episodeParser.Parse(obj.Value.GetString()!);
+        }
+
+        private global::StarWarsGeneratedClient.State.PageInfoData DeserializeNonNullableIGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_PageInfo(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("PageInfo", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::StarWarsGeneratedClient.State.PageInfoData(typename, endCursor: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "endCursor")), startCursor: DeserializeString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "startCursor")), hasNextPage: DeserializeNonNullableBoolean(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "hasNextPage")), hasPreviousPage: DeserializeNonNullableBoolean(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "hasPreviousPage")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.String? DeserializeString(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            return _stringParser.Parse(obj.Value.GetString()!);
+        }
+
+        private global::System.Boolean DeserializeNonNullableBoolean(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _booleanParser.Parse(obj.Value.GetBoolean()!);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class GetCharactersWithPagingBuilder : global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetCharactersWithPagingResult>
+    {
+        private readonly global::StrawberryShake.IEntityStore _entityStore;
+        private readonly global::StrawberryShake.IEntityIdSerializer _idSerializer;
+        private readonly global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetCharactersWithPagingResult> _resultDataFactory;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::StarWarsGeneratedClient.Episode> _episodeParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Int32, global::System.Int32> _intParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Boolean, global::System.Boolean> _booleanParser;
+        public GetCharactersWithPagingBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetCharactersWithPagingResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
+            _idSerializer = idSerializer ?? throw new global::System.ArgumentNullException(nameof(idSerializer));
+            _resultDataFactory = resultDataFactory ?? throw new global::System.ArgumentNullException(nameof(resultDataFactory));
+            _episodeParser = serializerResolver.GetLeafValueParser<global::System.String, global::StarWarsGeneratedClient.Episode>("Episode") ?? throw new global::System.ArgumentException("No serializer for type `Episode` found.");
+            _intParser = serializerResolver.GetLeafValueParser<global::System.Int32, global::System.Int32>("Int") ?? throw new global::System.ArgumentException("No serializer for type `Int` found.");
+            _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
+            _booleanParser = serializerResolver.GetLeafValueParser<global::System.Boolean, global::System.Boolean>("Boolean") ?? throw new global::System.ArgumentException("No serializer for type `Boolean` found.");
+        }
+
+        public global::StrawberryShake.IOperationResult<IGetCharactersWithPagingResult> Build(global::StrawberryShake.Response<global::System.Text.Json.JsonDocument> response)
+        {
+            (IGetCharactersWithPagingResult Result, GetCharactersWithPagingResultInfo Info)? data = null;
+            global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.IClientError>? errors = null;
+            if (response.Exception is null)
+            {
+                try
+                {
+                    if (response.Body != null)
+                    {
+                        if (response.Body.RootElement.TryGetProperty("data", out global::System.Text.Json.JsonElement dataElement) && dataElement.ValueKind == global::System.Text.Json.JsonValueKind.Object)
+                        {
+                            data = BuildData(dataElement);
+                        }
+
+                        if (response.Body.RootElement.TryGetProperty("errors", out global::System.Text.Json.JsonElement errorsElement))
+                        {
+                            errors = global::StrawberryShake.Json.JsonErrorParser.ParseErrors(errorsElement);
+                        }
+                    }
+                }
+                catch (global::System.Exception ex)
+                {
+                    errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(ex.Message, exception: ex, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+                }
+            }
+            else
+            {
+                errors = new global::StrawberryShake.IClientError[]{new global::StrawberryShake.ClientError(response.Exception.Message, exception: response.Exception, extensions: new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>{{"body", response.Body?.RootElement.ToString()}})};
+            }
+
+            return new global::StrawberryShake.OperationResult<IGetCharactersWithPagingResult>(data?.Result, data?.Info, _resultDataFactory, errors);
+        }
+
+        private (IGetCharactersWithPagingResult, GetCharactersWithPagingResultInfo) BuildData(global::System.Text.Json.JsonElement obj)
+        {
+            var entityIds = new global::System.Collections.Generic.HashSet<global::StrawberryShake.EntityId>();
+            global::StrawberryShake.IEntityStoreSnapshot snapshot = default !;
+            global::StarWarsGeneratedClient.State.CharacterCollectionSegmentData? charactersWithPagingFilteringAndSortingId = default !;
+            _entityStore.Update(session =>
+            {
+                charactersWithPagingFilteringAndSortingId = DeserializeIGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "charactersWithPagingFilteringAndSorting"), entityIds);
+                snapshot = session.CurrentSnapshot;
+            });
+            var resultInfo = new GetCharactersWithPagingResultInfo(charactersWithPagingFilteringAndSortingId, entityIds, snapshot.Version);
+            return (_resultDataFactory.Create(resultInfo), resultInfo);
+        }
+
+        private global::StarWarsGeneratedClient.State.CharacterCollectionSegmentData? DeserializeIGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("CharacterCollectionSegment", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::StarWarsGeneratedClient.State.CharacterCollectionSegmentData(typename, items: UpdateIGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_ItemsEntityArray(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "items"), entityIds), totalCount: DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "totalCount")), pageInfo: DeserializeNonNullableIGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_PageInfo(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "pageInfo")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId?>? UpdateIGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_ItemsEntityArray(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            var characters = new global::System.Collections.Generic.List<global::StrawberryShake.EntityId?>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                characters.Add(UpdateIGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_ItemsEntity(session, child, entityIds));
+            }
+
+            return characters;
+        }
+
+        private global::StrawberryShake.EntityId? UpdateIGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_ItemsEntity(global::StrawberryShake.IEntityStoreUpdateSession session, global::System.Text.Json.JsonElement? obj, global::System.Collections.Generic.ISet<global::StrawberryShake.EntityId> entityIds)
+        {
+            if (!obj.HasValue)
+            {
+                return null;
+            }
+
+            global::StrawberryShake.EntityId entityId = _idSerializer.Parse(obj.Value);
+            entityIds.Add(entityId);
+            if (entityId.Name.Equals("Human", global::System.StringComparison.Ordinal))
+            {
+                if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.HumanEntity? entity))
+                {
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
+                }
+                else
+                {
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
+                }
+
+                return entityId;
+            }
+
+            if (entityId.Name.Equals("Droid", global::System.StringComparison.Ordinal))
+            {
+                if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.DroidEntity? entity))
+                {
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), entity.PrimaryFunction));
+                }
+                else
+                {
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), default !));
+                }
+
+                return entityId;
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Int32 DeserializeNonNullableInt32(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _intParser.Parse(obj.Value.GetInt32()!);
+        }
+
+        private global::System.String DeserializeNonNullableString(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _stringParser.Parse(obj.Value.GetString()!);
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> DeserializeNonNullableEpisodeNonNullableArray(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            var episodes = new global::System.Collections.Generic.List<global::StarWarsGeneratedClient.Episode>();
+            foreach (global::System.Text.Json.JsonElement child in obj.Value.EnumerateArray())
+            {
+                episodes.Add(DeserializeNonNullableEpisode(child));
+            }
+
+            return episodes;
+        }
+
+        private global::StarWarsGeneratedClient.Episode DeserializeNonNullableEpisode(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _episodeParser.Parse(obj.Value.GetString()!);
+        }
+
+        private global::StarWarsGeneratedClient.State.CollectionSegmentInfoData DeserializeNonNullableIGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_PageInfo(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            var typename = obj.Value.GetProperty("__typename").GetString();
+            if (typename?.Equals("CollectionSegmentInfo", global::System.StringComparison.Ordinal) ?? false)
+            {
+                return new global::StarWarsGeneratedClient.State.CollectionSegmentInfoData(typename, hasNextPage: DeserializeNonNullableBoolean(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "hasNextPage")), hasPreviousPage: DeserializeNonNullableBoolean(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "hasPreviousPage")));
+            }
+
+            throw new global::System.NotSupportedException();
+        }
+
+        private global::System.Boolean DeserializeNonNullableBoolean(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _booleanParser.Parse(obj.Value.GetBoolean()!);
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class GetAllHumansAndDroidsBuilder : global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetAllHumansAndDroidsResult>
     {
         private readonly global::StrawberryShake.IEntityStore _entityStore;
@@ -4818,6 +7067,98 @@ namespace StarWarsGeneratedClient.State
 
         ///<summary>The review that was being created.</summary>
         public global::StrawberryShake.EntityId? Review { get; }
+    }
+
+    ///<summary>A connection to a list of items.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class CharactersWithCursorPagingFilteringAndSortingConnectionData
+    {
+        public CharactersWithCursorPagingFilteringAndSortingConnectionData(global::System.String __typename, global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId?>? nodes = default !, global::System.Int32? totalCount = default !, global::StarWarsGeneratedClient.State.PageInfoData? pageInfo = default !)
+        {
+            this.__typename = __typename ?? throw new global::System.ArgumentNullException(nameof(__typename));
+            Nodes = nodes;
+            TotalCount = totalCount;
+            PageInfo = pageInfo;
+        }
+
+        public global::System.String __typename { get; }
+
+        ///<summary>A flattened list of the nodes.</summary>
+        public global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId?>? Nodes { get; }
+
+        public global::System.Int32? TotalCount { get; }
+
+        ///<summary>Information to aid in pagination.</summary>
+        public global::StarWarsGeneratedClient.State.PageInfoData? PageInfo { get; }
+    }
+
+    ///<summary>Information about pagination in a connection.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class PageInfoData
+    {
+        public PageInfoData(global::System.String __typename, global::System.String? endCursor = default !, global::System.String? startCursor = default !, global::System.Boolean? hasNextPage = default !, global::System.Boolean? hasPreviousPage = default !)
+        {
+            this.__typename = __typename ?? throw new global::System.ArgumentNullException(nameof(__typename));
+            EndCursor = endCursor;
+            StartCursor = startCursor;
+            HasNextPage = hasNextPage;
+            HasPreviousPage = hasPreviousPage;
+        }
+
+        public global::System.String __typename { get; }
+
+        ///<summary>When paginating forwards, the cursor to continue.</summary>
+        public global::System.String? EndCursor { get; }
+
+        ///<summary>When paginating backwards, the cursor to continue.</summary>
+        public global::System.String? StartCursor { get; }
+
+        ///<summary>Indicates whether more edges exist following the set defined by the clients arguments.</summary>
+        public global::System.Boolean? HasNextPage { get; }
+
+        ///<summary>Indicates whether more edges exist prior the set defined by the clients arguments.</summary>
+        public global::System.Boolean? HasPreviousPage { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class CharacterCollectionSegmentData
+    {
+        public CharacterCollectionSegmentData(global::System.String __typename, global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId?>? items = default !, global::System.Int32? totalCount = default !, global::StarWarsGeneratedClient.State.CollectionSegmentInfoData? pageInfo = default !)
+        {
+            this.__typename = __typename ?? throw new global::System.ArgumentNullException(nameof(__typename));
+            Items = items;
+            TotalCount = totalCount;
+            PageInfo = pageInfo;
+        }
+
+        public global::System.String __typename { get; }
+
+        public global::System.Collections.Generic.IReadOnlyList<global::StrawberryShake.EntityId?>? Items { get; }
+
+        public global::System.Int32? TotalCount { get; }
+
+        ///<summary>Information to aid in pagination.</summary>
+        public global::StarWarsGeneratedClient.State.CollectionSegmentInfoData? PageInfo { get; }
+    }
+
+    ///<summary>Information about the offset pagination.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class CollectionSegmentInfoData
+    {
+        public CollectionSegmentInfoData(global::System.String __typename, global::System.Boolean? hasNextPage = default !, global::System.Boolean? hasPreviousPage = default !)
+        {
+            this.__typename = __typename ?? throw new global::System.ArgumentNullException(nameof(__typename));
+            HasNextPage = hasNextPage;
+            HasPreviousPage = hasPreviousPage;
+        }
+
+        public global::System.String __typename { get; }
+
+        ///<summary>Indicates whether more items exist following the set defined by the clients arguments.</summary>
+        public global::System.Boolean? HasNextPage { get; }
+
+        ///<summary>Indicates whether more items exist prior the set defined by the clients arguments.</summary>
+        public global::System.Boolean? HasPreviousPage { get; }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
