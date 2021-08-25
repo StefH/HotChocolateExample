@@ -2,6 +2,7 @@ using System;
 using HotChocolate;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -19,7 +20,8 @@ namespace ContosoUniversity
                 // Needed for Blazor demo
                 .AddCors()
 
-                .AddDbContext<SchoolContext>()
+                //.AddDbContext<SchoolContext>()
+                .AddDbContextFactory<SchoolContext>()
 
                 .AddAutoMapper(typeof(Startup))
 
@@ -39,6 +41,7 @@ namespace ContosoUniversity
                     .AddFiltering()
                     .AddSorting()
 
+                    // Add projection
                     .AddProjections()
 
                     // Since we are exposing a subscription type we also need a pub/sub system 
@@ -84,7 +87,9 @@ namespace ContosoUniversity
         {
             using var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope();
 
-            var context = serviceScope.ServiceProvider.GetRequiredService<SchoolContext>();
+            var factory = serviceScope.ServiceProvider.GetRequiredService<IDbContextFactory<SchoolContext>>();
+
+            var context = factory.CreateDbContext();
 
             if (context.Database.EnsureCreated())
             {
