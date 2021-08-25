@@ -1,9 +1,9 @@
-﻿query {
+query {
   students(order: { lastName: ASC }) {
-    id
-    lastName
-    enrollmentDate
-    __typename
+    nodes {
+      id
+      lastName
+    }
   }
 }
 

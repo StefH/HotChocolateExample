@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using HotChocolate.Data;
 
@@ -14,6 +14,7 @@ namespace ContosoUniversity.Models
 
         [UseProjection]
         [UseFiltering]
+        [UseSorting]
         public virtual ICollection<EnrollmentModel> Enrollments { get; set; }
     }
 }

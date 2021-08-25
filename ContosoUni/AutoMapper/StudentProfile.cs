@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using ContosoUniversity.Models;
 
 namespace ContosoUniversity.AutoMapper
@@ -7,7 +7,8 @@ namespace ContosoUniversity.AutoMapper
     {
         public StudentProfile()
         {
-            CreateMap<Student, StudentModel>();
+            CreateMap<Student, StudentModel>()
+                .ForMember(model => model.Enrollments, o => o.MapFrom(entity => entity.Enrollments));
         }
     }
 }

@@ -16,8 +16,12 @@ namespace ContosoUniversity
         public string FirstMidName { get; set; }
         public DateTime EnrollmentDate { get; set; }
 
+        //[UseProjection]
+        //[UseFiltering]
+        //[UseSorting]
         [UseProjection]
         [UseFiltering]
-        public virtual ICollection<Enrollment> Enrollments { get; set; } = new List<Enrollment>();
+        [UseSorting]
+        public List<Enrollment> Enrollments { get; } = new List<Enrollment>();
     }
 }

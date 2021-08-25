@@ -1,11 +1,11 @@
 using System;
-using AutoMapper;
 using HotChocolate;
-using HotChocolate.Execution.Options;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using StarWars.ExtraGraphQL;
 
 namespace ContosoUniversity
 {
@@ -15,15 +15,23 @@ namespace ContosoUniversity
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<SchoolContext>();
+            services
+                // Needed for Blazor demo
+                .AddCors()
 
-            services.AddAutoMapper(typeof(Startup));
+                .AddDbContext<SchoolContext>()
 
-            services.AddHttpContextAccessor();
+                .AddAutoMapper(typeof(Startup))
 
-            // services.AddLogging();
+                .AddHttpContextAccessor()
 
-            services.AddGraphQLServer()
+                .AddLogging()
+
+                // Next we are adding our GraphQL server configuration. 
+                // We can host multiple named GraphQL server configurations
+                // that can be exposed on different routes.
+                .AddGraphQLServer()
+                    .AddQueryableOffsetPagingProvider()
 
                     .AddQueryType<Query>()
 
@@ -31,12 +39,7 @@ namespace ContosoUniversity
                     .AddFiltering()
                     .AddSorting()
 
-                    // https://chillicream.com/docs/hotchocolate/fetching-data/projections
                     .AddProjections()
-
-                    // if you wanted to controll the pagination settings globally you could
-                    // do so by setting the paging options.
-                    // .SetPagingOptions()
 
                     // Since we are exposing a subscription type we also need a pub/sub system 
                     // handling the subscription events. For our little demo here we will use 
@@ -45,23 +48,12 @@ namespace ContosoUniversity
 
                     // Last we will add apollo tracing to our server which by default is 
                     // only activated through the X-APOLLO-TRACING:1 header.
-                    .AddApolloTracing(TracingPreference.Always)
-                    ;
+                    .AddApolloTracing()
 
-            //services.AddGraphQL(
-            //    SchemaBuilder.New()
-            //        .AddQueryType<Query>()
-            //        .Create(),
-            //        new QueryExecutionOptions
-            //        {
-            //            ForceSerialExecution = true,
-            //            IncludeExceptionDetails = true,
-            //            TracingPreference = TracingPreference.Always
-            //        }).AddErrorFilter(error =>
-            //        {
-            //            Console.WriteLine(error.Exception);
-            //            return error;
-            //        });
+                    // - https://github.com/ChilliCream/hotchocolate/issues/2901
+                    // - https://github.com/ChilliCream/hotchocolate/issues/3923
+                    .AddDiagnosticEventListener(sp => new MyDiagnosticEventListener(sp.GetService<ILogger<MyDiagnosticEventListener>>()))
+                    ;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -74,7 +66,16 @@ namespace ContosoUniversity
                 app.UseDeveloperExceptionPage();
             }
 
+            // Needed for Blazor demo
+            app.UseCors(policyBuilder =>
+            {
+                policyBuilder.AllowAnyOrigin();
+                policyBuilder.AllowAnyMethod();
+                policyBuilder.AllowAnyHeader();
+            });
+
             app
+                .UseWebSockets()
                 .UseRouting()
                 .UseEndpoints(endpoint => endpoint.MapGraphQL("/uni"));
         }
@@ -91,23 +92,6 @@ namespace ContosoUniversity
                 context.Courses.Add(course);
                 context.SaveChangesAsync();
 
-                var e1 = new Enrollment
-                {
-                    Course = course,
-                };
-                var e2 = new Enrollment
-                {
-                    Course = course,
-                };
-                var e3 = new Enrollment
-                {
-                    Course = course,
-                };
-                context.Enrollments.Add(e1);
-                context.Enrollments.Add(e2);
-                context.Enrollments.Add(e3);
-                context.SaveChangesAsync();
-
                 var s1 = new Student { FirstMidName = "Rafael", LastName = "Foo", EnrollmentDate = DateTime.UtcNow };
                 var s2 = new Student { FirstMidName = "Pascal", LastName = "Bar", EnrollmentDate = DateTime.UtcNow };
                 var s3 = new Student { FirstMidName = "Michael", LastName = "Baz", EnrollmentDate = DateTime.UtcNow };
@@ -116,9 +100,24 @@ namespace ContosoUniversity
                 context.Students.Add(s3);
                 context.SaveChangesAsync();
 
-                s1.Enrollments.Add(e1);
-                s2.Enrollments.Add(e2);
-                s3.Enrollments.Add(e3);
+                var e1 = new Enrollment
+                {
+                    Course = course,
+                    Student = s1
+                };
+                var e2 = new Enrollment
+                {
+                    Course = course,
+                    Student = s2
+                };
+                var e3 = new Enrollment
+                {
+                    Course = course,
+                    Student = s3
+                };
+                context.Enrollments.Add(e1);
+                context.Enrollments.Add(e2);
+                context.Enrollments.Add(e3);
                 context.SaveChangesAsync();
             }
         }

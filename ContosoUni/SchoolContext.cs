@@ -30,21 +30,21 @@ namespace ContosoUniversity
                 ;
         }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Student>()
-                .HasMany(t => t.Enrollments)
-                .WithOne(t => t.Student)
-                .HasForeignKey(t => t.StudentId);
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //    modelBuilder.Entity<Student>()
+        //        .HasMany(t => t.Enrollments)
+        //        .WithOne(t => t.Student)
+        //        .HasForeignKey(t => t.StudentId);
 
-            modelBuilder.Entity<Enrollment>()
-                .HasIndex(t => new { t.StudentId, t.CourseId })
-                .IsUnique();
+        //    modelBuilder.Entity<Enrollment>()
+        //        .HasIndex(t => new { t.StudentId, t.CourseId })
+        //        .IsUnique();
 
-            modelBuilder.Entity<Course>()
-                .HasMany(t => t.Enrollments)
-                .WithOne(t => t.Course)
-                .HasForeignKey(t => t.CourseId);
-        }
+        //    modelBuilder.Entity<Course>()
+        //        .HasMany(t => t.Enrollments)
+        //        .WithOne(t => t.Course)
+        //        .HasForeignKey(t => t.CourseId);
+        //}
     }
 }

@@ -11,6 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarWarsGeneratedClient", "
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A4AC317F-138E-4955-BD6A-8F7FE37EE52F}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		readme.md = readme.md
 	EndProjectSection
 EndProject
@@ -22,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "server", "server", "{6819F1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "client", "client", "{E7126E6E-3282-456E-9FAA-C335B5F3EA66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StarWars.BlazorApp", "StarWars.BlazorApp\StarWars.BlazorApp.csproj", "{31924BF7-49AB-4C29-82ED-E70C2C65AACB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StarWars.BlazorApp", "StarWars.BlazorApp\StarWars.BlazorApp.csproj", "{31924BF7-49AB-4C29-82ED-E70C2C65AACB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
