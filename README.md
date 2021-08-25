@@ -12,11 +12,13 @@ cd StarWarsGeneratedClient
 ## First time
 - `dotnet new tool-manifest`
 
-- `dotnet tool install StrawberryShake.Tools --version 12.0.0-preview.30 --local`
+- `dotnet tool uninstall StrawberryShake.Tools --local`
 
-- `dotnet add package StrawberryShake.Transport.Http --version 12.0.0-preview.30`
+- `dotnet tool install StrawberryShake.Tools --version 12.0.0-preview.31 --local`
 
-- `dotnet add package StrawberryShake.CodeGeneration.CSharp.Analyzers --version 12.0.0-preview.30`
+- `dotnet add package StrawberryShake.Transport.Http --version 12.0.0-preview.31`
+
+- `dotnet add package StrawberryShake.CodeGeneration.CSharp.Analyzers --version 12.0.0-preview.31`
 
 - `dotnet add package Microsoft.Extensions.DependencyInjection`
 
