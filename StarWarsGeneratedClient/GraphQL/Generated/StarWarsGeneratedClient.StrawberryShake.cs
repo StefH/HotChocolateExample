@@ -70,6 +70,13 @@ namespace Microsoft.Extensions.DependencyInjection
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StrawberryShake.Serialization.TimeSpanSerializer>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StrawberryShake.Serialization.JsonSerializer>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StarWarsGeneratedClient.CreateReviewInputInputValueFormatter>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StarWarsGeneratedClient.ICharacterFilterInputInputValueFormatter>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StarWarsGeneratedClient.ComparableInt32OperationFilterInputInputValueFormatter>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StarWarsGeneratedClient.StringOperationFilterInputInputValueFormatter>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StarWarsGeneratedClient.ListComparableInt32OperationFilterInputInputValueFormatter>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StarWarsGeneratedClient.ListEpisodeOperationFilterInputInputValueFormatter>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StarWarsGeneratedClient.EpisodeOperationFilterInputInputValueFormatter>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StarWarsGeneratedClient.ComparableDoubleOperationFilterInputInputValueFormatter>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StarWarsGeneratedClient.ICharacterSortInputInputValueFormatter>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializerResolver>(services, sp => new global::StrawberryShake.Serialization.SerializerResolver(global::System.Linq.Enumerable.Concat(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::System.Collections.Generic.IEnumerable<global::StrawberryShake.Serialization.ISerializer>>(parentServices), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::System.Collections.Generic.IEnumerable<global::StrawberryShake.Serialization.ISerializer>>(sp))));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetHeroResult>, global::StarWarsGeneratedClient.State.GetHeroResultFactory>(services);
@@ -3198,6 +3205,2682 @@ namespace StarWarsGeneratedClient
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class ICharacterFilterInputInputValueFormatter : global::StrawberryShake.Serialization.IInputObjectFormatter
+    {
+        private global::StrawberryShake.Serialization.IInputValueFormatter _iCharacterFilterInputFormatter = default !;
+        private global::StrawberryShake.Serialization.IInputValueFormatter _comparableInt32OperationFilterInputFormatter = default !;
+        private global::StrawberryShake.Serialization.IInputValueFormatter _stringOperationFilterInputFormatter = default !;
+        private global::StrawberryShake.Serialization.IInputValueFormatter _listComparableInt32OperationFilterInputFormatter = default !;
+        private global::StrawberryShake.Serialization.IInputValueFormatter _listEpisodeOperationFilterInputFormatter = default !;
+        private global::StrawberryShake.Serialization.IInputValueFormatter _comparableDoubleOperationFilterInputFormatter = default !;
+        public global::System.String TypeName => "ICharacterFilterInput";
+        public void Initialize(global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _iCharacterFilterInputFormatter = serializerResolver.GetInputValueFormatter("ICharacterFilterInput");
+            _comparableInt32OperationFilterInputFormatter = serializerResolver.GetInputValueFormatter("ComparableInt32OperationFilterInput");
+            _stringOperationFilterInputFormatter = serializerResolver.GetInputValueFormatter("StringOperationFilterInput");
+            _listComparableInt32OperationFilterInputFormatter = serializerResolver.GetInputValueFormatter("ListComparableInt32OperationFilterInput");
+            _listEpisodeOperationFilterInputFormatter = serializerResolver.GetInputValueFormatter("ListEpisodeOperationFilterInput");
+            _comparableDoubleOperationFilterInputFormatter = serializerResolver.GetInputValueFormatter("ComparableDoubleOperationFilterInput");
+        }
+
+        public global::System.Object? Format(global::System.Object? runtimeValue)
+        {
+            if (runtimeValue is null)
+            {
+                return null;
+            }
+
+            var input = runtimeValue as global::StarWarsGeneratedClient.ICharacterFilterInput;
+            var inputInfo = runtimeValue as global::StarWarsGeneratedClient.State.IICharacterFilterInputInfo;
+            if (input is null || inputInfo is null)
+            {
+                throw new global::System.ArgumentException(nameof(runtimeValue));
+            }
+
+            var fields = new global::System.Collections.Generic.List<global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>>();
+            if (inputInfo.IsAndSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("and", FormatAnd(input.And)));
+            }
+
+            if (inputInfo.IsOrSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("or", FormatOr(input.Or)));
+            }
+
+            if (inputInfo.IsIdSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("id", FormatId(input.Id)));
+            }
+
+            if (inputInfo.IsNameSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("name", FormatName(input.Name)));
+            }
+
+            if (inputInfo.IsFriendsSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("friends", FormatFriends(input.Friends)));
+            }
+
+            if (inputInfo.IsAppearsInSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("appearsIn", FormatAppearsIn(input.AppearsIn)));
+            }
+
+            if (inputInfo.IsHeightSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("height", FormatHeight(input.Height)));
+            }
+
+            return fields;
+        }
+
+        private global::System.Object? FormatAnd(global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.ICharacterFilterInput>? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                var input_list = new global::System.Collections.Generic.List<global::System.Object?>();
+                foreach (var input_elm in input)
+                {
+                    if (input_elm is null)
+                    {
+                        throw new global::System.ArgumentNullException(nameof(input_elm));
+                    }
+
+                    input_list.Add(_iCharacterFilterInputFormatter.Format(input_elm));
+                }
+
+                return input_list;
+            }
+        }
+
+        private global::System.Object? FormatOr(global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.ICharacterFilterInput>? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                var input_list = new global::System.Collections.Generic.List<global::System.Object?>();
+                foreach (var input_elm in input)
+                {
+                    if (input_elm is null)
+                    {
+                        throw new global::System.ArgumentNullException(nameof(input_elm));
+                    }
+
+                    input_list.Add(_iCharacterFilterInputFormatter.Format(input_elm));
+                }
+
+                return input_list;
+            }
+        }
+
+        private global::System.Object? FormatId(global::StarWarsGeneratedClient.ComparableInt32OperationFilterInput? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _comparableInt32OperationFilterInputFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatName(global::StarWarsGeneratedClient.StringOperationFilterInput? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _stringOperationFilterInputFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatFriends(global::StarWarsGeneratedClient.ListComparableInt32OperationFilterInput? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _listComparableInt32OperationFilterInputFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatAppearsIn(global::StarWarsGeneratedClient.ListEpisodeOperationFilterInput? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _listEpisodeOperationFilterInputFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatHeight(global::StarWarsGeneratedClient.ComparableDoubleOperationFilterInput? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _comparableDoubleOperationFilterInputFormatter.Format(input);
+            }
+        }
+    }
+
+    ///<summary>A character in the Star Wars universe.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class ICharacterFilterInput : global::StarWarsGeneratedClient.State.IICharacterFilterInputInfo, global::System.IEquatable<ICharacterFilterInput>
+    {
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((ICharacterFilterInput)obj);
+        }
+
+        public virtual global::System.Boolean Equals(ICharacterFilterInput? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(And, other.And)) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Or, other.Or) && ((Id is null && other.Id is null) || Id != null && Id.Equals(other.Id)) && ((Name is null && other.Name is null) || Name != null && Name.Equals(other.Name)) && ((Friends is null && other.Friends is null) || Friends != null && Friends.Equals(other.Friends)) && ((AppearsIn is null && other.AppearsIn is null) || AppearsIn != null && AppearsIn.Equals(other.AppearsIn)) && ((Height is null && other.Height is null) || Height != null && Height.Equals(other.Height));
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (And != null)
+                {
+                    foreach (var And_elm in And)
+                    {
+                        hash ^= 397 * And_elm.GetHashCode();
+                    }
+                }
+
+                if (Or != null)
+                {
+                    foreach (var Or_elm in Or)
+                    {
+                        hash ^= 397 * Or_elm.GetHashCode();
+                    }
+                }
+
+                if (Id != null)
+                {
+                    hash ^= 397 * Id.GetHashCode();
+                }
+
+                if (Name != null)
+                {
+                    hash ^= 397 * Name.GetHashCode();
+                }
+
+                if (Friends != null)
+                {
+                    hash ^= 397 * Friends.GetHashCode();
+                }
+
+                if (AppearsIn != null)
+                {
+                    hash ^= 397 * AppearsIn.GetHashCode();
+                }
+
+                if (Height != null)
+                {
+                    hash ^= 397 * Height.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.ICharacterFilterInput>? _value_and;
+        private global::System.Boolean _set_and;
+        private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.ICharacterFilterInput>? _value_or;
+        private global::System.Boolean _set_or;
+        private global::StarWarsGeneratedClient.ComparableInt32OperationFilterInput? _value_id;
+        private global::System.Boolean _set_id;
+        private global::StarWarsGeneratedClient.StringOperationFilterInput? _value_name;
+        private global::System.Boolean _set_name;
+        private global::StarWarsGeneratedClient.ListComparableInt32OperationFilterInput? _value_friends;
+        private global::System.Boolean _set_friends;
+        private global::StarWarsGeneratedClient.ListEpisodeOperationFilterInput? _value_appearsIn;
+        private global::System.Boolean _set_appearsIn;
+        private global::StarWarsGeneratedClient.ComparableDoubleOperationFilterInput? _value_height;
+        private global::System.Boolean _set_height;
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.ICharacterFilterInput>? And
+        {
+            get => _value_and;
+            set
+            {
+                _set_and = true;
+                _value_and = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IICharacterFilterInputInfo.IsAndSet => _set_and;
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.ICharacterFilterInput>? Or
+        {
+            get => _value_or;
+            set
+            {
+                _set_or = true;
+                _value_or = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IICharacterFilterInputInfo.IsOrSet => _set_or;
+        ///<summary>The unique identifier for the character.</summary>
+        public global::StarWarsGeneratedClient.ComparableInt32OperationFilterInput? Id
+        {
+            get => _value_id;
+            set
+            {
+                _set_id = true;
+                _value_id = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IICharacterFilterInputInfo.IsIdSet => _set_id;
+        ///<summary>The name of the character.</summary>
+        public global::StarWarsGeneratedClient.StringOperationFilterInput? Name
+        {
+            get => _value_name;
+            set
+            {
+                _set_name = true;
+                _value_name = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IICharacterFilterInputInfo.IsNameSet => _set_name;
+        ///<summary>The ids of the character's friends.</summary>
+        public global::StarWarsGeneratedClient.ListComparableInt32OperationFilterInput? Friends
+        {
+            get => _value_friends;
+            set
+            {
+                _set_friends = true;
+                _value_friends = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IICharacterFilterInputInfo.IsFriendsSet => _set_friends;
+        ///<summary>The episodes the character appears in.</summary>
+        public global::StarWarsGeneratedClient.ListEpisodeOperationFilterInput? AppearsIn
+        {
+            get => _value_appearsIn;
+            set
+            {
+                _set_appearsIn = true;
+                _value_appearsIn = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IICharacterFilterInputInfo.IsAppearsInSet => _set_appearsIn;
+        ///<summary>The height of the character.</summary>
+        public global::StarWarsGeneratedClient.ComparableDoubleOperationFilterInput? Height
+        {
+            get => _value_height;
+            set
+            {
+                _set_height = true;
+                _value_height = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IICharacterFilterInputInfo.IsHeightSet => _set_height;
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class ComparableInt32OperationFilterInputInputValueFormatter : global::StrawberryShake.Serialization.IInputObjectFormatter
+    {
+        private global::StrawberryShake.Serialization.IInputValueFormatter _intFormatter = default !;
+        public global::System.String TypeName => "ComparableInt32OperationFilterInput";
+        public void Initialize(global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _intFormatter = serializerResolver.GetInputValueFormatter("Int");
+        }
+
+        public global::System.Object? Format(global::System.Object? runtimeValue)
+        {
+            if (runtimeValue is null)
+            {
+                return null;
+            }
+
+            var input = runtimeValue as global::StarWarsGeneratedClient.ComparableInt32OperationFilterInput;
+            var inputInfo = runtimeValue as global::StarWarsGeneratedClient.State.IComparableInt32OperationFilterInputInfo;
+            if (input is null || inputInfo is null)
+            {
+                throw new global::System.ArgumentException(nameof(runtimeValue));
+            }
+
+            var fields = new global::System.Collections.Generic.List<global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>>();
+            if (inputInfo.IsEqSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("eq", FormatEq(input.Eq)));
+            }
+
+            if (inputInfo.IsNeqSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("neq", FormatNeq(input.Neq)));
+            }
+
+            if (inputInfo.IsInSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("in", FormatIn(input.In)));
+            }
+
+            if (inputInfo.IsNinSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("nin", FormatNin(input.Nin)));
+            }
+
+            if (inputInfo.IsGtSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("gt", FormatGt(input.Gt)));
+            }
+
+            if (inputInfo.IsNgtSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("ngt", FormatNgt(input.Ngt)));
+            }
+
+            if (inputInfo.IsGteSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("gte", FormatGte(input.Gte)));
+            }
+
+            if (inputInfo.IsNgteSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("ngte", FormatNgte(input.Ngte)));
+            }
+
+            if (inputInfo.IsLtSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("lt", FormatLt(input.Lt)));
+            }
+
+            if (inputInfo.IsNltSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("nlt", FormatNlt(input.Nlt)));
+            }
+
+            if (inputInfo.IsLteSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("lte", FormatLte(input.Lte)));
+            }
+
+            if (inputInfo.IsNlteSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("nlte", FormatNlte(input.Nlte)));
+            }
+
+            return fields;
+        }
+
+        private global::System.Object? FormatEq(global::System.Int32? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _intFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatNeq(global::System.Int32? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _intFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatIn(global::System.Collections.Generic.IReadOnlyList<global::System.Int32>? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                var input_list = new global::System.Collections.Generic.List<global::System.Object?>();
+                foreach (var input_elm in input)
+                {
+                    input_list.Add(_intFormatter.Format(input_elm));
+                }
+
+                return input_list;
+            }
+        }
+
+        private global::System.Object? FormatNin(global::System.Collections.Generic.IReadOnlyList<global::System.Int32>? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                var input_list = new global::System.Collections.Generic.List<global::System.Object?>();
+                foreach (var input_elm in input)
+                {
+                    input_list.Add(_intFormatter.Format(input_elm));
+                }
+
+                return input_list;
+            }
+        }
+
+        private global::System.Object? FormatGt(global::System.Int32? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _intFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatNgt(global::System.Int32? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _intFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatGte(global::System.Int32? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _intFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatNgte(global::System.Int32? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _intFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatLt(global::System.Int32? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _intFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatNlt(global::System.Int32? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _intFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatLte(global::System.Int32? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _intFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatNlte(global::System.Int32? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _intFormatter.Format(input);
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class ComparableInt32OperationFilterInput : global::StarWarsGeneratedClient.State.IComparableInt32OperationFilterInputInfo, global::System.IEquatable<ComparableInt32OperationFilterInput>
+    {
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((ComparableInt32OperationFilterInput)obj);
+        }
+
+        public virtual global::System.Boolean Equals(ComparableInt32OperationFilterInput? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (Eq == other.Eq) && Neq == other.Neq && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(In, other.In) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Nin, other.Nin) && Gt == other.Gt && Ngt == other.Ngt && Gte == other.Gte && Ngte == other.Ngte && Lt == other.Lt && Nlt == other.Nlt && Lte == other.Lte && Nlte == other.Nlte;
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (Eq != null)
+                {
+                    hash ^= 397 * Eq.GetHashCode();
+                }
+
+                if (Neq != null)
+                {
+                    hash ^= 397 * Neq.GetHashCode();
+                }
+
+                if (In != null)
+                {
+                    foreach (var In_elm in In)
+                    {
+                        hash ^= 397 * In_elm.GetHashCode();
+                    }
+                }
+
+                if (Nin != null)
+                {
+                    foreach (var Nin_elm in Nin)
+                    {
+                        hash ^= 397 * Nin_elm.GetHashCode();
+                    }
+                }
+
+                if (Gt != null)
+                {
+                    hash ^= 397 * Gt.GetHashCode();
+                }
+
+                if (Ngt != null)
+                {
+                    hash ^= 397 * Ngt.GetHashCode();
+                }
+
+                if (Gte != null)
+                {
+                    hash ^= 397 * Gte.GetHashCode();
+                }
+
+                if (Ngte != null)
+                {
+                    hash ^= 397 * Ngte.GetHashCode();
+                }
+
+                if (Lt != null)
+                {
+                    hash ^= 397 * Lt.GetHashCode();
+                }
+
+                if (Nlt != null)
+                {
+                    hash ^= 397 * Nlt.GetHashCode();
+                }
+
+                if (Lte != null)
+                {
+                    hash ^= 397 * Lte.GetHashCode();
+                }
+
+                if (Nlte != null)
+                {
+                    hash ^= 397 * Nlte.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+
+        private global::System.Int32? _value_eq;
+        private global::System.Boolean _set_eq;
+        private global::System.Int32? _value_neq;
+        private global::System.Boolean _set_neq;
+        private global::System.Collections.Generic.IReadOnlyList<global::System.Int32>? _value_in;
+        private global::System.Boolean _set_in;
+        private global::System.Collections.Generic.IReadOnlyList<global::System.Int32>? _value_nin;
+        private global::System.Boolean _set_nin;
+        private global::System.Int32? _value_gt;
+        private global::System.Boolean _set_gt;
+        private global::System.Int32? _value_ngt;
+        private global::System.Boolean _set_ngt;
+        private global::System.Int32? _value_gte;
+        private global::System.Boolean _set_gte;
+        private global::System.Int32? _value_ngte;
+        private global::System.Boolean _set_ngte;
+        private global::System.Int32? _value_lt;
+        private global::System.Boolean _set_lt;
+        private global::System.Int32? _value_nlt;
+        private global::System.Boolean _set_nlt;
+        private global::System.Int32? _value_lte;
+        private global::System.Boolean _set_lte;
+        private global::System.Int32? _value_nlte;
+        private global::System.Boolean _set_nlte;
+        public global::System.Int32? Eq
+        {
+            get => _value_eq;
+            set
+            {
+                _set_eq = true;
+                _value_eq = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IComparableInt32OperationFilterInputInfo.IsEqSet => _set_eq;
+        public global::System.Int32? Neq
+        {
+            get => _value_neq;
+            set
+            {
+                _set_neq = true;
+                _value_neq = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IComparableInt32OperationFilterInputInfo.IsNeqSet => _set_neq;
+        public global::System.Collections.Generic.IReadOnlyList<global::System.Int32>? In
+        {
+            get => _value_in;
+            set
+            {
+                _set_in = true;
+                _value_in = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IComparableInt32OperationFilterInputInfo.IsInSet => _set_in;
+        public global::System.Collections.Generic.IReadOnlyList<global::System.Int32>? Nin
+        {
+            get => _value_nin;
+            set
+            {
+                _set_nin = true;
+                _value_nin = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IComparableInt32OperationFilterInputInfo.IsNinSet => _set_nin;
+        public global::System.Int32? Gt
+        {
+            get => _value_gt;
+            set
+            {
+                _set_gt = true;
+                _value_gt = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IComparableInt32OperationFilterInputInfo.IsGtSet => _set_gt;
+        public global::System.Int32? Ngt
+        {
+            get => _value_ngt;
+            set
+            {
+                _set_ngt = true;
+                _value_ngt = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IComparableInt32OperationFilterInputInfo.IsNgtSet => _set_ngt;
+        public global::System.Int32? Gte
+        {
+            get => _value_gte;
+            set
+            {
+                _set_gte = true;
+                _value_gte = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IComparableInt32OperationFilterInputInfo.IsGteSet => _set_gte;
+        public global::System.Int32? Ngte
+        {
+            get => _value_ngte;
+            set
+            {
+                _set_ngte = true;
+                _value_ngte = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IComparableInt32OperationFilterInputInfo.IsNgteSet => _set_ngte;
+        public global::System.Int32? Lt
+        {
+            get => _value_lt;
+            set
+            {
+                _set_lt = true;
+                _value_lt = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IComparableInt32OperationFilterInputInfo.IsLtSet => _set_lt;
+        public global::System.Int32? Nlt
+        {
+            get => _value_nlt;
+            set
+            {
+                _set_nlt = true;
+                _value_nlt = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IComparableInt32OperationFilterInputInfo.IsNltSet => _set_nlt;
+        public global::System.Int32? Lte
+        {
+            get => _value_lte;
+            set
+            {
+                _set_lte = true;
+                _value_lte = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IComparableInt32OperationFilterInputInfo.IsLteSet => _set_lte;
+        public global::System.Int32? Nlte
+        {
+            get => _value_nlte;
+            set
+            {
+                _set_nlte = true;
+                _value_nlte = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IComparableInt32OperationFilterInputInfo.IsNlteSet => _set_nlte;
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class StringOperationFilterInputInputValueFormatter : global::StrawberryShake.Serialization.IInputObjectFormatter
+    {
+        private global::StrawberryShake.Serialization.IInputValueFormatter _stringOperationFilterInputFormatter = default !;
+        private global::StrawberryShake.Serialization.IInputValueFormatter _stringFormatter = default !;
+        public global::System.String TypeName => "StringOperationFilterInput";
+        public void Initialize(global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _stringOperationFilterInputFormatter = serializerResolver.GetInputValueFormatter("StringOperationFilterInput");
+            _stringFormatter = serializerResolver.GetInputValueFormatter("String");
+        }
+
+        public global::System.Object? Format(global::System.Object? runtimeValue)
+        {
+            if (runtimeValue is null)
+            {
+                return null;
+            }
+
+            var input = runtimeValue as global::StarWarsGeneratedClient.StringOperationFilterInput;
+            var inputInfo = runtimeValue as global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo;
+            if (input is null || inputInfo is null)
+            {
+                throw new global::System.ArgumentException(nameof(runtimeValue));
+            }
+
+            var fields = new global::System.Collections.Generic.List<global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>>();
+            if (inputInfo.IsAndSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("and", FormatAnd(input.And)));
+            }
+
+            if (inputInfo.IsOrSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("or", FormatOr(input.Or)));
+            }
+
+            if (inputInfo.IsEqSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("eq", FormatEq(input.Eq)));
+            }
+
+            if (inputInfo.IsNeqSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("neq", FormatNeq(input.Neq)));
+            }
+
+            if (inputInfo.IsContainsSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("contains", FormatContains(input.Contains)));
+            }
+
+            if (inputInfo.IsNcontainsSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("ncontains", FormatNcontains(input.Ncontains)));
+            }
+
+            if (inputInfo.IsInSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("in", FormatIn(input.In)));
+            }
+
+            if (inputInfo.IsNinSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("nin", FormatNin(input.Nin)));
+            }
+
+            if (inputInfo.IsStartsWithSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("startsWith", FormatStartsWith(input.StartsWith)));
+            }
+
+            if (inputInfo.IsNstartsWithSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("nstartsWith", FormatNstartsWith(input.NstartsWith)));
+            }
+
+            if (inputInfo.IsEndsWithSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("endsWith", FormatEndsWith(input.EndsWith)));
+            }
+
+            if (inputInfo.IsNendsWithSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("nendsWith", FormatNendsWith(input.NendsWith)));
+            }
+
+            return fields;
+        }
+
+        private global::System.Object? FormatAnd(global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.StringOperationFilterInput>? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                var input_list = new global::System.Collections.Generic.List<global::System.Object?>();
+                foreach (var input_elm in input)
+                {
+                    if (input_elm is null)
+                    {
+                        throw new global::System.ArgumentNullException(nameof(input_elm));
+                    }
+
+                    input_list.Add(_stringOperationFilterInputFormatter.Format(input_elm));
+                }
+
+                return input_list;
+            }
+        }
+
+        private global::System.Object? FormatOr(global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.StringOperationFilterInput>? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                var input_list = new global::System.Collections.Generic.List<global::System.Object?>();
+                foreach (var input_elm in input)
+                {
+                    if (input_elm is null)
+                    {
+                        throw new global::System.ArgumentNullException(nameof(input_elm));
+                    }
+
+                    input_list.Add(_stringOperationFilterInputFormatter.Format(input_elm));
+                }
+
+                return input_list;
+            }
+        }
+
+        private global::System.Object? FormatEq(global::System.String? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _stringFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatNeq(global::System.String? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _stringFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatContains(global::System.String? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _stringFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatNcontains(global::System.String? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _stringFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatIn(global::System.Collections.Generic.IReadOnlyList<global::System.String?>? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                var input_list = new global::System.Collections.Generic.List<global::System.Object?>();
+                foreach (var input_elm in input)
+                {
+                    if (input_elm is null)
+                    {
+                        input_list.Add(input_elm);
+                    }
+                    else
+                    {
+                        input_list.Add(_stringFormatter.Format(input_elm));
+                    }
+                }
+
+                return input_list;
+            }
+        }
+
+        private global::System.Object? FormatNin(global::System.Collections.Generic.IReadOnlyList<global::System.String?>? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                var input_list = new global::System.Collections.Generic.List<global::System.Object?>();
+                foreach (var input_elm in input)
+                {
+                    if (input_elm is null)
+                    {
+                        input_list.Add(input_elm);
+                    }
+                    else
+                    {
+                        input_list.Add(_stringFormatter.Format(input_elm));
+                    }
+                }
+
+                return input_list;
+            }
+        }
+
+        private global::System.Object? FormatStartsWith(global::System.String? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _stringFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatNstartsWith(global::System.String? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _stringFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatEndsWith(global::System.String? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _stringFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatNendsWith(global::System.String? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _stringFormatter.Format(input);
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class StringOperationFilterInput : global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo, global::System.IEquatable<StringOperationFilterInput>
+    {
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((StringOperationFilterInput)obj);
+        }
+
+        public virtual global::System.Boolean Equals(StringOperationFilterInput? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(And, other.And)) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Or, other.Or) && ((Eq is null && other.Eq is null) || Eq != null && Eq.Equals(other.Eq)) && ((Neq is null && other.Neq is null) || Neq != null && Neq.Equals(other.Neq)) && ((Contains is null && other.Contains is null) || Contains != null && Contains.Equals(other.Contains)) && ((Ncontains is null && other.Ncontains is null) || Ncontains != null && Ncontains.Equals(other.Ncontains)) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(In, other.In) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Nin, other.Nin) && ((StartsWith is null && other.StartsWith is null) || StartsWith != null && StartsWith.Equals(other.StartsWith)) && ((NstartsWith is null && other.NstartsWith is null) || NstartsWith != null && NstartsWith.Equals(other.NstartsWith)) && ((EndsWith is null && other.EndsWith is null) || EndsWith != null && EndsWith.Equals(other.EndsWith)) && ((NendsWith is null && other.NendsWith is null) || NendsWith != null && NendsWith.Equals(other.NendsWith));
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (And != null)
+                {
+                    foreach (var And_elm in And)
+                    {
+                        hash ^= 397 * And_elm.GetHashCode();
+                    }
+                }
+
+                if (Or != null)
+                {
+                    foreach (var Or_elm in Or)
+                    {
+                        hash ^= 397 * Or_elm.GetHashCode();
+                    }
+                }
+
+                if (Eq != null)
+                {
+                    hash ^= 397 * Eq.GetHashCode();
+                }
+
+                if (Neq != null)
+                {
+                    hash ^= 397 * Neq.GetHashCode();
+                }
+
+                if (Contains != null)
+                {
+                    hash ^= 397 * Contains.GetHashCode();
+                }
+
+                if (Ncontains != null)
+                {
+                    hash ^= 397 * Ncontains.GetHashCode();
+                }
+
+                if (In != null)
+                {
+                    foreach (var In_elm in In)
+                    {
+                        if (In_elm != null)
+                        {
+                            hash ^= 397 * In_elm.GetHashCode();
+                        }
+                    }
+                }
+
+                if (Nin != null)
+                {
+                    foreach (var Nin_elm in Nin)
+                    {
+                        if (Nin_elm != null)
+                        {
+                            hash ^= 397 * Nin_elm.GetHashCode();
+                        }
+                    }
+                }
+
+                if (StartsWith != null)
+                {
+                    hash ^= 397 * StartsWith.GetHashCode();
+                }
+
+                if (NstartsWith != null)
+                {
+                    hash ^= 397 * NstartsWith.GetHashCode();
+                }
+
+                if (EndsWith != null)
+                {
+                    hash ^= 397 * EndsWith.GetHashCode();
+                }
+
+                if (NendsWith != null)
+                {
+                    hash ^= 397 * NendsWith.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+
+        private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.StringOperationFilterInput>? _value_and;
+        private global::System.Boolean _set_and;
+        private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.StringOperationFilterInput>? _value_or;
+        private global::System.Boolean _set_or;
+        private global::System.String? _value_eq;
+        private global::System.Boolean _set_eq;
+        private global::System.String? _value_neq;
+        private global::System.Boolean _set_neq;
+        private global::System.String? _value_contains;
+        private global::System.Boolean _set_contains;
+        private global::System.String? _value_ncontains;
+        private global::System.Boolean _set_ncontains;
+        private global::System.Collections.Generic.IReadOnlyList<global::System.String?>? _value_in;
+        private global::System.Boolean _set_in;
+        private global::System.Collections.Generic.IReadOnlyList<global::System.String?>? _value_nin;
+        private global::System.Boolean _set_nin;
+        private global::System.String? _value_startsWith;
+        private global::System.Boolean _set_startsWith;
+        private global::System.String? _value_nstartsWith;
+        private global::System.Boolean _set_nstartsWith;
+        private global::System.String? _value_endsWith;
+        private global::System.Boolean _set_endsWith;
+        private global::System.String? _value_nendsWith;
+        private global::System.Boolean _set_nendsWith;
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.StringOperationFilterInput>? And
+        {
+            get => _value_and;
+            set
+            {
+                _set_and = true;
+                _value_and = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsAndSet => _set_and;
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.StringOperationFilterInput>? Or
+        {
+            get => _value_or;
+            set
+            {
+                _set_or = true;
+                _value_or = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsOrSet => _set_or;
+        public global::System.String? Eq
+        {
+            get => _value_eq;
+            set
+            {
+                _set_eq = true;
+                _value_eq = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsEqSet => _set_eq;
+        public global::System.String? Neq
+        {
+            get => _value_neq;
+            set
+            {
+                _set_neq = true;
+                _value_neq = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsNeqSet => _set_neq;
+        public global::System.String? Contains
+        {
+            get => _value_contains;
+            set
+            {
+                _set_contains = true;
+                _value_contains = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsContainsSet => _set_contains;
+        public global::System.String? Ncontains
+        {
+            get => _value_ncontains;
+            set
+            {
+                _set_ncontains = true;
+                _value_ncontains = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsNcontainsSet => _set_ncontains;
+        public global::System.Collections.Generic.IReadOnlyList<global::System.String?>? In
+        {
+            get => _value_in;
+            set
+            {
+                _set_in = true;
+                _value_in = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsInSet => _set_in;
+        public global::System.Collections.Generic.IReadOnlyList<global::System.String?>? Nin
+        {
+            get => _value_nin;
+            set
+            {
+                _set_nin = true;
+                _value_nin = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsNinSet => _set_nin;
+        public global::System.String? StartsWith
+        {
+            get => _value_startsWith;
+            set
+            {
+                _set_startsWith = true;
+                _value_startsWith = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsStartsWithSet => _set_startsWith;
+        public global::System.String? NstartsWith
+        {
+            get => _value_nstartsWith;
+            set
+            {
+                _set_nstartsWith = true;
+                _value_nstartsWith = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsNstartsWithSet => _set_nstartsWith;
+        public global::System.String? EndsWith
+        {
+            get => _value_endsWith;
+            set
+            {
+                _set_endsWith = true;
+                _value_endsWith = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsEndsWithSet => _set_endsWith;
+        public global::System.String? NendsWith
+        {
+            get => _value_nendsWith;
+            set
+            {
+                _set_nendsWith = true;
+                _value_nendsWith = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsNendsWithSet => _set_nendsWith;
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class ListComparableInt32OperationFilterInputInputValueFormatter : global::StrawberryShake.Serialization.IInputObjectFormatter
+    {
+        private global::StrawberryShake.Serialization.IInputValueFormatter _comparableInt32OperationFilterInputFormatter = default !;
+        private global::StrawberryShake.Serialization.IInputValueFormatter _booleanFormatter = default !;
+        public global::System.String TypeName => "ListComparableInt32OperationFilterInput";
+        public void Initialize(global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _comparableInt32OperationFilterInputFormatter = serializerResolver.GetInputValueFormatter("ComparableInt32OperationFilterInput");
+            _booleanFormatter = serializerResolver.GetInputValueFormatter("Boolean");
+        }
+
+        public global::System.Object? Format(global::System.Object? runtimeValue)
+        {
+            if (runtimeValue is null)
+            {
+                return null;
+            }
+
+            var input = runtimeValue as global::StarWarsGeneratedClient.ListComparableInt32OperationFilterInput;
+            var inputInfo = runtimeValue as global::StarWarsGeneratedClient.State.IListComparableInt32OperationFilterInputInfo;
+            if (input is null || inputInfo is null)
+            {
+                throw new global::System.ArgumentException(nameof(runtimeValue));
+            }
+
+            var fields = new global::System.Collections.Generic.List<global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>>();
+            if (inputInfo.IsAllSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("all", FormatAll(input.All)));
+            }
+
+            if (inputInfo.IsNoneSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("none", FormatNone(input.None)));
+            }
+
+            if (inputInfo.IsSomeSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("some", FormatSome(input.Some)));
+            }
+
+            if (inputInfo.IsAnySet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("any", FormatAny(input.Any)));
+            }
+
+            return fields;
+        }
+
+        private global::System.Object? FormatAll(global::StarWarsGeneratedClient.ComparableInt32OperationFilterInput? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _comparableInt32OperationFilterInputFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatNone(global::StarWarsGeneratedClient.ComparableInt32OperationFilterInput? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _comparableInt32OperationFilterInputFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatSome(global::StarWarsGeneratedClient.ComparableInt32OperationFilterInput? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _comparableInt32OperationFilterInputFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatAny(global::System.Boolean? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _booleanFormatter.Format(input);
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class ListComparableInt32OperationFilterInput : global::StarWarsGeneratedClient.State.IListComparableInt32OperationFilterInputInfo, global::System.IEquatable<ListComparableInt32OperationFilterInput>
+    {
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((ListComparableInt32OperationFilterInput)obj);
+        }
+
+        public virtual global::System.Boolean Equals(ListComparableInt32OperationFilterInput? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (((All is null && other.All is null) || All != null && All.Equals(other.All))) && ((None is null && other.None is null) || None != null && None.Equals(other.None)) && ((Some is null && other.Some is null) || Some != null && Some.Equals(other.Some)) && Any == other.Any;
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (All != null)
+                {
+                    hash ^= 397 * All.GetHashCode();
+                }
+
+                if (None != null)
+                {
+                    hash ^= 397 * None.GetHashCode();
+                }
+
+                if (Some != null)
+                {
+                    hash ^= 397 * Some.GetHashCode();
+                }
+
+                if (Any != null)
+                {
+                    hash ^= 397 * Any.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+
+        private global::StarWarsGeneratedClient.ComparableInt32OperationFilterInput? _value_all;
+        private global::System.Boolean _set_all;
+        private global::StarWarsGeneratedClient.ComparableInt32OperationFilterInput? _value_none;
+        private global::System.Boolean _set_none;
+        private global::StarWarsGeneratedClient.ComparableInt32OperationFilterInput? _value_some;
+        private global::System.Boolean _set_some;
+        private global::System.Boolean? _value_any;
+        private global::System.Boolean _set_any;
+        public global::StarWarsGeneratedClient.ComparableInt32OperationFilterInput? All
+        {
+            get => _value_all;
+            set
+            {
+                _set_all = true;
+                _value_all = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IListComparableInt32OperationFilterInputInfo.IsAllSet => _set_all;
+        public global::StarWarsGeneratedClient.ComparableInt32OperationFilterInput? None
+        {
+            get => _value_none;
+            set
+            {
+                _set_none = true;
+                _value_none = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IListComparableInt32OperationFilterInputInfo.IsNoneSet => _set_none;
+        public global::StarWarsGeneratedClient.ComparableInt32OperationFilterInput? Some
+        {
+            get => _value_some;
+            set
+            {
+                _set_some = true;
+                _value_some = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IListComparableInt32OperationFilterInputInfo.IsSomeSet => _set_some;
+        public global::System.Boolean? Any
+        {
+            get => _value_any;
+            set
+            {
+                _set_any = true;
+                _value_any = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IListComparableInt32OperationFilterInputInfo.IsAnySet => _set_any;
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class ListEpisodeOperationFilterInputInputValueFormatter : global::StrawberryShake.Serialization.IInputObjectFormatter
+    {
+        private global::StrawberryShake.Serialization.IInputValueFormatter _episodeOperationFilterInputFormatter = default !;
+        private global::StrawberryShake.Serialization.IInputValueFormatter _booleanFormatter = default !;
+        public global::System.String TypeName => "ListEpisodeOperationFilterInput";
+        public void Initialize(global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _episodeOperationFilterInputFormatter = serializerResolver.GetInputValueFormatter("EpisodeOperationFilterInput");
+            _booleanFormatter = serializerResolver.GetInputValueFormatter("Boolean");
+        }
+
+        public global::System.Object? Format(global::System.Object? runtimeValue)
+        {
+            if (runtimeValue is null)
+            {
+                return null;
+            }
+
+            var input = runtimeValue as global::StarWarsGeneratedClient.ListEpisodeOperationFilterInput;
+            var inputInfo = runtimeValue as global::StarWarsGeneratedClient.State.IListEpisodeOperationFilterInputInfo;
+            if (input is null || inputInfo is null)
+            {
+                throw new global::System.ArgumentException(nameof(runtimeValue));
+            }
+
+            var fields = new global::System.Collections.Generic.List<global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>>();
+            if (inputInfo.IsAllSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("all", FormatAll(input.All)));
+            }
+
+            if (inputInfo.IsNoneSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("none", FormatNone(input.None)));
+            }
+
+            if (inputInfo.IsSomeSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("some", FormatSome(input.Some)));
+            }
+
+            if (inputInfo.IsAnySet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("any", FormatAny(input.Any)));
+            }
+
+            return fields;
+        }
+
+        private global::System.Object? FormatAll(global::StarWarsGeneratedClient.EpisodeOperationFilterInput? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _episodeOperationFilterInputFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatNone(global::StarWarsGeneratedClient.EpisodeOperationFilterInput? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _episodeOperationFilterInputFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatSome(global::StarWarsGeneratedClient.EpisodeOperationFilterInput? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _episodeOperationFilterInputFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatAny(global::System.Boolean? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _booleanFormatter.Format(input);
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class ListEpisodeOperationFilterInput : global::StarWarsGeneratedClient.State.IListEpisodeOperationFilterInputInfo, global::System.IEquatable<ListEpisodeOperationFilterInput>
+    {
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((ListEpisodeOperationFilterInput)obj);
+        }
+
+        public virtual global::System.Boolean Equals(ListEpisodeOperationFilterInput? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (((All is null && other.All is null) || All != null && All.Equals(other.All))) && ((None is null && other.None is null) || None != null && None.Equals(other.None)) && ((Some is null && other.Some is null) || Some != null && Some.Equals(other.Some)) && Any == other.Any;
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (All != null)
+                {
+                    hash ^= 397 * All.GetHashCode();
+                }
+
+                if (None != null)
+                {
+                    hash ^= 397 * None.GetHashCode();
+                }
+
+                if (Some != null)
+                {
+                    hash ^= 397 * Some.GetHashCode();
+                }
+
+                if (Any != null)
+                {
+                    hash ^= 397 * Any.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+
+        private global::StarWarsGeneratedClient.EpisodeOperationFilterInput? _value_all;
+        private global::System.Boolean _set_all;
+        private global::StarWarsGeneratedClient.EpisodeOperationFilterInput? _value_none;
+        private global::System.Boolean _set_none;
+        private global::StarWarsGeneratedClient.EpisodeOperationFilterInput? _value_some;
+        private global::System.Boolean _set_some;
+        private global::System.Boolean? _value_any;
+        private global::System.Boolean _set_any;
+        public global::StarWarsGeneratedClient.EpisodeOperationFilterInput? All
+        {
+            get => _value_all;
+            set
+            {
+                _set_all = true;
+                _value_all = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IListEpisodeOperationFilterInputInfo.IsAllSet => _set_all;
+        public global::StarWarsGeneratedClient.EpisodeOperationFilterInput? None
+        {
+            get => _value_none;
+            set
+            {
+                _set_none = true;
+                _value_none = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IListEpisodeOperationFilterInputInfo.IsNoneSet => _set_none;
+        public global::StarWarsGeneratedClient.EpisodeOperationFilterInput? Some
+        {
+            get => _value_some;
+            set
+            {
+                _set_some = true;
+                _value_some = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IListEpisodeOperationFilterInputInfo.IsSomeSet => _set_some;
+        public global::System.Boolean? Any
+        {
+            get => _value_any;
+            set
+            {
+                _set_any = true;
+                _value_any = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IListEpisodeOperationFilterInputInfo.IsAnySet => _set_any;
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class EpisodeOperationFilterInputInputValueFormatter : global::StrawberryShake.Serialization.IInputObjectFormatter
+    {
+        private global::StrawberryShake.Serialization.IInputValueFormatter _episodeFormatter = default !;
+        public global::System.String TypeName => "EpisodeOperationFilterInput";
+        public void Initialize(global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _episodeFormatter = serializerResolver.GetInputValueFormatter("Episode");
+        }
+
+        public global::System.Object? Format(global::System.Object? runtimeValue)
+        {
+            if (runtimeValue is null)
+            {
+                return null;
+            }
+
+            var input = runtimeValue as global::StarWarsGeneratedClient.EpisodeOperationFilterInput;
+            var inputInfo = runtimeValue as global::StarWarsGeneratedClient.State.IEpisodeOperationFilterInputInfo;
+            if (input is null || inputInfo is null)
+            {
+                throw new global::System.ArgumentException(nameof(runtimeValue));
+            }
+
+            var fields = new global::System.Collections.Generic.List<global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>>();
+            if (inputInfo.IsEqSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("eq", FormatEq(input.Eq)));
+            }
+
+            if (inputInfo.IsNeqSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("neq", FormatNeq(input.Neq)));
+            }
+
+            if (inputInfo.IsInSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("in", FormatIn(input.In)));
+            }
+
+            if (inputInfo.IsNinSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("nin", FormatNin(input.Nin)));
+            }
+
+            return fields;
+        }
+
+        private global::System.Object? FormatEq(global::StarWarsGeneratedClient.Episode? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _episodeFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatNeq(global::StarWarsGeneratedClient.Episode? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _episodeFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatIn(global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode>? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                var input_list = new global::System.Collections.Generic.List<global::System.Object?>();
+                foreach (var input_elm in input)
+                {
+                    input_list.Add(_episodeFormatter.Format(input_elm));
+                }
+
+                return input_list;
+            }
+        }
+
+        private global::System.Object? FormatNin(global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode>? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                var input_list = new global::System.Collections.Generic.List<global::System.Object?>();
+                foreach (var input_elm in input)
+                {
+                    input_list.Add(_episodeFormatter.Format(input_elm));
+                }
+
+                return input_list;
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class EpisodeOperationFilterInput : global::StarWarsGeneratedClient.State.IEpisodeOperationFilterInputInfo, global::System.IEquatable<EpisodeOperationFilterInput>
+    {
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((EpisodeOperationFilterInput)obj);
+        }
+
+        public virtual global::System.Boolean Equals(EpisodeOperationFilterInput? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (((Eq is null && other.Eq is null) || Eq != null && Eq.Equals(other.Eq))) && ((Neq is null && other.Neq is null) || Neq != null && Neq.Equals(other.Neq)) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(In, other.In) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Nin, other.Nin);
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (Eq != null)
+                {
+                    hash ^= 397 * Eq.GetHashCode();
+                }
+
+                if (Neq != null)
+                {
+                    hash ^= 397 * Neq.GetHashCode();
+                }
+
+                if (In != null)
+                {
+                    foreach (var In_elm in In)
+                    {
+                        hash ^= 397 * In_elm.GetHashCode();
+                    }
+                }
+
+                if (Nin != null)
+                {
+                    foreach (var Nin_elm in Nin)
+                    {
+                        hash ^= 397 * Nin_elm.GetHashCode();
+                    }
+                }
+
+                return hash;
+            }
+        }
+
+        private global::StarWarsGeneratedClient.Episode? _value_eq;
+        private global::System.Boolean _set_eq;
+        private global::StarWarsGeneratedClient.Episode? _value_neq;
+        private global::System.Boolean _set_neq;
+        private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode>? _value_in;
+        private global::System.Boolean _set_in;
+        private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode>? _value_nin;
+        private global::System.Boolean _set_nin;
+        public global::StarWarsGeneratedClient.Episode? Eq
+        {
+            get => _value_eq;
+            set
+            {
+                _set_eq = true;
+                _value_eq = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IEpisodeOperationFilterInputInfo.IsEqSet => _set_eq;
+        public global::StarWarsGeneratedClient.Episode? Neq
+        {
+            get => _value_neq;
+            set
+            {
+                _set_neq = true;
+                _value_neq = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IEpisodeOperationFilterInputInfo.IsNeqSet => _set_neq;
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode>? In
+        {
+            get => _value_in;
+            set
+            {
+                _set_in = true;
+                _value_in = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IEpisodeOperationFilterInputInfo.IsInSet => _set_in;
+        public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode>? Nin
+        {
+            get => _value_nin;
+            set
+            {
+                _set_nin = true;
+                _value_nin = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IEpisodeOperationFilterInputInfo.IsNinSet => _set_nin;
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class ComparableDoubleOperationFilterInputInputValueFormatter : global::StrawberryShake.Serialization.IInputObjectFormatter
+    {
+        private global::StrawberryShake.Serialization.IInputValueFormatter _floatFormatter = default !;
+        public global::System.String TypeName => "ComparableDoubleOperationFilterInput";
+        public void Initialize(global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _floatFormatter = serializerResolver.GetInputValueFormatter("Float");
+        }
+
+        public global::System.Object? Format(global::System.Object? runtimeValue)
+        {
+            if (runtimeValue is null)
+            {
+                return null;
+            }
+
+            var input = runtimeValue as global::StarWarsGeneratedClient.ComparableDoubleOperationFilterInput;
+            var inputInfo = runtimeValue as global::StarWarsGeneratedClient.State.IComparableDoubleOperationFilterInputInfo;
+            if (input is null || inputInfo is null)
+            {
+                throw new global::System.ArgumentException(nameof(runtimeValue));
+            }
+
+            var fields = new global::System.Collections.Generic.List<global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>>();
+            if (inputInfo.IsEqSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("eq", FormatEq(input.Eq)));
+            }
+
+            if (inputInfo.IsNeqSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("neq", FormatNeq(input.Neq)));
+            }
+
+            if (inputInfo.IsInSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("in", FormatIn(input.In)));
+            }
+
+            if (inputInfo.IsNinSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("nin", FormatNin(input.Nin)));
+            }
+
+            if (inputInfo.IsGtSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("gt", FormatGt(input.Gt)));
+            }
+
+            if (inputInfo.IsNgtSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("ngt", FormatNgt(input.Ngt)));
+            }
+
+            if (inputInfo.IsGteSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("gte", FormatGte(input.Gte)));
+            }
+
+            if (inputInfo.IsNgteSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("ngte", FormatNgte(input.Ngte)));
+            }
+
+            if (inputInfo.IsLtSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("lt", FormatLt(input.Lt)));
+            }
+
+            if (inputInfo.IsNltSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("nlt", FormatNlt(input.Nlt)));
+            }
+
+            if (inputInfo.IsLteSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("lte", FormatLte(input.Lte)));
+            }
+
+            if (inputInfo.IsNlteSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("nlte", FormatNlte(input.Nlte)));
+            }
+
+            return fields;
+        }
+
+        private global::System.Object? FormatEq(global::System.Double? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _floatFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatNeq(global::System.Double? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _floatFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatIn(global::System.Collections.Generic.IReadOnlyList<global::System.Double>? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                var input_list = new global::System.Collections.Generic.List<global::System.Object?>();
+                foreach (var input_elm in input)
+                {
+                    input_list.Add(_floatFormatter.Format(input_elm));
+                }
+
+                return input_list;
+            }
+        }
+
+        private global::System.Object? FormatNin(global::System.Collections.Generic.IReadOnlyList<global::System.Double>? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                var input_list = new global::System.Collections.Generic.List<global::System.Object?>();
+                foreach (var input_elm in input)
+                {
+                    input_list.Add(_floatFormatter.Format(input_elm));
+                }
+
+                return input_list;
+            }
+        }
+
+        private global::System.Object? FormatGt(global::System.Double? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _floatFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatNgt(global::System.Double? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _floatFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatGte(global::System.Double? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _floatFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatNgte(global::System.Double? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _floatFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatLt(global::System.Double? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _floatFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatNlt(global::System.Double? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _floatFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatLte(global::System.Double? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _floatFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatNlte(global::System.Double? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _floatFormatter.Format(input);
+            }
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class ComparableDoubleOperationFilterInput : global::StarWarsGeneratedClient.State.IComparableDoubleOperationFilterInputInfo, global::System.IEquatable<ComparableDoubleOperationFilterInput>
+    {
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((ComparableDoubleOperationFilterInput)obj);
+        }
+
+        public virtual global::System.Boolean Equals(ComparableDoubleOperationFilterInput? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (Eq == other.Eq) && Neq == other.Neq && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(In, other.In) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Nin, other.Nin) && Gt == other.Gt && Ngt == other.Ngt && Gte == other.Gte && Ngte == other.Ngte && Lt == other.Lt && Nlt == other.Nlt && Lte == other.Lte && Nlte == other.Nlte;
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (Eq != null)
+                {
+                    hash ^= 397 * Eq.GetHashCode();
+                }
+
+                if (Neq != null)
+                {
+                    hash ^= 397 * Neq.GetHashCode();
+                }
+
+                if (In != null)
+                {
+                    foreach (var In_elm in In)
+                    {
+                        hash ^= 397 * In_elm.GetHashCode();
+                    }
+                }
+
+                if (Nin != null)
+                {
+                    foreach (var Nin_elm in Nin)
+                    {
+                        hash ^= 397 * Nin_elm.GetHashCode();
+                    }
+                }
+
+                if (Gt != null)
+                {
+                    hash ^= 397 * Gt.GetHashCode();
+                }
+
+                if (Ngt != null)
+                {
+                    hash ^= 397 * Ngt.GetHashCode();
+                }
+
+                if (Gte != null)
+                {
+                    hash ^= 397 * Gte.GetHashCode();
+                }
+
+                if (Ngte != null)
+                {
+                    hash ^= 397 * Ngte.GetHashCode();
+                }
+
+                if (Lt != null)
+                {
+                    hash ^= 397 * Lt.GetHashCode();
+                }
+
+                if (Nlt != null)
+                {
+                    hash ^= 397 * Nlt.GetHashCode();
+                }
+
+                if (Lte != null)
+                {
+                    hash ^= 397 * Lte.GetHashCode();
+                }
+
+                if (Nlte != null)
+                {
+                    hash ^= 397 * Nlte.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+
+        private global::System.Double? _value_eq;
+        private global::System.Boolean _set_eq;
+        private global::System.Double? _value_neq;
+        private global::System.Boolean _set_neq;
+        private global::System.Collections.Generic.IReadOnlyList<global::System.Double>? _value_in;
+        private global::System.Boolean _set_in;
+        private global::System.Collections.Generic.IReadOnlyList<global::System.Double>? _value_nin;
+        private global::System.Boolean _set_nin;
+        private global::System.Double? _value_gt;
+        private global::System.Boolean _set_gt;
+        private global::System.Double? _value_ngt;
+        private global::System.Boolean _set_ngt;
+        private global::System.Double? _value_gte;
+        private global::System.Boolean _set_gte;
+        private global::System.Double? _value_ngte;
+        private global::System.Boolean _set_ngte;
+        private global::System.Double? _value_lt;
+        private global::System.Boolean _set_lt;
+        private global::System.Double? _value_nlt;
+        private global::System.Boolean _set_nlt;
+        private global::System.Double? _value_lte;
+        private global::System.Boolean _set_lte;
+        private global::System.Double? _value_nlte;
+        private global::System.Boolean _set_nlte;
+        public global::System.Double? Eq
+        {
+            get => _value_eq;
+            set
+            {
+                _set_eq = true;
+                _value_eq = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IComparableDoubleOperationFilterInputInfo.IsEqSet => _set_eq;
+        public global::System.Double? Neq
+        {
+            get => _value_neq;
+            set
+            {
+                _set_neq = true;
+                _value_neq = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IComparableDoubleOperationFilterInputInfo.IsNeqSet => _set_neq;
+        public global::System.Collections.Generic.IReadOnlyList<global::System.Double>? In
+        {
+            get => _value_in;
+            set
+            {
+                _set_in = true;
+                _value_in = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IComparableDoubleOperationFilterInputInfo.IsInSet => _set_in;
+        public global::System.Collections.Generic.IReadOnlyList<global::System.Double>? Nin
+        {
+            get => _value_nin;
+            set
+            {
+                _set_nin = true;
+                _value_nin = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IComparableDoubleOperationFilterInputInfo.IsNinSet => _set_nin;
+        public global::System.Double? Gt
+        {
+            get => _value_gt;
+            set
+            {
+                _set_gt = true;
+                _value_gt = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IComparableDoubleOperationFilterInputInfo.IsGtSet => _set_gt;
+        public global::System.Double? Ngt
+        {
+            get => _value_ngt;
+            set
+            {
+                _set_ngt = true;
+                _value_ngt = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IComparableDoubleOperationFilterInputInfo.IsNgtSet => _set_ngt;
+        public global::System.Double? Gte
+        {
+            get => _value_gte;
+            set
+            {
+                _set_gte = true;
+                _value_gte = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IComparableDoubleOperationFilterInputInfo.IsGteSet => _set_gte;
+        public global::System.Double? Ngte
+        {
+            get => _value_ngte;
+            set
+            {
+                _set_ngte = true;
+                _value_ngte = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IComparableDoubleOperationFilterInputInfo.IsNgteSet => _set_ngte;
+        public global::System.Double? Lt
+        {
+            get => _value_lt;
+            set
+            {
+                _set_lt = true;
+                _value_lt = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IComparableDoubleOperationFilterInputInfo.IsLtSet => _set_lt;
+        public global::System.Double? Nlt
+        {
+            get => _value_nlt;
+            set
+            {
+                _set_nlt = true;
+                _value_nlt = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IComparableDoubleOperationFilterInputInfo.IsNltSet => _set_nlt;
+        public global::System.Double? Lte
+        {
+            get => _value_lte;
+            set
+            {
+                _set_lte = true;
+                _value_lte = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IComparableDoubleOperationFilterInputInfo.IsLteSet => _set_lte;
+        public global::System.Double? Nlte
+        {
+            get => _value_nlte;
+            set
+            {
+                _set_nlte = true;
+                _value_nlte = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IComparableDoubleOperationFilterInputInfo.IsNlteSet => _set_nlte;
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class ICharacterSortInputInputValueFormatter : global::StrawberryShake.Serialization.IInputObjectFormatter
     {
         private global::StrawberryShake.Serialization.IInputValueFormatter _sortEnumTypeFormatter = default !;
@@ -4300,8 +6983,8 @@ namespace StarWarsGeneratedClient
     /// <summary>
     /// Represents the operation service of the GetCharactersWithPaging GraphQL operation
     /// <code>
-    /// query GetCharactersWithPaging($take: Int!, $skip: Int, $order: [ICharacterSortInput!]) {
-    ///   charactersWithPagingFilteringAndSorting(take: $take, skip: $skip, order: $order) {
+    /// query GetCharactersWithPaging($take: Int!, $skip: Int, $where: ICharacterFilterInput, $order: [ICharacterSortInput!]) {
+    ///   charactersWithPagingFilteringAndSorting(take: $take, skip: $skip, where: $where, order: $order) {
     ///     __typename
     ///     items {
     ///       __typename
@@ -4338,8 +7021,8 @@ namespace StarWarsGeneratedClient
 
         public static GetCharactersWithPagingQueryDocument Instance { get; } = new GetCharactersWithPagingQueryDocument();
         public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Query;
-        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x57, 0x69, 0x74, 0x68, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x28, 0x24, 0x74, 0x61, 0x6b, 0x65, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x21, 0x2c, 0x20, 0x24, 0x73, 0x6b, 0x69, 0x70, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x2c, 0x20, 0x24, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x3a, 0x20, 0x5b, 0x49, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x53, 0x6f, 0x72, 0x74, 0x49, 0x6e, 0x70, 0x75, 0x74, 0x21, 0x5d, 0x29, 0x20, 0x7b, 0x20, 0x63, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x57, 0x69, 0x74, 0x68, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x46, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x69, 0x6e, 0x67, 0x41, 0x6e, 0x64, 0x53, 0x6f, 0x72, 0x74, 0x69, 0x6e, 0x67, 0x28, 0x74, 0x61, 0x6b, 0x65, 0x3a, 0x20, 0x24, 0x74, 0x61, 0x6b, 0x65, 0x2c, 0x20, 0x73, 0x6b, 0x69, 0x70, 0x3a, 0x20, 0x24, 0x73, 0x6b, 0x69, 0x70, 0x2c, 0x20, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x3a, 0x20, 0x24, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x63, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x20, 0x70, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x68, 0x61, 0x73, 0x4e, 0x65, 0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x20, 0x68, 0x61, 0x73, 0x50, 0x72, 0x65, 0x76, 0x69, 0x6f, 0x75, 0x73, 0x50, 0x61, 0x67, 0x65, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x63, 0x20, 0x6f, 0x6e, 0x20, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x61, 0x70, 0x70, 0x65, 0x61, 0x72, 0x73, 0x49, 0x6e, 0x20, 0x7d};
-        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "fdbe2aa13a0d8c3f88bc26b5c08d48f2");
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x57, 0x69, 0x74, 0x68, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x28, 0x24, 0x74, 0x61, 0x6b, 0x65, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x21, 0x2c, 0x20, 0x24, 0x73, 0x6b, 0x69, 0x70, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x2c, 0x20, 0x24, 0x77, 0x68, 0x65, 0x72, 0x65, 0x3a, 0x20, 0x49, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x46, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x49, 0x6e, 0x70, 0x75, 0x74, 0x2c, 0x20, 0x24, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x3a, 0x20, 0x5b, 0x49, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x53, 0x6f, 0x72, 0x74, 0x49, 0x6e, 0x70, 0x75, 0x74, 0x21, 0x5d, 0x29, 0x20, 0x7b, 0x20, 0x63, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x57, 0x69, 0x74, 0x68, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x46, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x69, 0x6e, 0x67, 0x41, 0x6e, 0x64, 0x53, 0x6f, 0x72, 0x74, 0x69, 0x6e, 0x67, 0x28, 0x74, 0x61, 0x6b, 0x65, 0x3a, 0x20, 0x24, 0x74, 0x61, 0x6b, 0x65, 0x2c, 0x20, 0x73, 0x6b, 0x69, 0x70, 0x3a, 0x20, 0x24, 0x73, 0x6b, 0x69, 0x70, 0x2c, 0x20, 0x77, 0x68, 0x65, 0x72, 0x65, 0x3a, 0x20, 0x24, 0x77, 0x68, 0x65, 0x72, 0x65, 0x2c, 0x20, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x3a, 0x20, 0x24, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x63, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x20, 0x70, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x68, 0x61, 0x73, 0x4e, 0x65, 0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x20, 0x68, 0x61, 0x73, 0x50, 0x72, 0x65, 0x76, 0x69, 0x6f, 0x75, 0x73, 0x50, 0x61, 0x67, 0x65, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x63, 0x20, 0x6f, 0x6e, 0x20, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x61, 0x70, 0x70, 0x65, 0x61, 0x72, 0x73, 0x49, 0x6e, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "2869b2922f485d4c18ae6d48544ec39b");
         public override global::System.String ToString()
         {
 #if NETSTANDARD2_0
@@ -4353,8 +7036,8 @@ namespace StarWarsGeneratedClient
     /// <summary>
     /// Represents the operation service of the GetCharactersWithPaging GraphQL operation
     /// <code>
-    /// query GetCharactersWithPaging($take: Int!, $skip: Int, $order: [ICharacterSortInput!]) {
-    ///   charactersWithPagingFilteringAndSorting(take: $take, skip: $skip, order: $order) {
+    /// query GetCharactersWithPaging($take: Int!, $skip: Int, $where: ICharacterFilterInput, $order: [ICharacterSortInput!]) {
+    ///   charactersWithPagingFilteringAndSorting(take: $take, skip: $skip, where: $where, order: $order) {
     ///     __typename
     ///     items {
     ///       __typename
@@ -4387,32 +7070,35 @@ namespace StarWarsGeneratedClient
     {
         private readonly global::StrawberryShake.IOperationExecutor<IGetCharactersWithPagingResult> _operationExecutor;
         private readonly global::StrawberryShake.Serialization.IInputValueFormatter _intFormatter;
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _iCharacterFilterInputFormatter;
         private readonly global::StrawberryShake.Serialization.IInputValueFormatter _iCharacterSortInputFormatter;
         public GetCharactersWithPagingQuery(global::StrawberryShake.IOperationExecutor<IGetCharactersWithPagingResult> operationExecutor, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
         {
             _operationExecutor = operationExecutor ?? throw new global::System.ArgumentNullException(nameof(operationExecutor));
             _intFormatter = serializerResolver.GetInputValueFormatter("Int");
+            _iCharacterFilterInputFormatter = serializerResolver.GetInputValueFormatter("ICharacterFilterInput");
             _iCharacterSortInputFormatter = serializerResolver.GetInputValueFormatter("ICharacterSortInput");
         }
 
         global::System.Type global::StrawberryShake.IOperationRequestFactory.ResultType => typeof(IGetCharactersWithPagingResult);
-        public async global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetCharactersWithPagingResult>> ExecuteAsync(global::System.Int32 take, global::System.Int32? skip, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.ICharacterSortInput>? order, global::System.Threading.CancellationToken cancellationToken = default)
+        public async global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetCharactersWithPagingResult>> ExecuteAsync(global::System.Int32 take, global::System.Int32? skip, global::StarWarsGeneratedClient.ICharacterFilterInput? @where, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.ICharacterSortInput>? order, global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = CreateRequest(take, skip, order);
+            var request = CreateRequest(take, skip, @where, order);
             return await _operationExecutor.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
         }
 
-        public global::System.IObservable<global::StrawberryShake.IOperationResult<IGetCharactersWithPagingResult>> Watch(global::System.Int32 take, global::System.Int32? skip, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.ICharacterSortInput>? order, global::StrawberryShake.ExecutionStrategy? strategy = null)
+        public global::System.IObservable<global::StrawberryShake.IOperationResult<IGetCharactersWithPagingResult>> Watch(global::System.Int32 take, global::System.Int32? skip, global::StarWarsGeneratedClient.ICharacterFilterInput? @where, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.ICharacterSortInput>? order, global::StrawberryShake.ExecutionStrategy? strategy = null)
         {
-            var request = CreateRequest(take, skip, order);
+            var request = CreateRequest(take, skip, @where, order);
             return _operationExecutor.Watch(request, strategy);
         }
 
-        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Int32 take, global::System.Int32? skip, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.ICharacterSortInput>? order)
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Int32 take, global::System.Int32? skip, global::StarWarsGeneratedClient.ICharacterFilterInput? @where, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.ICharacterSortInput>? order)
         {
             var variables = new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>();
             variables.Add("take", FormatTake(take));
             variables.Add("skip", FormatSkip(skip));
+            variables.Add("where", FormatWhere(@where));
             variables.Add("order", FormatOrder(order));
             return CreateRequest(variables);
         }
@@ -4436,6 +7122,18 @@ namespace StarWarsGeneratedClient
             else
             {
                 return _intFormatter.Format(value);
+            }
+        }
+
+        private global::System.Object? FormatWhere(global::StarWarsGeneratedClient.ICharacterFilterInput? value)
+        {
+            if (value is null)
+            {
+                return value;
+            }
+            else
+            {
+                return _iCharacterFilterInputFormatter.Format(value);
             }
         }
 
@@ -4471,8 +7169,8 @@ namespace StarWarsGeneratedClient
     /// <summary>
     /// Represents the operation service of the GetCharactersWithPaging GraphQL operation
     /// <code>
-    /// query GetCharactersWithPaging($take: Int!, $skip: Int, $order: [ICharacterSortInput!]) {
-    ///   charactersWithPagingFilteringAndSorting(take: $take, skip: $skip, order: $order) {
+    /// query GetCharactersWithPaging($take: Int!, $skip: Int, $where: ICharacterFilterInput, $order: [ICharacterSortInput!]) {
+    ///   charactersWithPagingFilteringAndSorting(take: $take, skip: $skip, where: $where, order: $order) {
     ///     __typename
     ///     items {
     ///       __typename
@@ -4503,8 +7201,8 @@ namespace StarWarsGeneratedClient
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public interface IGetCharactersWithPagingQuery : global::StrawberryShake.IOperationRequestFactory
     {
-        global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetCharactersWithPagingResult>> ExecuteAsync(global::System.Int32 take, global::System.Int32? skip, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.ICharacterSortInput>? order, global::System.Threading.CancellationToken cancellationToken = default);
-        global::System.IObservable<global::StrawberryShake.IOperationResult<IGetCharactersWithPagingResult>> Watch(global::System.Int32 take, global::System.Int32? skip, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.ICharacterSortInput>? order, global::StrawberryShake.ExecutionStrategy? strategy = null);
+        global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetCharactersWithPagingResult>> ExecuteAsync(global::System.Int32 take, global::System.Int32? skip, global::StarWarsGeneratedClient.ICharacterFilterInput? @where, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.ICharacterSortInput>? order, global::System.Threading.CancellationToken cancellationToken = default);
+        global::System.IObservable<global::StrawberryShake.IOperationResult<IGetCharactersWithPagingResult>> Watch(global::System.Int32 take, global::System.Int32? skip, global::StarWarsGeneratedClient.ICharacterFilterInput? @where, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.ICharacterSortInput>? order, global::StrawberryShake.ExecutionStrategy? strategy = null);
     }
 
     /// <summary>
@@ -5971,6 +8669,144 @@ namespace StarWarsGeneratedClient.State
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    internal interface IICharacterFilterInputInfo
+    {
+        global::System.Boolean IsAndSet { get; }
+
+        global::System.Boolean IsOrSet { get; }
+
+        global::System.Boolean IsIdSet { get; }
+
+        global::System.Boolean IsNameSet { get; }
+
+        global::System.Boolean IsFriendsSet { get; }
+
+        global::System.Boolean IsAppearsInSet { get; }
+
+        global::System.Boolean IsHeightSet { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    internal interface IComparableInt32OperationFilterInputInfo
+    {
+        global::System.Boolean IsEqSet { get; }
+
+        global::System.Boolean IsNeqSet { get; }
+
+        global::System.Boolean IsInSet { get; }
+
+        global::System.Boolean IsNinSet { get; }
+
+        global::System.Boolean IsGtSet { get; }
+
+        global::System.Boolean IsNgtSet { get; }
+
+        global::System.Boolean IsGteSet { get; }
+
+        global::System.Boolean IsNgteSet { get; }
+
+        global::System.Boolean IsLtSet { get; }
+
+        global::System.Boolean IsNltSet { get; }
+
+        global::System.Boolean IsLteSet { get; }
+
+        global::System.Boolean IsNlteSet { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    internal interface IStringOperationFilterInputInfo
+    {
+        global::System.Boolean IsAndSet { get; }
+
+        global::System.Boolean IsOrSet { get; }
+
+        global::System.Boolean IsEqSet { get; }
+
+        global::System.Boolean IsNeqSet { get; }
+
+        global::System.Boolean IsContainsSet { get; }
+
+        global::System.Boolean IsNcontainsSet { get; }
+
+        global::System.Boolean IsInSet { get; }
+
+        global::System.Boolean IsNinSet { get; }
+
+        global::System.Boolean IsStartsWithSet { get; }
+
+        global::System.Boolean IsNstartsWithSet { get; }
+
+        global::System.Boolean IsEndsWithSet { get; }
+
+        global::System.Boolean IsNendsWithSet { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    internal interface IListComparableInt32OperationFilterInputInfo
+    {
+        global::System.Boolean IsAllSet { get; }
+
+        global::System.Boolean IsNoneSet { get; }
+
+        global::System.Boolean IsSomeSet { get; }
+
+        global::System.Boolean IsAnySet { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    internal interface IListEpisodeOperationFilterInputInfo
+    {
+        global::System.Boolean IsAllSet { get; }
+
+        global::System.Boolean IsNoneSet { get; }
+
+        global::System.Boolean IsSomeSet { get; }
+
+        global::System.Boolean IsAnySet { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    internal interface IEpisodeOperationFilterInputInfo
+    {
+        global::System.Boolean IsEqSet { get; }
+
+        global::System.Boolean IsNeqSet { get; }
+
+        global::System.Boolean IsInSet { get; }
+
+        global::System.Boolean IsNinSet { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    internal interface IComparableDoubleOperationFilterInputInfo
+    {
+        global::System.Boolean IsEqSet { get; }
+
+        global::System.Boolean IsNeqSet { get; }
+
+        global::System.Boolean IsInSet { get; }
+
+        global::System.Boolean IsNinSet { get; }
+
+        global::System.Boolean IsGtSet { get; }
+
+        global::System.Boolean IsNgtSet { get; }
+
+        global::System.Boolean IsGteSet { get; }
+
+        global::System.Boolean IsNgteSet { get; }
+
+        global::System.Boolean IsLtSet { get; }
+
+        global::System.Boolean IsNltSet { get; }
+
+        global::System.Boolean IsLteSet { get; }
+
+        global::System.Boolean IsNlteSet { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     internal interface IICharacterSortInputInfo
     {
         global::System.Boolean IsIdSet { get; }
@@ -6896,21 +9732,23 @@ namespace StarWarsGeneratedClient.State
         private readonly global::StrawberryShake.IEntityStore _entityStore;
         private readonly global::StrawberryShake.IEntityIdSerializer _idSerializer;
         private readonly global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetCharactersWithPagingResult> _resultDataFactory;
-        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::StarWarsGeneratedClient.SortEnumType> _sortEnumTypeParser;
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::StarWarsGeneratedClient.Episode> _episodeParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::StarWarsGeneratedClient.SortEnumType> _sortEnumTypeParser;
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Int32, global::System.Int32> _intParser;
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Boolean, global::System.Boolean> _booleanParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Double, global::System.Double> _floatParser;
         public GetCharactersWithPagingBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetCharactersWithPagingResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
         {
             _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
             _idSerializer = idSerializer ?? throw new global::System.ArgumentNullException(nameof(idSerializer));
             _resultDataFactory = resultDataFactory ?? throw new global::System.ArgumentNullException(nameof(resultDataFactory));
-            _sortEnumTypeParser = serializerResolver.GetLeafValueParser<global::System.String, global::StarWarsGeneratedClient.SortEnumType>("SortEnumType") ?? throw new global::System.ArgumentException("No serializer for type `SortEnumType` found.");
             _episodeParser = serializerResolver.GetLeafValueParser<global::System.String, global::StarWarsGeneratedClient.Episode>("Episode") ?? throw new global::System.ArgumentException("No serializer for type `Episode` found.");
+            _sortEnumTypeParser = serializerResolver.GetLeafValueParser<global::System.String, global::StarWarsGeneratedClient.SortEnumType>("SortEnumType") ?? throw new global::System.ArgumentException("No serializer for type `SortEnumType` found.");
             _intParser = serializerResolver.GetLeafValueParser<global::System.Int32, global::System.Int32>("Int") ?? throw new global::System.ArgumentException("No serializer for type `Int` found.");
             _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
             _booleanParser = serializerResolver.GetLeafValueParser<global::System.Boolean, global::System.Boolean>("Boolean") ?? throw new global::System.ArgumentException("No serializer for type `Boolean` found.");
+            _floatParser = serializerResolver.GetLeafValueParser<global::System.Double, global::System.Double>("Float") ?? throw new global::System.ArgumentException("No serializer for type `Float` found.");
         }
 
         public global::StrawberryShake.IOperationResult<IGetCharactersWithPagingResult> Build(global::StrawberryShake.Response<global::System.Text.Json.JsonDocument> response)

@@ -53,8 +53,18 @@ query GetCharactersWithCursorPaging($first: Int, $last: Int, $before: String, $a
   }
 }
 
-query GetCharactersWithPaging($take: Int!, $skip: Int, $order: [ICharacterSortInput!]) {
-  charactersWithPagingFilteringAndSorting (take: $take, skip: $skip, order: $order) {
+query GetCharactersWithPaging(
+  $take: Int!
+  $skip: Int
+  $where: ICharacterFilterInput
+  $order: [ICharacterSortInput!]
+) {
+  charactersWithPagingFilteringAndSorting(
+    take: $take
+    skip: $skip
+    where: $where
+    order: $order
+  ) {
     items {
       ...c
     }

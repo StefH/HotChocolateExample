@@ -1,5 +1,7 @@
 @page "/blazoriseDataGrid"
 
+@inject IStarWarsGeneratedClient Client;
+
 @using Character = StarWarsGeneratedClient.IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items;
 
 <h1>Characters (Blazorise DataGrid)</h1>
@@ -7,15 +9,17 @@
 <DataGrid TItem="Character"
 		  Data="@characters"
 		  ReadData="@OnReadData"
+		  Filterable="true"
+		  Sortable="true"
 		  ShowPager="true"
 		  TotalItems="@total"
-		  PageSizes="@(new[] { 2,3, 5, 10})"
+		  PageSizes="@(new[] { 2, 3, 5, 10 })"
 		  ShowPageSizes="true">
 
 	<ChildContent>
-		<DataGridColumn TItem="Character" Field="@nameof(Character.Id)" Caption="Id" />
+		<DataGridNumericColumn TItem="Character" Field="@nameof(Character.Id)" Caption="Id" />
 		<DataGridColumn TItem="Character" Field="@nameof(Character.Name)" Caption="Name" />
-		<DataGridColumn TItem="Character" Field="@nameof(Character.AppearsIn)" Caption="Episodes" Sortable="false">
+		<DataGridColumn TItem="Character" Field="@nameof(Character.AppearsIn)" Caption="Episodes" Filterable="false" Sortable="false">
 			<DisplayTemplate>
 				@(string.Join(", ", context.AppearsIn))
 			</DisplayTemplate>

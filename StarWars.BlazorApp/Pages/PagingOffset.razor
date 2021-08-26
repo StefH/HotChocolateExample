@@ -77,7 +77,7 @@ else
 	{
 		var skip = (page - 1) * pageSize;
 
-		var operationResult = await Client.GetCharactersWithPaging.ExecuteAsync(pageSize, skip, null);
+		var operationResult = await Client.GetCharactersWithPaging.ExecuteAsync(pageSize, skip, null, null);
 
 		var result = operationResult.Data.CharactersWithPagingFilteringAndSorting;
 		characters = result.Items;
