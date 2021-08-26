@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
 namespace ContosoUniversity
-{
+{ 
     public class SchoolContext : DbContext
     {
         private readonly ILoggerFactory _loggerFactory;
@@ -22,8 +22,8 @@ namespace ContosoUniversity
         {
             options
                 .LogTo(a => _logger.LogDebug(a))
-                //.UseInMemoryDatabase("uni")
-                .UseSqlite("Data Source=uni.db")
+                .UseInMemoryDatabase("uni")
+                //.UseSqlite("Data Source=uni.db")
                 .EnableDetailedErrors()
                 .EnableSensitiveDataLogging()
                 .UseLoggerFactory(_loggerFactory)

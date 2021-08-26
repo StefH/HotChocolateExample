@@ -1,4 +1,4 @@
-﻿fragment characterWithIdAndName on Character {
+fragment characterWithIdAndName on Character {
   id
   name
 }
@@ -53,8 +53,8 @@ query GetCharactersWithCursorPaging($first: Int, $last: Int, $before: String, $a
   }
 }
 
-query GetCharactersWithPaging($take: Int, $skip: Int) {
-  charactersWithPagingFilteringAndSorting (take: $take, skip: $skip) {
+query GetCharactersWithPaging($take: Int!, $skip: Int, $order: [ICharacterSortInput!]) {
+  charactersWithPagingFilteringAndSorting (take: $take, skip: $skip, order: $order) {
     items {
       ...c
     }

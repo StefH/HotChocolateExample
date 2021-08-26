@@ -52,6 +52,7 @@ namespace Microsoft.Extensions.DependencyInjection
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.HumanEntity, global::StarWarsGeneratedClient.GetAllHumansAndDroids_Characters_Human>, global::StarWarsGeneratedClient.State.GetAllHumansAndDroids_Characters_HumanFromHumanEntityMapper>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IEntityMapper<global::StarWarsGeneratedClient.State.DroidEntity, global::StarWarsGeneratedClient.GetAllHumansAndDroids_Characters_Droid>, global::StarWarsGeneratedClient.State.GetAllHumansAndDroids_Characters_DroidFromDroidEntityMapper>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StarWarsGeneratedClient.EpisodeSerializer>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StarWarsGeneratedClient.SortEnumTypeSerializer>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StrawberryShake.Serialization.StringSerializer>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StrawberryShake.Serialization.BooleanSerializer>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StrawberryShake.Serialization.ByteSerializer>(services);
@@ -69,6 +70,7 @@ namespace Microsoft.Extensions.DependencyInjection
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StrawberryShake.Serialization.TimeSpanSerializer>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StrawberryShake.Serialization.JsonSerializer>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StarWarsGeneratedClient.CreateReviewInputInputValueFormatter>(services);
+            global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializer, global::StarWarsGeneratedClient.ICharacterSortInputInputValueFormatter>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.Serialization.ISerializerResolver>(services, sp => new global::StrawberryShake.Serialization.SerializerResolver(global::System.Linq.Enumerable.Concat(global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::System.Collections.Generic.IEnumerable<global::StrawberryShake.Serialization.ISerializer>>(parentServices), global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::System.Collections.Generic.IEnumerable<global::StrawberryShake.Serialization.ISerializer>>(sp))));
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetHeroResult>, global::StarWarsGeneratedClient.State.GetHeroResultFactory>(services);
             global::Microsoft.Extensions.DependencyInjection.ServiceCollectionServiceExtensions.AddSingleton<global::StrawberryShake.IOperationResultDataFactory>(services, sp => global::Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService<global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetHeroResult>>(sp));
@@ -3196,6 +3198,198 @@ namespace StarWarsGeneratedClient
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class ICharacterSortInputInputValueFormatter : global::StrawberryShake.Serialization.IInputObjectFormatter
+    {
+        private global::StrawberryShake.Serialization.IInputValueFormatter _sortEnumTypeFormatter = default !;
+        public global::System.String TypeName => "ICharacterSortInput";
+        public void Initialize(global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
+        {
+            _sortEnumTypeFormatter = serializerResolver.GetInputValueFormatter("SortEnumType");
+        }
+
+        public global::System.Object? Format(global::System.Object? runtimeValue)
+        {
+            if (runtimeValue is null)
+            {
+                return null;
+            }
+
+            var input = runtimeValue as global::StarWarsGeneratedClient.ICharacterSortInput;
+            var inputInfo = runtimeValue as global::StarWarsGeneratedClient.State.IICharacterSortInputInfo;
+            if (input is null || inputInfo is null)
+            {
+                throw new global::System.ArgumentException(nameof(runtimeValue));
+            }
+
+            var fields = new global::System.Collections.Generic.List<global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>>();
+            if (inputInfo.IsIdSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("id", FormatId(input.Id)));
+            }
+
+            if (inputInfo.IsNameSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("name", FormatName(input.Name)));
+            }
+
+            if (inputInfo.IsHeightSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("height", FormatHeight(input.Height)));
+            }
+
+            return fields;
+        }
+
+        private global::System.Object? FormatId(global::StarWarsGeneratedClient.SortEnumType? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _sortEnumTypeFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatName(global::StarWarsGeneratedClient.SortEnumType? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _sortEnumTypeFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatHeight(global::StarWarsGeneratedClient.SortEnumType? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _sortEnumTypeFormatter.Format(input);
+            }
+        }
+    }
+
+    ///<summary>A character in the Star Wars universe.</summary>
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class ICharacterSortInput : global::StarWarsGeneratedClient.State.IICharacterSortInputInfo, global::System.IEquatable<ICharacterSortInput>
+    {
+        public override global::System.Boolean Equals(global::System.Object? obj)
+        {
+            if (ReferenceEquals(null, obj))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, obj))
+            {
+                return true;
+            }
+
+            if (obj.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return Equals((ICharacterSortInput)obj);
+        }
+
+        public virtual global::System.Boolean Equals(ICharacterSortInput? other)
+        {
+            if (ReferenceEquals(null, other))
+            {
+                return false;
+            }
+
+            if (ReferenceEquals(this, other))
+            {
+                return true;
+            }
+
+            if (other.GetType() != GetType())
+            {
+                return false;
+            }
+
+            return (((Id is null && other.Id is null) || Id != null && Id.Equals(other.Id))) && ((Name is null && other.Name is null) || Name != null && Name.Equals(other.Name)) && ((Height is null && other.Height is null) || Height != null && Height.Equals(other.Height));
+        }
+
+        public override global::System.Int32 GetHashCode()
+        {
+            unchecked
+            {
+                int hash = 5;
+                if (Id != null)
+                {
+                    hash ^= 397 * Id.GetHashCode();
+                }
+
+                if (Name != null)
+                {
+                    hash ^= 397 * Name.GetHashCode();
+                }
+
+                if (Height != null)
+                {
+                    hash ^= 397 * Height.GetHashCode();
+                }
+
+                return hash;
+            }
+        }
+
+        private global::StarWarsGeneratedClient.SortEnumType? _value_id;
+        private global::System.Boolean _set_id;
+        private global::StarWarsGeneratedClient.SortEnumType? _value_name;
+        private global::System.Boolean _set_name;
+        private global::StarWarsGeneratedClient.SortEnumType? _value_height;
+        private global::System.Boolean _set_height;
+        ///<summary>The unique identifier for the character.</summary>
+        public global::StarWarsGeneratedClient.SortEnumType? Id
+        {
+            get => _value_id;
+            set
+            {
+                _set_id = true;
+                _value_id = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IICharacterSortInputInfo.IsIdSet => _set_id;
+        ///<summary>The name of the character.</summary>
+        public global::StarWarsGeneratedClient.SortEnumType? Name
+        {
+            get => _value_name;
+            set
+            {
+                _set_name = true;
+                _value_name = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IICharacterSortInputInfo.IsNameSet => _set_name;
+        ///<summary>The height of the character.</summary>
+        public global::StarWarsGeneratedClient.SortEnumType? Height
+        {
+            get => _value_height;
+            set
+            {
+                _set_height = true;
+                _value_height = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IICharacterSortInputInfo.IsHeightSet => _set_height;
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public enum Episode
     {
         /// <summary>
@@ -3233,6 +3427,36 @@ namespace StarWarsGeneratedClient
                 Episode.NewHope => "NEW_HOPE",
                 Episode.Empire => "EMPIRE",
                 Episode.Jedi => "JEDI",
+                _ => throw new global::StrawberryShake.GraphQLClientException()};
+        }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public enum SortEnumType
+    {
+        Asc,
+        Desc
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    public partial class SortEnumTypeSerializer : global::StrawberryShake.Serialization.IInputValueFormatter, global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, SortEnumType>
+    {
+        public global::System.String TypeName => "SortEnumType";
+        public SortEnumType Parse(global::System.String serializedValue)
+        {
+            return serializedValue switch
+            {
+                "ASC" => SortEnumType.Asc,
+                "DESC" => SortEnumType.Desc,
+                _ => throw new global::StrawberryShake.GraphQLClientException()};
+        }
+
+        public global::System.Object Format(global::System.Object? runtimeValue)
+        {
+            return runtimeValue switch
+            {
+                SortEnumType.Asc => "ASC",
+                SortEnumType.Desc => "DESC",
                 _ => throw new global::StrawberryShake.GraphQLClientException()};
         }
     }
@@ -4076,8 +4300,8 @@ namespace StarWarsGeneratedClient
     /// <summary>
     /// Represents the operation service of the GetCharactersWithPaging GraphQL operation
     /// <code>
-    /// query GetCharactersWithPaging($take: Int, $skip: Int) {
-    ///   charactersWithPagingFilteringAndSorting(take: $take, skip: $skip) {
+    /// query GetCharactersWithPaging($take: Int!, $skip: Int, $order: [ICharacterSortInput!]) {
+    ///   charactersWithPagingFilteringAndSorting(take: $take, skip: $skip, order: $order) {
     ///     __typename
     ///     items {
     ///       __typename
@@ -4114,8 +4338,8 @@ namespace StarWarsGeneratedClient
 
         public static GetCharactersWithPagingQueryDocument Instance { get; } = new GetCharactersWithPagingQueryDocument();
         public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Query;
-        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x57, 0x69, 0x74, 0x68, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x28, 0x24, 0x74, 0x61, 0x6b, 0x65, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x2c, 0x20, 0x24, 0x73, 0x6b, 0x69, 0x70, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x29, 0x20, 0x7b, 0x20, 0x63, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x57, 0x69, 0x74, 0x68, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x46, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x69, 0x6e, 0x67, 0x41, 0x6e, 0x64, 0x53, 0x6f, 0x72, 0x74, 0x69, 0x6e, 0x67, 0x28, 0x74, 0x61, 0x6b, 0x65, 0x3a, 0x20, 0x24, 0x74, 0x61, 0x6b, 0x65, 0x2c, 0x20, 0x73, 0x6b, 0x69, 0x70, 0x3a, 0x20, 0x24, 0x73, 0x6b, 0x69, 0x70, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x63, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x20, 0x70, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x68, 0x61, 0x73, 0x4e, 0x65, 0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x20, 0x68, 0x61, 0x73, 0x50, 0x72, 0x65, 0x76, 0x69, 0x6f, 0x75, 0x73, 0x50, 0x61, 0x67, 0x65, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x63, 0x20, 0x6f, 0x6e, 0x20, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x61, 0x70, 0x70, 0x65, 0x61, 0x72, 0x73, 0x49, 0x6e, 0x20, 0x7d};
-        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "7664e78ecb61f69383715bd239ecb85e");
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x57, 0x69, 0x74, 0x68, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x28, 0x24, 0x74, 0x61, 0x6b, 0x65, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x21, 0x2c, 0x20, 0x24, 0x73, 0x6b, 0x69, 0x70, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x2c, 0x20, 0x24, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x3a, 0x20, 0x5b, 0x49, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x53, 0x6f, 0x72, 0x74, 0x49, 0x6e, 0x70, 0x75, 0x74, 0x21, 0x5d, 0x29, 0x20, 0x7b, 0x20, 0x63, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x57, 0x69, 0x74, 0x68, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x46, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x69, 0x6e, 0x67, 0x41, 0x6e, 0x64, 0x53, 0x6f, 0x72, 0x74, 0x69, 0x6e, 0x67, 0x28, 0x74, 0x61, 0x6b, 0x65, 0x3a, 0x20, 0x24, 0x74, 0x61, 0x6b, 0x65, 0x2c, 0x20, 0x73, 0x6b, 0x69, 0x70, 0x3a, 0x20, 0x24, 0x73, 0x6b, 0x69, 0x70, 0x2c, 0x20, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x3a, 0x20, 0x24, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x63, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x20, 0x70, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x68, 0x61, 0x73, 0x4e, 0x65, 0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x20, 0x68, 0x61, 0x73, 0x50, 0x72, 0x65, 0x76, 0x69, 0x6f, 0x75, 0x73, 0x50, 0x61, 0x67, 0x65, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x63, 0x20, 0x6f, 0x6e, 0x20, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x61, 0x70, 0x70, 0x65, 0x61, 0x72, 0x73, 0x49, 0x6e, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "fdbe2aa13a0d8c3f88bc26b5c08d48f2");
         public override global::System.String ToString()
         {
 #if NETSTANDARD2_0
@@ -4129,8 +4353,8 @@ namespace StarWarsGeneratedClient
     /// <summary>
     /// Represents the operation service of the GetCharactersWithPaging GraphQL operation
     /// <code>
-    /// query GetCharactersWithPaging($take: Int, $skip: Int) {
-    ///   charactersWithPagingFilteringAndSorting(take: $take, skip: $skip) {
+    /// query GetCharactersWithPaging($take: Int!, $skip: Int, $order: [ICharacterSortInput!]) {
+    ///   charactersWithPagingFilteringAndSorting(take: $take, skip: $skip, order: $order) {
     ///     __typename
     ///     items {
     ///       __typename
@@ -4163,30 +4387,33 @@ namespace StarWarsGeneratedClient
     {
         private readonly global::StrawberryShake.IOperationExecutor<IGetCharactersWithPagingResult> _operationExecutor;
         private readonly global::StrawberryShake.Serialization.IInputValueFormatter _intFormatter;
+        private readonly global::StrawberryShake.Serialization.IInputValueFormatter _iCharacterSortInputFormatter;
         public GetCharactersWithPagingQuery(global::StrawberryShake.IOperationExecutor<IGetCharactersWithPagingResult> operationExecutor, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
         {
             _operationExecutor = operationExecutor ?? throw new global::System.ArgumentNullException(nameof(operationExecutor));
             _intFormatter = serializerResolver.GetInputValueFormatter("Int");
+            _iCharacterSortInputFormatter = serializerResolver.GetInputValueFormatter("ICharacterSortInput");
         }
 
         global::System.Type global::StrawberryShake.IOperationRequestFactory.ResultType => typeof(IGetCharactersWithPagingResult);
-        public async global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetCharactersWithPagingResult>> ExecuteAsync(global::System.Int32? take, global::System.Int32? skip, global::System.Threading.CancellationToken cancellationToken = default)
+        public async global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetCharactersWithPagingResult>> ExecuteAsync(global::System.Int32 take, global::System.Int32? skip, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.ICharacterSortInput>? order, global::System.Threading.CancellationToken cancellationToken = default)
         {
-            var request = CreateRequest(take, skip);
+            var request = CreateRequest(take, skip, order);
             return await _operationExecutor.ExecuteAsync(request, cancellationToken).ConfigureAwait(false);
         }
 
-        public global::System.IObservable<global::StrawberryShake.IOperationResult<IGetCharactersWithPagingResult>> Watch(global::System.Int32? take, global::System.Int32? skip, global::StrawberryShake.ExecutionStrategy? strategy = null)
+        public global::System.IObservable<global::StrawberryShake.IOperationResult<IGetCharactersWithPagingResult>> Watch(global::System.Int32 take, global::System.Int32? skip, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.ICharacterSortInput>? order, global::StrawberryShake.ExecutionStrategy? strategy = null)
         {
-            var request = CreateRequest(take, skip);
+            var request = CreateRequest(take, skip, order);
             return _operationExecutor.Watch(request, strategy);
         }
 
-        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Int32? take, global::System.Int32? skip)
+        private global::StrawberryShake.OperationRequest CreateRequest(global::System.Int32 take, global::System.Int32? skip, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.ICharacterSortInput>? order)
         {
             var variables = new global::System.Collections.Generic.Dictionary<global::System.String, global::System.Object?>();
             variables.Add("take", FormatTake(take));
             variables.Add("skip", FormatSkip(skip));
+            variables.Add("order", FormatOrder(order));
             return CreateRequest(variables);
         }
 
@@ -4195,16 +4422,9 @@ namespace StarWarsGeneratedClient
             return new global::StrawberryShake.OperationRequest(id: GetCharactersWithPagingQueryDocument.Instance.Hash.Value, name: "GetCharactersWithPaging", document: GetCharactersWithPagingQueryDocument.Instance, strategy: global::StrawberryShake.RequestStrategy.Default, variables: variables);
         }
 
-        private global::System.Object? FormatTake(global::System.Int32? value)
+        private global::System.Object? FormatTake(global::System.Int32 value)
         {
-            if (value is null)
-            {
-                return value;
-            }
-            else
-            {
-                return _intFormatter.Format(value);
-            }
+            return _intFormatter.Format(value);
         }
 
         private global::System.Object? FormatSkip(global::System.Int32? value)
@@ -4219,6 +4439,29 @@ namespace StarWarsGeneratedClient
             }
         }
 
+        private global::System.Object? FormatOrder(global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.ICharacterSortInput>? value)
+        {
+            if (value is null)
+            {
+                return value;
+            }
+            else
+            {
+                var value_list = new global::System.Collections.Generic.List<global::System.Object?>();
+                foreach (var value_elm in value)
+                {
+                    if (value_elm is null)
+                    {
+                        throw new global::System.ArgumentNullException(nameof(value_elm));
+                    }
+
+                    value_list.Add(_iCharacterSortInputFormatter.Format(value_elm));
+                }
+
+                return value_list;
+            }
+        }
+
         global::StrawberryShake.OperationRequest global::StrawberryShake.IOperationRequestFactory.Create(global::System.Collections.Generic.IReadOnlyDictionary<global::System.String, global::System.Object?>? variables)
         {
             return CreateRequest(variables!);
@@ -4228,8 +4471,8 @@ namespace StarWarsGeneratedClient
     /// <summary>
     /// Represents the operation service of the GetCharactersWithPaging GraphQL operation
     /// <code>
-    /// query GetCharactersWithPaging($take: Int, $skip: Int) {
-    ///   charactersWithPagingFilteringAndSorting(take: $take, skip: $skip) {
+    /// query GetCharactersWithPaging($take: Int!, $skip: Int, $order: [ICharacterSortInput!]) {
+    ///   charactersWithPagingFilteringAndSorting(take: $take, skip: $skip, order: $order) {
     ///     __typename
     ///     items {
     ///       __typename
@@ -4260,8 +4503,8 @@ namespace StarWarsGeneratedClient
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public interface IGetCharactersWithPagingQuery : global::StrawberryShake.IOperationRequestFactory
     {
-        global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetCharactersWithPagingResult>> ExecuteAsync(global::System.Int32? take, global::System.Int32? skip, global::System.Threading.CancellationToken cancellationToken = default);
-        global::System.IObservable<global::StrawberryShake.IOperationResult<IGetCharactersWithPagingResult>> Watch(global::System.Int32? take, global::System.Int32? skip, global::StrawberryShake.ExecutionStrategy? strategy = null);
+        global::System.Threading.Tasks.Task<global::StrawberryShake.IOperationResult<IGetCharactersWithPagingResult>> ExecuteAsync(global::System.Int32 take, global::System.Int32? skip, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.ICharacterSortInput>? order, global::System.Threading.CancellationToken cancellationToken = default);
+        global::System.IObservable<global::StrawberryShake.IOperationResult<IGetCharactersWithPagingResult>> Watch(global::System.Int32 take, global::System.Int32? skip, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.ICharacterSortInput>? order, global::StrawberryShake.ExecutionStrategy? strategy = null);
     }
 
     /// <summary>
@@ -5728,6 +5971,16 @@ namespace StarWarsGeneratedClient.State
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
+    internal interface IICharacterSortInputInfo
+    {
+        global::System.Boolean IsIdSet { get; }
+
+        global::System.Boolean IsNameSet { get; }
+
+        global::System.Boolean IsHeightSet { get; }
+    }
+
+    [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class GetHeroBuilder : global::StrawberryShake.IOperationResultBuilder<global::System.Text.Json.JsonDocument, global::StarWarsGeneratedClient.IGetHeroResult>
     {
         private readonly global::StrawberryShake.IEntityStore _entityStore;
@@ -6643,6 +6896,7 @@ namespace StarWarsGeneratedClient.State
         private readonly global::StrawberryShake.IEntityStore _entityStore;
         private readonly global::StrawberryShake.IEntityIdSerializer _idSerializer;
         private readonly global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetCharactersWithPagingResult> _resultDataFactory;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::StarWarsGeneratedClient.SortEnumType> _sortEnumTypeParser;
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::StarWarsGeneratedClient.Episode> _episodeParser;
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Int32, global::System.Int32> _intParser;
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
@@ -6652,6 +6906,7 @@ namespace StarWarsGeneratedClient.State
             _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
             _idSerializer = idSerializer ?? throw new global::System.ArgumentNullException(nameof(idSerializer));
             _resultDataFactory = resultDataFactory ?? throw new global::System.ArgumentNullException(nameof(resultDataFactory));
+            _sortEnumTypeParser = serializerResolver.GetLeafValueParser<global::System.String, global::StarWarsGeneratedClient.SortEnumType>("SortEnumType") ?? throw new global::System.ArgumentException("No serializer for type `SortEnumType` found.");
             _episodeParser = serializerResolver.GetLeafValueParser<global::System.String, global::StarWarsGeneratedClient.Episode>("Episode") ?? throw new global::System.ArgumentException("No serializer for type `Episode` found.");
             _intParser = serializerResolver.GetLeafValueParser<global::System.Int32, global::System.Int32>("Int") ?? throw new global::System.ArgumentException("No serializer for type `Int` found.");
             _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
