@@ -1,4 +1,4 @@
-﻿@page "/charactersPagingOffset"
+@page "/charactersPagingOffset"
 
 @inject IStarWarsGeneratedClient Client;
 
@@ -30,13 +30,13 @@ else
 		</tbody>
 	</table>
 	<div>Total = @total</div>
-	<button disabled="@(!pageInfo.HasPreviousPage)" type="button" @onclick="@ClickPrevious">⬅️</button>
+	<span disabled="@(!pageInfo.HasPreviousPage)" @onclick="@ClickPrevious" style="text-underline-position: under;cursor: pointer;color: blue;" class="oi oi-arrow-left"></span>
 	for (int pageIndex = 1; pageIndex <= Convert.ToInt32(Math.Ceiling(total / Convert.ToDecimal(pageSize))); pageIndex++)
 	{
 		var handlePageArgument = pageIndex;
-		<button type="button" @onclick="(() => HandleChangePage(handlePageArgument))">@pageIndex</button>
+		<span style="text-underline-position: under;cursor: pointer;color: blue;" @onclick="(() => HandleChangePage(handlePageArgument))"><span style="margin-left: 5px;margin-right: 5px;">@pageIndex</span></span>
 	}
-	<button disabled="@(!pageInfo.HasNextPage)" type="button" @onclick="@ClickNext">➡️</button>
+	<span disabled="@(!pageInfo.HasNextPage)" @onclick="@ClickNext" style="text-underline-position: under;cursor: pointer;color: blue;" class="oi oi-arrow-right"></span>
 }
 
 @code {
