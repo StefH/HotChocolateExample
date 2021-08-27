@@ -1169,10 +1169,11 @@ namespace StarWarsGeneratedClient
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class GetCharactersByIds_CharactersByIds_Human : global::System.IEquatable<GetCharactersByIds_CharactersByIds_Human>, IGetCharactersByIds_CharactersByIds_Human
     {
-        public GetCharactersByIds_CharactersByIds_Human(global::System.Int32 id, global::System.String name, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
+        public GetCharactersByIds_CharactersByIds_Human(global::System.Int32 id, global::System.String name, global::System.Double height, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
         {
             Id = id;
             Name = name;
+            Height = height;
             AppearsIn = appearsIn;
         }
 
@@ -1185,6 +1186,11 @@ namespace StarWarsGeneratedClient
         /// The name of the character.
         /// </summary>
         public global::System.String Name { get; }
+
+        /// <summary>
+        /// The height of the character.
+        /// </summary>
+        public global::System.Double Height { get; }
 
         /// <summary>
         /// The episodes the character appears in.
@@ -1208,7 +1214,7 @@ namespace StarWarsGeneratedClient
                 return false;
             }
 
-            return (Id == other.Id) && Name.Equals(other.Name) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
+            return (Id == other.Id) && Name.Equals(other.Name) && Height == other.Height && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
         }
 
         public override global::System.Boolean Equals(global::System.Object? obj)
@@ -1238,6 +1244,7 @@ namespace StarWarsGeneratedClient
                 int hash = 5;
                 hash ^= 397 * Id.GetHashCode();
                 hash ^= 397 * Name.GetHashCode();
+                hash ^= 397 * Height.GetHashCode();
                 foreach (var AppearsIn_elm in AppearsIn)
                 {
                     hash ^= 397 * AppearsIn_elm.GetHashCode();
@@ -1254,10 +1261,11 @@ namespace StarWarsGeneratedClient
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class GetCharactersByIds_CharactersByIds_Droid : global::System.IEquatable<GetCharactersByIds_CharactersByIds_Droid>, IGetCharactersByIds_CharactersByIds_Droid
     {
-        public GetCharactersByIds_CharactersByIds_Droid(global::System.Int32 id, global::System.String name, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
+        public GetCharactersByIds_CharactersByIds_Droid(global::System.Int32 id, global::System.String name, global::System.Double height, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
         {
             Id = id;
             Name = name;
+            Height = height;
             AppearsIn = appearsIn;
         }
 
@@ -1270,6 +1278,11 @@ namespace StarWarsGeneratedClient
         /// The name of the character.
         /// </summary>
         public global::System.String Name { get; }
+
+        /// <summary>
+        /// The height of the character.
+        /// </summary>
+        public global::System.Double Height { get; }
 
         /// <summary>
         /// The episodes the character appears in.
@@ -1293,7 +1306,7 @@ namespace StarWarsGeneratedClient
                 return false;
             }
 
-            return (Id == other.Id) && Name.Equals(other.Name) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
+            return (Id == other.Id) && Name.Equals(other.Name) && Height == other.Height && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
         }
 
         public override global::System.Boolean Equals(global::System.Object? obj)
@@ -1323,6 +1336,7 @@ namespace StarWarsGeneratedClient
                 int hash = 5;
                 hash ^= 397 * Id.GetHashCode();
                 hash ^= 397 * Name.GetHashCode();
+                hash ^= 397 * Height.GetHashCode();
                 foreach (var AppearsIn_elm in AppearsIn)
                 {
                     hash ^= 397 * AppearsIn_elm.GetHashCode();
@@ -1364,6 +1378,11 @@ namespace StarWarsGeneratedClient
         /// The name of the character.
         /// </summary>
         public global::System.String Name { get; }
+
+        /// <summary>
+        /// The height of the character.
+        /// </summary>
+        public global::System.Double Height { get; }
 
         /// <summary>
         /// The episodes the character appears in.
@@ -1476,10 +1495,11 @@ namespace StarWarsGeneratedClient
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class GetAllCharacters_Characters_Human : global::System.IEquatable<GetAllCharacters_Characters_Human>, IGetAllCharacters_Characters_Human
     {
-        public GetAllCharacters_Characters_Human(global::System.Int32 id, global::System.String name, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
+        public GetAllCharacters_Characters_Human(global::System.Int32 id, global::System.String name, global::System.Double height, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
         {
             Id = id;
             Name = name;
+            Height = height;
             AppearsIn = appearsIn;
         }
 
@@ -1492,6 +1512,11 @@ namespace StarWarsGeneratedClient
         /// The name of the character.
         /// </summary>
         public global::System.String Name { get; }
+
+        /// <summary>
+        /// The height of the character.
+        /// </summary>
+        public global::System.Double Height { get; }
 
         /// <summary>
         /// The episodes the character appears in.
@@ -1515,7 +1540,7 @@ namespace StarWarsGeneratedClient
                 return false;
             }
 
-            return (Id == other.Id) && Name.Equals(other.Name) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
+            return (Id == other.Id) && Name.Equals(other.Name) && Height == other.Height && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
         }
 
         public override global::System.Boolean Equals(global::System.Object? obj)
@@ -1545,6 +1570,7 @@ namespace StarWarsGeneratedClient
                 int hash = 5;
                 hash ^= 397 * Id.GetHashCode();
                 hash ^= 397 * Name.GetHashCode();
+                hash ^= 397 * Height.GetHashCode();
                 foreach (var AppearsIn_elm in AppearsIn)
                 {
                     hash ^= 397 * AppearsIn_elm.GetHashCode();
@@ -1561,10 +1587,11 @@ namespace StarWarsGeneratedClient
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class GetAllCharacters_Characters_Droid : global::System.IEquatable<GetAllCharacters_Characters_Droid>, IGetAllCharacters_Characters_Droid
     {
-        public GetAllCharacters_Characters_Droid(global::System.Int32 id, global::System.String name, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
+        public GetAllCharacters_Characters_Droid(global::System.Int32 id, global::System.String name, global::System.Double height, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
         {
             Id = id;
             Name = name;
+            Height = height;
             AppearsIn = appearsIn;
         }
 
@@ -1577,6 +1604,11 @@ namespace StarWarsGeneratedClient
         /// The name of the character.
         /// </summary>
         public global::System.String Name { get; }
+
+        /// <summary>
+        /// The height of the character.
+        /// </summary>
+        public global::System.Double Height { get; }
 
         /// <summary>
         /// The episodes the character appears in.
@@ -1600,7 +1632,7 @@ namespace StarWarsGeneratedClient
                 return false;
             }
 
-            return (Id == other.Id) && Name.Equals(other.Name) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
+            return (Id == other.Id) && Name.Equals(other.Name) && Height == other.Height && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
         }
 
         public override global::System.Boolean Equals(global::System.Object? obj)
@@ -1630,6 +1662,7 @@ namespace StarWarsGeneratedClient
                 int hash = 5;
                 hash ^= 397 * Id.GetHashCode();
                 hash ^= 397 * Name.GetHashCode();
+                hash ^= 397 * Height.GetHashCode();
                 foreach (var AppearsIn_elm in AppearsIn)
                 {
                     hash ^= 397 * AppearsIn_elm.GetHashCode();
@@ -1849,10 +1882,11 @@ namespace StarWarsGeneratedClient
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Human : global::System.IEquatable<GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Human>, IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Human
     {
-        public GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Human(global::System.Int32 id, global::System.String name, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
+        public GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Human(global::System.Int32 id, global::System.String name, global::System.Double height, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
         {
             Id = id;
             Name = name;
+            Height = height;
             AppearsIn = appearsIn;
         }
 
@@ -1865,6 +1899,11 @@ namespace StarWarsGeneratedClient
         /// The name of the character.
         /// </summary>
         public global::System.String Name { get; }
+
+        /// <summary>
+        /// The height of the character.
+        /// </summary>
+        public global::System.Double Height { get; }
 
         /// <summary>
         /// The episodes the character appears in.
@@ -1888,7 +1927,7 @@ namespace StarWarsGeneratedClient
                 return false;
             }
 
-            return (Id == other.Id) && Name.Equals(other.Name) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
+            return (Id == other.Id) && Name.Equals(other.Name) && Height == other.Height && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
         }
 
         public override global::System.Boolean Equals(global::System.Object? obj)
@@ -1918,6 +1957,7 @@ namespace StarWarsGeneratedClient
                 int hash = 5;
                 hash ^= 397 * Id.GetHashCode();
                 hash ^= 397 * Name.GetHashCode();
+                hash ^= 397 * Height.GetHashCode();
                 foreach (var AppearsIn_elm in AppearsIn)
                 {
                     hash ^= 397 * AppearsIn_elm.GetHashCode();
@@ -1934,10 +1974,11 @@ namespace StarWarsGeneratedClient
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Droid : global::System.IEquatable<GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Droid>, IGetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Droid
     {
-        public GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Droid(global::System.Int32 id, global::System.String name, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
+        public GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Droid(global::System.Int32 id, global::System.String name, global::System.Double height, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
         {
             Id = id;
             Name = name;
+            Height = height;
             AppearsIn = appearsIn;
         }
 
@@ -1950,6 +1991,11 @@ namespace StarWarsGeneratedClient
         /// The name of the character.
         /// </summary>
         public global::System.String Name { get; }
+
+        /// <summary>
+        /// The height of the character.
+        /// </summary>
+        public global::System.Double Height { get; }
 
         /// <summary>
         /// The episodes the character appears in.
@@ -1973,7 +2019,7 @@ namespace StarWarsGeneratedClient
                 return false;
             }
 
-            return (Id == other.Id) && Name.Equals(other.Name) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
+            return (Id == other.Id) && Name.Equals(other.Name) && Height == other.Height && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
         }
 
         public override global::System.Boolean Equals(global::System.Object? obj)
@@ -2003,6 +2049,7 @@ namespace StarWarsGeneratedClient
                 int hash = 5;
                 hash ^= 397 * Id.GetHashCode();
                 hash ^= 397 * Name.GetHashCode();
+                hash ^= 397 * Height.GetHashCode();
                 foreach (var AppearsIn_elm in AppearsIn)
                 {
                     hash ^= 397 * AppearsIn_elm.GetHashCode();
@@ -2374,10 +2421,11 @@ namespace StarWarsGeneratedClient
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Human : global::System.IEquatable<GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Human>, IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Human
     {
-        public GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Human(global::System.Int32 id, global::System.String name, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
+        public GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Human(global::System.Int32 id, global::System.String name, global::System.Double height, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
         {
             Id = id;
             Name = name;
+            Height = height;
             AppearsIn = appearsIn;
         }
 
@@ -2390,6 +2438,11 @@ namespace StarWarsGeneratedClient
         /// The name of the character.
         /// </summary>
         public global::System.String Name { get; }
+
+        /// <summary>
+        /// The height of the character.
+        /// </summary>
+        public global::System.Double Height { get; }
 
         /// <summary>
         /// The episodes the character appears in.
@@ -2413,7 +2466,7 @@ namespace StarWarsGeneratedClient
                 return false;
             }
 
-            return (Id == other.Id) && Name.Equals(other.Name) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
+            return (Id == other.Id) && Name.Equals(other.Name) && Height == other.Height && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
         }
 
         public override global::System.Boolean Equals(global::System.Object? obj)
@@ -2443,6 +2496,7 @@ namespace StarWarsGeneratedClient
                 int hash = 5;
                 hash ^= 397 * Id.GetHashCode();
                 hash ^= 397 * Name.GetHashCode();
+                hash ^= 397 * Height.GetHashCode();
                 foreach (var AppearsIn_elm in AppearsIn)
                 {
                     hash ^= 397 * AppearsIn_elm.GetHashCode();
@@ -2459,10 +2513,11 @@ namespace StarWarsGeneratedClient
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Droid : global::System.IEquatable<GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Droid>, IGetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Droid
     {
-        public GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Droid(global::System.Int32 id, global::System.String name, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
+        public GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Droid(global::System.Int32 id, global::System.String name, global::System.Double height, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn)
         {
             Id = id;
             Name = name;
+            Height = height;
             AppearsIn = appearsIn;
         }
 
@@ -2475,6 +2530,11 @@ namespace StarWarsGeneratedClient
         /// The name of the character.
         /// </summary>
         public global::System.String Name { get; }
+
+        /// <summary>
+        /// The height of the character.
+        /// </summary>
+        public global::System.Double Height { get; }
 
         /// <summary>
         /// The episodes the character appears in.
@@ -2498,7 +2558,7 @@ namespace StarWarsGeneratedClient
                 return false;
             }
 
-            return (Id == other.Id) && Name.Equals(other.Name) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
+            return (Id == other.Id) && Name.Equals(other.Name) && Height == other.Height && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(AppearsIn, other.AppearsIn);
         }
 
         public override global::System.Boolean Equals(global::System.Object? obj)
@@ -2528,6 +2588,7 @@ namespace StarWarsGeneratedClient
                 int hash = 5;
                 hash ^= 397 * Id.GetHashCode();
                 hash ^= 397 * Name.GetHashCode();
+                hash ^= 397 * Height.GetHashCode();
                 foreach (var AppearsIn_elm in AppearsIn)
                 {
                     hash ^= 397 * AppearsIn_elm.GetHashCode();
@@ -4184,6 +4245,16 @@ namespace StarWarsGeneratedClient
                 fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("nendsWith", FormatNendsWith(input.NendsWith)));
             }
 
+            if (inputInfo.IsContainsIgnoreCaseSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("containsIgnoreCase", FormatContainsIgnoreCase(input.ContainsIgnoreCase)));
+            }
+
+            if (inputInfo.IsEqualsIgnoreCaseSet)
+            {
+                fields.Add(new global::System.Collections.Generic.KeyValuePair<global::System.String, global::System.Object?>("equalsIgnoreCase", FormatEqualsIgnoreCase(input.EqualsIgnoreCase)));
+            }
+
             return fields;
         }
 
@@ -4378,6 +4449,30 @@ namespace StarWarsGeneratedClient
                 return _stringFormatter.Format(input);
             }
         }
+
+        private global::System.Object? FormatContainsIgnoreCase(global::System.String? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _stringFormatter.Format(input);
+            }
+        }
+
+        private global::System.Object? FormatEqualsIgnoreCase(global::System.String? input)
+        {
+            if (input is null)
+            {
+                return input;
+            }
+            else
+            {
+                return _stringFormatter.Format(input);
+            }
+        }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
@@ -4420,7 +4515,7 @@ namespace StarWarsGeneratedClient
                 return false;
             }
 
-            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(And, other.And)) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Or, other.Or) && ((Eq is null && other.Eq is null) || Eq != null && Eq.Equals(other.Eq)) && ((Neq is null && other.Neq is null) || Neq != null && Neq.Equals(other.Neq)) && ((Contains is null && other.Contains is null) || Contains != null && Contains.Equals(other.Contains)) && ((Ncontains is null && other.Ncontains is null) || Ncontains != null && Ncontains.Equals(other.Ncontains)) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(In, other.In) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Nin, other.Nin) && ((StartsWith is null && other.StartsWith is null) || StartsWith != null && StartsWith.Equals(other.StartsWith)) && ((NstartsWith is null && other.NstartsWith is null) || NstartsWith != null && NstartsWith.Equals(other.NstartsWith)) && ((EndsWith is null && other.EndsWith is null) || EndsWith != null && EndsWith.Equals(other.EndsWith)) && ((NendsWith is null && other.NendsWith is null) || NendsWith != null && NendsWith.Equals(other.NendsWith));
+            return (global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(And, other.And)) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Or, other.Or) && ((Eq is null && other.Eq is null) || Eq != null && Eq.Equals(other.Eq)) && ((Neq is null && other.Neq is null) || Neq != null && Neq.Equals(other.Neq)) && ((Contains is null && other.Contains is null) || Contains != null && Contains.Equals(other.Contains)) && ((Ncontains is null && other.Ncontains is null) || Ncontains != null && Ncontains.Equals(other.Ncontains)) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(In, other.In) && global::StrawberryShake.Helper.ComparisonHelper.SequenceEqual(Nin, other.Nin) && ((StartsWith is null && other.StartsWith is null) || StartsWith != null && StartsWith.Equals(other.StartsWith)) && ((NstartsWith is null && other.NstartsWith is null) || NstartsWith != null && NstartsWith.Equals(other.NstartsWith)) && ((EndsWith is null && other.EndsWith is null) || EndsWith != null && EndsWith.Equals(other.EndsWith)) && ((NendsWith is null && other.NendsWith is null) || NendsWith != null && NendsWith.Equals(other.NendsWith)) && ((ContainsIgnoreCase is null && other.ContainsIgnoreCase is null) || ContainsIgnoreCase != null && ContainsIgnoreCase.Equals(other.ContainsIgnoreCase)) && ((EqualsIgnoreCase is null && other.EqualsIgnoreCase is null) || EqualsIgnoreCase != null && EqualsIgnoreCase.Equals(other.EqualsIgnoreCase));
         }
 
         public override global::System.Int32 GetHashCode()
@@ -4506,6 +4601,16 @@ namespace StarWarsGeneratedClient
                     hash ^= 397 * NendsWith.GetHashCode();
                 }
 
+                if (ContainsIgnoreCase != null)
+                {
+                    hash ^= 397 * ContainsIgnoreCase.GetHashCode();
+                }
+
+                if (EqualsIgnoreCase != null)
+                {
+                    hash ^= 397 * EqualsIgnoreCase.GetHashCode();
+                }
+
                 return hash;
             }
         }
@@ -4534,6 +4639,10 @@ namespace StarWarsGeneratedClient
         private global::System.Boolean _set_endsWith;
         private global::System.String? _value_nendsWith;
         private global::System.Boolean _set_nendsWith;
+        private global::System.String? _value_containsIgnoreCase;
+        private global::System.Boolean _set_containsIgnoreCase;
+        private global::System.String? _value_equalsIgnoreCase;
+        private global::System.Boolean _set_equalsIgnoreCase;
         public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.StringOperationFilterInput>? And
         {
             get => _value_and;
@@ -4666,6 +4775,30 @@ namespace StarWarsGeneratedClient
         }
 
         global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsNendsWithSet => _set_nendsWith;
+        ///<summary>string.Contains with InvariantCultureIgnoreCase</summary>
+        public global::System.String? ContainsIgnoreCase
+        {
+            get => _value_containsIgnoreCase;
+            set
+            {
+                _set_containsIgnoreCase = true;
+                _value_containsIgnoreCase = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsContainsIgnoreCaseSet => _set_containsIgnoreCase;
+        ///<summary>string.Equals with InvariantCultureIgnoreCase</summary>
+        public global::System.String? EqualsIgnoreCase
+        {
+            get => _value_equalsIgnoreCase;
+            set
+            {
+                _set_equalsIgnoreCase = true;
+                _value_equalsIgnoreCase = value;
+            }
+        }
+
+        global::System.Boolean global::StarWarsGeneratedClient.State.IStringOperationFilterInputInfo.IsEqualsIgnoreCaseSet => _set_equalsIgnoreCase;
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
@@ -6489,6 +6622,7 @@ namespace StarWarsGeneratedClient
     /// fragment c on Character {
     ///   id
     ///   name
+    ///   height
     ///   appearsIn
     /// }
     /// </code>
@@ -6502,8 +6636,8 @@ namespace StarWarsGeneratedClient
 
         public static GetCharactersByIdsQueryDocument Instance { get; } = new GetCharactersByIdsQueryDocument();
         public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Query;
-        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x42, 0x79, 0x49, 0x64, 0x73, 0x28, 0x24, 0x69, 0x64, 0x73, 0x3a, 0x20, 0x5b, 0x49, 0x6e, 0x74, 0x21, 0x5d, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x63, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x42, 0x79, 0x49, 0x64, 0x73, 0x28, 0x69, 0x64, 0x73, 0x3a, 0x20, 0x24, 0x69, 0x64, 0x73, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x63, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x63, 0x20, 0x6f, 0x6e, 0x20, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x61, 0x70, 0x70, 0x65, 0x61, 0x72, 0x73, 0x49, 0x6e, 0x20, 0x7d};
-        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "74a49c2ce041d8131c47abd24a296a71");
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x42, 0x79, 0x49, 0x64, 0x73, 0x28, 0x24, 0x69, 0x64, 0x73, 0x3a, 0x20, 0x5b, 0x49, 0x6e, 0x74, 0x21, 0x5d, 0x21, 0x29, 0x20, 0x7b, 0x20, 0x63, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x42, 0x79, 0x49, 0x64, 0x73, 0x28, 0x69, 0x64, 0x73, 0x3a, 0x20, 0x24, 0x69, 0x64, 0x73, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x63, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x63, 0x20, 0x6f, 0x6e, 0x20, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x68, 0x65, 0x69, 0x67, 0x68, 0x74, 0x20, 0x61, 0x70, 0x70, 0x65, 0x61, 0x72, 0x73, 0x49, 0x6e, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "cb5b558116f458467c7b46507f4fdaa1");
         public override global::System.String ToString()
         {
 #if NETSTANDARD2_0
@@ -6533,6 +6667,7 @@ namespace StarWarsGeneratedClient
     /// fragment c on Character {
     ///   id
     ///   name
+    ///   height
     ///   appearsIn
     /// }
     /// </code>
@@ -6609,6 +6744,7 @@ namespace StarWarsGeneratedClient
     /// fragment c on Character {
     ///   id
     ///   name
+    ///   height
     ///   appearsIn
     /// }
     /// </code>
@@ -6639,6 +6775,7 @@ namespace StarWarsGeneratedClient
     /// fragment c on Character {
     ///   id
     ///   name
+    ///   height
     ///   appearsIn
     /// }
     /// </code>
@@ -6652,8 +6789,8 @@ namespace StarWarsGeneratedClient
 
         public static GetAllCharactersQueryDocument Instance { get; } = new GetAllCharactersQueryDocument();
         public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Query;
-        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x20, 0x7b, 0x20, 0x63, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x63, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x63, 0x20, 0x6f, 0x6e, 0x20, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x61, 0x70, 0x70, 0x65, 0x61, 0x72, 0x73, 0x49, 0x6e, 0x20, 0x7d};
-        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "f5182c61e56079e2c22f68c05f853638");
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x20, 0x7b, 0x20, 0x63, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x63, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x63, 0x20, 0x6f, 0x6e, 0x20, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x68, 0x65, 0x69, 0x67, 0x68, 0x74, 0x20, 0x61, 0x70, 0x70, 0x65, 0x61, 0x72, 0x73, 0x49, 0x6e, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "1caf7d14bb8b33684e21049529607545");
         public override global::System.String ToString()
         {
 #if NETSTANDARD2_0
@@ -6683,6 +6820,7 @@ namespace StarWarsGeneratedClient
     /// fragment c on Character {
     ///   id
     ///   name
+    ///   height
     ///   appearsIn
     /// }
     /// </code>
@@ -6744,6 +6882,7 @@ namespace StarWarsGeneratedClient
     /// fragment c on Character {
     ///   id
     ///   name
+    ///   height
     ///   appearsIn
     /// }
     /// </code>
@@ -6785,6 +6924,7 @@ namespace StarWarsGeneratedClient
     /// fragment c on Character {
     ///   id
     ///   name
+    ///   height
     ///   appearsIn
     /// }
     /// </code>
@@ -6798,8 +6938,8 @@ namespace StarWarsGeneratedClient
 
         public static GetCharactersWithCursorPagingQueryDocument Instance { get; } = new GetCharactersWithCursorPagingQueryDocument();
         public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Query;
-        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x57, 0x69, 0x74, 0x68, 0x43, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x28, 0x24, 0x66, 0x69, 0x72, 0x73, 0x74, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x2c, 0x20, 0x24, 0x6c, 0x61, 0x73, 0x74, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x2c, 0x20, 0x24, 0x62, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x3a, 0x20, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x2c, 0x20, 0x24, 0x61, 0x66, 0x74, 0x65, 0x72, 0x3a, 0x20, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x29, 0x20, 0x7b, 0x20, 0x63, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x57, 0x69, 0x74, 0x68, 0x43, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x46, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x69, 0x6e, 0x67, 0x41, 0x6e, 0x64, 0x53, 0x6f, 0x72, 0x74, 0x69, 0x6e, 0x67, 0x28, 0x66, 0x69, 0x72, 0x73, 0x74, 0x3a, 0x20, 0x24, 0x66, 0x69, 0x72, 0x73, 0x74, 0x2c, 0x20, 0x6c, 0x61, 0x73, 0x74, 0x3a, 0x20, 0x24, 0x6c, 0x61, 0x73, 0x74, 0x2c, 0x20, 0x62, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x3a, 0x20, 0x24, 0x62, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x2c, 0x20, 0x61, 0x66, 0x74, 0x65, 0x72, 0x3a, 0x20, 0x24, 0x61, 0x66, 0x74, 0x65, 0x72, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x6f, 0x64, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x63, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x20, 0x70, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x65, 0x6e, 0x64, 0x43, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x20, 0x73, 0x74, 0x61, 0x72, 0x74, 0x43, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x20, 0x68, 0x61, 0x73, 0x4e, 0x65, 0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x20, 0x68, 0x61, 0x73, 0x50, 0x72, 0x65, 0x76, 0x69, 0x6f, 0x75, 0x73, 0x50, 0x61, 0x67, 0x65, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x63, 0x20, 0x6f, 0x6e, 0x20, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x61, 0x70, 0x70, 0x65, 0x61, 0x72, 0x73, 0x49, 0x6e, 0x20, 0x7d};
-        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "40a41651e074201c994b72d7ab251b7a");
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x57, 0x69, 0x74, 0x68, 0x43, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x28, 0x24, 0x66, 0x69, 0x72, 0x73, 0x74, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x2c, 0x20, 0x24, 0x6c, 0x61, 0x73, 0x74, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x2c, 0x20, 0x24, 0x62, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x3a, 0x20, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x2c, 0x20, 0x24, 0x61, 0x66, 0x74, 0x65, 0x72, 0x3a, 0x20, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x29, 0x20, 0x7b, 0x20, 0x63, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x57, 0x69, 0x74, 0x68, 0x43, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x46, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x69, 0x6e, 0x67, 0x41, 0x6e, 0x64, 0x53, 0x6f, 0x72, 0x74, 0x69, 0x6e, 0x67, 0x28, 0x66, 0x69, 0x72, 0x73, 0x74, 0x3a, 0x20, 0x24, 0x66, 0x69, 0x72, 0x73, 0x74, 0x2c, 0x20, 0x6c, 0x61, 0x73, 0x74, 0x3a, 0x20, 0x24, 0x6c, 0x61, 0x73, 0x74, 0x2c, 0x20, 0x62, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x3a, 0x20, 0x24, 0x62, 0x65, 0x66, 0x6f, 0x72, 0x65, 0x2c, 0x20, 0x61, 0x66, 0x74, 0x65, 0x72, 0x3a, 0x20, 0x24, 0x61, 0x66, 0x74, 0x65, 0x72, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x6e, 0x6f, 0x64, 0x65, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x63, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x20, 0x70, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x65, 0x6e, 0x64, 0x43, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x20, 0x73, 0x74, 0x61, 0x72, 0x74, 0x43, 0x75, 0x72, 0x73, 0x6f, 0x72, 0x20, 0x68, 0x61, 0x73, 0x4e, 0x65, 0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x20, 0x68, 0x61, 0x73, 0x50, 0x72, 0x65, 0x76, 0x69, 0x6f, 0x75, 0x73, 0x50, 0x61, 0x67, 0x65, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x63, 0x20, 0x6f, 0x6e, 0x20, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x68, 0x65, 0x69, 0x67, 0x68, 0x74, 0x20, 0x61, 0x70, 0x70, 0x65, 0x61, 0x72, 0x73, 0x49, 0x6e, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "d4e5252b56e9684462952449cedc40cf");
         public override global::System.String ToString()
         {
 #if NETSTANDARD2_0
@@ -6840,6 +6980,7 @@ namespace StarWarsGeneratedClient
     /// fragment c on Character {
     ///   id
     ///   name
+    ///   height
     ///   appearsIn
     /// }
     /// </code>
@@ -6969,6 +7110,7 @@ namespace StarWarsGeneratedClient
     /// fragment c on Character {
     ///   id
     ///   name
+    ///   height
     ///   appearsIn
     /// }
     /// </code>
@@ -7008,6 +7150,7 @@ namespace StarWarsGeneratedClient
     /// fragment c on Character {
     ///   id
     ///   name
+    ///   height
     ///   appearsIn
     /// }
     /// </code>
@@ -7021,8 +7164,8 @@ namespace StarWarsGeneratedClient
 
         public static GetCharactersWithPagingQueryDocument Instance { get; } = new GetCharactersWithPagingQueryDocument();
         public global::StrawberryShake.OperationKind Kind => global::StrawberryShake.OperationKind.Query;
-        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x57, 0x69, 0x74, 0x68, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x28, 0x24, 0x74, 0x61, 0x6b, 0x65, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x21, 0x2c, 0x20, 0x24, 0x73, 0x6b, 0x69, 0x70, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x2c, 0x20, 0x24, 0x77, 0x68, 0x65, 0x72, 0x65, 0x3a, 0x20, 0x49, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x46, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x49, 0x6e, 0x70, 0x75, 0x74, 0x2c, 0x20, 0x24, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x3a, 0x20, 0x5b, 0x49, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x53, 0x6f, 0x72, 0x74, 0x49, 0x6e, 0x70, 0x75, 0x74, 0x21, 0x5d, 0x29, 0x20, 0x7b, 0x20, 0x63, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x57, 0x69, 0x74, 0x68, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x46, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x69, 0x6e, 0x67, 0x41, 0x6e, 0x64, 0x53, 0x6f, 0x72, 0x74, 0x69, 0x6e, 0x67, 0x28, 0x74, 0x61, 0x6b, 0x65, 0x3a, 0x20, 0x24, 0x74, 0x61, 0x6b, 0x65, 0x2c, 0x20, 0x73, 0x6b, 0x69, 0x70, 0x3a, 0x20, 0x24, 0x73, 0x6b, 0x69, 0x70, 0x2c, 0x20, 0x77, 0x68, 0x65, 0x72, 0x65, 0x3a, 0x20, 0x24, 0x77, 0x68, 0x65, 0x72, 0x65, 0x2c, 0x20, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x3a, 0x20, 0x24, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x63, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x20, 0x70, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x68, 0x61, 0x73, 0x4e, 0x65, 0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x20, 0x68, 0x61, 0x73, 0x50, 0x72, 0x65, 0x76, 0x69, 0x6f, 0x75, 0x73, 0x50, 0x61, 0x67, 0x65, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x63, 0x20, 0x6f, 0x6e, 0x20, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x61, 0x70, 0x70, 0x65, 0x61, 0x72, 0x73, 0x49, 0x6e, 0x20, 0x7d};
-        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "2869b2922f485d4c18ae6d48544ec39b");
+        public global::System.ReadOnlySpan<global::System.Byte> Body => new global::System.Byte[]{0x71, 0x75, 0x65, 0x72, 0x79, 0x20, 0x47, 0x65, 0x74, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x57, 0x69, 0x74, 0x68, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x28, 0x24, 0x74, 0x61, 0x6b, 0x65, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x21, 0x2c, 0x20, 0x24, 0x73, 0x6b, 0x69, 0x70, 0x3a, 0x20, 0x49, 0x6e, 0x74, 0x2c, 0x20, 0x24, 0x77, 0x68, 0x65, 0x72, 0x65, 0x3a, 0x20, 0x49, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x46, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x49, 0x6e, 0x70, 0x75, 0x74, 0x2c, 0x20, 0x24, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x3a, 0x20, 0x5b, 0x49, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x53, 0x6f, 0x72, 0x74, 0x49, 0x6e, 0x70, 0x75, 0x74, 0x21, 0x5d, 0x29, 0x20, 0x7b, 0x20, 0x63, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x73, 0x57, 0x69, 0x74, 0x68, 0x50, 0x61, 0x67, 0x69, 0x6e, 0x67, 0x46, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x69, 0x6e, 0x67, 0x41, 0x6e, 0x64, 0x53, 0x6f, 0x72, 0x74, 0x69, 0x6e, 0x67, 0x28, 0x74, 0x61, 0x6b, 0x65, 0x3a, 0x20, 0x24, 0x74, 0x61, 0x6b, 0x65, 0x2c, 0x20, 0x73, 0x6b, 0x69, 0x70, 0x3a, 0x20, 0x24, 0x73, 0x6b, 0x69, 0x70, 0x2c, 0x20, 0x77, 0x68, 0x65, 0x72, 0x65, 0x3a, 0x20, 0x24, 0x77, 0x68, 0x65, 0x72, 0x65, 0x2c, 0x20, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x3a, 0x20, 0x24, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x29, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x69, 0x74, 0x65, 0x6d, 0x73, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x63, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x48, 0x75, 0x6d, 0x61, 0x6e, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x2e, 0x2e, 0x2e, 0x20, 0x6f, 0x6e, 0x20, 0x44, 0x72, 0x6f, 0x69, 0x64, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x74, 0x6f, 0x74, 0x61, 0x6c, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x20, 0x70, 0x61, 0x67, 0x65, 0x49, 0x6e, 0x66, 0x6f, 0x20, 0x7b, 0x20, 0x5f, 0x5f, 0x74, 0x79, 0x70, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x68, 0x61, 0x73, 0x4e, 0x65, 0x78, 0x74, 0x50, 0x61, 0x67, 0x65, 0x20, 0x68, 0x61, 0x73, 0x50, 0x72, 0x65, 0x76, 0x69, 0x6f, 0x75, 0x73, 0x50, 0x61, 0x67, 0x65, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x7d, 0x20, 0x66, 0x72, 0x61, 0x67, 0x6d, 0x65, 0x6e, 0x74, 0x20, 0x63, 0x20, 0x6f, 0x6e, 0x20, 0x43, 0x68, 0x61, 0x72, 0x61, 0x63, 0x74, 0x65, 0x72, 0x20, 0x7b, 0x20, 0x69, 0x64, 0x20, 0x6e, 0x61, 0x6d, 0x65, 0x20, 0x68, 0x65, 0x69, 0x67, 0x68, 0x74, 0x20, 0x61, 0x70, 0x70, 0x65, 0x61, 0x72, 0x73, 0x49, 0x6e, 0x20, 0x7d};
+        public global::StrawberryShake.DocumentHash Hash { get; } = new global::StrawberryShake.DocumentHash("md5Hash", "be37bbfff502e87490046ebbf5ba0e7e");
         public override global::System.String ToString()
         {
 #if NETSTANDARD2_0
@@ -7061,6 +7204,7 @@ namespace StarWarsGeneratedClient
     /// fragment c on Character {
     ///   id
     ///   name
+    ///   height
     ///   appearsIn
     /// }
     /// </code>
@@ -7194,6 +7338,7 @@ namespace StarWarsGeneratedClient
     /// fragment c on Character {
     ///   id
     ///   name
+    ///   height
     ///   appearsIn
     /// }
     /// </code>
@@ -7426,11 +7571,12 @@ namespace StarWarsGeneratedClient.State
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class HumanEntity
     {
-        public HumanEntity(global::System.Int32 id = default !, global::System.String name = default !, global::StarWarsGeneratedClient.State.FriendsConnectionData? friends = default !, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn = default !)
+        public HumanEntity(global::System.Int32 id = default !, global::System.String name = default !, global::StarWarsGeneratedClient.State.FriendsConnectionData? friends = default !, global::System.Double height = default !, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn = default !)
         {
             Id = id;
             Name = name;
             Friends = friends;
+            Height = height;
             AppearsIn = appearsIn;
         }
 
@@ -7442,6 +7588,9 @@ namespace StarWarsGeneratedClient.State
 
         public global::StarWarsGeneratedClient.State.FriendsConnectionData? Friends { get; }
 
+        ///<summary>The height of the character.</summary>
+        public global::System.Double Height { get; }
+
         ///<summary>The episodes the character appears in.</summary>
         public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> AppearsIn { get; }
     }
@@ -7450,11 +7599,12 @@ namespace StarWarsGeneratedClient.State
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
     public partial class DroidEntity
     {
-        public DroidEntity(global::System.Int32 id = default !, global::System.String name = default !, global::StarWarsGeneratedClient.State.FriendsConnectionData? friends = default !, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn = default !, global::System.String primaryFunction = default !)
+        public DroidEntity(global::System.Int32 id = default !, global::System.String name = default !, global::StarWarsGeneratedClient.State.FriendsConnectionData? friends = default !, global::System.Double height = default !, global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> appearsIn = default !, global::System.String primaryFunction = default !)
         {
             Id = id;
             Name = name;
             Friends = friends;
+            Height = height;
             AppearsIn = appearsIn;
             PrimaryFunction = primaryFunction;
         }
@@ -7466,6 +7616,9 @@ namespace StarWarsGeneratedClient.State
         public global::System.String Name { get; }
 
         public global::StarWarsGeneratedClient.State.FriendsConnectionData? Friends { get; }
+
+        ///<summary>The height of the character.</summary>
+        public global::System.Double Height { get; }
 
         ///<summary>The episodes the character appears in.</summary>
         public global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> AppearsIn { get; }
@@ -8014,7 +8167,7 @@ namespace StarWarsGeneratedClient.State
                 snapshot = _entityStore.CurrentSnapshot;
             }
 
-            return new GetCharactersByIds_CharactersByIds_Human(entity.Id, entity.Name, entity.AppearsIn);
+            return new GetCharactersByIds_CharactersByIds_Human(entity.Id, entity.Name, entity.Height, entity.AppearsIn);
         }
     }
 
@@ -8034,7 +8187,7 @@ namespace StarWarsGeneratedClient.State
                 snapshot = _entityStore.CurrentSnapshot;
             }
 
-            return new GetCharactersByIds_CharactersByIds_Droid(entity.Id, entity.Name, entity.AppearsIn);
+            return new GetCharactersByIds_CharactersByIds_Droid(entity.Id, entity.Name, entity.Height, entity.AppearsIn);
         }
     }
 
@@ -8149,7 +8302,7 @@ namespace StarWarsGeneratedClient.State
                 snapshot = _entityStore.CurrentSnapshot;
             }
 
-            return new GetAllCharacters_Characters_Human(entity.Id, entity.Name, entity.AppearsIn);
+            return new GetAllCharacters_Characters_Human(entity.Id, entity.Name, entity.Height, entity.AppearsIn);
         }
     }
 
@@ -8169,7 +8322,7 @@ namespace StarWarsGeneratedClient.State
                 snapshot = _entityStore.CurrentSnapshot;
             }
 
-            return new GetAllCharacters_Characters_Droid(entity.Id, entity.Name, entity.AppearsIn);
+            return new GetAllCharacters_Characters_Droid(entity.Id, entity.Name, entity.Height, entity.AppearsIn);
         }
     }
 
@@ -8324,7 +8477,7 @@ namespace StarWarsGeneratedClient.State
                 snapshot = _entityStore.CurrentSnapshot;
             }
 
-            return new GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Human(entity.Id, entity.Name, entity.AppearsIn);
+            return new GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Human(entity.Id, entity.Name, entity.Height, entity.AppearsIn);
         }
     }
 
@@ -8344,7 +8497,7 @@ namespace StarWarsGeneratedClient.State
                 snapshot = _entityStore.CurrentSnapshot;
             }
 
-            return new GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Droid(entity.Id, entity.Name, entity.AppearsIn);
+            return new GetCharactersWithCursorPaging_CharactersWithCursorPagingFilteringAndSorting_Nodes_Droid(entity.Id, entity.Name, entity.Height, entity.AppearsIn);
         }
     }
 
@@ -8499,7 +8652,7 @@ namespace StarWarsGeneratedClient.State
                 snapshot = _entityStore.CurrentSnapshot;
             }
 
-            return new GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Human(entity.Id, entity.Name, entity.AppearsIn);
+            return new GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Human(entity.Id, entity.Name, entity.Height, entity.AppearsIn);
         }
     }
 
@@ -8519,7 +8672,7 @@ namespace StarWarsGeneratedClient.State
                 snapshot = _entityStore.CurrentSnapshot;
             }
 
-            return new GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Droid(entity.Id, entity.Name, entity.AppearsIn);
+            return new GetCharactersWithPaging_CharactersWithPagingFilteringAndSorting_Items_Droid(entity.Id, entity.Name, entity.Height, entity.AppearsIn);
         }
     }
 
@@ -8740,6 +8893,10 @@ namespace StarWarsGeneratedClient.State
         global::System.Boolean IsEndsWithSet { get; }
 
         global::System.Boolean IsNendsWithSet { get; }
+
+        global::System.Boolean IsContainsIgnoreCaseSet { get; }
+
+        global::System.Boolean IsEqualsIgnoreCaseSet { get; }
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("StrawberryShake", "12.0.0.0")]
@@ -8896,11 +9053,11 @@ namespace StarWarsGeneratedClient.State
             {
                 if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.HumanEntity? entity))
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), DeserializeIGetHero_Hero_Friends(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "friends"), entityIds), entity.AppearsIn));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), DeserializeIGetHero_Hero_Friends(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "friends"), entityIds), entity.Height, entity.AppearsIn));
                 }
                 else
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), DeserializeIGetHero_Hero_Friends(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "friends"), entityIds), default !));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), DeserializeIGetHero_Hero_Friends(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "friends"), entityIds), default !, default !));
                 }
 
                 return entityId;
@@ -8910,11 +9067,11 @@ namespace StarWarsGeneratedClient.State
             {
                 if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.DroidEntity? entity))
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), DeserializeIGetHero_Hero_Friends(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "friends"), entityIds), entity.AppearsIn, entity.PrimaryFunction));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), DeserializeIGetHero_Hero_Friends(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "friends"), entityIds), entity.Height, entity.AppearsIn, entity.PrimaryFunction));
                 }
                 else
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), DeserializeIGetHero_Hero_Friends(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "friends"), entityIds), default !, default !));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), DeserializeIGetHero_Hero_Friends(session, global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "friends"), entityIds), default !, default !, default !));
                 }
 
                 return entityId;
@@ -9004,11 +9161,11 @@ namespace StarWarsGeneratedClient.State
             {
                 if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.HumanEntity? entity))
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, entity.AppearsIn));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, entity.Height, entity.AppearsIn));
                 }
                 else
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, default !));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, default !, default !));
                 }
 
                 return entityId;
@@ -9018,11 +9175,11 @@ namespace StarWarsGeneratedClient.State
             {
                 if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.DroidEntity? entity))
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, entity.AppearsIn, entity.PrimaryFunction));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, entity.Height, entity.AppearsIn, entity.PrimaryFunction));
                 }
                 else
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, default !, default !));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, default !, default !, default !));
                 }
 
                 return entityId;
@@ -9171,6 +9328,7 @@ namespace StarWarsGeneratedClient.State
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::StarWarsGeneratedClient.Episode> _episodeParser;
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Int32, global::System.Int32> _intParser;
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Double, global::System.Double> _floatParser;
         public GetCharactersByIdsBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetCharactersByIdsResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
         {
             _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
@@ -9179,6 +9337,7 @@ namespace StarWarsGeneratedClient.State
             _episodeParser = serializerResolver.GetLeafValueParser<global::System.String, global::StarWarsGeneratedClient.Episode>("Episode") ?? throw new global::System.ArgumentException("No serializer for type `Episode` found.");
             _intParser = serializerResolver.GetLeafValueParser<global::System.Int32, global::System.Int32>("Int") ?? throw new global::System.ArgumentException("No serializer for type `Int` found.");
             _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
+            _floatParser = serializerResolver.GetLeafValueParser<global::System.Double, global::System.Double>("Float") ?? throw new global::System.ArgumentException("No serializer for type `Float` found.");
         }
 
         public global::StrawberryShake.IOperationResult<IGetCharactersByIdsResult> Build(global::StrawberryShake.Response<global::System.Text.Json.JsonDocument> response)
@@ -9258,11 +9417,11 @@ namespace StarWarsGeneratedClient.State
             {
                 if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.HumanEntity? entity))
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableDouble(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "height")), DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
                 }
                 else
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableDouble(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "height")), DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
                 }
 
                 return entityId;
@@ -9272,11 +9431,11 @@ namespace StarWarsGeneratedClient.State
             {
                 if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.DroidEntity? entity))
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), entity.PrimaryFunction));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableDouble(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "height")), DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), entity.PrimaryFunction));
                 }
                 else
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), default !));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableDouble(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "height")), DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), default !));
                 }
 
                 return entityId;
@@ -9303,6 +9462,16 @@ namespace StarWarsGeneratedClient.State
             }
 
             return _stringParser.Parse(obj.Value.GetString()!);
+        }
+
+        private global::System.Double DeserializeNonNullableDouble(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _floatParser.Parse(obj.Value.GetDouble()!);
         }
 
         private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> DeserializeNonNullableEpisodeNonNullableArray(global::System.Text.Json.JsonElement? obj)
@@ -9341,6 +9510,7 @@ namespace StarWarsGeneratedClient.State
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::StarWarsGeneratedClient.Episode> _episodeParser;
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Int32, global::System.Int32> _intParser;
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Double, global::System.Double> _floatParser;
         public GetAllCharactersBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetAllCharactersResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
         {
             _entityStore = entityStore ?? throw new global::System.ArgumentNullException(nameof(entityStore));
@@ -9349,6 +9519,7 @@ namespace StarWarsGeneratedClient.State
             _episodeParser = serializerResolver.GetLeafValueParser<global::System.String, global::StarWarsGeneratedClient.Episode>("Episode") ?? throw new global::System.ArgumentException("No serializer for type `Episode` found.");
             _intParser = serializerResolver.GetLeafValueParser<global::System.Int32, global::System.Int32>("Int") ?? throw new global::System.ArgumentException("No serializer for type `Int` found.");
             _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
+            _floatParser = serializerResolver.GetLeafValueParser<global::System.Double, global::System.Double>("Float") ?? throw new global::System.ArgumentException("No serializer for type `Float` found.");
         }
 
         public global::StrawberryShake.IOperationResult<IGetAllCharactersResult> Build(global::StrawberryShake.Response<global::System.Text.Json.JsonDocument> response)
@@ -9428,11 +9599,11 @@ namespace StarWarsGeneratedClient.State
             {
                 if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.HumanEntity? entity))
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableDouble(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "height")), DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
                 }
                 else
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableDouble(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "height")), DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
                 }
 
                 return entityId;
@@ -9442,11 +9613,11 @@ namespace StarWarsGeneratedClient.State
             {
                 if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.DroidEntity? entity))
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), entity.PrimaryFunction));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableDouble(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "height")), DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), entity.PrimaryFunction));
                 }
                 else
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), default !));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableDouble(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "height")), DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), default !));
                 }
 
                 return entityId;
@@ -9473,6 +9644,16 @@ namespace StarWarsGeneratedClient.State
             }
 
             return _stringParser.Parse(obj.Value.GetString()!);
+        }
+
+        private global::System.Double DeserializeNonNullableDouble(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _floatParser.Parse(obj.Value.GetDouble()!);
         }
 
         private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> DeserializeNonNullableEpisodeNonNullableArray(global::System.Text.Json.JsonElement? obj)
@@ -9511,6 +9692,7 @@ namespace StarWarsGeneratedClient.State
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::StarWarsGeneratedClient.Episode> _episodeParser;
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Int32, global::System.Int32> _intParser;
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.String, global::System.String> _stringParser;
+        private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Double, global::System.Double> _floatParser;
         private readonly global::StrawberryShake.Serialization.ILeafValueParser<global::System.Boolean, global::System.Boolean> _booleanParser;
         public GetCharactersWithCursorPagingBuilder(global::StrawberryShake.IEntityStore entityStore, global::StrawberryShake.IEntityIdSerializer idSerializer, global::StrawberryShake.IOperationResultDataFactory<global::StarWarsGeneratedClient.IGetCharactersWithCursorPagingResult> resultDataFactory, global::StrawberryShake.Serialization.ISerializerResolver serializerResolver)
         {
@@ -9520,6 +9702,7 @@ namespace StarWarsGeneratedClient.State
             _episodeParser = serializerResolver.GetLeafValueParser<global::System.String, global::StarWarsGeneratedClient.Episode>("Episode") ?? throw new global::System.ArgumentException("No serializer for type `Episode` found.");
             _intParser = serializerResolver.GetLeafValueParser<global::System.Int32, global::System.Int32>("Int") ?? throw new global::System.ArgumentException("No serializer for type `Int` found.");
             _stringParser = serializerResolver.GetLeafValueParser<global::System.String, global::System.String>("String") ?? throw new global::System.ArgumentException("No serializer for type `String` found.");
+            _floatParser = serializerResolver.GetLeafValueParser<global::System.Double, global::System.Double>("Float") ?? throw new global::System.ArgumentException("No serializer for type `Float` found.");
             _booleanParser = serializerResolver.GetLeafValueParser<global::System.Boolean, global::System.Boolean>("Boolean") ?? throw new global::System.ArgumentException("No serializer for type `Boolean` found.");
         }
 
@@ -9616,11 +9799,11 @@ namespace StarWarsGeneratedClient.State
             {
                 if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.HumanEntity? entity))
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableDouble(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "height")), DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
                 }
                 else
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableDouble(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "height")), DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
                 }
 
                 return entityId;
@@ -9630,11 +9813,11 @@ namespace StarWarsGeneratedClient.State
             {
                 if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.DroidEntity? entity))
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), entity.PrimaryFunction));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableDouble(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "height")), DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), entity.PrimaryFunction));
                 }
                 else
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), default !));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableDouble(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "height")), DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), default !));
                 }
 
                 return entityId;
@@ -9661,6 +9844,16 @@ namespace StarWarsGeneratedClient.State
             }
 
             return _stringParser.Parse(obj.Value.GetString()!);
+        }
+
+        private global::System.Double DeserializeNonNullableDouble(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _floatParser.Parse(obj.Value.GetDouble()!);
         }
 
         private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> DeserializeNonNullableEpisodeNonNullableArray(global::System.Text.Json.JsonElement? obj)
@@ -9844,11 +10037,11 @@ namespace StarWarsGeneratedClient.State
             {
                 if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.HumanEntity? entity))
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableDouble(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "height")), DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
                 }
                 else
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableDouble(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "height")), DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
                 }
 
                 return entityId;
@@ -9858,11 +10051,11 @@ namespace StarWarsGeneratedClient.State
             {
                 if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.DroidEntity? entity))
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), entity.PrimaryFunction));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableDouble(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "height")), DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), entity.PrimaryFunction));
                 }
                 else
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), default !));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableDouble(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "height")), DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), default !));
                 }
 
                 return entityId;
@@ -9889,6 +10082,16 @@ namespace StarWarsGeneratedClient.State
             }
 
             return _stringParser.Parse(obj.Value.GetString()!);
+        }
+
+        private global::System.Double DeserializeNonNullableDouble(global::System.Text.Json.JsonElement? obj)
+        {
+            if (!obj.HasValue)
+            {
+                throw new global::System.ArgumentNullException();
+            }
+
+            return _floatParser.Parse(obj.Value.GetDouble()!);
         }
 
         private global::System.Collections.Generic.IReadOnlyList<global::StarWarsGeneratedClient.Episode> DeserializeNonNullableEpisodeNonNullableArray(global::System.Text.Json.JsonElement? obj)
@@ -10040,11 +10243,11 @@ namespace StarWarsGeneratedClient.State
             {
                 if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.HumanEntity? entity))
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, entity.Height, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
                 }
                 else
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.HumanEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, default !, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn"))));
                 }
 
                 return entityId;
@@ -10054,11 +10257,11 @@ namespace StarWarsGeneratedClient.State
             {
                 if (session.CurrentSnapshot.TryGetEntity(entityId, out global::StarWarsGeneratedClient.State.DroidEntity? entity))
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "primaryFunction"))));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), entity.Friends, entity.Height, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "primaryFunction"))));
                 }
                 else
                 {
-                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "primaryFunction"))));
+                    session.SetEntity(entityId, new global::StarWarsGeneratedClient.State.DroidEntity(DeserializeNonNullableInt32(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "id")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "name")), default !, default !, DeserializeNonNullableEpisodeNonNullableArray(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "appearsIn")), DeserializeNonNullableString(global::StrawberryShake.Json.JsonElementExtensions.GetPropertyOrNull(obj, "primaryFunction"))));
                 }
 
                 return entityId;

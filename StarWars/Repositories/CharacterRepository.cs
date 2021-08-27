@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using StarWars.Characters;
@@ -116,7 +116,8 @@ namespace StarWars.Repositories
                 "C-3PO",
                 new[] { 1000, 1002, 1003, 2001 },
                 new[] { Episode.NewHope, Episode.Empire, Episode.Jedi },
-                "Protocol"
+                "Protocol",
+                2.01
             );
 
             yield return new Droid
@@ -125,7 +126,8 @@ namespace StarWars.Repositories
                 "R2-D2",
                 new[] { 1000, 1002, 1003 },
                 new[] { Episode.NewHope, Episode.Empire, Episode.Jedi },
-                "Astromech"
+                "Astromech",
+                0.99
             );
         }
 

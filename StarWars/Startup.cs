@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using StarWars.Characters;
 using StarWars.ExtraGraphQL;
+using StarWars.Filters;
 using StarWars.Repositories;
 using StarWars.Reviews;
 
@@ -59,7 +60,7 @@ namespace StarWars
                     .AddTypeExtension<CharacterResolvers>()
 
                     // Add filtering and sorting capabilities.
-                    .AddFiltering()
+                    .AddFiltering<CustomFilterConvention>()
                     .AddSorting()
 
                     // if you wanted to controll the pagination settings globally you could

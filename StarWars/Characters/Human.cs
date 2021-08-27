@@ -1,6 +1,5 @@
+using System;
 using System.Collections.Generic;
-using HotChocolate.Types;
-using HotChocolate.Types.Relay;
 
 namespace StarWars.Characters
 {
@@ -15,14 +14,14 @@ namespace StarWars.Characters
             IReadOnlyList<int> friends, 
             IReadOnlyList<Episode> appearsIn, 
             string? homePlanet = null, 
-            double height = 1.72d)
+            double height = 1.50d)
         {
             Id = id;
             Name = name;
             Friends = friends;
             AppearsIn = appearsIn;
             HomePlanet = homePlanet;
-            Height = height;
+            Height = height + Math.Round(new Random().NextDouble() * 0.5, 2);
         }
 
         /// <inheritdoc />

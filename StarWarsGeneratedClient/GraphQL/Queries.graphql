@@ -99,5 +99,6 @@ fragment d on Droid {
 fragment c on Character {
   id
   name
+  height
   appearsIn
 }

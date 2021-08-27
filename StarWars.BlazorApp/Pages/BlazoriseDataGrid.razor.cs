@@ -107,7 +107,8 @@ namespace StarWars.BlazorApp.Pages
                 default:
                     filterInput = new StringOperationFilterInput
                     {
-                        Contains = stringvalue
+                        //Contains = stringvalue
+                        ContainsIgnoreCase = stringvalue
                     };
                     break;
             }

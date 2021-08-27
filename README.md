@@ -14,11 +14,11 @@ cd StarWarsGeneratedClient
 
 - `dotnet tool uninstall StrawberryShake.Tools --local`
 
-- `dotnet tool install StrawberryShake.Tools --version 12.0.0-preview.32 --local`
+- `dotnet tool install StrawberryShake.Tools --version 12.0.0-preview.34 --local`
 
-- `dotnet add package StrawberryShake.Transport.Http --version 12.0.0-preview.32`
+- `dotnet add package StrawberryShake.Transport.Http --version 12.0.0-preview.34`
 
-- `dotnet add package StrawberryShake.CodeGeneration.CSharp.Analyzers --version 12.0.0-preview.32`
+- `dotnet add package StrawberryShake.CodeGeneration.CSharp.Analyzers --version 12.0.0-preview.34`
 
 - `dotnet add package Microsoft.Extensions.DependencyInjection`
 
