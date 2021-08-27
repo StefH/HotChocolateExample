@@ -36,7 +36,7 @@ namespace StarWars.Characters
             }
         }
 
-        private double ConvertToUnit(double length, Unit unit)
+        private static double ConvertToUnit(double length, Unit unit)
         {
             if (unit == Unit.Foot)
             {

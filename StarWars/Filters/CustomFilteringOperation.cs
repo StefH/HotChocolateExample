@@ -2,8 +2,8 @@ namespace StarWars.Filters
 {
     internal static class CustomFilteringOperation
     {
-        public static int EqualsIgnoreCase = 1025;
+        public static int EqualsIgnoreCase = 1000000;
 
-        public static int ContainsIgnoreCase = 1026;
+        public static int ContainsIgnoreCase = 1000001;
     }
 }

@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <Version>0.0.1</Version>
+        <TargetFramework>net5.0</TargetFramework>
+        <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
+        <Nullable>enable</Nullable>
+        <RootNamespace>HotChocolate.Data.Filters</RootNamespace>
+        <Title>HotChocolate.Data.Filters.Extensions</Title>
+        <PackageId>HotChocolate.Data.Filters.Extensions</PackageId>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="HotChocolate.Data" Version="12.0.0-preview.34" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Extensions\" />
+    </ItemGroup>
+
+</Project>
