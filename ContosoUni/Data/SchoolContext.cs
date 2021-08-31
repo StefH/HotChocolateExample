@@ -5,30 +5,36 @@ namespace ContosoUniversity
 { 
     public class SchoolContext : DbContext
     {
-        private readonly ILoggerFactory _loggerFactory;
-        private readonly ILogger _logger;
+        //private readonly ILoggerFactory _loggerFactory;
+        //private readonly ILogger _logger;
 
-        public SchoolContext(DbContextOptions<SchoolContext> options, ILoggerFactory loggerFactory, ILogger<SchoolContext> logger) : base(options)
+        public SchoolContext(DbContextOptions<SchoolContext> options):base(options)
         {
-            _loggerFactory = loggerFactory;
-            _logger = logger;
+            //_loggerFactory = loggerFactory;
+            //_logger = logger;
         }
+
+        //public SchoolContext(DbContextOptions<SchoolContext> options, ILoggerFactory loggerFactory, ILogger<SchoolContext> logger) : base(options)
+        //{
+        //    _loggerFactory = loggerFactory;
+        //    _logger = logger;
+        //}
 
         public DbSet<Student> Students { get; set; }
         public DbSet<Enrollment> Enrollments { get; set; }
         public DbSet<Course> Courses { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
-        {
-            options
-                .LogTo(a => _logger.LogDebug(a))
-                .UseInMemoryDatabase("uni")
-                //.UseSqlite("Data Source=uni.db")
-                .EnableDetailedErrors()
-                .EnableSensitiveDataLogging()
-                .UseLoggerFactory(_loggerFactory)
-                ;
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder options)
+        //{
+        //    options
+        //        .LogTo(a => _logger.LogDebug(a))
+        //        .UseInMemoryDatabase("uni")
+        //        //.UseSqlite("Data Source=uni.db")
+        //        .EnableDetailedErrors()
+        //        .EnableSensitiveDataLogging()
+        //        .UseLoggerFactory(_loggerFactory)
+        //        ;
+        //}
 
         //protected override void OnModelCreating(ModelBuilder modelBuilder)
         //{

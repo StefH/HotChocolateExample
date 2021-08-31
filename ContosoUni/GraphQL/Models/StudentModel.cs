@@ -13,8 +13,6 @@ namespace ContosoUniversity.Models
         public DateTime EnrollmentDate { get; set; }
 
         [UseProjection]
-        [UseFiltering]
-        [UseSorting]
         public virtual ICollection<EnrollmentModel> Enrollments { get; set; }
     }
 }

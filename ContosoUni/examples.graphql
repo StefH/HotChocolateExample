@@ -1,15 +1,22 @@
-query {
-  students(order: { lastName: ASC }) {
-    nodes {
-      id
-      lastName
-    }
+query students {
+  students(where: { lastName: { containsIgnoreCase: "Z" } }) {
+    ...s
   }
 }
 
-query {
-  studentById (studentId: 1) {
-    id
-    lastName
+query studentById {
+  studentById(studentId: 1) {
+    ...s
+  }
+}
+
+fragment s on StudentModel {
+  id
+  lastName
+  firstMidName
+  enrollmentDate
+  enrollments {
+    enrollmentIdentifier
+    courseId
   }
 }

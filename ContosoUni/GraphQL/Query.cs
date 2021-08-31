@@ -4,8 +4,6 @@ using AutoMapper;
 using ContosoUniversity.Models;
 using HotChocolate;
 using HotChocolate.Data;
-using HotChocolate.Types;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 
@@ -23,12 +21,12 @@ namespace ContosoUniversity
         }
 
         [UseDbContext(typeof(SchoolContext))]
-        [UseFirstOrDefault]
         [UseProjection]
         [UseFiltering]
-        public IEnumerable<StudentModel> GetStudentById([Service] SchoolContext context, int studentId)
+        [UseSorting]
+        public IEnumerable<StudentModel> GetStudentsById([ScopedService] SchoolContext context, int studentId)
         {
-            return _mapper.ProjectTo<StudentModel>(context.Students.Include(s => s.Enrollments)).Where(s => s.Id == studentId).ToList();
+            return _mapper.ProjectTo<StudentModel>(context.Students.Include(s => s.Enrollments).Where(s => s.Id == studentId).AsNoTracking());
         }
 
         // The middleware pipeline order for the field `Query.students` is invalid.
@@ -39,9 +37,9 @@ namespace ContosoUniversity
         [UseProjection]
         [UseFiltering]
         [UseSorting]
-        public IQueryable<Student> GetStudents([ScopedService] SchoolContext dbContext)
+        public IEnumerable<StudentModel> GetStudents([ScopedService] SchoolContext dbContext)
         {
-            return dbContext.Students.Include(s => s.Enrollments).AsNoTracking();
+            return _mapper.ProjectTo<StudentModel>(dbContext.Students.Include(s => s.Enrollments).AsNoTracking());
         }
     }
 }

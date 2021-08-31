@@ -6,7 +6,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using StarWars.ExtraGraphQL;
 
 namespace ContosoUniversity
 {
@@ -16,12 +15,31 @@ namespace ContosoUniversity
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            //services
+            //    .AddMiniProfiler(options =>
+            //    {
+            //        options.RouteBasePath = "/profiler";
+            //    })
+            //    .AddEntityFramework();
+
             services
                 // Needed for Blazor demo
                 .AddCors()
 
                 //.AddDbContext<SchoolContext>()
-                .AddDbContextFactory<SchoolContext>()
+                .AddPooledDbContextFactory<SchoolContext>((sp, optionsBuilder) =>
+                {
+                    var loggerFactory = sp.GetRequiredService<ILoggerFactory>();
+                    var logger = sp.GetRequiredService<ILogger<SchoolContext>>();
+
+                    optionsBuilder
+                        .LogTo(a => logger.LogDebug(a))
+                        .UseInMemoryDatabase("uni")
+                        //.UseSqlite("Data Source=uni.db")
+                        .EnableDetailedErrors()
+                        .EnableSensitiveDataLogging()
+                        .UseLoggerFactory(loggerFactory);
+                })
 
                 .AddAutoMapper(typeof(Startup))
 
@@ -38,7 +56,7 @@ namespace ContosoUniversity
                     .AddQueryType<Query>()
 
                     // Add filtering and sorting capabilities.
-                    .AddFiltering()
+                    .AddExtendedFiltering()
                     .AddSorting()
 
                     // Add projection
@@ -52,10 +70,6 @@ namespace ContosoUniversity
                     // Last we will add apollo tracing to our server which by default is 
                     // only activated through the X-APOLLO-TRACING:1 header.
                     .AddApolloTracing()
-
-                    // - https://github.com/ChilliCream/hotchocolate/issues/2901
-                    // - https://github.com/ChilliCream/hotchocolate/issues/3923
-                    .AddDiagnosticEventListener(sp => new MyDiagnosticEventListener(sp.GetService<ILogger<MyDiagnosticEventListener>>()))
                     ;
         }
 
